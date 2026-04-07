@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gtchallenge.io/schemas/item-schema/v1",
+  "title": "GT Challenge Assessment Item",
+  "description": "FROZEN SCHEMA v1.0 — Defines the structure of IRT 3PL-calibrated adaptive assessment items for the GT Challenge platform. Used by QA evaluators, item generators, and the scoring pipeline. Do not modify without a version bump and evaluator migration.",
+  "$comment": "Aligned with: packages/shared-types/src/schemas.ts (ItemRowSchema), packages/irt-engine/src/types.ts (Item interface), packages/shared-types/src/enums.ts (Domain, AgeBand).",
+  "type": "object",
+  "required": [
+    "id",
+    "domain",
+    "age_bands",
+    "difficulty",
+    "discrimination",
+    "guessing",
+    "content",
+    "metadata"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(K2|35|68)-(r|m|v|p)\\d{4}$",
+      "description": "Unique item identifier. Format: {band_code}-{domain_initial}{4-digit number}. Band codes: K2 (ages 5-7), 35 (ages 8-10), 68 (ages 11-14). Domain initials: r=reasoning, m=math, v=verbal, p=pattern_recognition. Examples: K2-r0001, 35-m0042, 68-p0003.",
+      "examples": ["K2-r0001", "35-m0042", "68-v0017", "68-p0003"]
+    },
+    "domain": {
+      "type": "string",
+      "enum": ["reasoning", "math", "verbal", "pattern_recognition"],
+      "description": "Primary cognitive domain. Must match the domain initial in the id field (r/m/v/p). Maps to Domain enum in shared-types."
+    },
+    "age_bands": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["K-2", "3-5", "6-8"]
+      },
+      "minItems": 1,
+      "maxItems": 3,
+      "uniqueItems": true,
+      "description": "Age bands this item is appropriate for. Most items target one band. Items spanning adjacent bands (e.g., ['K-2','3-5']) are permissible for bridging difficulty. The band code in the id must match the primary (first) age band."
+    },
+    "difficulty": {
+      "type": "number",
+      "minimum": -3.0,
+      "maximum": 3.0,
+      "description": "IRT b parameter (item difficulty). The theta value at which a non-guessing test-taker has a 50% probability of a correct response. Negative = easier, positive = harder. Typical ranges by band: K-2 [-2.5, 1.0], 3-5 [-2.0, 2.0], 6-8 [-0.5, 3.0]. See grade-specs.json for anchors."
+    },
+    "discrimination": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 2.5,
+      "description": "IRT a parameter (item discrimination). Controls steepness of the item characteristic curve. Higher values mean the item differentiates more sharply between ability levels near its difficulty. Below 0.5 = too flat, provides negligible Fisher information. Above 2.5 = suspiciously steep, likely overfitting or a flawed item."
+    },
+    "guessing": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 0.35,
+      "description": "IRT c parameter (pseudo-guessing). Lower asymptote of the item characteristic curve — the probability a very-low-ability examinee answers correctly by chance. Typically 1/num_options: 3 options = 0.33, 4 options = 0.25, 5 options = 0.20. Must be consistent with content.options length."
+    },
+    "content": {
+      "type": "object",
+      "required": ["stem", "type", "options", "correct_index", "explanation"],
+      "additionalProperties": false,
+      "description": "The presentable content of the item — what the child sees and what the parent reads on the dashboard.",
+      "properties": {
+        "stem": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 500,
+          "description": "The question text presented to the child. Must respect the reading level, vocabulary ceiling, and max stem length for the item's age band (see grade-specs.json). K-2 stems should use Dolch/Fry sight words and stay under 60 characters where possible. 3-5 stems can use grade-level vocabulary up to ~200 characters. 6-8 stems may use academic vocabulary up to 500 characters."
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "analogy",
+            "odd_one_out",
+            "number_series",
+            "syllogism",
+            "matrix",
+            "computation",
+            "word_problem",
+            "comparison",
+            "number_sense",
+            "estimation",
+            "synonym",
+            "antonym",
+            "inference",
+            "comprehension",
+            "definition",
+            "vocabulary",
+            "color_pattern",
+            "shape_pattern",
+            "size_pattern",
+            "number_pattern",
+            "sequence_completion"
+          ],
+          "description": "Question type. Must be valid for the item's domain per domain-taxonomy.json. reasoning: analogy, odd_one_out, number_series, syllogism, matrix. math: computation, word_problem, comparison, number_sense, estimation. verbal: synonym, antonym, inference, comprehension, definition, vocabulary. pattern_recognition: color_pattern, shape_pattern, size_pattern, number_pattern, matrix, sequence_completion."
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["text"],
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "description": "Option display text. Each non-correct option (distractor) should target a specific misconception from misconception-library.json. Option text must be at the same reading level as the stem."
+              },
+              "image": {
+                "type": "string",
+                "description": "Optional storage path or URL for visual option content. Used for pattern_recognition and spatial items."
+              },
+              "audio": {
+                "type": "string",
+                "description": "Optional audio path for pre-reader accessibility (K-2)."
+              }
+            }
+          },
+          "minItems": 3,
+          "maxItems": 5,
+          "description": "Answer choices. K-2: 3-4 options. 3-5: 3-4 options. 6-8: 4-5 options. The guessing parameter must equal 1/options.length (within 0.02 tolerance). Distractors must target documented misconceptions — no random wrong answers."
+        },
+        "correct_index": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4,
+          "description": "0-based index into options array for the correct answer. Must satisfy: 0 <= correct_index < options.length. The correct answer should be unambiguously correct — no trick questions, no 'best answer' subjectivity."
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 800,
+          "description": "Plain-language explanation for the parent dashboard. Must explain: (1) why the correct answer is right, (2) what reasoning the child should have used, and (3) why the most tempting distractor is wrong. Should be understandable by a non-expert adult."
+        },
+        "media": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Optional images or audio files for the stem (e.g., matrix grids, number lines, shape sequences). Referenced by storage path or URL."
+        },
+        "audio_stem": {
+          "type": "string",
+          "description": "Audio version of the stem for pre-readers (K-2). Recommended for all K-2 items. The audio should read the stem exactly, with no additional hints or emphasis."
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "cognitive_skill",
+        "misconception_targeted",
+        "bloom_level"
+      ],
+      "additionalProperties": false,
+      "description": "Psychometric and pedagogical metadata. Used by QA evaluators and the parent dashboard.",
+      "properties": {
+        "cognitive_skill": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 100,
+          "description": "The specific cognitive ability this item measures. Must map to a skill listed in domain-taxonomy.json. Examples: 'analogical reasoning', 'working memory', 'mental rotation', 'deductive inference', 'phonemic awareness', 'numerical estimation', 'fluid reasoning', 'crystallized knowledge', 'visual-spatial processing', 'quantitative reasoning'."
+        },
+        "misconception_targeted": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 200,
+          "description": "The specific misconception or common error that the primary distractor catches. Must reference a misconception from misconception-library.json. Example: 'Assumes pattern repeats rather than grows', 'Confuses correlation with causation in syllogisms'."
+        },
+        "bloom_level": {
+          "type": "string",
+          "enum": ["remember", "understand", "apply", "analyze"],
+          "description": "Bloom's taxonomy level. remember = recall a fact or definition. understand = explain a concept in own words. apply = use a known procedure in a new context. analyze = decompose, find patterns, evaluate relationships. Gifted-identification items should skew toward 'apply' and 'analyze'. Items at 'remember' level should be rare and used only for floor/warm-up."
+        },
+        "distractor_rationale": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["option_index", "misconception_id", "reasoning"],
+            "additionalProperties": false,
+            "properties": {
+              "option_index": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "0-based index of the distractor option. Must not equal content.correct_index."
+              },
+              "misconception_id": {
+                "type": "string",
+                "description": "References a misconception id from misconception-library.json (e.g., 'r_35_correlational_trap')."
+              },
+              "reasoning": {
+                "type": "string",
+                "description": "Explanation of why a child holding this misconception would select this distractor."
+              }
+            }
+          },
+          "description": "Optional but strongly recommended. Detailed rationale linking each distractor to a specific misconception. One entry per distractor option."
+        },
+        "source_reference": {
+          "type": "string",
+          "description": "Optional psychometric or educational source reference (e.g., 'CogAT Form 7 Verbal Battery', 'Raven's Progressive Matrices', 'NNAT3 Pattern Completion'). For traceability, not licensing."
+        }
+      }
+    }
+  }
+}

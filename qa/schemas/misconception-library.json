@@ -1,0 +1,497 @@
+{
+  "$comment": "FROZEN v1.0 — Misconception library for GT Challenge adaptive assessment. Each distractor in an assessment item should target a specific misconception from this library. Organized by domain and age band. Minimum 5 misconceptions per domain per age band. Used by item generators and QA evaluators. Do not modify without version bump.",
+  "misconceptions": [
+    {
+      "domain": "reasoning",
+      "age_band": "K-2",
+      "misconceptions": [
+        {
+          "id": "r_K2_surface_similarity",
+          "description": "Selects an analogy answer based on surface similarity (looks like, sounds like) rather than relational similarity (functions like, belongs to same category as).",
+          "distractor_strategy": "Offer an option that shares a visual or phonetic feature with one of the stem terms but does not complete the relational mapping.",
+          "example": "'Bird is to nest as dog is to ___' — child picks 'bone' because dogs and bones are associated, instead of 'doghouse' which completes the home-relationship."
+        },
+        {
+          "id": "r_K2_association_over_relation",
+          "description": "Picks an option that is associated with the stem word (co-occurs in experience) rather than one that completes the specified relationship.",
+          "distractor_strategy": "Include a strong associative lure that is related to the stem word but does not match the relational structure.",
+          "example": "'Hat is to head as shoe is to ___' — child picks 'sock' (associated with shoe) instead of 'foot' (worn-on relationship)."
+        },
+        {
+          "id": "r_K2_single_attribute_classification",
+          "description": "Classifies objects by one salient attribute (color, size) when the correct grouping requires a different or less salient attribute (function, category).",
+          "distractor_strategy": "In odd-one-out items, make the correct answer share a salient surface attribute with the group while differing on the classification-relevant attribute.",
+          "example": "'Which does not belong: apple, banana, carrot, grape?' — child picks grape (small and round, unlike banana) instead of carrot (not a fruit)."
+        },
+        {
+          "id": "r_K2_recency_pattern",
+          "description": "In a sequence, predicts the next element by repeating the most recently seen element rather than applying the repeating pattern rule.",
+          "distractor_strategy": "Include the last element of the visible sequence as a distractor.",
+          "example": "'Red, blue, red, blue, ___' — child picks blue (just saw blue) instead of red (pattern continues alternation)."
+        },
+        {
+          "id": "r_K2_majority_rule",
+          "description": "In odd-one-out tasks, picks the item that appears most often or is most common in the set, rather than the one that does not belong.",
+          "distractor_strategy": "Design the set so the odd one out is not the most visually distinctive element.",
+          "example": "'Circle, circle, square, circle' — child picks square because it is different rather than understanding the question asks which does not belong to the category."
+        },
+        {
+          "id": "r_K2_sequence_too_short",
+          "description": "Identifies a pattern from only the first two elements, ignoring subsequent elements that reveal a more complex rule.",
+          "distractor_strategy": "Offer an option that is consistent with the first two elements but not the full sequence.",
+          "example": "'2, 4, 8, 16, ___' — child sees 2, 4 and guesses 6 (adding 2) instead of 32 (doubling). Note: only use simple number patterns for K-2."
+        }
+      ]
+    },
+    {
+      "domain": "reasoning",
+      "age_band": "3-5",
+      "misconceptions": [
+        {
+          "id": "r_35_correlational_trap",
+          "description": "Confuses correlation with causation in syllogisms. Assumes that because two things often occur together, one must cause the other.",
+          "distractor_strategy": "Offer 'Yes, definitely' when only 'Maybe' or 'Cannot determine' is correct.",
+          "example": "'The ground is wet. It must be raining.' — ignores sprinklers, hose, dew, etc."
+        },
+        {
+          "id": "r_35_illicit_conversion",
+          "description": "Reverses a conditional: assumes 'All A are B' means 'All B are A'.",
+          "distractor_strategy": "Present a conclusion that follows from the reversed conditional and mark it as a distractor.",
+          "example": "'All dogs are animals. All animals are dogs.' — child accepts the reversed statement as also true."
+        },
+        {
+          "id": "r_35_affirming_consequent",
+          "description": "Accepts an invalid inference by affirming the consequent: 'If A then B; B is true; therefore A.'",
+          "distractor_strategy": "Offer the affirmed antecedent as a distractor when the valid conclusion is 'Cannot determine'.",
+          "example": "'If it rains, the grass is wet. The grass is wet. Therefore it rained.' — valid conclusion is only 'maybe'."
+        },
+        {
+          "id": "r_35_alternating_pattern_single_rule",
+          "description": "Identifies only one of two alternating rules in a number series and applies it uniformly.",
+          "distractor_strategy": "Offer the result of applying only the first rule or only the second rule.",
+          "example": "'2, 5, 4, 7, 6, 9, ___' (alternating +3, -1) — child applies only +3 and answers 12, or only -1 and answers 8."
+        },
+        {
+          "id": "r_35_belief_bias",
+          "description": "Evaluates the truth of a syllogism's conclusion based on whether it is believable in the real world, rather than whether it follows logically from the premises.",
+          "distractor_strategy": "Use counterfactual premises that lead to a true logical conclusion that sounds absurd, with a believable-but-invalid alternative.",
+          "example": "'All fish can fly. Nemo is a fish. Can Nemo fly?' — child answers 'No' because fish cannot really fly, ignoring the premise."
+        },
+        {
+          "id": "r_35_partial_pattern",
+          "description": "Identifies a rule that works for the first few terms of a series but breaks down for later terms. Commits to the partial rule without checking.",
+          "distractor_strategy": "Offer the result of the partial rule as a distractor.",
+          "example": "'1, 2, 4, 7, 11, ___' (differences: +1, +2, +3, +4, next +5 = 16) — child sees +1, +2 and assumes +3 always, getting 14."
+        }
+      ]
+    },
+    {
+      "domain": "reasoning",
+      "age_band": "6-8",
+      "misconceptions": [
+        {
+          "id": "r_68_denying_antecedent",
+          "description": "Invalid inference: 'If A then B; not A; therefore not B.'",
+          "distractor_strategy": "Offer 'Not B' as a distractor when the valid answer is 'Cannot determine from the given information'.",
+          "example": "'If you study, you pass. You did not study. Therefore you did not pass.' — studying is sufficient but not necessary."
+        },
+        {
+          "id": "r_68_scope_confusion",
+          "description": "Confuses 'some' with 'all' or 'none' in quantified statements. Overgeneralizes from a particular to a universal.",
+          "distractor_strategy": "Offer a universal conclusion as a distractor when only a particular conclusion is valid.",
+          "example": "'Some mammals can fly (bats). Therefore all mammals can fly.' or 'Some A are B, therefore all A are B.'"
+        },
+        {
+          "id": "r_68_nested_operation_collapse",
+          "description": "In complex number series, collapses a nested operation (e.g., multiply then subtract) into a single simpler operation.",
+          "distractor_strategy": "Offer the result of applying only the outer operation or only the inner operation.",
+          "example": "'3, 5, 9, 17, ___' (each term: previous * 2 - 1) — child sees +2, +4, +8 and extrapolates +16 = 33 instead of 17*2-1 = 33. Or child tries +2, +4, +8, +16 = 33 (happens to be same here — use a case where they diverge)."
+        },
+        {
+          "id": "r_68_existential_fallacy",
+          "description": "Assumes that because a category is defined, members must exist. 'All unicorns are magical' does not mean unicorns exist.",
+          "distractor_strategy": "Offer a conclusion that assumes existence as a distractor.",
+          "example": "'All zorbits are blue. Therefore there exists at least one blue zorbit.' — invalid if zorbits do not exist."
+        },
+        {
+          "id": "r_68_false_dilemma",
+          "description": "Accepts a false dichotomy, assuming only two options exist when a third is possible.",
+          "distractor_strategy": "Offer two extreme options and include a moderate or 'other possibility' correct answer.",
+          "example": "'Either the answer is always yes or always no' when the correct answer is 'sometimes yes, sometimes no, depending on conditions.'"
+        },
+        {
+          "id": "r_68_matrix_row_only",
+          "description": "In matrix completion, identifies the pattern across rows but ignores the pattern down columns (or vice versa).",
+          "distractor_strategy": "Offer an option that satisfies the row pattern but violates the column pattern.",
+          "example": "3x3 matrix where shape changes across rows and shading changes down columns — child picks the right shape but wrong shading."
+        }
+      ]
+    },
+    {
+      "domain": "math",
+      "age_band": "K-2",
+      "misconceptions": [
+        {
+          "id": "m_K2_counting_on_error",
+          "description": "When adding, counts the first number as a count rather than starting from it. Off by one.",
+          "distractor_strategy": "Offer the answer that is one less than the correct sum.",
+          "example": "'5 + 3 = ___' — child counts '5, 6, 7' (three counts starting from 5) getting 7 instead of 8."
+        },
+        {
+          "id": "m_K2_operation_reversal",
+          "description": "Performs the wrong operation — adds when should subtract or vice versa.",
+          "distractor_strategy": "Offer the result of the opposite operation as a distractor.",
+          "example": "'8 - 3 = ___' — child adds and gets 11 instead of 5."
+        },
+        {
+          "id": "m_K2_bigger_number_first",
+          "description": "Always subtracts the smaller number from the larger, regardless of order. Cannot produce negative results or handle subtraction where the answer would be negative (not expected at this age, but misapplies to multi-digit subtraction).",
+          "distractor_strategy": "Offer the result of subtracting smaller from larger when the problem specifies the reverse.",
+          "example": "'3 - 5 = ___' is not age-appropriate, but in '52 - 37' a child may compute 7-2 = 5 in the ones place instead of borrowing."
+        },
+        {
+          "id": "m_K2_missing_addend_as_sum",
+          "description": "When asked '___ + 4 = 9', adds the two visible numbers instead of finding the missing part.",
+          "distractor_strategy": "Offer 13 (4 + 9) as a distractor.",
+          "example": "'___ + 4 = 9' — child answers 13 instead of 5."
+        },
+        {
+          "id": "m_K2_skip_count_restart",
+          "description": "When skip counting (by 2s, 5s, 10s), restarts from the beginning of the sequence instead of continuing from the last term.",
+          "distractor_strategy": "Offer an early term in the sequence as the distractor.",
+          "example": "'5, 10, 15, 20, ___' — child answers 5 (restarting) instead of 25."
+        },
+        {
+          "id": "m_K2_place_value_ones_only",
+          "description": "Treats each digit independently, ignoring place value.",
+          "distractor_strategy": "Offer the result of adding digits independently without carrying.",
+          "example": "'14 + 8 = ___' — child adds 4+8=12 and says 112 instead of 22, or gets 12 (ignoring the tens place entirely)."
+        }
+      ]
+    },
+    {
+      "domain": "math",
+      "age_band": "3-5",
+      "misconceptions": [
+        {
+          "id": "m_35_fraction_whole_number_thinking",
+          "description": "Treats numerator and denominator as independent whole numbers. Believes 1/3 > 1/2 because 3 > 2.",
+          "distractor_strategy": "Offer the fraction with the larger denominator as 'greater' when it is actually smaller.",
+          "example": "'Which is greater: 1/4 or 1/3?' — child picks 1/4 because 4 > 3."
+        },
+        {
+          "id": "m_35_keyword_trap",
+          "description": "Selects an operation based on a keyword rather than the problem's structure. 'More' always means add; 'left' always means subtract.",
+          "distractor_strategy": "Offer the result of the keyword-triggered operation when a different operation is needed.",
+          "example": "'Tom has 5 more stickers than Sara. Sara has 8. How many does Tom have?' — child subtracts because they see '5' and '8' and 'more' confusingly, or in comparison problems: 'How many more does A have than B?' — child adds."
+        },
+        {
+          "id": "m_35_carry_error",
+          "description": "Forgets to carry in multi-digit addition, or carries the wrong digit.",
+          "distractor_strategy": "Offer the result without the carry as a distractor.",
+          "example": "'347 + 285 = ___' — child gets 522 (no carry from ones) instead of 632."
+        },
+        {
+          "id": "m_35_order_of_operations",
+          "description": "Computes left-to-right ignoring operator precedence (PEMDAS/BODMAS).",
+          "distractor_strategy": "Offer the left-to-right result as a distractor.",
+          "example": "'3 + 4 x 2 = ___' — child gets 14 (left-to-right) instead of 11."
+        },
+        {
+          "id": "m_35_irrelevant_information",
+          "description": "Uses all numbers mentioned in a word problem, including irrelevant ones.",
+          "distractor_strategy": "Include a result that incorporates the irrelevant number.",
+          "example": "'A store has 48 red balls and 36 blue balls. Each box holds 6 balls. The store is open 8 hours. How many boxes?' — child includes 8 in the calculation."
+        },
+        {
+          "id": "m_35_partial_solution",
+          "description": "Solves only the first step of a multi-step problem and reports that as the answer.",
+          "distractor_strategy": "Offer the intermediate result as a distractor.",
+          "example": "'48 + 36 = 84 balls total. 84 / 6 = 14 boxes.' — child answers 84 (stopped after adding)."
+        }
+      ]
+    },
+    {
+      "domain": "math",
+      "age_band": "6-8",
+      "misconceptions": [
+        {
+          "id": "m_68_sign_error",
+          "description": "Drops or flips the sign when working with negative numbers or when moving terms across the equals sign.",
+          "distractor_strategy": "Offer the result with the opposite sign as a distractor.",
+          "example": "'Solve: 3x + 7 = 22' — child subtracts 7 but gets 3x = 29 (added instead), yielding x = 29/3."
+        },
+        {
+          "id": "m_68_distribution_error",
+          "description": "Fails to distribute correctly: a(b + c) = ab + c instead of ab + ac.",
+          "distractor_strategy": "Offer the result of incomplete distribution.",
+          "example": "'Expand: 3(x + 4)' — child writes 3x + 4 instead of 3x + 12."
+        },
+        {
+          "id": "m_68_rate_vs_total",
+          "description": "Compares totals instead of rates when the question asks about rates, or vice versa.",
+          "distractor_strategy": "Offer the total-based comparison as a distractor when rate-based is needed.",
+          "example": "'Machine A makes 45 in 3 hours, Machine B makes 70 in 5 hours. Which is faster?' — child says B because 70 > 45."
+        },
+        {
+          "id": "m_68_equation_balance",
+          "description": "Performs an operation on only one side of an equation, breaking the equality.",
+          "distractor_strategy": "Offer the result of a one-sided operation.",
+          "example": "'Solve: x/4 = 12' — child subtracts 4 from one side only, getting x = 8 instead of x = 48."
+        },
+        {
+          "id": "m_68_proportional_additive",
+          "description": "Uses additive reasoning where proportional reasoning is required.",
+          "distractor_strategy": "Offer the additive result as a distractor.",
+          "example": "'If 3 shirts cost $12, how much do 7 shirts cost?' — child adds (7-3=4, so $12+$4=$16) instead of ($12/3)*7=$28."
+        },
+        {
+          "id": "m_68_exponent_multiplication",
+          "description": "Multiplies the base by the exponent instead of raising to the power.",
+          "distractor_strategy": "Offer base * exponent as a distractor.",
+          "example": "'What is 2^5?' — child answers 10 (2*5) instead of 32."
+        }
+      ]
+    },
+    {
+      "domain": "verbal",
+      "age_band": "K-2",
+      "misconceptions": [
+        {
+          "id": "v_K2_phonetic_trap",
+          "description": "Selects a word that sounds similar to the target or stem word, rather than one that matches the requested semantic relationship.",
+          "distractor_strategy": "Include a phonetically similar but semantically unrelated word as a distractor.",
+          "example": "'Which word means the same as bare?' — child picks 'bear' (sounds the same) instead of 'empty'."
+        },
+        {
+          "id": "v_K2_thematic_association",
+          "description": "Picks a word that is thematically associated (belongs to the same scene) rather than one with the requested relationship.",
+          "distractor_strategy": "Include a word from the same thematic field that does not satisfy the specific relationship.",
+          "example": "'Which word is the opposite of hot?' — child picks 'fire' (associated with hot) instead of 'cold'."
+        },
+        {
+          "id": "v_K2_visual_inference_over_text",
+          "description": "When making inferences, relies on the most vivid visual detail rather than integrating multiple clues.",
+          "distractor_strategy": "Offer an answer based on the single most vivid detail when the correct inference requires combining details.",
+          "example": "'Sam wore boots and a raincoat and carried an umbrella. What is the weather?' — child fixates on boots and says 'muddy' instead of 'rainy'."
+        },
+        {
+          "id": "v_K2_opposite_confusion",
+          "description": "Confuses synonym and antonym tasks. When asked for a word that means the same, provides an opposite, or vice versa.",
+          "distractor_strategy": "Include the antonym when asking for synonym, and the synonym when asking for antonym.",
+          "example": "'Which word means the same as happy?' — child picks 'sad' (the opposite)."
+        },
+        {
+          "id": "v_K2_literal_interpretation",
+          "description": "Takes figurative or idiomatic language literally.",
+          "distractor_strategy": "Offer a literal interpretation of a common expression as a distractor.",
+          "example": "'It is raining cats and dogs. What does this mean?' — child picks 'Animals are falling from the sky' instead of 'It is raining very hard.'"
+        }
+      ]
+    },
+    {
+      "domain": "verbal",
+      "age_band": "3-5",
+      "misconceptions": [
+        {
+          "id": "v_35_root_word_trap",
+          "description": "Guesses a word's meaning from a familiar root or prefix that is misleading in this context.",
+          "distractor_strategy": "Offer a meaning based on the misleading root as a distractor.",
+          "example": "'What does inflammable mean?' — child picks 'not flammable' (thinking in- means not) instead of 'easily catches fire'."
+        },
+        {
+          "id": "v_35_connotation_confusion",
+          "description": "Selects a word with the right emotional connotation but the wrong denotation.",
+          "distractor_strategy": "Offer a word that feels right but means something different.",
+          "example": "'Which word means the same as brave?' — child picks 'strong' (positive connotation, associated with bravery) instead of 'courageous' (actual synonym)."
+        },
+        {
+          "id": "v_35_over_inference",
+          "description": "Draws a conclusion that goes beyond what the text actually supports, filling in from personal experience or imagination.",
+          "distractor_strategy": "Offer a plausible but unsupported conclusion as a distractor.",
+          "example": "Passage says 'Maya walked to school with her head down.' — child infers 'Maya is being bullied' when the text only supports 'Maya seems upset or tired'."
+        },
+        {
+          "id": "v_35_most_recent_detail",
+          "description": "Answers based on the most recently read sentence rather than the relevant sentence from earlier in the passage.",
+          "distractor_strategy": "Place the answer-relevant detail early and a distractor-relevant detail at the end of the passage.",
+          "example": "Passage mentions the setting in sentence 1 and the character's feelings in sentence 4. When asked about the setting, child answers with information from sentence 4."
+        },
+        {
+          "id": "v_35_prior_knowledge_override",
+          "description": "Uses personal knowledge or beliefs instead of the information given in the passage.",
+          "distractor_strategy": "Offer the commonly-believed answer when the passage states something different.",
+          "example": "Passage says 'The tallest mountain in the solar system is on Mars.' Question: 'What is the tallest mountain in the solar system?' — child answers 'Mount Everest' from prior knowledge."
+        },
+        {
+          "id": "v_35_scope_error",
+          "description": "Generalizes a specific statement to a universal claim, or vice versa.",
+          "distractor_strategy": "Offer a universalized version of a specific claim as a distractor.",
+          "example": "Passage says 'Some birds cannot fly.' Question asks what can be concluded. Child picks 'Most birds cannot fly' instead of 'Not all birds can fly.'"
+        }
+      ]
+    },
+    {
+      "domain": "verbal",
+      "age_band": "6-8",
+      "misconceptions": [
+        {
+          "id": "v_68_false_cognate",
+          "description": "Guesses a word's meaning from its resemblance to another word in English or another language.",
+          "distractor_strategy": "Offer the meaning of the look-alike word as a distractor.",
+          "example": "'What does enervate mean?' — child picks 'to energize' (looks like energy) instead of 'to weaken'."
+        },
+        {
+          "id": "v_68_correlation_causation_in_text",
+          "description": "When analyzing an argument in a passage, treats a correlation as a proven causal relationship.",
+          "distractor_strategy": "Offer 'A causes B' as a distractor when the passage only shows correlation.",
+          "example": "Passage says 'Students who eat breakfast score higher on tests.' Child concludes 'Eating breakfast causes better test scores' when the text does not establish causation."
+        },
+        {
+          "id": "v_68_author_vs_character_voice",
+          "description": "Attributes a character's stated opinion to the author's opinion.",
+          "distractor_strategy": "Offer the character's opinion as 'what the author believes' when the author is presenting it critically.",
+          "example": "A persuasive essay includes a quote from an opponent that the author then refutes. Child identifies the opponent's view as the author's thesis."
+        },
+        {
+          "id": "v_68_hasty_generalization",
+          "description": "Accepts a generalization based on a single example or a small, unrepresentative sample mentioned in the text.",
+          "distractor_strategy": "Offer a broad generalization from a passage that only provides one or two examples.",
+          "example": "Passage describes one dog that is friendly. Child accepts 'All dogs are friendly' as a valid inference."
+        },
+        {
+          "id": "v_68_context_default_meaning",
+          "description": "Applies the most common meaning of a word when the passage uses a less common or specialized meaning.",
+          "distractor_strategy": "Offer the common/default meaning as a distractor when the specialized meaning is correct.",
+          "example": "'The bank of the river was steep.' — child picks 'a financial institution' instead of 'the edge of a river'."
+        },
+        {
+          "id": "v_68_topic_vs_thesis",
+          "description": "Confuses the topic of a passage (what it is about) with the thesis (what the author argues about it).",
+          "distractor_strategy": "Offer the topic as a distractor when asking for the thesis.",
+          "example": "Passage about renewable energy argues that solar is more cost-effective than wind. Child identifies the thesis as 'renewable energy' (the topic) rather than 'solar is more cost-effective than wind' (the argument)."
+        }
+      ]
+    },
+    {
+      "domain": "pattern_recognition",
+      "age_band": "K-2",
+      "misconceptions": [
+        {
+          "id": "p_K2_repeat_last",
+          "description": "Predicts the next element by simply repeating the last visible element, ignoring the pattern structure.",
+          "distractor_strategy": "Include the last element of the visible sequence as a distractor.",
+          "example": "'Red, blue, red, blue, ___' — child answers 'blue' (last seen) instead of 'red' (pattern continues)."
+        },
+        {
+          "id": "p_K2_color_over_shape",
+          "description": "Attends to color while ignoring shape (or vice versa) when both are relevant.",
+          "distractor_strategy": "Offer an option that matches on color but not shape.",
+          "example": "Sequence alternates red circle, blue square, red circle, blue square. Child matches only the color pattern and picks red triangle."
+        },
+        {
+          "id": "p_K2_random_favorite",
+          "description": "Selects a preferred or familiar option rather than the one that completes the pattern.",
+          "distractor_strategy": "Include an attractive but pattern-irrelevant option (a child's typically favorite color, a popular shape).",
+          "example": "Pattern is: triangle, square, triangle, square, ___. Child picks star (a favorite) instead of triangle."
+        },
+        {
+          "id": "p_K2_grow_vs_repeat",
+          "description": "Assumes a pattern always repeats when it actually grows (e.g., one more each time).",
+          "distractor_strategy": "Offer the repeating-cycle answer when the pattern is actually growing.",
+          "example": "'1 dot, 2 dots, 3 dots, ___' — child answers '1 dot' (assuming repetition) instead of '4 dots'."
+        },
+        {
+          "id": "p_K2_position_bias",
+          "description": "Selects based on the position of the option (always picks the first or last option) rather than pattern logic.",
+          "distractor_strategy": "Vary the position of the correct answer across items. QA should check that correct_index is not always in the same position.",
+          "example": "Child consistently picks option A regardless of pattern content."
+        }
+      ]
+    },
+    {
+      "domain": "pattern_recognition",
+      "age_band": "3-5",
+      "misconceptions": [
+        {
+          "id": "p_35_single_attribute",
+          "description": "Tracks only one of two or more independently varying attributes in a matrix or sequence.",
+          "distractor_strategy": "Offer an option that matches on the tracked attribute but fails on the untracked one.",
+          "example": "3x3 matrix: shape varies by row, shading by column. Child picks the right shape but wrong shading because they only tracked shape."
+        },
+        {
+          "id": "p_35_linear_assumption",
+          "description": "Assumes a numeric pattern is arithmetic (constant difference) when it is geometric (constant ratio) or polynomial.",
+          "distractor_strategy": "Offer the arithmetic continuation as a distractor.",
+          "example": "'2, 6, 18, 54, ___' (x3 each time) — child sees +4, +12, +36 and tries to extrapolate linearly, or guesses 90 (adding 36 again)."
+        },
+        {
+          "id": "p_35_reflection_rotation_confusion",
+          "description": "Confuses a reflected (mirror) image with a rotated image.",
+          "distractor_strategy": "Offer the reflection when rotation is needed, or vice versa.",
+          "example": "Pattern requires 90-degree clockwise rotation. Child selects the horizontal mirror image instead."
+        },
+        {
+          "id": "p_35_off_by_one_position",
+          "description": "Applies the correct rule but to the wrong position in the sequence (shifts the phase).",
+          "distractor_strategy": "Offer the element that would be correct if the pattern phase were shifted by one position.",
+          "example": "'A, B, C, A, B, C, ___' — child answers B (skipped A, jumped to the next element in the cycle)."
+        },
+        {
+          "id": "p_35_second_difference_miss",
+          "description": "Computes first differences but does not check second differences when the sequence is quadratic.",
+          "distractor_strategy": "Offer the result of continuing the last first-difference as if it were constant.",
+          "example": "'2, 6, 12, 20, 30, ___' — differences are 4, 6, 8, 10 (second difference +2). Child applies +10 again to get 40 instead of +12 to get 42."
+        },
+        {
+          "id": "p_35_repetition_bias",
+          "description": "Expects patterns to repeat in fixed cycles rather than to transform or grow.",
+          "distractor_strategy": "Offer the repeating-cycle answer when the pattern is a growing or transforming sequence.",
+          "example": "Sequence of shapes where each step adds one side (triangle, square, pentagon, ___). Child expects the cycle to restart: 'triangle'."
+        }
+      ]
+    },
+    {
+      "domain": "pattern_recognition",
+      "age_band": "6-8",
+      "misconceptions": [
+        {
+          "id": "p_68_row_only_reasoning",
+          "description": "In a 3x3 matrix, identifies the pattern across rows but fails to verify or apply the pattern down columns.",
+          "distractor_strategy": "Offer an option that satisfies the row pattern but violates the column pattern.",
+          "example": "Matrix where rows follow Rule A and columns follow Rule B. Child's answer matches Rule A only."
+        },
+        {
+          "id": "p_68_transformation_order",
+          "description": "Applies the correct transformations (e.g., rotate then reflect) in the wrong order, producing a different result.",
+          "distractor_strategy": "Offer the result of the reversed transformation order.",
+          "example": "Pattern requires rotate-90-then-reflect. Child reflects-then-rotates-90, producing a different figure."
+        },
+        {
+          "id": "p_68_xor_overlay_miss",
+          "description": "In matrix items using overlay/XOR logic, treats the combination as simple union (OR) instead of exclusive or (XOR).",
+          "distractor_strategy": "Offer the OR/union result as a distractor when XOR is the rule.",
+          "example": "Two shapes overlaid: XOR means the overlap region disappears. Child picks the option with the overlap region filled in (union) instead of removed (XOR)."
+        },
+        {
+          "id": "p_68_recursive_vs_explicit",
+          "description": "Fails to identify a recursive rule (each term depends on previous terms) and instead tries to find an explicit formula based on position.",
+          "distractor_strategy": "Offer the result of a simple position-based formula as a distractor.",
+          "example": "'1, 1, 2, 3, 5, 8, ___' (Fibonacci: each = sum of two previous). Child tries to find a formula like n^2 or 2n and picks an incorrect result."
+        },
+        {
+          "id": "p_68_two_of_three_rules",
+          "description": "In a complex matrix with three independent rules, identifies two but misses the third, selecting an option that satisfies two of three constraints.",
+          "distractor_strategy": "Craft distractors so each satisfies exactly two of the three rules. Only the correct answer satisfies all three.",
+          "example": "3x3 matrix with shape, rotation, and shading as independent rules. Each of three distractors nails two rules but misses one different rule."
+        },
+        {
+          "id": "p_68_negative_space_confusion",
+          "description": "Focuses on the background or negative space of a figure instead of the foreground figure.",
+          "distractor_strategy": "Offer an option that completes the negative-space pattern rather than the figure pattern.",
+          "example": "Matrix where black shapes on white backgrounds follow a rule. Child attends to the white space (which forms its own pattern) and selects based on that."
+        }
+      ]
+    }
+  ]
+}

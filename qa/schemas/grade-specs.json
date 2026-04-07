@@ -1,0 +1,259 @@
+{
+  "$comment": "FROZEN v1.0 — Age band specifications for GT Challenge adaptive assessment. Defines reading level, vocabulary ceiling, stem constraints, content themes, and IRT parameter ranges per band. Used by item generators and QA evaluators. Do not modify without version bump.",
+  "K-2": {
+    "age_range": "5-7",
+    "grade_range": "Kindergarten through 2nd grade",
+    "reading_level": {
+      "description": "Pre-reader to early reader. Many K students cannot read independently.",
+      "flesch_kincaid_grade_max": 2.0,
+      "max_syllables_per_word": 2,
+      "max_words_per_sentence": 12,
+      "word_list_basis": "Dolch sight words and Fry first 300 words. Concrete nouns from everyday experience.",
+      "requires_audio_stem": true,
+      "notes": "All K-2 items should have an audio_stem available. Stems should be understandable when read aloud to a non-reader. Avoid homophones that could confuse audio-only test-takers."
+    },
+    "vocabulary_ceiling": {
+      "allowed_categories": [
+        "common animals (dog, cat, bird, fish, bear, rabbit)",
+        "common foods (apple, banana, cookie, milk, bread)",
+        "school objects (pencil, book, crayon, desk, backpack)",
+        "family terms (mom, dad, brother, sister, baby)",
+        "body parts (hand, foot, head, eye, ear)",
+        "basic colors and shapes (red, blue, circle, square, triangle)",
+        "common verbs (run, jump, eat, sleep, play, read, write)",
+        "basic adjectives (big, small, fast, slow, hot, cold, happy, sad)",
+        "numbers and counting words (one through twenty, first, last, more, less)"
+      ],
+      "forbidden_categories": [
+        "abstract concepts (democracy, hypothesis, consequence)",
+        "domain-specific jargon (photosynthesis, algorithm, denominator)",
+        "multi-clause conditional language (if...then...unless)",
+        "sarcasm, irony, or figurative language",
+        "region-specific or culturally narrow references"
+      ]
+    },
+    "stem_constraints": {
+      "max_characters": 80,
+      "max_words": 15,
+      "preferred_format": "Simple declarative or question sentence. One clause. Subject-verb-object structure.",
+      "avoid": "Negation in the stem ('Which is NOT...') — young children process negation poorly. If negation is necessary, bold or highlight the word NOT."
+    },
+    "option_constraints": {
+      "min_options": 3,
+      "max_options": 4,
+      "max_option_characters": 30,
+      "max_option_words": 5,
+      "preferred_format": "Single word or very short phrase. Visual/picture options strongly preferred for pattern_recognition items.",
+      "notes": "Options should be visually distinct. Avoid options that differ by only one letter (a/an confusion, plural/singular) as these test reading accuracy, not cognition."
+    },
+    "content_themes": {
+      "appropriate": [
+        "animals and pets",
+        "playground and outdoor play",
+        "family activities",
+        "school and classroom",
+        "food and meals",
+        "weather and seasons",
+        "basic transportation (car, bus, bike, boat)",
+        "colors, shapes, and sizes",
+        "counting and sorting everyday objects",
+        "simple stories with clear characters"
+      ],
+      "inappropriate": [
+        "violence, danger, or fear-inducing scenarios",
+        "death or serious illness",
+        "complex social dynamics (bullying, exclusion)",
+        "money beyond basic coin recognition",
+        "time beyond hours and half-hours",
+        "geography beyond 'our town' level",
+        "any content requiring reading passages longer than 2 sentences"
+      ]
+    },
+    "irt_parameter_ranges": {
+      "difficulty": { "min": -2.5, "max": 1.0 },
+      "difficulty_notes": "Skewed easy. Most items between -2.0 and 0.0. Items above 0.5 are ceiling items for identifying exceptionally gifted K-2 children.",
+      "discrimination": { "min": 0.6, "max": 2.0 },
+      "discrimination_notes": "Lower bound slightly higher than schema minimum because very flat items waste testing time for young children with short attention spans.",
+      "guessing": { "min": 0.25, "max": 0.33 },
+      "guessing_notes": "Higher guessing due to fewer options (3-4). For 3-option items, c = 0.33. For 4-option items, c = 0.25."
+    },
+    "timing": {
+      "max_item_time_seconds": 30,
+      "expected_item_time_seconds": "10-20",
+      "notes": "Young children lose focus quickly. Items taking over 30 seconds should be flagged. If a child has not responded after 30 seconds, the system may offer encouragement."
+    },
+    "accessibility": {
+      "audio_required": true,
+      "visual_support_recommended": true,
+      "color_blind_safe": "Required — never use color alone as the distinguishing feature. Pair with shape or pattern.",
+      "motor_skill_consideration": "Large tap/click targets. No drag-and-drop for K students."
+    }
+  },
+  "3-5": {
+    "age_range": "8-10",
+    "grade_range": "3rd through 5th grade",
+    "reading_level": {
+      "description": "Fluent reader. Can handle multi-sentence stems and paragraph-length passages.",
+      "flesch_kincaid_grade_max": 6.0,
+      "max_syllables_per_word": 4,
+      "max_words_per_sentence": 20,
+      "word_list_basis": "Grade-level vocabulary up to 6th grade reading level. Academic vocabulary permitted with context.",
+      "requires_audio_stem": false,
+      "notes": "Audio support should be available as an accommodation but is not required by default. Stems can include domain-specific terms if they are defined in context or are part of the tested skill."
+    },
+    "vocabulary_ceiling": {
+      "allowed_categories": [
+        "all K-2 vocabulary plus:",
+        "academic language (compare, analyze, describe, predict, sequence)",
+        "science basics (habitat, energy, planet, experiment, cycle)",
+        "social studies basics (community, government, continent, tradition)",
+        "math terminology (fraction, decimal, perimeter, area, equation, variable)",
+        "literary terms (character, setting, plot, author, fiction, nonfiction)",
+        "multi-syllable common words (important, different, together, however, because)"
+      ],
+      "forbidden_categories": [
+        "SAT-level vocabulary without context (ubiquitous, ephemeral, sycophant)",
+        "specialized scientific or mathematical terminology beyond grade level",
+        "political or ideological language",
+        "slang or informal language that varies by region"
+      ]
+    },
+    "stem_constraints": {
+      "max_characters": 250,
+      "max_words": 50,
+      "preferred_format": "Clear question with necessary context. May include a short setup sentence followed by the question. For comprehension items, a passage of up to 100 words is acceptable.",
+      "avoid": "Double negatives. Ambiguous pronouns. Stems where the question is buried in a wall of text."
+    },
+    "option_constraints": {
+      "min_options": 3,
+      "max_options": 4,
+      "max_option_characters": 80,
+      "max_option_words": 15,
+      "preferred_format": "Short phrases or single sentences. All options should be grammatically parallel (same structure).",
+      "notes": "Options should be approximately the same length. The correct answer should not be systematically longer or shorter than distractors."
+    },
+    "content_themes": {
+      "appropriate": [
+        "all K-2 themes plus:",
+        "science experiments and nature observation",
+        "space and planets",
+        "world geography and cultures (respectfully presented)",
+        "historical events commonly taught in elementary school",
+        "sports and games with rules",
+        "friendships and teamwork",
+        "technology basics (computers, internet safety)",
+        "environmental topics (recycling, habitats, ecosystems)",
+        "money and basic economics (earning, saving, spending)"
+      ],
+      "inappropriate": [
+        "graphic violence or detailed descriptions of harm",
+        "romantic relationships",
+        "substance use",
+        "complex political controversies",
+        "content requiring specialized knowledge from a specific curriculum"
+      ]
+    },
+    "irt_parameter_ranges": {
+      "difficulty": { "min": -2.0, "max": 2.0 },
+      "difficulty_notes": "Centered distribution. Items span from easy warm-ups to challenging ceiling items. Most items between -1.0 and 1.0.",
+      "discrimination": { "min": 0.5, "max": 2.5 },
+      "discrimination_notes": "Full range. High-discrimination items are particularly valuable in this band for efficient theta estimation.",
+      "guessing": { "min": 0.20, "max": 0.33 },
+      "guessing_notes": "For 3-option items, c = 0.33. For 4-option items, c = 0.25. 5-option items (c = 0.20) are rare but permissible."
+    },
+    "timing": {
+      "max_item_time_seconds": 60,
+      "expected_item_time_seconds": "15-40",
+      "notes": "Multi-step problems may need up to 60 seconds. Comprehension items with passages may need the full time."
+    },
+    "accessibility": {
+      "audio_required": false,
+      "visual_support_recommended": "Recommended for pattern_recognition and math items but not required for verbal.",
+      "color_blind_safe": "Required.",
+      "motor_skill_consideration": "Standard click/tap targets. Drag-and-drop is acceptable."
+    }
+  },
+  "6-8": {
+    "age_range": "11-14",
+    "grade_range": "6th through 8th grade",
+    "reading_level": {
+      "description": "Advanced reader. Can handle complex sentence structures, academic vocabulary, and multi-paragraph passages.",
+      "flesch_kincaid_grade_max": 10.0,
+      "max_syllables_per_word": 6,
+      "max_words_per_sentence": 30,
+      "word_list_basis": "SAT-prep level vocabulary acceptable. Academic and domain-specific terms encouraged. Greek and Latin roots can be used as part of vocabulary items.",
+      "requires_audio_stem": false,
+      "notes": "Passages for comprehension and inference items may be up to 250 words. Items may use multi-clause sentences, conditionals, and semi-formal academic register."
+    },
+    "vocabulary_ceiling": {
+      "allowed_categories": [
+        "all 3-5 vocabulary plus:",
+        "SAT-prep vocabulary (ubiquitous, reticent, ephemeral, pragmatic)",
+        "scientific terminology (hypothesis, photosynthesis, velocity, equilibrium)",
+        "mathematical terminology (coefficient, quadratic, integer, rational, irrational)",
+        "literary analysis terms (irony, metaphor, allegory, foreshadowing, juxtaposition)",
+        "logical and philosophical terms (premise, conclusion, valid, fallacy, counterexample)",
+        "social science terms (correlation, bias, demographic, hypothesis)"
+      ],
+      "forbidden_categories": [
+        "graduate-level or professional jargon (eigenvalue, amortization, epistemology)",
+        "obscure or archaic vocabulary unlikely to be encountered in grade-level reading",
+        "culturally or politically charged terms that could distract from the cognitive task"
+      ]
+    },
+    "stem_constraints": {
+      "max_characters": 500,
+      "max_words": 100,
+      "preferred_format": "May include setup context, data, or a short passage followed by a clear question. For multi-step problems, each step should be on a separate line or clearly delineated.",
+      "avoid": "Unnecessarily verbose stems. Trick wording designed to confuse rather than assess. Stems where careful reading of the question is harder than the actual cognitive task."
+    },
+    "option_constraints": {
+      "min_options": 4,
+      "max_options": 5,
+      "max_option_characters": 150,
+      "max_option_words": 30,
+      "preferred_format": "Short phrases or sentences. For analysis items, options may be 1-2 sentences describing different interpretations. All options should be parallel in structure and similar in length.",
+      "notes": "4-option items are standard. 5-option items are used when additional distractor coverage is valuable (e.g., syllogism items where there are many common errors to trap)."
+    },
+    "content_themes": {
+      "appropriate": [
+        "all 3-5 themes plus:",
+        "scientific reasoning and experimental design",
+        "historical analysis and source evaluation",
+        "literary analysis and author's craft",
+        "logical argumentation and debate",
+        "statistics and probability in real-world contexts",
+        "algebra and geometric proofs at introductory level",
+        "ethical dilemmas (age-appropriate, no graphic content)",
+        "current events (presented neutrally, focused on reasoning not opinion)",
+        "career exploration and real-world problem-solving",
+        "cross-cultural comparison (presented with respect and nuance)"
+      ],
+      "inappropriate": [
+        "graphic violence, sexual content, or substance abuse details",
+        "content requiring allegiance to a specific political or religious viewpoint",
+        "scenarios that could cause significant anxiety (nuclear war, pandemic death tolls)",
+        "content that mocks or stereotypes any group"
+      ]
+    },
+    "irt_parameter_ranges": {
+      "difficulty": { "min": -0.5, "max": 3.0 },
+      "difficulty_notes": "Skewed hard. This band targets gifted identification, so most items are between 0.0 and 2.0. Items at +2.5 and above are ceiling items for exceptionally gifted identification. A few items at -0.5 to 0.0 serve as warm-ups and reduce test anxiety.",
+      "discrimination": { "min": 0.5, "max": 2.5 },
+      "discrimination_notes": "Full range. Ceiling items (b > 2.0) may have slightly lower discrimination since they operate at the extreme tail.",
+      "guessing": { "min": 0.20, "max": 0.25 },
+      "guessing_notes": "For 4-option items, c = 0.25. For 5-option items, c = 0.20. Lower guessing rates reflect more options and the expectation that older students engage more thoughtfully."
+    },
+    "timing": {
+      "max_item_time_seconds": 90,
+      "expected_item_time_seconds": "20-60",
+      "notes": "Complex items (multi-step algebra, passage analysis) may need 60-90 seconds. Items consistently taking over 90 seconds should be reviewed for excessive complexity."
+    },
+    "accessibility": {
+      "audio_required": false,
+      "visual_support_recommended": "For pattern_recognition items. Not required for verbal or math unless the item involves graphs or diagrams.",
+      "color_blind_safe": "Required.",
+      "motor_skill_consideration": "Standard web interfaces. No accessibility concerns specific to this age group beyond general web accessibility standards."
+    }
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "$comment": "FROZEN v1.0 — Domain taxonomy for GT Challenge adaptive assessment. Defines question types, cognitive skills, and difficulty anchors per domain and age band. Used by item generators and QA evaluators. Do not modify without version bump and evaluator migration.",
+  "domains": {
+    "reasoning": {
+      "description": "Fluid reasoning and logical thinking — the ability to identify relationships, draw inferences, and solve novel problems without relying on prior knowledge.",
+      "question_types": {
+        "analogy": {
+          "description": "A is to B as C is to ___. Tests relational reasoning — the ability to perceive and apply abstract relationships between concepts.",
+          "age_band_notes": {
+            "K-2": "Concrete, picture-based analogies using familiar objects. Single-step relationships (e.g., 'Dog is to puppy as cat is to ___').",
+            "3-5": "Abstract analogies with words. May involve category shifts, function relationships, or part-whole mappings.",
+            "6-8": "Multi-layered analogies requiring understanding of abstract concepts, dual relationships, or domain-crossing mappings."
+          }
+        },
+        "odd_one_out": {
+          "description": "Which one does NOT belong? Tests classification and category abstraction — the ability to identify the rule that unifies a set and find the exception.",
+          "age_band_notes": {
+            "K-2": "Groups of 3-4 items differing by one obvious attribute (shape, color, category).",
+            "3-5": "Groups requiring multi-attribute classification. The 'odd' item may share surface features with the group.",
+            "6-8": "Groups where the unifying rule is abstract (e.g., all prime, all palindromes, all exhibit a specific logical property)."
+          }
+        },
+        "number_series": {
+          "description": "What comes next in the sequence? Tests inductive reasoning — the ability to detect rules governing ordered sets.",
+          "age_band_notes": {
+            "K-2": "Simple counting patterns: +1, +2, skip counting. Visual number lines.",
+            "3-5": "Arithmetic and geometric progressions. Two-rule series (e.g., +2, +3, +2, +3).",
+            "6-8": "Complex multi-operation series, Fibonacci-type, nested rules, or series involving squares/cubes."
+          }
+        },
+        "syllogism": {
+          "description": "Deductive logic from premises to conclusion. Tests formal reasoning — the ability to evaluate logical validity independent of content truth.",
+          "age_band_notes": {
+            "K-2": "Simple conditional: 'All dogs have tails. Spot is a dog. Does Spot have a tail?'",
+            "3-5": "Two-premise syllogisms with concrete content. May include 'some' quantifiers.",
+            "6-8": "Abstract syllogisms, contrapositive reasoning, identifying invalid inferences. Content may be counterfactual to test logic vs. belief."
+          }
+        },
+        "matrix": {
+          "description": "Complete the matrix by finding the rule governing rows and columns simultaneously. Tests simultaneous relational reasoning across two dimensions.",
+          "age_band_notes": {
+            "K-2": "2x2 matrices with one attribute changing (shape or color).",
+            "3-5": "3x3 matrices with two attributes changing independently across rows and columns.",
+            "6-8": "3x3 matrices with three or more attributes, including transformations (rotation, reflection, overlay)."
+          }
+        }
+      },
+      "cognitive_skills_tested": [
+        "analogical reasoning",
+        "inductive reasoning",
+        "deductive reasoning",
+        "classification and categorization",
+        "abstract rule extraction",
+        "fluid reasoning (Gf)",
+        "working memory",
+        "mental flexibility"
+      ],
+      "difficulty_anchors": {
+        "K-2": {
+          "-2": "Concrete single-attribute analogy with picture support: 'Bird is to nest as dog is to ___' with options [doghouse, bone, leash]. Obvious correct answer, distractors are associative but not relational.",
+          "0": "Two-step analogy requiring category shift: 'Shoe is to foot as hat is to ___'. Requires understanding function-mapping, not just association. One distractor is associatively plausible.",
+          "+1": "Odd-one-out with competing classification rules: three items share a non-obvious property while one shares a surface feature with the group. Requires inhibiting the salient but wrong grouping."
+        },
+        "3-5": {
+          "-2": "Simple verbal analogy with single clear relationship: 'Hot is to cold as up is to ___'. All distractors are thematically related but only one completes the antonym relationship.",
+          "0": "Number series with two alternating rules: 2, 5, 4, 7, 6, 9, ___. Requires tracking two interleaved patterns. Primary distractor applies only one rule.",
+          "+2": "Abstract syllogism with believable-but-invalid conclusion: 'All zips are zaps. Some zaps are zops. Are some zips zops?' Correct answer is 'Cannot determine'. Primary distractor is 'Yes' (illicit conversion)."
+        },
+        "6-8": {
+          "-1": "Standard 3x3 matrix with two attributes (shape changes across rows, shading changes down columns). One rule is immediately visible; the other requires checking.",
+          "0": "Syllogism with counterfactual premises: 'All fish can fly. Nemo is a fish. Can Nemo fly?' Tests whether the child can reason from premises regardless of real-world truth.",
+          "+2": "Complex number series requiring detection of nested operations: each term is generated by applying two operations in sequence (e.g., multiply by 2 then subtract 1). Multiple partial-pattern distractors."
+        }
+      },
+      "good_item_criteria": [
+        "Tests reasoning ability, not domain knowledge — a child should not need to know specific facts to answer correctly.",
+        "The correct answer is unambiguous and logically necessary given the stem.",
+        "Each distractor reflects a specific, documented reasoning error — not a random wrong answer.",
+        "Surface features (length of options, position of correct answer) do not provide cues.",
+        "For analogies: the relationship is specific enough that only one option completes it (avoid overly broad relationships like 'is related to').",
+        "For syllogisms: the logical structure is the point — avoid content that triggers strong real-world beliefs that override logic."
+      ]
+    },
+    "math": {
+      "description": "Quantitative reasoning and mathematical problem-solving — the ability to reason with numbers, quantities, and mathematical relationships.",
+      "question_types": {
+        "computation": {
+          "description": "Direct arithmetic or algebraic calculation. Tests procedural fluency and accuracy.",
+          "age_band_notes": {
+            "K-2": "Single-digit addition and subtraction. Counting forward and backward. Doubles and near-doubles.",
+            "3-5": "Multi-digit operations, basic fraction arithmetic, order of operations with parentheses.",
+            "6-8": "Integer operations, exponents, algebraic simplification, equation solving."
+          }
+        },
+        "word_problem": {
+          "description": "Mathematical reasoning embedded in a real-world context. Tests translation from natural language to mathematical operations.",
+          "age_band_notes": {
+            "K-2": "One-step problems with concrete scenarios: 'You have 5 apples. You eat 2. How many are left?'",
+            "3-5": "Two-step problems requiring operation selection. May include irrelevant information as distractors.",
+            "6-8": "Multi-step problems requiring setup of equations, rate/ratio reasoning, or proportional thinking."
+          }
+        },
+        "comparison": {
+          "description": "Comparing quantities, magnitudes, or expressions. Tests number sense and relational understanding.",
+          "age_band_notes": {
+            "K-2": "Comparing single-digit numbers, identifying greater/lesser, comparing small sets visually.",
+            "3-5": "Comparing fractions, decimals, and mixed representations (e.g., 'Which is greater: 3/4 or 0.7?').",
+            "6-8": "Comparing algebraic expressions, ordering rational numbers, comparing rates or ratios."
+          }
+        },
+        "number_sense": {
+          "description": "Understanding number properties, relationships, and magnitude without calculation. Tests intuitive quantitative understanding.",
+          "age_band_notes": {
+            "K-2": "Subitizing, number-line placement, odd/even, tens and ones place value.",
+            "3-5": "Factor/multiple relationships, prime vs. composite, fraction magnitude intuition.",
+            "6-8": "Properties of operations, number-line reasoning with negatives, rational vs. irrational intuition."
+          }
+        },
+        "estimation": {
+          "description": "Approximate calculation or magnitude judgment. Tests quantitative reasoning without exact computation.",
+          "age_band_notes": {
+            "K-2": "Estimating small quantities (jar of marbles), rounding to nearest 10.",
+            "3-5": "Estimating sums/products of multi-digit numbers, reasonableness checks.",
+            "6-8": "Estimating with percentages, large-number reasoning, Fermi-style estimation."
+          }
+        }
+      },
+      "cognitive_skills_tested": [
+        "quantitative reasoning (Gq)",
+        "numerical facility",
+        "mathematical problem translation",
+        "proportional reasoning",
+        "algebraic thinking",
+        "estimation and approximation",
+        "number sense",
+        "working memory (for multi-step computation)"
+      ],
+      "difficulty_anchors": {
+        "K-2": {
+          "-2": "Single-digit addition with visual support: '3 + 2 = ___' with pictures of grouped objects. Distractors are off-by-one or the result of subtraction instead.",
+          "0": "Missing addend: '___ + 4 = 9'. Requires reversing the operation. Primary distractor is 13 (child adds instead of finding the missing part).",
+          "+1": "Two-step word problem: 'You have 8 stickers. You give 3 away and then get 2 more. How many now?' Requires maintaining and updating a running total."
+        },
+        "3-5": {
+          "-2": "Straightforward multi-digit addition with regrouping: '347 + 285 = ___'. Distractors target carry errors and place-value confusion.",
+          "0": "Fraction comparison requiring common denominator thinking: 'Which is greater, 3/5 or 2/3?' Distractors include comparing numerators only (3 > 2 so 3/5) and comparing denominators only.",
+          "+2": "Multi-step word problem with irrelevant information: 'A store has 48 red balls and 36 blue balls. Each box holds 6 balls. The store is open 8 hours a day. How many boxes are needed for all the balls?' Requires ignoring the hours, adding, then dividing."
+        },
+        "6-8": {
+          "-1": "Simple equation solving: '3x + 7 = 22, solve for x'. Single operation on each side. Distractors target operation errors (dividing 22 by 3, subtracting 7 from both sides then forgetting to divide).",
+          "0": "Rate comparison: 'Machine A makes 45 widgets in 3 hours. Machine B makes 70 widgets in 5 hours. Which is faster?' Requires computing unit rates and comparing. Distractors include comparing totals.",
+          "+2": "Algebraic word problem: 'The sum of three consecutive even numbers is 72. What is the largest?' Requires setting up and solving 3-term equation. Distractors include the smallest number, the middle number, and 72/3."
+        }
+      },
+      "good_item_criteria": [
+        "Tests mathematical reasoning, not reading comprehension — word problems should have clear, concise language at or below grade level.",
+        "Distractors reflect specific computational or conceptual errors, not random numbers.",
+        "For computation: one distractor should reflect the most common procedural error (e.g., forgetting to carry).",
+        "For word problems: one distractor should be the result of a 'keyword trap' (e.g., seeing 'more' and adding when subtraction is needed).",
+        "Avoid items where the correct answer can be found by estimation alone (unless the item IS an estimation item).",
+        "Numbers should be chosen so that common errors produce one of the distractor values — not all distractors should be far from the correct answer."
+      ]
+    },
+    "verbal": {
+      "description": "Verbal reasoning and language comprehension — the ability to understand, analyze, and reason with language.",
+      "question_types": {
+        "synonym": {
+          "description": "Identify a word with the same or very similar meaning. Tests breadth and precision of vocabulary.",
+          "age_band_notes": {
+            "K-2": "Common words with concrete meanings: 'Which word means the same as big?' Options: [large, blue, fast, round].",
+            "3-5": "Grade-level vocabulary with nuance: 'Which word means the same as brave?' Options: [courageous, strong, angry, loud].",
+            "6-8": "Academic and SAT-prep vocabulary: 'Which word means the same as reticent?' Options: [reluctant, repetitive, resilient, restless]."
+          }
+        },
+        "antonym": {
+          "description": "Identify a word with the opposite meaning. Tests vocabulary depth and polarity understanding.",
+          "age_band_notes": {
+            "K-2": "Simple polar opposites: hot/cold, big/small, up/down.",
+            "3-5": "Less obvious opposites requiring semantic precision: generous/stingy, expand/contract.",
+            "6-8": "Abstract or context-dependent antonyms: ephemeral/permanent, exacerbate/alleviate."
+          }
+        },
+        "inference": {
+          "description": "Draw a conclusion not explicitly stated from given text or context. Tests reading between the lines.",
+          "age_band_notes": {
+            "K-2": "One-sentence scenarios: 'Sara put on her boots and grabbed an umbrella. What is the weather like?'",
+            "3-5": "Short paragraph with embedded clues requiring synthesis of 2-3 details.",
+            "6-8": "Multi-paragraph passages requiring identification of author's implicit argument, character motivation, or cause-effect chains."
+          }
+        },
+        "comprehension": {
+          "description": "Demonstrate understanding of explicitly stated information in a passage. Tests careful reading and detail extraction.",
+          "age_band_notes": {
+            "K-2": "2-3 sentence passages with direct factual questions.",
+            "3-5": "One-paragraph passages with main idea and detail questions.",
+            "6-8": "Multi-paragraph passages with questions about structure, purpose, and specific supporting details."
+          }
+        },
+        "definition": {
+          "description": "Select or produce the correct definition of a word, potentially from context. Tests vocabulary depth.",
+          "age_band_notes": {
+            "K-2": "Concrete nouns and common verbs with picture support.",
+            "3-5": "Academic vocabulary in context: 'In the sentence \"The ancient ruins were remarkable,\" what does ancient mean?'",
+            "6-8": "Multiple-meaning words in context, domain-specific terminology, words with Greek/Latin roots."
+          }
+        },
+        "vocabulary": {
+          "description": "Broader vocabulary tasks including word relationships, word parts, and contextual usage.",
+          "age_band_notes": {
+            "K-2": "Word-picture matching, rhyming words, beginning sound identification.",
+            "3-5": "Root word identification, prefix/suffix meaning, context clues for unknown words.",
+            "6-8": "Etymology-based reasoning, connotation vs. denotation, precise word choice in context."
+          }
+        }
+      },
+      "cognitive_skills_tested": [
+        "crystallized intelligence (Gc)",
+        "verbal comprehension",
+        "lexical access and retrieval",
+        "inferential reasoning",
+        "contextual analysis",
+        "semantic precision",
+        "reading comprehension",
+        "metalinguistic awareness"
+      ],
+      "difficulty_anchors": {
+        "K-2": {
+          "-2": "Concrete synonym with obvious match: 'Which word means the same as happy?' [sad, glad, fast, big]. Three distractors are from unrelated semantic fields.",
+          "0": "Simple inference from one sentence: 'The boy put on a coat, scarf, and mittens. What season is it?' Requires synthesizing three cold-weather clues. Distractor: 'fall' (partially plausible).",
+          "+1": "Inference requiring inhibition of prior knowledge: 'Mia loves cake but she said no to a slice. Why might she say no?' Requires generating non-obvious explanations (full, allergic) rather than defaulting to 'she doesn't like cake'."
+        },
+        "3-5": {
+          "-2": "Direct comprehension of a 3-sentence passage: 'The dolphin jumped out of the water and splashed back down. The crowd cheered. Where was the dolphin?' Answer: an aquarium/ocean show. Distractors: a river, a bathtub, a swimming pool.",
+          "0": "Antonym requiring nuance: 'What is the opposite of generous?' [stingy, poor, small, kind]. 'Poor' is the primary distractor (associative but not an antonym).",
+          "+2": "Multi-step inference from a paragraph: passage describes a character who acts one way but says another. Question asks what the character really feels. Requires understanding unreliable narration at a basic level."
+        },
+        "6-8": {
+          "-1": "Vocabulary from context: 'The hikers were exhausted after the arduous climb.' What does arduous mean? [difficult, enjoyable, quick, steep]. 'Steep' is the primary distractor (associated with climbing but not the meaning of arduous).",
+          "0": "Inference about author's purpose: a persuasive paragraph is presented. 'What is the author trying to convince the reader of?' Requires distinguishing the argument from the topic. Distractor: a true statement from the passage that is not the thesis.",
+          "+2": "Critical analysis of an argument: a short argument with a logical flaw is presented. 'What is the weakness in this argument?' Requires identifying the specific flaw (e.g., false dichotomy, hasty generalization) among plausible-sounding alternatives."
+        }
+      },
+      "good_item_criteria": [
+        "Vocabulary level of the stem and options must match the target age band — see grade-specs.json.",
+        "For inference items: the correct answer must be supported by textual evidence, not just 'a reasonable guess'. There should be specific clues in the passage.",
+        "Distractors should be plausible to a child who misreads, skims, or applies a common misconception — not obviously absurd.",
+        "Avoid items that depend heavily on cultural knowledge specific to one region, ethnicity, or socioeconomic background.",
+        "For vocabulary items: the target word should not be guessable from its phonetic similarity to other known words (no false cognate giveaways).",
+        "Passages should be original or public domain — no copyrighted text."
+      ]
+    },
+    "pattern_recognition": {
+      "description": "Visual and abstract pattern detection — the ability to perceive regularities, predict continuations, and complete structured patterns.",
+      "question_types": {
+        "color_pattern": {
+          "description": "Identify the rule governing a sequence of colors and predict the next element. Tests serial pattern detection.",
+          "age_band_notes": {
+            "K-2": "Simple AB, ABB, ABC repeating color patterns with visual blocks.",
+            "3-5": "Complex repeating patterns (ABAC, AABB) or growing patterns where the color rule shifts.",
+            "6-8": "Color patterns combined with other attributes (color + position, color + size), requiring tracking multiple simultaneous rules."
+          }
+        },
+        "shape_pattern": {
+          "description": "Identify rules governing sequences of shapes. Tests visual discrimination and pattern abstraction.",
+          "age_band_notes": {
+            "K-2": "Repeating shape sequences (circle, square, circle, square, ___) with 2-3 shapes.",
+            "3-5": "Growing patterns where shapes transform (add a side each step, rotate, grow). May combine shape with size.",
+            "6-8": "Compound shape transformations involving multiple simultaneous changes (rotation + reflection, growth + color shift)."
+          }
+        },
+        "size_pattern": {
+          "description": "Identify rules governing changes in size across a sequence. Tests magnitude reasoning and proportional thinking.",
+          "age_band_notes": {
+            "K-2": "Simple growing/shrinking patterns with 2-3 sizes (small, medium, large).",
+            "3-5": "Proportional growth patterns, alternating growth and shrinkage.",
+            "6-8": "Geometric growth patterns, size changes combined with other transformations."
+          }
+        },
+        "number_pattern": {
+          "description": "Identify the rule governing a numerical sequence. Tests inductive reasoning with quantities.",
+          "age_band_notes": {
+            "K-2": "Counting by 1s, 2s, 5s, 10s. Simple +/- constant patterns.",
+            "3-5": "Arithmetic and geometric progressions. Two-rule alternating patterns.",
+            "6-8": "Polynomial sequences, Fibonacci-type, recursive definitions, interleaved series."
+          }
+        },
+        "matrix": {
+          "description": "Complete a grid where rules operate across both rows and columns simultaneously. Raven's Progressive Matrices-style. Tests simultaneous relational reasoning.",
+          "age_band_notes": {
+            "K-2": "2x2 grids with one attribute changing per dimension (shape across rows, color down columns).",
+            "3-5": "3x3 grids with two attributes. Requires checking both row and column patterns.",
+            "6-8": "3x3 grids with three or more attributes including transformations (overlay, XOR, rotation). Demands systematic analysis."
+          }
+        },
+        "sequence_completion": {
+          "description": "Given a sequence with a missing element (not necessarily the last), identify what belongs in the gap. Tests bidirectional pattern reasoning.",
+          "age_band_notes": {
+            "K-2": "Sequences of 4-5 elements with a gap in the middle. Simple repeating rule.",
+            "3-5": "Longer sequences with the gap at various positions. Rule may involve two attributes.",
+            "6-8": "Sequences with multiple valid-looking completions where only one is consistent with the full sequence. May involve abstract symbols."
+          }
+        }
+      },
+      "cognitive_skills_tested": [
+        "visual-spatial processing (Gv)",
+        "pattern detection",
+        "serial reasoning",
+        "simultaneous processing",
+        "mental rotation",
+        "figure-ground discrimination",
+        "rule induction",
+        "visual working memory"
+      ],
+      "difficulty_anchors": {
+        "K-2": {
+          "-2": "Simple AB repeating color pattern: red, blue, red, blue, ___. Three options: red (correct), green (random), blue (would break the alternation at this position). Only one attribute, short sequence.",
+          "0": "Two-attribute sequence: shapes that are both growing in size and alternating in color. Child must track both attributes to select the correct next element. One distractor gets the size right but the color wrong.",
+          "+1": "2x2 matrix with shapes changing across rows and fill changing down columns. Missing cell requires applying both rules simultaneously. Distractors each satisfy one rule but not both."
+        },
+        "3-5": {
+          "-2": "Repeating shape pattern with 3 elements: circle, triangle, square, circle, triangle, ___. One distractor is circle (repeats the wrong position in the cycle).",
+          "0": "3x3 matrix with two independent attributes: shape type varies across rows (circle, square, triangle) and shading varies down columns (empty, striped, filled). Missing bottom-right cell. Distractors satisfy one rule but not both.",
+          "+2": "Number pattern with a non-obvious rule: 2, 6, 12, 20, 30, ___. The differences are 4, 6, 8, 10 (increasing by 2). Requires computing second differences. Primary distractor is 40 (assumes constant difference of 10)."
+        },
+        "6-8": {
+          "-1": "Standard 3x3 matrix with two clear attributes. One attribute is obvious (shape), the other requires more careful inspection (orientation). Distractors target single-attribute reasoning.",
+          "0": "Sequence with a recursive rule: each element is the sum of the two preceding elements (Fibonacci variant). Requires identifying the recursive structure, not just differences. Distractors apply simpler additive or multiplicative rules.",
+          "+2": "3x3 matrix with three simultaneous transformations: shape change, rotation, and an overlay operation (XOR of shading). Requires systematic isolation of each rule. Distractors are crafted so that each satisfies exactly two of the three rules."
+        }
+      },
+      "good_item_criteria": [
+        "Pattern items should be solvable from the visual/numerical information alone — no domain knowledge required. This makes pattern_recognition the most culture-fair domain.",
+        "For matrix items: the rules governing rows and columns should be independent. A child who identifies the row rule should get information that is orthogonal to the column rule.",
+        "Distractors should each be the result of applying a partial or incorrect rule — systematically constructed, not random shapes or numbers.",
+        "For visual items: images must be clean, high-contrast, and unambiguous. No hand-drawn or pixelated content.",
+        "The correct answer should be uniquely determined by the pattern — there should not be two equally valid completions.",
+        "Avoid patterns that are only detectable by children with specific educational exposure (e.g., knowledge of the Fibonacci sequence is not required; the pattern itself should be discoverable)."
+      ]
+    }
+  },
+  "domain_to_question_types": {
+    "$comment": "Quick lookup: which content.type values are valid for each domain. QA evaluators should reject items where content.type is not in this list for the item's domain.",
+    "reasoning": ["analogy", "odd_one_out", "number_series", "syllogism", "matrix"],
+    "math": ["computation", "word_problem", "comparison", "number_sense", "estimation"],
+    "verbal": ["synonym", "antonym", "inference", "comprehension", "definition", "vocabulary"],
+    "pattern_recognition": ["color_pattern", "shape_pattern", "size_pattern", "number_pattern", "matrix", "sequence_completion"]
+  }
+}
