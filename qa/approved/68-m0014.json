@@ -1,0 +1,52 @@
+{
+  "id": "68-m0014",
+  "domain": "math",
+  "age_bands": [
+    "6-8"
+  ],
+  "difficulty": 1,
+  "discrimination": 1.7,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Three friends split a restaurant bill proportionally based on what they ordered. Ana paid $18, Ben paid $12, and Chen paid $15. If they decide to split a $20 tip using the same proportion, how much should Ana contribute to the tip?",
+    "type": "comparison",
+    "options": [
+      {
+        "text": "$8.00"
+      },
+      {
+        "text": "$6.00"
+      },
+      {
+        "text": "$7.50"
+      },
+      {
+        "text": "$5.00"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "Ana paid $18 out of a total bill of $18 + $12 + $15 = $45. Her proportion is 18/45 = 2/5. For the $20 tip, Ana should pay 2/5 × $20 = $8.00."
+  },
+  "metadata": {
+    "cognitive_skill": "proportional reasoning with multiple ratios",
+    "misconception_targeted": "errors in proportion setup and calculation",
+    "bloom_level": "apply",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "equal_split_assumption",
+        "reasoning": "Student divides tip equally: $20 ÷ 3 = $6.67, rounds to $6.00"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "improper_ratio_setup",
+        "reasoning": "Student incorrectly calculates Ana's proportion using only the middle values (12 + 15 = 27), then applies 15/27 × $20 = $11.11, or uses Ana's payment relative to average payment: $18/15 average × $20/4 = $6 base + $1.50 = $7.50"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "additive_instead_of_proportional",
+        "reasoning": "Student uses additive reasoning, thinking Ana should pay $5 more than the base amount since she paid $5 more than Ben ($18-$12-$1), calculating $20÷4 = $5"
+      }
+    ]
+  }
+}

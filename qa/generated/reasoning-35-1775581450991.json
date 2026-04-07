@@ -1,0 +1,523 @@
+[
+  {
+    "id": "35-r0001",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -2.5,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Bird is to nest as bee is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "hive"
+        },
+        {
+          "text": "flower"
+        },
+        {
+          "text": "honey"
+        },
+        {
+          "text": "wing"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "This analogy tests the relationship between an animal and its home. Birds live in nests, and bees live in hives."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning",
+      "misconception_targeted": "function vs. habitat confusion",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "habitat_function",
+          "reasoning": "Students may think of where bees go (flowers) rather than where they live"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "product_confusion",
+          "reasoning": "Students may focus on what bees make rather than where they live"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "part_whole",
+          "reasoning": "Students may think of bee body parts rather than the home relationship"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0002",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -1.5,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which number comes next in this pattern? 3, 6, 9, 12, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "14"
+        },
+        {
+          "text": "15"
+        },
+        {
+          "text": "16"
+        },
+        {
+          "text": "18"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "This is a skip-counting pattern that adds 3 each time: 3+3=6, 6+3=9, 9+3=12, so 12+3=15."
+    },
+    "metadata": {
+      "cognitive_skill": "pattern recognition and inductive reasoning",
+      "misconception_targeted": "additive pattern confusion",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "add_two",
+          "reasoning": "Student adds 2 instead of recognizing the add-3 pattern"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "add_four",
+          "reasoning": "Student adds 4, possibly seeing 12+4=16"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "double_last",
+          "reasoning": "Student incorrectly doubles the last increment (6) and adds to 12"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0003",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -0.5,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which one does NOT belong with the others? Triangle, square, circle, rectangle",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "triangle"
+        },
+        {
+          "text": "square"
+        },
+        {
+          "text": "circle"
+        },
+        {
+          "text": "rectangle"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Circle is the only shape without corners or straight sides. Triangle, square, and rectangle all have corners and straight edges."
+    },
+    "metadata": {
+      "cognitive_skill": "classification and categorical reasoning",
+      "misconception_targeted": "surface feature focus over structural properties",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "side_count",
+          "reasoning": "Student focuses on triangle having 3 sides vs others having 4, missing the curved vs straight distinction"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "equal_sides",
+          "reasoning": "Student thinks square doesn't belong because all sides are equal"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "size_variation",
+          "reasoning": "Student thinks rectangle doesn't belong because it's longer than it is tall"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0004",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All birds can fly. Robins are birds. What can we say about robins?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Robins can fly"
+        },
+        {
+          "text": "All robins are red"
+        },
+        {
+          "text": "Robins build nests"
+        },
+        {
+          "text": "Robins eat worms"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "This follows logical deduction: if all birds can fly and robins are birds, then robins must be able to fly."
+    },
+    "metadata": {
+      "cognitive_skill": "deductive reasoning",
+      "misconception_targeted": "irrelevant conclusion selection",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "belief_bias",
+          "reasoning": "Student relies on real-world knowledge that some robins have red coloring rather than following the logical structure of the argument"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "illicit_conversion",
+          "reasoning": "Student incorrectly converts the premise 'all birds can fly' to conclude other bird characteristics not mentioned in the logical structure"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "belief_bias",
+          "reasoning": "Student applies factual knowledge about robin behavior rather than deriving the conclusion from the given logical premises"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0005",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.5,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Cup is to coffee as bowl is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "kitchen"
+        },
+        {
+          "text": "soup"
+        },
+        {
+          "text": "spoon"
+        },
+        {
+          "text": "round"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "This analogy shows the relationship between a container and what it typically holds. Cups hold coffee, and bowls hold soup."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning and functional relationships",
+      "misconception_targeted": "location vs. content confusion",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "location_focus",
+          "reasoning": "Student thinks about where bowls are found rather than what they contain"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "tool_association",
+          "reasoning": "Student thinks of utensils used with bowls rather than contents"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "shape_property",
+          "reasoning": "Student focuses on physical shape similarities rather than functional relationship"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0006",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "What number completes this pattern? 2, 4, 8, 16, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "24"
+        },
+        {
+          "text": "32"
+        },
+        {
+          "text": "20"
+        },
+        {
+          "text": "18"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "This is a doubling pattern: 2×2=4, 4×2=8, 8×2=16, so 16×2=32. Each number is multiplied by 2 to get the next number."
+    },
+    "metadata": {
+      "cognitive_skill": "multiplicative pattern recognition",
+      "misconception_targeted": "additive vs. multiplicative pattern confusion",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "additive_pattern",
+          "reasoning": "Student adds 8 (the last difference) instead of recognizing doubling pattern"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "add_constant",
+          "reasoning": "Student adds 4 (first difference) assuming constant addition"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "add_two",
+          "reasoning": "Student adds 2 (smallest number) rather than seeing multiplicative relationship"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0007",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which one belongs to a different category? Oak, pine, rose, maple",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "oak"
+        },
+        {
+          "text": "pine"
+        },
+        {
+          "text": "rose"
+        },
+        {
+          "text": "maple"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Rose does not belong because oak, pine, and maple are all trees, while rose is a flowering bush or shrub, not a tree."
+    },
+    "metadata": {
+      "cognitive_skill": "hierarchical classification",
+      "misconception_targeted": "physical characteristics focus rather than categorical classification",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "leaf_type",
+          "reasoning": "Student might think oak doesn't belong due to different leaf shape"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "needle_leaves",
+          "reasoning": "Student focuses on pine having needles vs. broad leaves rather than tree category"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "seasonal_change",
+          "reasoning": "Student thinks maple doesn't belong due to color changes in fall"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0008",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1,
+    "discrimination": 1,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Some flowers are red. All roses are flowers. What can we say about the color of roses?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "All roses are red"
+        },
+        {
+          "text": "No roses are red"
+        },
+        {
+          "text": "All roses must be red"
+        },
+        {
+          "text": "Some roses might be red"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "Since only 'some' flowers are red (not all), and roses are flowers, we cannot be sure about rose color. Some roses might be red, but it's not guaranteed."
+    },
+    "metadata": {
+      "cognitive_skill": "logical reasoning with quantifiers",
+      "misconception_targeted": "universal vs. particular quantifier confusion",
+      "bloom_level": "analyze",
+      "dok_level": 3,
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "universal_assumption",
+          "reasoning": "Student incorrectly treats 'some flowers are red' as 'all flowers are red' and concludes all roses must be red"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "universal_assumption",
+          "reasoning": "Student incorrectly treats 'some flowers are red' as 'only some specific flowers are red' and excludes roses entirely"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "universal_assumption",
+          "reasoning": "Student confuses 'some' with 'all' and believes definite conclusions about necessity can be drawn from particular premises"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0009",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 2.5,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Teacher is to student as doctor is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "hospital"
+        },
+        {
+          "text": "patient"
+        },
+        {
+          "text": "nurse"
+        },
+        {
+          "text": "medicine"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "This analogy shows the professional-client relationship. A teacher helps students learn, and a doctor helps patients get well. Both relationships involve a professional serving someone who needs their expertise."
+    },
+    "metadata": {
+      "cognitive_skill": "abstract relational reasoning",
+      "misconception_targeted": "workplace vs. relationship focus",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "location_focus",
+          "reasoning": "Student thinks of where doctors work rather than the relationship pattern"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "profession_category",
+          "reasoning": "Student focuses on medical professions rather than the helper-helped relationship"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "tool_association",
+          "reasoning": "Student thinks of what doctors use rather than who they serve"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0010",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 3,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Find the next number in this sequence: 1, 1, 2, 3, 5, 8, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "11"
+        },
+        {
+          "text": "13"
+        },
+        {
+          "text": "16"
+        },
+        {
+          "text": "10"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "This is a Fibonacci sequence where each number equals the sum of the two preceding numbers: 1+1=2, 1+2=3, 2+3=5, 3+5=8, 5+8=13."
+    },
+    "metadata": {
+      "cognitive_skill": "complex pattern recognition with multiple dependencies",
+      "misconception_targeted": "single-step vs. multi-step pattern rules",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "add_three",
+          "reasoning": "Student adds 3 to the last number, missing the two-number sum rule"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "double_last",
+          "reasoning": "Student doubles the last number instead of adding the previous two"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "add_two",
+          "reasoning": "Student adds 2 to continue from 8, not recognizing the sum pattern"
+        }
+      ]
+    }
+  }
+]

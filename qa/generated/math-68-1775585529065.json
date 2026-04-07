@@ -1,0 +1,262 @@
+[
+  {
+    "id": "68-m0001",
+    "domain": "math",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": -0.5,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "A school cafeteria serves pizza slices cut from circular pizzas. Each pizza is cut into 8 equal slices. If 3 pizzas are completely consumed and 5 slices remain from a 4th pizza, how many total slices were eaten?",
+      "type": "word_problem",
+      "options": [
+        {
+          "text": "24 slices"
+        },
+        {
+          "text": "27 slices"
+        },
+        {
+          "text": "29 slices"
+        },
+        {
+          "text": "19 slices"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "Three complete pizzas contain 3 × 8 = 24 slices. From the 4th pizza, 8 - 5 = 3 slices were eaten. Total eaten: 24 + 3 = 27 slices."
+    },
+    "metadata": {
+      "cognitive_skill": "multi-step arithmetic reasoning with contextual interpretation",
+      "misconception_targeted": "misinterpreting remaining vs. consumed quantities",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "incomplete_calculation",
+          "reasoning": "Student calculates only the complete pizzas (3 × 8 = 24) but forgets about the partial pizza consumption"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "addition_error",
+          "reasoning": "Student correctly identifies 24 + 3 but makes arithmetic error getting 27 instead of 27"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "remaining_confusion",
+          "reasoning": "Student adds remaining slices instead of subtracting: 24 + 5 = 29"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-m0002",
+    "domain": "math",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 0.8,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Compare these three expressions without calculating their exact values: A = 7² - 3², B = (7-3)², C = 7² + 3². Which statement is correct?",
+      "type": "comparison",
+      "options": [
+        {
+          "text": "A < B < C"
+        },
+        {
+          "text": "B < A < C"
+        },
+        {
+          "text": "C < B < A"
+        },
+        {
+          "text": "A < C < B"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Using number sense: A = 49 - 9 = 40, B = 4² = 16, C = 49 + 9 = 58. Therefore B < A < C. Students should recognize that subtraction gives a smaller result than addition, and that (7-3)² is much smaller than operations on the original squares."
+    },
+    "metadata": {
+      "cognitive_skill": "algebraic expression comparison using number sense and properties",
+      "misconception_targeted": "order of operations confusion with exponents",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "exponent_distribution",
+          "reasoning": "Student thinks (7-3)² = 7² - 3² and concludes A = B, then guesses order"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "magnitude_reversal",
+          "reasoning": "Student reverses the relative magnitudes, thinking addition gives smaller result than subtraction"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "squared_difference_confusion",
+          "reasoning": "Student overestimates (7-3)² thinking it's larger than 7² - 3²"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-m0003",
+    "domain": "math",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 1.4,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "The population of bacteria in a petri dish doubles every 3 hours. If there are initially 50 bacteria, approximately how many bacteria will there be after 20 hours?",
+      "type": "estimation",
+      "options": [
+        {
+          "text": "Approximately 3,200 bacteria"
+        },
+        {
+          "text": "Approximately 1,600 bacteria"
+        },
+        {
+          "text": "Approximately 6,400 bacteria"
+        },
+        {
+          "text": "Approximately 400 bacteria"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "After 20 hours, there are approximately 20 ÷ 3 = 6.67 ≈ 6-7 doubling periods. Using 6 doublings: 50 × 2⁶ = 50 × 64 = 3,200. With 7 doublings it would be 6,400, so 3,200 is the better approximation for 6.67 periods."
+    },
+    "metadata": {
+      "cognitive_skill": "exponential growth estimation with non-integer time periods",
+      "misconception_targeted": "linear vs exponential growth confusion",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "one_less_doubling",
+          "reasoning": "Student uses only 5 doublings (50 × 32 = 1,600), miscounting the periods"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "rounding_up_error",
+          "reasoning": "Student rounds 6.67 up to 7 doublings completely: 50 × 128 = 6,400"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "linear_growth",
+          "reasoning": "Student thinks population increases linearly: 50 + (20÷3 × 50) ≈ 50 + 350 = 400"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-m0004",
+    "domain": "math",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2.1,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Consider the number 2³⁵. Without calculating the exact value, which property can help you determine whether this number is closer to 10¹⁰ or 10¹¹?",
+      "type": "number_sense",
+      "options": [
+        {
+          "text": "Since 2¹⁰ ≈ 10³, then 2³⁵ ≈ 10¹⁰·⁵, making it closer to 10¹¹"
+        },
+        {
+          "text": "Since 2¹⁰ = 1024 ≈ 10³, then 2³⁵ ≈ (10³)³·⁵ = 10¹⁰·⁵, making it closer to 10¹⁰"
+        },
+        {
+          "text": "Since 35 is between 30 and 40, and 2³⁰ = 10⁹ while 2⁴⁰ = 10¹², it's closer to 10¹⁰"
+        },
+        {
+          "text": "Since 2³⁵ = (2⁷)⁵ and 2⁷ = 128 ≈ 10², then 2³⁵ ≈ 10¹⁰"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Using the key approximation 2¹⁰ ≈ 10³, we can write 2³⁵ = 2³⁰ × 2⁵ = (2¹⁰)³ × 2⁵ ≈ (10³)³ × 32 = 10⁹ × 32 ≈ 3.2 × 10¹⁰. Since 3.2 > √10 ≈ 3.16, this is closer to 10¹¹."
+    },
+    "metadata": {
+      "cognitive_skill": "logarithmic reasoning and magnitude estimation with exponents",
+      "misconception_targeted": "exponent manipulation and approximation strategies",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "correct_setup_wrong_conclusion",
+          "reasoning": "Student sets up the approximation correctly but fails to recognize that 10^10.5 is closer to 10^11 than 10^10"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "false_interpolation",
+          "reasoning": "Student incorrectly assumes 2^30 = 10^9 and uses linear interpolation instead of exponential scaling"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "factorization_error",
+          "reasoning": "Student uses incorrect approximation 2^7 ≈ 10^2 when 2^7 = 128 is closer to 10^2.1"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-m0005",
+    "domain": "math",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2.8,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "A sequence is defined by the rule: a₁ = 2, and for n ≥ 2, aₙ = 3aₙ₋₁ - n. If you compute several terms and notice a pattern in their remainders when divided by 4, what is a₁₀ (mod 4)?",
+      "type": "computation",
+      "options": [
+        {
+          "text": "0"
+        },
+        {
+          "text": "1"
+        },
+        {
+          "text": "2"
+        },
+        {
+          "text": "3"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Computing terms modulo 4: a₁ = 2, a₂ = 3(2) - 2 = 4 ≡ 0, a₃ = 3(0) - 3 = -3 ≡ 1, a₄ = 3(1) - 4 = -1 ≡ 3, a₅ = 3(3) - 5 = 4 ≡ 0, a₆ = 3(0) - 6 = -6 ≡ 2. The pattern of remainders is 2, 0, 1, 3, 0, 2, 3, 1, 0, ... with period 8. Since 10 ≡ 2 (mod 8), a₁₀ ≡ a₂ ≡ 0. Wait, let me recalculate: a₉ = 3(2) - 9 = -3 ≡ 1, a₁₀ = 3(1) - 10 = -7 ≡ 1."
+    },
+    "metadata": {
+      "cognitive_skill": "modular arithmetic pattern recognition in recursive sequences",
+      "misconception_targeted": "recursive sequence computation with modular arithmetic",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "pattern_misidentification",
+          "reasoning": "Student identifies a pattern but miscounts the period or starting position"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "direct_calculation_error",
+          "reasoning": "Student attempts direct calculation of a₁₀ without using modular arithmetic and makes computational errors"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "modular_arithmetic_error",
+          "reasoning": "Student makes error in modular arithmetic operations, especially with negative numbers"
+        }
+      ]
+    }
+  }
+]

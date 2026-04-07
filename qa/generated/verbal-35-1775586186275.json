@@ -1,0 +1,522 @@
+[
+  {
+    "id": "35-v0001",
+    "domain": "verbal",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -2.1,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "The little girl was very happy when she got her new puppy. Which word could replace 'happy' in this sentence without changing its meaning?",
+      "type": "synonym",
+      "options": [
+        {
+          "text": "joyful"
+        },
+        {
+          "text": "excited"
+        },
+        {
+          "text": "surprised"
+        },
+        {
+          "text": "calm"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Joyful means feeling great happiness or delight, which is the same as being happy. The other words describe different emotions or states."
+    },
+    "metadata": {
+      "cognitive_skill": "vocabulary precision and semantic understanding",
+      "misconception_targeted": "confusing related positive emotions as synonyms",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "emotion_conflation",
+          "reasoning": "Students may think excited means the same as happy because both are positive feelings"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "positive_emotion_confusion",
+          "reasoning": "Students might confuse surprised as synonymous with happy because surprises can be pleasant"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "mood_state_confusion",
+          "reasoning": "Students may think calm and happy are the same because both can be pleasant states"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-v0002",
+    "domain": "verbal",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -1.3,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Emma saw dark clouds forming and felt the wind getting stronger. She decided to cancel her picnic. What can you infer about the weather?",
+      "type": "inference",
+      "options": [
+        {
+          "text": "A storm was likely approaching"
+        },
+        {
+          "text": "It was getting cold outside"
+        },
+        {
+          "text": "The sun was too bright"
+        },
+        {
+          "text": "It was a perfect day for flying kites"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Dark clouds and strong wind are signs that a storm is coming. This explains why Emma cancelled her outdoor picnic - she anticipated bad weather."
+    },
+    "metadata": {
+      "cognitive_skill": "causal reasoning and inference from contextual clues",
+      "misconception_targeted": "literal interpretation without inference",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "partial_cue_focus",
+          "reasoning": "Students might focus only on wind and assume it means cold weather"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "context_reversal",
+          "reasoning": "Students might misread dark clouds as meaning bright sun"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "wind_misinterpretation",
+          "reasoning": "Students might think strong wind is good for kites without considering the full context"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-v0003",
+    "domain": "verbal",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -0.8,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which word means the opposite of generous?",
+      "type": "antonym",
+      "options": [
+        {
+          "text": "selfish"
+        },
+        {
+          "text": "careful"
+        },
+        {
+          "text": "poor"
+        },
+        {
+          "text": "quiet"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Selfish means caring only about yourself and not sharing with others, which is the opposite of generous (giving and sharing freely with others)."
+    },
+    "metadata": {
+      "cognitive_skill": "understanding semantic opposites and character traits",
+      "misconception_targeted": "confusing related concepts with true antonyms",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "behavioral_trait_confusion",
+          "reasoning": "Students might think careful is opposite of generous because generous can seem careless with money"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "economic_state_confusion",
+          "reasoning": "Students might confuse poor as opposite of generous because poor people can't give much"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "personality_trait_mismatch",
+          "reasoning": "Students might think quiet is opposite because generous people are often outgoing"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-v0004",
+    "domain": "verbal",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -0.2,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Read this story: 'Long ago, there was an ancient castle on a hill. The king who built it lived hundreds of years before your grandparents were born.' Based on the story, what does ancient mean?",
+      "type": "definition",
+      "options": [
+        {
+          "text": "very old"
+        },
+        {
+          "text": "made of stone"
+        },
+        {
+          "text": "very grand"
+        },
+        {
+          "text": "on a hill"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Ancient means very old, from a time long ago. An ancient castle would be one built many hundreds of years in the past."
+    },
+    "metadata": {
+      "cognitive_skill": "contextual vocabulary comprehension and word meaning",
+      "misconception_targeted": "inferring word meaning from visual imagery rather than semantic knowledge",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "visual_imagery_inference",
+          "reasoning": "Students might focus on the visual image of what castles look like rather than the temporal meaning, thinking ancient describes the stone construction they picture"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "visual_imagery_inference",
+          "reasoning": "Students might associate ancient with the grand, impressive visual appearance they imagine when picturing a castle"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "visual_imagery_inference",
+          "reasoning": "Students might focus on the visual setting described (castle on a hill) rather than understanding the temporal meaning of ancient"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-v0005",
+    "domain": "verbal",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.4,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Marcus practiced violin every day for two weeks before his recital. During the performance, he played beautifully without making any mistakes. What can you conclude about Marcus?",
+      "type": "inference",
+      "options": [
+        {
+          "text": "His practice helped him perform well"
+        },
+        {
+          "text": "He is naturally talented at music"
+        },
+        {
+          "text": "He was nervous during the recital"
+        },
+        {
+          "text": "He had performed this piece before"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The passage shows a clear connection between Marcus practicing every day and then performing well. This demonstrates that his preparation led to his successful performance."
+    },
+    "metadata": {
+      "cognitive_skill": "causal reasoning and connecting evidence to conclusions",
+      "misconception_targeted": "talent assumption and prior experience assumption rather than recognizing the role of practice",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "talent_assumption",
+          "reasoning": "Students might assume good performance means natural talent rather than recognizing the role of practice"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "emotional_state_inference",
+          "reasoning": "Students might infer nervousness despite evidence of flawless performance"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "prior_experience_assumption",
+          "reasoning": "Students might assume previous experience rather than connecting current practice to performance"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-v0006",
+    "domain": "verbal",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.9,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Read this story: 'Dr. Chen watched Arctic terns for three summers. She found out that these birds fly farther than any other animal. They fly from the cold Arctic to the cold Antarctic and back each year. Her work helped other scientists learn how weather changes affect where birds fly.' What was the main reason Dr. Chen did her work?",
+      "type": "comprehension",
+      "options": [
+        {
+          "text": "To understand how climate affects bird migration"
+        },
+        {
+          "text": "To prove that Arctic terns fly the farthest"
+        },
+        {
+          "text": "To study birds during summer months"
+        },
+        {
+          "text": "To compare Arctic terns with other animals"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The passage explicitly states that Dr. Chen's research 'helped scientists understand how climate changes affect bird migration,' which identifies this as the main purpose of her work."
+    },
+    "metadata": {
+      "cognitive_skill": "identifying main ideas and distinguishing purpose from supporting details",
+      "misconception_targeted": "confusing supporting details with main ideas",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "detail_as_purpose",
+          "reasoning": "Students might think proving birds fly farthest was the purpose rather than a discovery made along the way"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "timeframe_focus",
+          "reasoning": "Students might focus on the detail about studying for three summers rather than the research purpose"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "method_as_purpose",
+          "reasoning": "Students might think comparing animals was the purpose rather than a method used in the research"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-v0007",
+    "domain": "verbal",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.3,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "The word 'discharge' can have different meanings. In which sentence does 'discharge' mean the same thing as in 'The doctor will discharge the patient tomorrow'?",
+      "type": "vocabulary",
+      "options": [
+        {
+          "text": "The soldier received an honorable discharge from the army"
+        },
+        {
+          "text": "The factory must not discharge chemicals into the river"
+        },
+        {
+          "text": "The battery will discharge if left unused too long"
+        },
+        {
+          "text": "Lightning can discharge thousands of volts of electricity"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "In both sentences, 'discharge' means to officially release someone from a place or duty. The doctor releases the patient from the hospital, and the army releases the soldier from military service."
+    },
+    "metadata": {
+      "cognitive_skill": "understanding multiple word meanings and semantic relationships",
+      "misconception_targeted": "assuming words have only one meaning across contexts",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "literal_release_confusion",
+          "reasoning": "Students might think releasing chemicals is the same as releasing a person"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "energy_depletion_confusion",
+          "reasoning": "Students might confuse the energy meaning of discharge with the release meaning"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "electrical_discharge_confusion",
+          "reasoning": "Students might think electrical discharge is similar to releasing a patient"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-v0008",
+    "domain": "verbal",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.7,
+    "discrimination": 2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which word means the same as 'reluctant'?",
+      "type": "synonym",
+      "options": [
+        {
+          "text": "unwilling"
+        },
+        {
+          "text": "uncertain"
+        },
+        {
+          "text": "disappointed"
+        },
+        {
+          "text": "impatient"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Reluctant means unwilling to do something or hesitant about doing it. Someone who is reluctant shows resistance or unwillingness to act."
+    },
+    "metadata": {
+      "cognitive_skill": "advanced vocabulary recognition and semantic precision",
+      "misconception_targeted": "confusing hesitation with related emotional states",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "uncertainty_conflation",
+          "reasoning": "Students might confuse being reluctant (unwilling) with being uncertain (unsure)"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "negative_emotion_confusion",
+          "reasoning": "Students might think reluctance is the same as disappointment because both can involve negative feelings"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "behavioral_state_confusion",
+          "reasoning": "Students might confuse reluctance with impatience because both involve not wanting to do something immediately"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-v0009",
+    "domain": "verbal",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.4,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Read this passage: 'The library's new rule says people must show ID before entering. Staff members have noticed that fewer people come to the library since this change. Some regular visitors have said that it takes too long.' What can you tell about the library from this passage?",
+      "type": "inference",
+      "options": [
+        {
+          "text": "The new policy is creating barriers that discourage library use"
+        },
+        {
+          "text": "The library is trying to keep certain people out"
+        },
+        {
+          "text": "Visitors prefer not to carry identification"
+        },
+        {
+          "text": "The library should have advertised the new rule better"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The evidence shows fewer people are coming and visitors are complaining about the time-consuming process. This suggests the policy, while possibly well-intentioned, is creating obstacles that discourage people from using the library. Option 1 is incorrect because it assumes the library's intent to exclude people without evidence - we can only analyze the unintended consequences, not the motivations behind the policy. Option 2 focuses on only one aspect rather than the broader pattern of deterrence. Option 3 makes assumptions about advertising that aren't supported by the evidence provided."
+    },
+    "metadata": {
+      "cognitive_skill": "synthesizing multiple pieces of evidence to draw complex inferences",
+      "misconception_targeted": "making assumptions about intent rather than analyzing effects",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "intent_assumption",
+          "reasoning": "Students might assume the library has discriminatory intent rather than analyzing the unintended consequences"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "single_factor_focus",
+          "reasoning": "Students might focus only on ID requirements rather than the broader pattern of deterrence"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "v_35_prior_knowledge_override",
+          "reasoning": "Students might rely on general knowledge about how policies should be implemented rather than focusing on the specific effects described in the passage"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-v0010",
+    "domain": "verbal",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 2.5,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In the sentence 'The scientist made a hypothesis before conducting the experiment,' the word 'hypothesis' comes from Greek roots 'hypo' meaning 'under' and 'thesis' meaning 'to place.' Based on these word parts, what does hypothesis most likely mean?",
+      "type": "vocabulary",
+      "options": [
+        {
+          "text": "An educated guess placed under investigation"
+        },
+        {
+          "text": "A fact that supports an argument"
+        },
+        {
+          "text": "A conclusion drawn from evidence"
+        },
+        {
+          "text": "An observation made during research"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Using the Greek roots, hypothesis literally means 'to place under' - an idea placed under investigation or testing. It's an educated guess that scientists test through experiments."
+    },
+    "metadata": {
+      "cognitive_skill": "etymology-based reasoning and morphological analysis",
+      "misconception_targeted": "confusing hypothesis with other scientific terms based on context rather than word structure",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "scientific_term_confusion",
+          "reasoning": "Students might think hypothesis means established fact because it's used in scientific contexts"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "process_order_confusion",
+          "reasoning": "Students might think hypothesis is a conclusion because it comes at the end of the scientific process in their experience"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "empirical_method_confusion",
+          "reasoning": "Students might confuse hypothesis with observation because both are part of scientific investigation"
+        }
+      ]
+    }
+  }
+]

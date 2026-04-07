@@ -1,0 +1,523 @@
+[
+  {
+    "id": "68-p0001",
+    "domain": "pattern_recognition",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": -0.5,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at this sequence of shapes transforming: Circle → Square → Pentagon → Hexagon → ? What comes next?",
+      "type": "shape_pattern",
+      "options": [
+        {
+          "text": "Heptagon (7 sides)"
+        },
+        {
+          "text": "Triangle"
+        },
+        {
+          "text": "Octagon (8 sides)"
+        },
+        {
+          "text": "Another circle"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The pattern shows shapes with an increasing number of sides: circle (0 vertices/continuous), square (4 sides), pentagon (5 sides), hexagon (6 sides). The next shape should have 7 sides, which is a heptagon."
+    },
+    "metadata": {
+      "cognitive_skill": "sequential pattern recognition with geometric progression",
+      "misconception_targeted": "confusion between similar progression rules",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "pattern_restart",
+          "reasoning": "Student thinks pattern resets to simplest shape after reaching complexity"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "skip_counting",
+          "reasoning": "Student jumps by 2 (6 to 8 sides) instead of continuing by 1"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "cyclical_pattern",
+          "reasoning": "Student believes pattern returns to starting shape"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-p0002",
+    "domain": "pattern_recognition",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 0.2,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In this color sequence, Red-Blue-Blue-Red-Green-Green-Red-Yellow-Yellow-?, what color comes next based on the underlying pattern?",
+      "type": "color_pattern",
+      "options": [
+        {
+          "text": "Red"
+        },
+        {
+          "text": "Yellow"
+        },
+        {
+          "text": "Purple"
+        },
+        {
+          "text": "Blue"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The pattern is: Red (single), then pairs of colors (Blue-Blue, Green-Green, Yellow-Yellow), with Red appearing as a separator after each pair. After Yellow-Yellow, Red should appear again as the separator."
+    },
+    "metadata": {
+      "cognitive_skill": "complex sequential pattern with embedded separators",
+      "misconception_targeted": "missing embedded separator elements",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "continuation_error",
+          "reasoning": "Student continues the double-yellow pattern instead of recognizing separator"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "new_color_assumption",
+          "reasoning": "Student thinks pattern introduces new colors in sequence"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "cycling_back",
+          "reasoning": "Student thinks pattern cycles through the paired colors"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-p0003",
+    "domain": "pattern_recognition",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 0.8,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Consider the sequence: 3, 7, 15, 31, 63, ?. Each term follows a specific mathematical relationship with the previous term. What is the next number?",
+      "type": "number_pattern",
+      "options": [
+        {
+          "text": "127"
+        },
+        {
+          "text": "95"
+        },
+        {
+          "text": "126"
+        },
+        {
+          "text": "131"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Each term is found by doubling the previous term and adding 1: 3→7 (3×2+1), 7→15 (7×2+1), 15→31 (15×2+1), 31→63 (31×2+1), so 63→127 (63×2+1)."
+    },
+    "metadata": {
+      "cognitive_skill": "multiplicative pattern recognition with additive component",
+      "misconception_targeted": "additive vs multiplicative pattern confusion",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "simple_addition",
+          "reasoning": "Student adds 32 (seeing 31+32=63, so 63+32=95) missing the doubling rule"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "doubling_only",
+          "reasoning": "Student doubles 63 to get 126, forgetting the +1 component"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "arithmetic_progression",
+          "reasoning": "Student sees differences of 4,8,16,32 and adds 68 to get 131"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-p0004",
+    "domain": "pattern_recognition",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 1.3,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "This 3×3 matrix has objects that transform both across rows and down columns. In each row, shapes rotate 90° clockwise. In each column, shapes change color: Red→Blue→Green. The bottom-right cell is missing. What belongs there? [Matrix shows: Row 1: Red Triangle pointing up, Red Square, Red Pentagon; Row 2: Blue Triangle pointing right, Blue Diamond, Blue Hexagon; Row 3: Green Triangle pointing down, Green Star, ?]",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "Green Octagon"
+        },
+        {
+          "text": "Green Pentagon"
+        },
+        {
+          "text": "Blue Octagon"
+        },
+        {
+          "text": "Green Hexagon pointing left"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Following the column pattern (Red→Blue→Green), the missing shape must be green. Following the row pattern of shape progression (Triangle→Square→Pentagon in row 1, Triangle→Diamond→Hexagon in row 2), row 3 shows Triangle→Star→Octagon."
+    },
+    "metadata": {
+      "cognitive_skill": "simultaneous dual-dimension pattern analysis",
+      "misconception_targeted": "single dimension focus in matrix reasoning",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "row_repeat",
+          "reasoning": "Student replicates shape from row 1 instead of continuing row 3's progression"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "color_confusion",
+          "reasoning": "Student follows shape progression correctly but uses wrong color (blue instead of green)"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "rotation_focus",
+          "reasoning": "Student focuses on rotation pattern and replicates row 2's final shape with wrong color"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-p0005",
+    "domain": "pattern_recognition",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 1.8,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In this size pattern, objects grow according to a geometric progression: 2mm, 6mm, 18mm, 54mm, ?, 486mm. What is the missing measurement?",
+      "type": "size_pattern",
+      "options": [
+        {
+          "text": "162mm"
+        },
+        {
+          "text": "108mm"
+        },
+        {
+          "text": "216mm"
+        },
+        {
+          "text": "324mm"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Each measurement is multiplied by 3: 2×3=6, 6×3=18, 18×3=54, 54×3=162, 162×3=486. The missing measurement is 162mm."
+    },
+    "metadata": {
+      "cognitive_skill": "geometric progression recognition with verification constraint",
+      "misconception_targeted": "arithmetic vs geometric progression confusion",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "doubling_pattern",
+          "reasoning": "Student doubles 54 to get 108, not recognizing the ×3 pattern"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "additive_thinking",
+          "reasoning": "Student adds a constant difference and chooses 216 based on arithmetic reasoning"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "multiplication_error",
+          "reasoning": "Student multiplies by 6 instead of 3, getting 54×6=324"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-p0006",
+    "domain": "pattern_recognition",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2.1,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Complete this sequence where one element is missing from the middle: ●○●●○, ●○○●●○○, ●○○○●●○○○, ●○○○○?○○○○, ●○○○○○●●○○○○○○. The pattern involves both the number and position of filled circles (●) and empty circles (○). What replaces the ?",
+      "type": "sequence_completion",
+      "options": [
+        {
+          "text": "●●"
+        },
+        {
+          "text": "●"
+        },
+        {
+          "text": "○"
+        },
+        {
+          "text": "●○"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The pattern shows: n empty circles, then n filled circles, then n empty circles, where n increases each time (1,2,3,4,5). For the missing term with n=4, we need 4 empty circles, then 4 filled circles, then 4 empty circles. The missing part is the second of the 4 filled circles, so ●● completes the ●●●● group."
+    },
+    "metadata": {
+      "cognitive_skill": "bidirectional pattern completion with embedded structure",
+      "misconception_targeted": "incomplete pattern analysis in sequence completion",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "single_element",
+          "reasoning": "Student sees only that filled circles appear but doesn't count the grouping requirement"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "alternating_focus",
+          "reasoning": "Student focuses on alternating pattern and expects empty circle to continue"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "micro_pattern",
+          "reasoning": "Student thinks the pattern alternates ● and ○ locally rather than in groups"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-p0007",
+    "domain": "pattern_recognition",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2,
+    "discrimination": 1.3,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at this number pattern: 1, 4, 9, 16, 25, ?, 64, 100. The missing number follows a mathematical rule. There is also a second rule that changes every third position by taking away 3. What number belongs in the missing position?",
+      "type": "number_pattern",
+      "options": [
+        {
+          "text": "33"
+        },
+        {
+          "text": "36"
+        },
+        {
+          "text": "39"
+        },
+        {
+          "text": "49"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The base pattern is perfect squares: 1², 2², 3², 4², 5², 6², 7², 8² = 1,4,9,16,25,36,49,64,81,100. Every third position (positions 3,6,9...) is modified by subtracting 3. Position 6 should be 36, but with the -3 modification: 36-3=33."
+    },
+    "metadata": {
+      "cognitive_skill": "overlaid pattern recognition with conditional modifications",
+      "misconception_targeted": "single pattern assumption in complex sequences",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "base_pattern_only",
+          "reasoning": "Student identifies the square pattern (6²=36) but ignores the modification rule"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "wrong_modification",
+          "reasoning": "Student applies +3 instead of -3 to the base pattern (36+3=39)"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "next_square",
+          "reasoning": "Student uses 7²=49, thinking the pattern skipped a square"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-p0008",
+    "domain": "pattern_recognition",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2.2,
+    "discrimination": 1.1,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at this 3×3 grid puzzle. Each spot has a special symbol that comes from mixing the row and column using a special rule. Rows have numbers: A=1, B=2, C=4. Columns have numbers: X=1, Y=2, Z=4. The rule changes these numbers into a pattern of 1s and 0s, then combines them where same numbers disappear (like 1+1=0, 0+0=0, but 1+0=1). The result becomes a symbol: 000=☆, 001=◇, 010=◯, 011=△, 100=□, 101=◈, 110=○, 111=●. What symbol goes in the bottom-right corner (row C, column Z)?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "☆"
+        },
+        {
+          "text": "◈"
+        },
+        {
+          "text": "○"
+        },
+        {
+          "text": "●"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Row C has value 4 (binary 100) and Column Z has value 4 (binary 100). XOR of 100⊕100=000. The symbol for 000 is ☆."
+    },
+    "metadata": {
+      "cognitive_skill": "logical operation pattern recognition",
+      "misconception_targeted": "confusion between logical operators in pattern matrices",
+      "bloom_level": "analyze",
+      "dok_level": 3,
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "addition_instead_xor",
+          "reasoning": "Student adds 4+4=8 (1000 in binary), takes last 3 bits (000), but maps incorrectly to ◈"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "or_instead_xor",
+          "reasoning": "Student uses OR instead of XOR: 100 OR 100 = 100, maps to ○ instead of □"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "and_instead_xor",
+          "reasoning": "Student uses AND: 100 AND 100 = 100, but maps to wrong symbol ●"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-p0009",
+    "domain": "pattern_recognition",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 1.5,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "This shape sequence shows transformations involving both rotation and reflection: L-shape → ⅃-shape → Γ-shape → ⌐-shape → ?. Each step involves a 90° clockwise rotation followed by a horizontal flip. What comes next?",
+      "type": "shape_pattern",
+      "options": [
+        {
+          "text": "L-shape"
+        },
+        {
+          "text": "⅃-shape"
+        },
+        {
+          "text": "Γ-shape"
+        },
+        {
+          "text": "⌒-shape"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Following the pattern: ⌐-shape rotated 90° clockwise becomes Γ-shape, then horizontally flipped becomes L-shape. The sequence returns to the starting position after 4 transformations."
+    },
+    "metadata": {
+      "cognitive_skill": "compound geometric transformation tracking",
+      "misconception_targeted": "transformation sequence confusion",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "single_operation",
+          "reasoning": "Student applies only rotation OR only reflection, not both"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "wrong_direction",
+          "reasoning": "Student rotates counterclockwise instead of clockwise"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "wrong_transformation",
+          "reasoning": "Student applies vertical flip instead of horizontal flip"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-p0010",
+    "domain": "pattern_recognition",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2,
+    "discrimination": 1,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at this number pattern: Start with F(1)=1, F(2)=1, F(3)=2. For numbers 4 and higher: If the spot number is even, add the two numbers before it. If the spot number is odd, double the number before it and take away the number three spots back. Example: F(4) is even, so F(4) = F(3) + F(2) = 2 + 1 = 3. What is F(8)?",
+      "type": "number_pattern",
+      "options": [
+        {
+          "text": "21"
+        },
+        {
+          "text": "8"
+        },
+        {
+          "text": "17"
+        },
+        {
+          "text": "34"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Computing step by step: F(4)=F(3)+F(2)=2+1=3 (even rule), F(5)=F(4)×2-F(2)=3×2-1=5 (odd rule), F(6)=F(5)+F(4)=5+3=8 (even rule), F(7)=F(6)×2-F(4)=8×2-3=13 (odd rule), F(8)=F(7)+F(6)=13+8=21 (even rule)."
+    },
+    "metadata": {
+      "cognitive_skill": "recursive sequence analysis",
+      "misconception_targeted": "rule application errors in conditional sequences",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "incomplete_calculation",
+          "reasoning": "Student correctly calculates F(6)=8 but stops there, thinking F(8) equals F(6)"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "single_rule_assumption",
+          "reasoning": "Student uses only the Fibonacci rule throughout: F(8)=F(7)+F(6) but with wrong previous values"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "doubling_pattern",
+          "reasoning": "Student thinks F(8)=F(7)×2+something and computes 13×2+8=34"
+        }
+      ]
+    }
+  }
+]

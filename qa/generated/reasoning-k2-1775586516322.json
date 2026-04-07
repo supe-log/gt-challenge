@@ -1,0 +1,522 @@
+[
+  {
+    "id": "K2-r0001",
+    "domain": "reasoning",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -2.5,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Bird is to nest as bee is to what?",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "hive"
+        },
+        {
+          "text": "flower"
+        },
+        {
+          "text": "yellow"
+        },
+        {
+          "text": "buzz"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "A nest is where a bird lives, so a hive is where a bee lives. This shows the animal-to-home relationship."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning",
+      "misconception_targeted": "confusing functional relationships with categorical relationships",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "functional_association",
+          "reasoning": "Students may think of what bees use rather than where they live"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "attribute_confusion",
+          "reasoning": "Students may focus on bee characteristics rather than habitat relationship"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "action_association",
+          "reasoning": "Students may think of what bees do rather than the structural relationship"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-r0002",
+    "domain": "reasoning",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -2,
+    "discrimination": 1,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which one does not belong and why: apple, banana, carrot, orange?",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "carrot"
+        },
+        {
+          "text": "apple"
+        },
+        {
+          "text": "banana"
+        },
+        {
+          "text": "orange"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Apple, banana, and orange are all fruits. Carrot is a vegetable, so it does not belong with the fruits."
+    },
+    "metadata": {
+      "cognitive_skill": "categorical classification",
+      "misconception_targeted": "surface feature classification over conceptual categories",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "color_focus",
+          "reasoning": "Students may focus on red color being different from yellow/orange"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "shape_focus",
+          "reasoning": "Students may think banana's curved shape makes it different"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "size_focus",
+          "reasoning": "Students may focus on orange having a bumpy texture unlike the smooth surfaces of apple and banana"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-r0003",
+    "domain": "reasoning",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -1.5,
+    "discrimination": 1.3,
+    "guessing": 0.25,
+    "content": {
+      "stem": "What comes next: 2, 4, 6, 8, ?",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "10"
+        },
+        {
+          "text": "9"
+        },
+        {
+          "text": "12"
+        },
+        {
+          "text": "16"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The pattern adds 2 each time. 2+2=4, 4+2=6, 6+2=8, so 8+2=10."
+    },
+    "metadata": {
+      "cognitive_skill": "pattern recognition and inductive reasoning",
+      "misconception_targeted": "random guessing without pattern detection",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "plus_one_error",
+          "reasoning": "Students may add 1 instead of identifying the +2 pattern"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "skip_ahead",
+          "reasoning": "Students may continue counting but skip numbers"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "doubling_confusion",
+          "reasoning": "Students may think the pattern is doubling from the last number"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-r0004",
+    "domain": "reasoning",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -1,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All cats have tails. Fluffy is a cat. Does Fluffy have a tail?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "yes"
+        },
+        {
+          "text": "no"
+        },
+        {
+          "text": "maybe"
+        },
+        {
+          "text": "only black cats"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Since all cats have tails and Fluffy is a cat, Fluffy must have a tail. This follows the rule."
+    },
+    "metadata": {
+      "cognitive_skill": "deductive reasoning",
+      "misconception_targeted": "incomplete logical application",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "exception_thinking",
+          "reasoning": "Students may think there could be exceptions to the rule"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "uncertainty_bias",
+          "reasoning": "Students may be unsure about applying general rules to specific cases"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "irrelevant_attribute",
+          "reasoning": "Students may think color affects the rule about tails"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-r0005",
+    "domain": "reasoning",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -0.5,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at the pattern. What shape goes in the empty box?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "red circle"
+        },
+        {
+          "text": "blue circle"
+        },
+        {
+          "text": "red square"
+        },
+        {
+          "text": "blue square"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "In each row, the color changes from red to blue. In each column, the shape stays the same. So a blue circle completes the pattern."
+    },
+    "metadata": {
+      "cognitive_skill": "simultaneous relational reasoning",
+      "misconception_targeted": "single dimension focus in matrix patterns",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "color_consistency",
+          "reasoning": "Students may focus only on keeping one color consistent"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "shape_change",
+          "reasoning": "Students may think both shape and color should change"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "diagonal_pattern",
+          "reasoning": "Students may look for diagonal patterns instead of row/column rules"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-r0006",
+    "domain": "reasoning",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 0,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Bird is to nest as bear is to what?",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "cave"
+        },
+        {
+          "text": "honey"
+        },
+        {
+          "text": "forest"
+        },
+        {
+          "text": "fish"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "A nest is where a bird lives. A cave is where a bear lives. Both are homes for the animals."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning with habitat concepts",
+      "misconception_targeted": "confusing habitat with food or environment",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "food_association",
+          "reasoning": "Students may think of what bears eat rather than where they live"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "general_environment",
+          "reasoning": "Students may confuse specific home with general environment"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "behavioral_association",
+          "reasoning": "Students may focus on what bears catch rather than where they sleep"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-r0007",
+    "domain": "reasoning",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 0.5,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which one is different: truck, car, bike, tree?",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "tree"
+        },
+        {
+          "text": "truck"
+        },
+        {
+          "text": "car"
+        },
+        {
+          "text": "bike"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Truck, car, and bike are all things you can ride to move around. A tree cannot move you from place to place."
+    },
+    "metadata": {
+      "cognitive_skill": "functional classification",
+      "misconception_targeted": "focusing on physical attributes over function",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "physical_size_focus",
+          "reasoning": "Students may focus on the truck being the largest physical object rather than considering transportation function"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "color_appearance_focus",
+          "reasoning": "Students may focus on visual appearance or typical color differences rather than transportation function"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "wheel_appearance_focus",
+          "reasoning": "Students may focus on the bike having visible spokes or different wheel appearance rather than transportation function"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-r0008",
+    "domain": "reasoning",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 0.5,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In this number series, two different patterns are used. What is next? 1, 3, 2, 4, 3, 5, 4, ?",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "6"
+        },
+        {
+          "text": "5"
+        },
+        {
+          "text": "7"
+        },
+        {
+          "text": "4"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "There are two simple rules here: first we count up 1, 2, 3, 4 in some spots. Then we count up 3, 4, 5, 6 in other spots. The next number should be 6."
+    },
+    "metadata": {
+      "cognitive_skill": "complex pattern recognition with alternating rules",
+      "misconception_targeted": "applying single rule to complex multi-rule patterns",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "simple_continuation",
+          "reasoning": "Students may just continue the visible sequence without seeing the two-rule pattern"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "add_one_error",
+          "reasoning": "Students may see 5+2=7 but miss that positions alternate"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "repetition_pattern",
+          "reasoning": "Students may think the pattern just repeats the last few numbers"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-r0009",
+    "domain": "reasoning",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 1.5,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All birds can fly. Penguins are birds. Can penguins fly?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "no"
+        },
+        {
+          "text": "yes"
+        },
+        {
+          "text": "only baby ones"
+        },
+        {
+          "text": "only in water"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Even though the rule says all birds fly, we know that penguins are birds that cannot fly. Some rules have exceptions in real life."
+    },
+    "metadata": {
+      "cognitive_skill": "logical reasoning with real-world knowledge integration",
+      "misconception_targeted": "rigid rule application without considering exceptions",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "logical_rule_following",
+          "reasoning": "Students may follow the logical rule strictly without considering real-world exceptions"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "partial_exception",
+          "reasoning": "Students may try to reconcile the rule by creating age-based exceptions"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "environment_modification",
+          "reasoning": "Students may think penguins fly differently in their environment"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-r0010",
+    "domain": "reasoning",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 2,
+    "discrimination": 2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In this grid, what completes the pattern in the bottom right?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "small blue triangle"
+        },
+        {
+          "text": "big red circle"
+        },
+        {
+          "text": "small red triangle"
+        },
+        {
+          "text": "big blue circle"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Looking across rows: size goes big to small. Looking down columns: shape stays the same, color goes blue to red. So bottom right needs small red triangle."
+    },
+    "metadata": {
+      "cognitive_skill": "multi-attribute matrix reasoning",
+      "misconception_targeted": "incomplete analysis of multiple changing attributes",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "partial_attribute_tracking",
+          "reasoning": "Students may correctly track size and shape but miss the color change pattern"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "opposite_pattern",
+          "reasoning": "Students may reverse the size pattern or confuse row and column rules"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "shape_confusion",
+          "reasoning": "Students may focus on size and color but miss that shape must stay consistent in columns"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "id": "K2-p0008",
+  "domain": "pattern_recognition",
+  "age_bands": [
+    "K-2"
+  ],
+  "difficulty": 1,
+  "discrimination": 2,
+  "guessing": 0.25,
+  "content": {
+    "stem": "The shapes turn. Up arrow, right arrow, down arrow, ___. What comes next?",
+    "type": "shape_pattern",
+    "options": [
+      {
+        "text": "left arrow"
+      },
+      {
+        "text": "up arrow"
+      },
+      {
+        "text": "right arrow"
+      },
+      {
+        "text": "down arrow"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "The arrows rotate clockwise: up, right, down. Continuing the rotation, left arrow comes next to complete the circle."
+  },
+  "metadata": {
+    "cognitive_skill": "rotational transformation pattern",
+    "misconception_targeted": "directional sequence understanding",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "cycle_restart",
+        "reasoning": "Child thinks the pattern restarts after three elements instead of completing the four-direction cycle"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "reverse_direction",
+        "reasoning": "Child reverses the rotation direction and goes back to right"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "static_repetition",
+        "reasoning": "Child repeats the last shown element instead of continuing the rotation"
+      }
+    ]
+  }
+}

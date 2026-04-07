@@ -1,0 +1,52 @@
+{
+  "id": "68-p0003",
+  "domain": "pattern_recognition",
+  "age_bands": [
+    "6-8"
+  ],
+  "difficulty": 0.8,
+  "discrimination": 1.7,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Consider the sequence: 3, 7, 15, 31, 63, ?. Each term follows a specific mathematical relationship with the previous term. What is the next number?",
+    "type": "number_pattern",
+    "options": [
+      {
+        "text": "127"
+      },
+      {
+        "text": "95"
+      },
+      {
+        "text": "126"
+      },
+      {
+        "text": "131"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "Each term is found by doubling the previous term and adding 1: 3→7 (3×2+1), 7→15 (7×2+1), 15→31 (15×2+1), 31→63 (31×2+1), so 63→127 (63×2+1)."
+  },
+  "metadata": {
+    "cognitive_skill": "multiplicative pattern recognition with additive component",
+    "misconception_targeted": "additive vs multiplicative pattern confusion",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "simple_addition",
+        "reasoning": "Student adds 32 (seeing 31+32=63, so 63+32=95) missing the doubling rule"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "doubling_only",
+        "reasoning": "Student doubles 63 to get 126, forgetting the +1 component"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "arithmetic_progression",
+        "reasoning": "Student sees differences of 4,8,16,32 and adds 68 to get 131"
+      }
+    ]
+  }
+}

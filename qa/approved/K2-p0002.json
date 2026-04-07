@@ -1,0 +1,52 @@
+{
+  "id": "K2-p0002",
+  "domain": "pattern_recognition",
+  "age_bands": [
+    "K-2"
+  ],
+  "difficulty": -2,
+  "discrimination": 1,
+  "guessing": 0.25,
+  "content": {
+    "stem": "What shape comes next? Circle, square, triangle, circle, square, ___",
+    "type": "shape_pattern",
+    "options": [
+      {
+        "text": "triangle"
+      },
+      {
+        "text": "circle"
+      },
+      {
+        "text": "square"
+      },
+      {
+        "text": "star"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "The pattern repeats every three shapes: circle, square, triangle. After circle and square, triangle comes next."
+  },
+  "metadata": {
+    "cognitive_skill": "three-element pattern recognition",
+    "misconception_targeted": "ABC repeating pattern confusion",
+    "bloom_level": "understand",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "pattern_restart",
+        "reasoning": "Child thinks the pattern restarts from the beginning after seeing the first element again"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "last_element_repetition",
+        "reasoning": "Child repeats the most recent element shown"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "arbitrary_extension",
+        "reasoning": "Child introduces an element not part of the established pattern"
+      }
+    ]
+  }
+}

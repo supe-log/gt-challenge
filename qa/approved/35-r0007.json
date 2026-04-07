@@ -4,48 +4,56 @@
   "age_bands": [
     "3-5"
   ],
-  "difficulty": 0,
+  "difficulty": 0.2,
   "discrimination": 1.3,
-  "guessing": 0.25,
+  "guessing": 0.2,
   "content": {
-    "stem": "Which group does NOT follow the same rule? Group A: cat, dog, rabbit Group B: car, bus, truck Group C: apple, banana, orange Group D: happy, sad, book",
+    "stem": "Which one belongs to a different category: apple, banana, carrot, orange, grape?",
     "type": "odd_one_out",
     "options": [
       {
-        "text": "Group D"
+        "text": "apple"
       },
       {
-        "text": "Group A"
+        "text": "banana"
       },
       {
-        "text": "Group B"
+        "text": "carrot"
       },
       {
-        "text": "Group C"
+        "text": "orange"
+      },
+      {
+        "text": "grape"
       }
     ],
-    "correct_index": 0,
-    "explanation": "Groups A, B, and C each contain three items from the same category (animals, vehicles, fruits). Group D mixes two emotions with one object, so it doesn't follow the same rule."
+    "correct_index": 2,
+    "explanation": "Apple, banana, orange, and grape are all fruits, while carrot is a vegetable. Carrot belongs to a different category than the fruit group."
   },
   "metadata": {
-    "cognitive_skill": "meta-categorical reasoning and rule identification",
-    "misconception_targeted": "focusing on surface features rather than categorical consistency",
+    "cognitive_skill": "categorical discrimination",
+    "misconception_targeted": "surface vs deep categorization",
     "bloom_level": "analyze",
     "distractor_rationale": [
       {
-        "option_index": 1,
-        "misconception_id": "living_vs_nonliving",
-        "reasoning": "Student might think Group A doesn't belong because it contains living things while others seem non-living"
+        "option_index": 0,
+        "misconception_id": "color_grouping",
+        "reasoning": "Students may think apple doesn't belong because it's the only red one"
       },
       {
-        "option_index": 2,
-        "misconception_id": "concrete_vs_abstract",
-        "reasoning": "Student might focus on vehicles being machines rather than seeing the categorical consistency"
+        "option_index": 1,
+        "misconception_id": "shape_focus",
+        "reasoning": "Students may think banana doesn't belong because of its unique curved shape"
       },
       {
         "option_index": 3,
-        "misconception_id": "natural_vs_artificial",
-        "reasoning": "Student might think fruits don't belong because they're natural while other groups seem artificial"
+        "misconception_id": "size_comparison",
+        "reasoning": "Students may think orange doesn't belong due to its round shape compared to others"
+      },
+      {
+        "option_index": 4,
+        "misconception_id": "r_35_belief_bias",
+        "reasoning": "Students may think grape doesn't belong due to personal preference or familiarity rather than logical categorization"
       }
     ]
   }

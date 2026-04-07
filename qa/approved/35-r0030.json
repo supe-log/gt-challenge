@@ -1,0 +1,52 @@
+{
+  "id": "35-r0030",
+  "domain": "reasoning",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": 1.8,
+  "discrimination": 1.5,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Study this 3×3 grid pattern. Row 1: star increases in size from left to right. Row 2: circle increases in size from left to right. Row 3: triangle, larger triangle, ___. What completes the pattern?",
+    "type": "matrix",
+    "options": [
+      {
+        "text": "largest triangle"
+      },
+      {
+        "text": "small star"
+      },
+      {
+        "text": "largest circle"
+      },
+      {
+        "text": "medium triangle"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "Each row shows the same shape getting bigger and bigger from left to right. Row 1 shows stars increasing in size, Row 2 shows circles increasing in size, so Row 3 should show triangles increasing in size, making the largest triangle correct."
+  },
+  "metadata": {
+    "cognitive_skill": "multi-dimensional pattern analysis",
+    "misconception_targeted": "shape cycling and column pattern confusion",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "shape_cycling",
+        "reasoning": "Students may think the pattern cycles through different shapes rather than maintaining shape consistency within rows"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "column_pattern_confusion",
+        "reasoning": "Students may try to apply a column-based pattern instead of the row-based size progression"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "incomplete_progression",
+        "reasoning": "Students may not recognize that the progression should continue to the largest size"
+      }
+    ]
+  }
+}

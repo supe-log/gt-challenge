@@ -8,44 +8,44 @@
   "discrimination": 1.8,
   "guessing": 0.25,
   "content": {
-    "stem": "Sharp is to dull as hot is to ___",
-    "type": "analogy",
+    "stem": "Which one does NOT belong: microscope, telescope, binoculars, camera?",
+    "type": "odd_one_out",
     "options": [
       {
-        "text": "cold"
+        "text": "microscope"
       },
       {
-        "text": "warm"
+        "text": "telescope"
       },
       {
-        "text": "cool"
+        "text": "binoculars"
       },
       {
-        "text": "freezing"
+        "text": "camera"
       }
     ],
-    "correct_index": 0,
-    "explanation": "This analogy shows opposite relationships. Sharp and dull are complete opposites on the sharpness scale, just as hot and cold are complete opposites on the temperature scale."
+    "correct_index": 3,
+    "explanation": "Microscope, telescope, and binoculars all magnify things to help you see them better. A camera captures images but doesn't magnify for direct viewing."
   },
   "metadata": {
-    "cognitive_skill": "relational reasoning with opposite relationships",
-    "misconception_targeted": "degree confusion in opposite relationships",
+    "cognitive_skill": "functional analysis and categorization",
+    "misconception_targeted": "surface similarity vs functional purpose",
     "bloom_level": "analyze",
     "distractor_rationale": [
       {
+        "option_index": 0,
+        "misconception_id": "size_focus",
+        "reasoning": "Students may think microscope doesn't belong because it's used for very small things"
+      },
+      {
         "option_index": 1,
-        "misconception_id": "degree_matching",
-        "reasoning": "Student thinks warm is opposite to hot rather than understanding the complete opposition relationship"
+        "misconception_id": "distance_focus",
+        "reasoning": "Students may think telescope doesn't belong because it's used for very far things"
       },
       {
         "option_index": 2,
-        "misconception_id": "mild_opposite",
-        "reasoning": "Student chooses a moderate opposite rather than the complete opposite that matches the sharp-dull relationship"
-      },
-      {
-        "option_index": 3,
-        "misconception_id": "extreme_matching",
-        "reasoning": "Student thinks freezing matches because both hot and freezing are extreme, missing the direct opposition"
+        "misconception_id": "portability_focus",
+        "reasoning": "Students may think binoculars don't belong because they're the most portable"
       }
     ]
   }

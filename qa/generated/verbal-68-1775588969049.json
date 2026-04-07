@@ -1,0 +1,522 @@
+[
+  {
+    "id": "68-v0001",
+    "domain": "verbal",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": -0.2,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which word means the opposite of 'ephemeral'?",
+      "type": "antonym",
+      "options": [
+        {
+          "text": "temporary"
+        },
+        {
+          "text": "permanent"
+        },
+        {
+          "text": "invisible"
+        },
+        {
+          "text": "beautiful"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Ephemeral means lasting for a very short time, so its antonym is permanent, which means lasting indefinitely or for a very long time."
+    },
+    "metadata": {
+      "cognitive_skill": "vocabulary knowledge and semantic relationships",
+      "misconception_targeted": "confusing similar concepts or selecting synonyms instead of antonyms",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "synonym_confusion",
+          "reasoning": "Students might select temporary because it's similar to ephemeral rather than opposite"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "surface_association",
+          "reasoning": "Students might associate ephemeral with something hard to see or grasp"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "unrelated_concept",
+          "reasoning": "Students might confuse ephemeral with ethereal and think about beauty"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-v0002",
+    "domain": "verbal",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 0.8,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Scientists questioned a study that only included people from one town. What does 'representative' most likely mean?",
+      "type": "definition",
+      "options": [
+        {
+          "text": "accurate in measurement"
+        },
+        {
+          "text": "typical of a larger group"
+        },
+        {
+          "text": "chosen by voting"
+        },
+        {
+          "text": "clearly presented"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "In research context, a representative sample is one that accurately reflects the characteristics of the larger population being studied, making it typical of the larger group."
+    },
+    "metadata": {
+      "cognitive_skill": "contextual vocabulary analysis and inference",
+      "misconception_targeted": "misunderstanding technical terms in academic contexts",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "general_precision",
+          "reasoning": "Students might focus on research accuracy rather than sampling methodology"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "political_definition",
+          "reasoning": "Students might think of representative in the political sense of elected officials"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "presentation_clarity",
+          "reasoning": "Students might confuse representative with well-presented or clear data"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-v0003",
+    "domain": "verbal",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 1.4,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Maya is a student leader trying to solve a problem between two groups of students who don't get along. In front of teachers and other students, Maya always speaks kindly about both groups and encourages everyone to be friends. But when Maya talks to her best friend privately, she admits she's worried and upset because the two groups still won't work together. What can we learn about Maya's situation?",
+      "type": "inference",
+      "options": [
+        {
+          "text": "Maya was being dishonest in her public statements"
+        },
+        {
+          "text": "Maya was managing conflicting pressures between public leadership and private concerns"
+        },
+        {
+          "text": "Maya lacked the skills necessary for successful negotiation"
+        },
+        {
+          "text": "Maya doesn't understand that student conflicts are simple to solve"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "The passage shows Maya maintaining positive public language while privately expressing frustration, indicating she was balancing the need for public leadership with genuine private concerns about lack of progress. This demonstrates sophisticated emotional and social management, not dishonesty. Option A is incorrect because having different public and private expressions doesn't mean lying - Maya's public statements were still genuine attempts to encourage peace. Option C is wrong because the lack of progress doesn't indicate Maya lacks skills; some conflicts are simply difficult to resolve. Option D is incorrect because Maya clearly understands the complexity of the situation, as shown by her private frustrations and continued diplomatic efforts."
+    },
+    "metadata": {
+      "cognitive_skill": "complex textual inference and character motivation analysis",
+      "misconception_targeted": "oversimplifying complex diplomatic situations",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "binary_honesty",
+          "reasoning": "Students might see any difference between public and private statements as dishonesty"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "attribution_error",
+          "reasoning": "Students might blame the individual rather than recognizing systemic challenges"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "oversimplification",
+          "reasoning": "Students might assume conflicts have simple solutions and that complexity indicates misunderstanding"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-v0004",
+    "domain": "verbal",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 1.5,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In the passage 'Social media platforms have become ubiquitous in modern communication,' which word best replaces 'ubiquitous' while maintaining the same meaning?",
+      "type": "synonym",
+      "options": [
+        {
+          "text": "obvious"
+        },
+        {
+          "text": "pervasive"
+        },
+        {
+          "text": "unanimous"
+        },
+        {
+          "text": "frequent"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Ubiquitous means present everywhere or very widespread, which is most closely matched by pervasive, meaning spreading widely throughout an area or group."
+    },
+    "metadata": {
+      "cognitive_skill": "advanced vocabulary recognition and semantic precision",
+      "misconception_targeted": "confusing similar-sounding academic vocabulary",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "frequency_confusion",
+          "reasoning": "Students might think ubiquitous means obvious because common things seem obvious"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "phonetic_similarity",
+          "reasoning": "Students might confuse ubiquitous with unanimous due to similar sound patterns"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "frequency_conflation",
+          "reasoning": "Students might think ubiquitous simply means happening often rather than being everywhere at once"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-v0005",
+    "domain": "verbal",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 0.3,
+    "discrimination": 1.3,
+    "guessing": 0.25,
+    "content": {
+      "stem": "The scientist's hypothesis was based on preliminary observations, but she knew that rigorous testing would be required before drawing any definitive conclusions. According to this passage, what is true about the scientist's approach?",
+      "type": "comprehension",
+      "options": [
+        {
+          "text": "She had already proven her theory through observation"
+        },
+        {
+          "text": "She recognized the need for further testing before reaching final conclusions"
+        },
+        {
+          "text": "She was uncertain about her observational skills"
+        },
+        {
+          "text": "She preferred preliminary work over detailed analysis"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "The passage explicitly states that she knew rigorous testing would be required before drawing definitive conclusions, showing she recognized the need for further work."
+    },
+    "metadata": {
+      "cognitive_skill": "literal comprehension and scientific reasoning understanding",
+      "misconception_targeted": "misunderstanding the scientific method and hypothesis testing",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "hypothesis_as_proof",
+          "reasoning": "Students might think having a hypothesis means the theory is already proven"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "confidence_confusion",
+          "reasoning": "Students might misinterpret caution as lack of confidence in skills"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "process_preference",
+          "reasoning": "Students might think mentioning preliminary work shows a preference for it"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-v0006",
+    "domain": "verbal",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 1.7,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "The committee decided to postpone the vote. They were being pragmatic rather than unrealistic. They knew that rushing to make a decision without enough preparation would likely result in a poor outcome. What does the word 'pragmatic' suggest about the committee's approach?",
+      "type": "vocabulary",
+      "options": [
+        {
+          "text": "They prioritized practical considerations over theoretical principles"
+        },
+        {
+          "text": "They were unwilling to take any risks whatsoever"
+        },
+        {
+          "text": "They valued compromise above all other considerations"
+        },
+        {
+          "text": "They were indecisive and lacked clear direction"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Pragmatic means dealing with things sensibly and realistically based on practical considerations. The contrast with 'idealistic' and their focus on avoiding flawed outcomes shows practical thinking."
+    },
+    "metadata": {
+      "cognitive_skill": "contextual vocabulary analysis and contrast comprehension",
+      "misconception_targeted": "misunderstanding pragmatism as indecision or excessive caution",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "risk_aversion",
+          "reasoning": "Students might confuse practical caution with fear of any risk"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "compromise_focus",
+          "reasoning": "Students might think pragmatic always means seeking middle ground"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "decisiveness_confusion",
+          "reasoning": "Students might see postponement as indecision rather than strategic timing"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-v0007",
+    "domain": "verbal",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2.5,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "The author's tone throughout the editorial becomes increasingly mocking as she describes the politician's latest campaign promises. While initially staying neutral, by the final paragraph her word choices reveal hidden dislike for what she sees as planned lies. The author's use of phrases like 'conveniently timed revelations' and 'strategically ambiguous commitments' serves what primary purpose?",
+      "type": "inference",
+      "options": [
+        {
+          "text": "To provide factual analysis of campaign strategy techniques"
+        },
+        {
+          "text": "To subtly communicate skepticism about the politician's sincerity"
+        },
+        {
+          "text": "To suggest the author has superior knowledge of political tactics"
+        },
+        {
+          "text": "To maintain balanced coverage by presenting multiple perspectives"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "The phrases 'conveniently timed' and 'strategically ambiguous' contain implicit criticism, suggesting manipulation and insincerity, which aligns with the described shift toward mocking tone and dislike. The key purpose is the subtle nature of this skepticism, not merely the presence of criticism - the author uses carefully chosen words to hint at her doubts rather than stating them directly."
+    },
+    "metadata": {
+      "cognitive_skill": "advanced tone analysis and implicit meaning detection",
+      "misconception_targeted": "difficulty recognizing subtle bias and implicit criticism in sophisticated writing",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "surface_objectivity",
+          "reasoning": "Students might miss the loaded language and see only factual description"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "author_motivation",
+          "reasoning": "Students might think the purpose is to show off expertise rather than express criticism"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "balance_assumption",
+          "reasoning": "Students might assume any analysis of multiple aspects represents balanced coverage"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-v0008",
+    "domain": "verbal",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "During the class discussion, Maya barely spoke and kept her thoughts to herself, while Alex freely shared every opinion. If Maya was being reticent, what was Alex being?",
+      "type": "antonym",
+      "options": [
+        {
+          "text": "outspoken"
+        },
+        {
+          "text": "reluctant"
+        },
+        {
+          "text": "impatient"
+        },
+        {
+          "text": "reckless"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Reticent means not revealing one's thoughts or feelings readily; being reserved or restrained in speech. The opposite would be outspoken, meaning expressing opinions freely and openly."
+    },
+    "metadata": {
+      "cognitive_skill": "advanced vocabulary and semantic opposition",
+      "misconception_targeted": "confusing reticent with other similar concepts",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "synonym_selection",
+          "reasoning": "Students might confuse reticent with reluctant and choose a synonym instead"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "behavioral_confusion",
+          "reasoning": "Students might think reticent people are patient, so they choose impatient as the opposite"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "caution_association",
+          "reasoning": "Students might think reticent means careful and choose reckless as opposite"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-v0009",
+    "domain": "verbal",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "When studying how things are connected, scientists need to figure out if one thing actually causes another thing to happen, or if they just happen together. This challenge is about understanding how we can know things for sure. What does 'epistemological' most likely mean?",
+      "type": "definition",
+      "options": [
+        {
+          "text": "related to the study of knowledge and how we know things"
+        },
+        {
+          "text": "concerning statistical methods and data analysis"
+        },
+        {
+          "text": "involving questions about what we can trust as true knowledge"
+        },
+        {
+          "text": "pertaining to the historical development of scientific theories"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Epistemological refers to epistemology, the branch of philosophy concerned with the nature of knowledge, justified belief, and the rationality of belief. The context discusses how we can know and establish valid knowledge claims. Option 2 is incorrect because while methodology is mentioned in research, epistemology specifically deals with the theory of knowledge itself, not statistical methods. Option 3 is incorrect because it focuses on trust rather than the systematic study of knowledge. Option 4 is incorrect because epistemology is about how we know things in general, not specifically about historical development of theories."
+    },
+    "metadata": {
+      "cognitive_skill": "sophisticated academic vocabulary and philosophical concept recognition",
+      "misconception_targeted": "confusion between different academic domains and terminology",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "methodology_confusion",
+          "reasoning": "Students might focus on the research methods mentioned rather than the knowledge theory aspect"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "knowledge_trust_confusion",
+          "reasoning": "Students might confuse epistemology with questions of reliability rather than the systematic study of knowledge itself"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "historical_assumption",
+          "reasoning": "Students might connect academic discourse with historical development of ideas"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-v0010",
+    "domain": "verbal",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 1.9,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "A book reviewer wrote what seemed like a positive review, praising the author's 'big ideas' and 'bold choices.' But readers noticed that every nice comment had a 'but' or 'however' after it. The review ended by saying the book might appeal to 'readers who care more about new ideas than making sense.' What can we figure out about the reviewer's real opinion?",
+      "type": "inference",
+      "options": [
+        {
+          "text": "The critic genuinely admired the novel's experimental approach"
+        },
+        {
+          "text": "The critic was diplomatically expressing significant reservations about the book's quality"
+        },
+        {
+          "text": "The critic was uncertain about their own literary judgment"
+        },
+        {
+          "text": "The critic was strategically writing to please both fans and critics of experimental fiction"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "The word 'ostensibly' signals apparent versus real meaning, the qualified compliments, and the backhanded final comment about innovation over coherence all indicate diplomatic criticism rather than genuine praise."
+    },
+    "metadata": {
+      "cognitive_skill": "sophisticated textual analysis and detection of implicit criticism",
+      "misconception_targeted": "taking diplomatic or qualified language at face value",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "surface_reading",
+          "reasoning": "Students might focus on the positive words and miss the underlying critique"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "uncertainty_attribution",
+          "reasoning": "Students might interpret diplomatic language as personal uncertainty rather than tactful criticism"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "audience_strategy",
+          "reasoning": "Students might see this as marketing strategy rather than veiled criticism"
+        }
+      ]
+    }
+  }
+]

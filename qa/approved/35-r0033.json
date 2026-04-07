@@ -1,0 +1,52 @@
+{
+  "id": "35-r0033",
+  "domain": "reasoning",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": 0,
+  "discrimination": 1.8,
+  "guessing": 0.25,
+  "content": {
+    "stem": "What number comes next in this pattern: 4, 7, 10, 13, ___",
+    "type": "number_series",
+    "options": [
+      {
+        "text": "15"
+      },
+      {
+        "text": "16"
+      },
+      {
+        "text": "17"
+      },
+      {
+        "text": "14"
+      }
+    ],
+    "correct_index": 1,
+    "explanation": "The pattern adds 3 each time: 4+3=7, 7+3=10, 10+3=13, so 13+3=16."
+  },
+  "metadata": {
+    "cognitive_skill": "pattern recognition and inductive reasoning",
+    "misconception_targeted": "inconsistent_rule_application",
+    "bloom_level": "apply",
+    "distractor_rationale": [
+      {
+        "option_index": 0,
+        "misconception_id": "add_two_pattern",
+        "reasoning": "Students may see an add 2 pattern from looking at every other number"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "add_four_pattern",
+        "reasoning": "Students may miscalculate the difference as 4 instead of 3"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "reverse_pattern",
+        "reasoning": "Students may think the pattern reverses and subtracts 1 from the last number"
+      }
+    ]
+  }
+}

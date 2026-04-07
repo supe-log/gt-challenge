@@ -1,0 +1,52 @@
+{
+  "id": "68-p0007",
+  "domain": "pattern_recognition",
+  "age_bands": [
+    "6-8"
+  ],
+  "difficulty": 2,
+  "discrimination": 1.3,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Look at this number pattern: 1, 4, 9, 16, 25, ?, 64, 100. The missing number follows a mathematical rule. There is also a second rule that changes every third position by taking away 3. What number belongs in the missing position?",
+    "type": "number_pattern",
+    "options": [
+      {
+        "text": "33"
+      },
+      {
+        "text": "36"
+      },
+      {
+        "text": "39"
+      },
+      {
+        "text": "49"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "The base pattern is perfect squares: 1², 2², 3², 4², 5², 6², 7², 8² = 1,4,9,16,25,36,49,64,81,100. Every third position (positions 3,6,9...) is modified by subtracting 3. Position 6 should be 36, but with the -3 modification: 36-3=33."
+  },
+  "metadata": {
+    "cognitive_skill": "overlaid pattern recognition with conditional modifications",
+    "misconception_targeted": "single pattern assumption in complex sequences",
+    "bloom_level": "evaluate",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "base_pattern_only",
+        "reasoning": "Student identifies the square pattern (6²=36) but ignores the modification rule"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "wrong_modification",
+        "reasoning": "Student applies +3 instead of -3 to the base pattern (36+3=39)"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "next_square",
+        "reasoning": "Student uses 7²=49, thinking the pattern skipped a square"
+      }
+    ]
+  }
+}

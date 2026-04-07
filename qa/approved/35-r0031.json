@@ -1,0 +1,52 @@
+{
+  "id": "35-r0031",
+  "domain": "reasoning",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": -2,
+  "discrimination": 1.2,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Stethoscope is to listen as telescope is to ___",
+    "type": "analogy",
+    "options": [
+      {
+        "text": "stars"
+      },
+      {
+        "text": "see"
+      },
+      {
+        "text": "instrument"
+      },
+      {
+        "text": "space"
+      }
+    ],
+    "correct_index": 1,
+    "explanation": "A stethoscope is an instrument used to listen, just as a telescope is an instrument used to see. The analogy relates each object to its primary function or purpose. 'Stars' is incorrect because it identifies what a telescope looks at rather than what it does. 'Instrument' is incorrect because while both are instruments, it misses the specific function relationship being tested. 'Space' is incorrect because it refers to where telescopes are often pointed rather than their purpose of magnifying vision."
+  },
+  "metadata": {
+    "cognitive_skill": "relational reasoning",
+    "misconception_targeted": "function_vs_object_confusion",
+    "bloom_level": "apply",
+    "distractor_rationale": [
+      {
+        "option_index": 0,
+        "misconception_id": "object_association",
+        "reasoning": "Students may focus on what a telescope observes rather than what it does"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "category_confusion",
+        "reasoning": "Students may identify both as instruments but miss the function relationship"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "material_association",
+        "reasoning": "Students may think of where telescopes are used rather than their purpose"
+      }
+    ]
+  }
+}

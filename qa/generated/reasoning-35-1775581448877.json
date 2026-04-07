@@ -1,0 +1,522 @@
+[
+  {
+    "id": "35-r0001",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -2.5,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Bird is to nest as bee is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "hive"
+        },
+        {
+          "text": "flower"
+        },
+        {
+          "text": "honey"
+        },
+        {
+          "text": "wings"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "This analogy tests the relationship of 'animal to home.' A bird lives in a nest, and a bee lives in a hive."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning",
+      "misconception_targeted": "confusing function with habitat",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "function_confusion",
+          "reasoning": "Students may think of where bees go (flowers) rather than where they live"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "product_confusion",
+          "reasoning": "Students may focus on what bees make rather than where they live"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "attribute_confusion",
+          "reasoning": "Students may focus on a shared body part rather than the habitat relationship"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0002",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -1,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which number belongs to a different group: 12, 15, 18, 23",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "23"
+        },
+        {
+          "text": "12"
+        },
+        {
+          "text": "15"
+        },
+        {
+          "text": "18"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The numbers 12, 15, and 18 are all multiples of 3, but 23 is not divisible by 3."
+    },
+    "metadata": {
+      "cognitive_skill": "pattern recognition and classification",
+      "misconception_targeted": "focusing on surface features rather than mathematical relationships",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "even_in_odd_group",
+          "reasoning": "Students may think 12 doesn't belong because it's the only even number among what they perceive as mostly odd numbers"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "odd_even_focus",
+          "reasoning": "Students may incorrectly focus on odd vs even numbers"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "largest_smallest",
+          "reasoning": "Students may think the largest or smallest number is different"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0003",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "What number comes next in this sequence: 3, 7, 11, 15, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "19"
+        },
+        {
+          "text": "17"
+        },
+        {
+          "text": "20"
+        },
+        {
+          "text": "18"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The pattern adds 4 each time: 3+4=7, 7+4=11, 11+4=15, so 15+4=19."
+    },
+    "metadata": {
+      "cognitive_skill": "inductive reasoning",
+      "misconception_targeted": "inconsistent pattern application",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "add_two_pattern",
+          "reasoning": "Students may see +2 pattern instead of +4"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "add_five_pattern",
+          "reasoning": "Students may incorrectly identify +5 pattern"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "add_three_pattern",
+          "reasoning": "Students may see +3 pattern from partial observation"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0004",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All flowers need water. Roses are flowers. What can we conclude?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Roses need water"
+        },
+        {
+          "text": "All roses are red"
+        },
+        {
+          "text": "Water makes flowers grow"
+        },
+        {
+          "text": "Roses are the best flowers"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "This is a logical deduction. If all flowers need water and roses are flowers, then roses must need water."
+    },
+    "metadata": {
+      "cognitive_skill": "deductive reasoning",
+      "misconception_targeted": "adding information not given in premises",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "stereotype_addition",
+          "reasoning": "Students may add common but unrelated information about roses"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "causal_assumption",
+          "reasoning": "Students may make assumptions about cause and effect not stated"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "opinion_injection",
+          "reasoning": "Students may confuse logical conclusions with opinions or preferences"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0005",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.5,
+    "discrimination": 2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Study the pattern. In each row and column, shapes change in a specific way. What goes in the empty box?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "Small white triangle"
+        },
+        {
+          "text": "Large black triangle"
+        },
+        {
+          "text": "Small black circle"
+        },
+        {
+          "text": "Large white circle"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Looking at the pattern: Row 1 has large shapes becoming small, Row 2 has black shapes becoming white. The missing shape should be small and white, and following the column pattern, it should be a triangle."
+    },
+    "metadata": {
+      "cognitive_skill": "simultaneous relational reasoning",
+      "misconception_targeted": "focusing on single dimension instead of multiple pattern rules",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "size_rule_only",
+          "reasoning": "Students may only apply the size transformation rule"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "color_rule_only",
+          "reasoning": "Students may only apply the color transformation rule"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "reverse_pattern",
+          "reasoning": "Students may reverse both transformation rules"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0006",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -1.5,
+    "discrimination": 1.3,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Happy is to sad as hot is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "cold"
+        },
+        {
+          "text": "warm"
+        },
+        {
+          "text": "fire"
+        },
+        {
+          "text": "summer"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "This analogy shows opposite relationships. Happy is the opposite of sad, so hot is the opposite of cold."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning",
+      "misconception_targeted": "confusing opposites with related concepts",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "degree_confusion",
+          "reasoning": "Students may choose a related temperature rather than the opposite"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "source_confusion",
+          "reasoning": "Students may think of what causes heat rather than its opposite"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "context_confusion",
+          "reasoning": "Students may associate hot with summer rather than finding the opposite"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0007",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.5,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which word does NOT belong: triangle, circle, square, corner",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "corner"
+        },
+        {
+          "text": "triangle"
+        },
+        {
+          "text": "circle"
+        },
+        {
+          "text": "square"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Triangle, circle, and square are all complete shapes, while corner is just a part of a shape, not a complete shape itself."
+    },
+    "metadata": {
+      "cognitive_skill": "categorical classification",
+      "misconception_targeted": "confusing parts with wholes in classification",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "angle_focus",
+          "reasoning": "Students may think triangle doesn't belong because it has angles"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "curve_focus",
+          "reasoning": "Students may think circle doesn't belong because it's curved"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "side_count_focus",
+          "reasoning": "Students may focus on number of sides rather than category"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0008",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 2,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Find the next number: 2, 6, 18, 54, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "162"
+        },
+        {
+          "text": "108"
+        },
+        {
+          "text": "72"
+        },
+        {
+          "text": "216"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Each number is multiplied by 3 to get the next number: 2×3=6, 6×3=18, 18×3=54, so 54×3=162."
+    },
+    "metadata": {
+      "cognitive_skill": "multiplicative pattern recognition",
+      "misconception_targeted": "assuming additive rather than multiplicative patterns",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "double_pattern",
+          "reasoning": "Students may see doubling pattern (54×2=108)"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "additive_pattern",
+          "reasoning": "Students may add 18 (54+18=72) seeing an additive pattern"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "times_four",
+          "reasoning": "Students may multiply by 4 instead of 3 (54×4=216)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0009",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.3,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Some birds can swim. All ducks are birds. Some ducks live in parks. Which statement is true?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Some birds live in parks"
+        },
+        {
+          "text": "All ducks can swim"
+        },
+        {
+          "text": "All birds live in parks"
+        },
+        {
+          "text": "All birds that swim live in parks"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Since some ducks live in parks and all ducks are birds, we can conclude that some birds (the ducks) live in parks. Option 1 is incorrect because we only know that some birds can swim, not all ducks. Option 2 is incorrect because we only know some ducks live in parks, not all birds. Option 3 is incorrect because we have no information connecting swimming birds to parks - we know some birds swim and some ducks live in parks, but we cannot conclude that the swimming birds are the same ones living in parks."
+    },
+    "metadata": {
+      "cognitive_skill": "complex deductive reasoning with quantifiers",
+      "misconception_targeted": "overgeneralizing from 'some' to 'all'",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "hasty_generalization",
+          "reasoning": "Students may assume all ducks can swim from 'some birds can swim'"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "universal_assumption",
+          "reasoning": "Students may generalize from 'some ducks' to 'all birds'"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "universal_assumption",
+          "reasoning": "Students may overgeneralize by assuming 'all' birds that swim live in parks instead of recognizing the 'some' limitation"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0010",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 2.5,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at this 3×3 grid pattern. Each row follows one rule, each column follows another rule. The center square is missing. What belongs there?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "Medium gray star"
+        },
+        {
+          "text": "Light gray circle"
+        },
+        {
+          "text": "Dark gray star"
+        },
+        {
+          "text": "Medium gray circle"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Row pattern: shapes get one shade lighter left to right. Column pattern: circle changes to star changes to diamond top to bottom. The center needs medium gray (between dark and light) and star shape (middle of column pattern)."
+    },
+    "metadata": {
+      "cognitive_skill": "complex simultaneous pattern recognition",
+      "misconception_targeted": "incomplete analysis of multi-dimensional patterns",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "shade_only",
+          "reasoning": "Students may get the shade right but wrong shape"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "shape_only",
+          "reasoning": "Students may get the shape right but wrong shade"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "both_wrong",
+          "reasoning": "Students may misapply both pattern rules"
+        }
+      ]
+    }
+  }
+]

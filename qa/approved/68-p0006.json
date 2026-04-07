@@ -1,0 +1,52 @@
+{
+  "id": "68-p0006",
+  "domain": "pattern_recognition",
+  "age_bands": [
+    "6-8"
+  ],
+  "difficulty": 2.1,
+  "discrimination": 1.4,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Complete this sequence where one element is missing from the middle: ●○●●○, ●○○●●○○, ●○○○●●○○○, ●○○○○?○○○○, ●○○○○○●●○○○○○○. The pattern involves both the number and position of filled circles (●) and empty circles (○). What replaces the ?",
+    "type": "sequence_completion",
+    "options": [
+      {
+        "text": "●●"
+      },
+      {
+        "text": "●"
+      },
+      {
+        "text": "○"
+      },
+      {
+        "text": "●○"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "The pattern shows: n empty circles, then n filled circles, then n empty circles, where n increases each time (1,2,3,4,5). For the missing term with n=4, we need 4 empty circles, then 4 filled circles, then 4 empty circles. The missing part is the second of the 4 filled circles, so ●● completes the ●●●● group."
+  },
+  "metadata": {
+    "cognitive_skill": "bidirectional pattern completion with embedded structure",
+    "misconception_targeted": "incomplete pattern analysis in sequence completion",
+    "bloom_level": "evaluate",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "single_element",
+        "reasoning": "Student sees only that filled circles appear but doesn't count the grouping requirement"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "alternating_focus",
+        "reasoning": "Student focuses on alternating pattern and expects empty circle to continue"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "micro_pattern",
+        "reasoning": "Student thinks the pattern alternates ● and ○ locally rather than in groups"
+      }
+    ]
+  }
+}

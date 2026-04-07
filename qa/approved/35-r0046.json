@@ -1,0 +1,52 @@
+{
+  "id": "35-r0046",
+  "domain": "reasoning",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": 1.1,
+  "discrimination": 1.7,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Ocean is to fish as forest is to ___",
+    "type": "analogy",
+    "options": [
+      {
+        "text": "trees"
+      },
+      {
+        "text": "deer"
+      },
+      {
+        "text": "leaves"
+      },
+      {
+        "text": "water"
+      }
+    ],
+    "correct_index": 1,
+    "explanation": "Ocean is the habitat where fish live, so forest is the habitat where deer (animals) live. The relationship is habitat-to-animal-inhabitant. 'Trees' is incorrect because it focuses on what forests contain rather than what lives there - the analogy requires finding the animal that inhabits the forest, just as fish inhabit the ocean."
+  },
+  "metadata": {
+    "cognitive_skill": "analogical reasoning across domains",
+    "misconception_targeted": "part-whole confusion",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 0,
+        "misconception_id": "part_whole_confusion",
+        "reasoning": "Students focus on trees as the main component of forests rather than animals that live there"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "part_detail_focus",
+        "reasoning": "Students choose a specific part of trees rather than forest inhabitants"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "analogical_surface_matching",
+        "reasoning": "Students incorrectly match water with ocean based on surface similarity rather than the habitat-inhabitant relationship"
+      }
+    ]
+  }
+}

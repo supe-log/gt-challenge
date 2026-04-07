@@ -1,0 +1,522 @@
+[
+  {
+    "id": "35-r0021",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -2.1,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Pencil is to paper as paintbrush is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "canvas"
+        },
+        {
+          "text": "artist"
+        },
+        {
+          "text": "color"
+        },
+        {
+          "text": "art"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "A pencil is used to write or draw on paper. Similarly, a paintbrush is used to paint on canvas. Both relationships show a tool being used with its primary surface or material."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning and tool-to-surface analogical thinking",
+      "misconception_targeted": "focusing on broader context rather than specific functional relationship",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "agent_confusion",
+          "reasoning": "Students may focus on who uses the paintbrush rather than what surface it works with"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "attribute_focus",
+          "reasoning": "Students may think about what the paintbrush creates (color) rather than the surface relationship"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "category_generalization",
+          "reasoning": "Students may focus on the general category of what's created rather than the specific functional relationship"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0022",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -0.8,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which one belongs to a different category: violin, trumpet, piano, guitar",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "violin"
+        },
+        {
+          "text": "trumpet"
+        },
+        {
+          "text": "piano"
+        },
+        {
+          "text": "guitar"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Violin, piano, and guitar all use strings to create sound. The trumpet is the only wind instrument that creates sound by blowing air through it, making it different from the string instruments."
+    },
+    "metadata": {
+      "cognitive_skill": "classification by sound production mechanism",
+      "misconception_targeted": "superficial grouping by general category rather than specific attributes",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "sound_production_confusion",
+          "reasoning": "Students might mistakenly think violin produces sound differently because it requires a bow rather than direct plucking or striking of strings like piano and guitar"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "playing_method",
+          "reasoning": "Students might focus on piano being played with keys rather than how sound is produced"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "popularity_bias",
+          "reasoning": "Students might consider guitar as most common or different in popularity"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0023",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.3,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "What number comes next in this pattern: 4, 7, 10, 13, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "15"
+        },
+        {
+          "text": "16"
+        },
+        {
+          "text": "17"
+        },
+        {
+          "text": "18"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "The pattern adds 3 to each number: 4+3=7, 7+3=10, 10+3=13, so 13+3=16. This is an arithmetic sequence with a common difference of 3."
+    },
+    "metadata": {
+      "cognitive_skill": "arithmetic progression pattern recognition",
+      "misconception_targeted": "incorrect pattern identification in arithmetic sequences",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "add_by_two",
+          "reasoning": "Students might see the difference as 2 instead of 3"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "add_by_four",
+          "reasoning": "Students might calculate the difference as 4 instead of 3"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "add_by_five",
+          "reasoning": "Students might think the pattern increases by 5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0024",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.2,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All squares are rectangles. Some rectangles are blue. What do we know about squares?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "All squares are blue"
+        },
+        {
+          "text": "Some squares might be blue"
+        },
+        {
+          "text": "No squares are blue"
+        },
+        {
+          "text": "All blue shapes are squares"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Since all squares are rectangles, and some rectangles are blue, it's possible that some squares could be among those blue rectangles. However, we cannot conclude that all squares are blue or that none are blue."
+    },
+    "metadata": {
+      "cognitive_skill": "logical reasoning with quantifiers and subset relationships",
+      "misconception_targeted": "invalid logical conclusions from syllogistic premises",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "universal_conclusion",
+          "reasoning": "Students may incorrectly conclude that all members of a subset have the same property"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "negative_conclusion",
+          "reasoning": "Students may incorrectly think that 'some' means 'not all' excludes the possibility entirely"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "converse_error",
+          "reasoning": "Students may incorrectly reverse the logical relationship"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0025",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.8,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at this pattern grid. Each row increases by one shape, each column changes color. What goes in the empty bottom-right corner?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "3 red shapes"
+        },
+        {
+          "text": "3 blue shapes"
+        },
+        {
+          "text": "3 green shapes"
+        },
+        {
+          "text": "2 green shapes"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Following the row pattern: row 1 has 1 shape, row 2 has 2 shapes, so row 3 needs 3 shapes. Following the column pattern: column 1 is red, column 2 is blue, so column 3 is green. The answer is 3 green shapes."
+    },
+    "metadata": {
+      "cognitive_skill": "simultaneous dual-dimension pattern recognition",
+      "misconception_targeted": "focusing on single dimension while ignoring the other in matrix reasoning",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "wrong_color_sequence",
+          "reasoning": "Students might get the number right but use the wrong color pattern"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "middle_color_error",
+          "reasoning": "Students might confuse the color sequence and pick the middle color"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "wrong_number_pattern",
+          "reasoning": "Students might focus only on color pattern and miss the increasing number pattern"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0026",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -1.5,
+    "discrimination": 1.3,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Engine is to train as motor is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "car"
+        },
+        {
+          "text": "wheel"
+        },
+        {
+          "text": "gas"
+        },
+        {
+          "text": "driver"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "An engine powers a train by providing the force needed for movement. Similarly, a motor powers a car. Both relationships show the power source for a vehicle."
+    },
+    "metadata": {
+      "cognitive_skill": "part-to-whole analogical reasoning with functional relationships",
+      "misconception_targeted": "confusing power source with other vehicle components or requirements",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "part_confusion",
+          "reasoning": "Students might think of another part of the vehicle rather than what the motor powers"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "fuel_source",
+          "reasoning": "Students might confuse the power source with what fuels it"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "operator_focus",
+          "reasoning": "Students might think about who operates the vehicle rather than the power relationship"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0027",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.7,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which one does NOT belong: eagle, penguin, bat, sparrow",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "eagle"
+        },
+        {
+          "text": "penguin"
+        },
+        {
+          "text": "bat"
+        },
+        {
+          "text": "sparrow"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Eagle, penguin, and sparrow are all birds, even though penguins cannot fly. A bat is the only mammal in the group, making it different from the birds."
+    },
+    "metadata": {
+      "cognitive_skill": "taxonomic classification beyond surface similarities",
+      "misconception_targeted": "focusing on functional similarities rather than biological classification",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "size_difference",
+          "reasoning": "Students might focus on eagle being much larger than the others"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "flight_ability",
+          "reasoning": "Students might think penguin doesn't belong because it can't fly"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "commonality_bias",
+          "reasoning": "Students might think sparrow is too common compared to the others"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0028",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Find the next number: 2, 6, 18, 54, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "108"
+        },
+        {
+          "text": "162"
+        },
+        {
+          "text": "180"
+        },
+        {
+          "text": "216"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Each number is multiplied by 3 to get the next number: 2×3=6, 6×3=18, 18×3=54, so 54×3=162. This is a pattern in numbers with a common ratio of 3."
+    },
+    "metadata": {
+      "cognitive_skill": "geometric progression pattern recognition",
+      "misconception_targeted": "treating geometric sequences as arithmetic or using wrong multiplier",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "double_instead",
+          "reasoning": "Students might think the pattern is doubling (×2) instead of tripling"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "add_constant",
+          "reasoning": "Students might try to add a constant difference instead of multiplying"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "multiply_by_four",
+          "reasoning": "Students might think the multiplier is 4 instead of 3"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0029",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 2.3,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All planets go around stars. Some planets have moons. Earth is a planet with a moon. If Zex is a planet, what can we say about Zex?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Zex has a moon"
+        },
+        {
+          "text": "Zex orbits a star"
+        },
+        {
+          "text": "Zex is like Earth"
+        },
+        {
+          "text": "Zex is bigger than Earth"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Since all planets orbit stars, and Zex is a planet, Zex must orbit a star. We cannot conclude anything about whether Zex has a moon because only 'some' planets have moons, not all."
+    },
+    "metadata": {
+      "cognitive_skill": "deductive reasoning with conditional statements and multiple premises",
+      "misconception_targeted": "confusing universal and particular quantifiers in logical reasoning",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "particular_as_universal",
+          "reasoning": "Students might think 'some planets have moons' means all planets have moons"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "example_generalization",
+          "reasoning": "Students might think because Earth is given as an example, other planets must be like Earth"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "r_35_belief_bias",
+          "reasoning": "Students might rely on real-world knowledge about planets rather than logical deduction from premises"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0030",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 2.7,
+    "discrimination": 2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In this 3×3 grid, each row shows shapes rotating 90 degrees clockwise, and each column shows the number of shapes doubling. What belongs in the bottom-right corner?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "4 triangles pointing right"
+        },
+        {
+          "text": "4 triangles pointing down"
+        },
+        {
+          "text": "8 triangles pointing down"
+        },
+        {
+          "text": "8 triangles pointing right"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Following the column rule: 1 shape becomes 2, then 4, so the bottom row needs 8 shapes. Following the row rule: starting with triangles pointing up, rotating 90° clockwise twice gives triangles pointing down. The answer is 8 triangles pointing down."
+    },
+    "metadata": {
+      "cognitive_skill": "complex dual-transformation matrix reasoning with rotation and multiplication",
+      "misconception_targeted": "applying single transformation while missing the dual-rule requirement",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "wrong_quantity",
+          "reasoning": "Students might get the rotation right but miss the doubling pattern"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "wrong_quantity_correct_rotation",
+          "reasoning": "Students might apply rotation correctly but fail to continue the number progression"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "wrong_rotation_correct_quantity",
+          "reasoning": "Students might get the doubling pattern but make an error in the rotation sequence"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,522 @@
+[
+  {
+    "id": "35-r0011",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -1.5,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Pencil is to write as hammer is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "build"
+        },
+        {
+          "text": "nail"
+        },
+        {
+          "text": "tool"
+        },
+        {
+          "text": "wood"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "A pencil's function is to write, just as a hammer's function is to nail (drive nails). This tests understanding of tool-to-function relationships."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning",
+      "misconception_targeted": "function vs category confusion",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "general_purpose_confusion",
+          "reasoning": "Students may think of the general outcome (building) rather than the specific function"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "category_matching",
+          "reasoning": "Students may match categories (both are tools) instead of functional relationships"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "object_association",
+          "reasoning": "Students may choose what hammers work on rather than what they do"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0012",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.8,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which one belongs to a different group: elephant, mouse, whale, butterfly?",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "elephant"
+        },
+        {
+          "text": "mouse"
+        },
+        {
+          "text": "whale"
+        },
+        {
+          "text": "butterfly"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "Elephant, mouse, and whale are all mammals, while butterfly is an insect. This requires understanding biological classification beyond surface features like size. While whale might seem different because it lives in water, the key grouping principle here is biological classification - whale is still a mammal like elephant and mouse."
+    },
+    "metadata": {
+      "cognitive_skill": "categorical classification",
+      "misconception_targeted": "surface feature classification",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "size_based_grouping",
+          "reasoning": "Students may think elephant doesn't belong due to large size"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "size_based_grouping",
+          "reasoning": "Students may think mouse doesn't belong due to small size"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "habitat_classification",
+          "reasoning": "Students may think whale doesn't belong because it lives in water"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0013",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -0.5,
+    "discrimination": 1.3,
+    "guessing": 0.25,
+    "content": {
+      "stem": "What number comes next: 4, 7, 10, 13, ___?",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "15"
+        },
+        {
+          "text": "16"
+        },
+        {
+          "text": "17"
+        },
+        {
+          "text": "19"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "The pattern adds 3 each time: 4+3=7, 7+3=10, 10+3=13, so 13+3=16. This tests recognition of arithmetic progressions."
+    },
+    "metadata": {
+      "cognitive_skill": "pattern recognition and inductive reasoning",
+      "misconception_targeted": "incorrect pattern identification",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "add_two_pattern",
+          "reasoning": "Students may incorrectly see a +2 pattern from 13"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "add_four_pattern",
+          "reasoning": "Students may incorrectly calculate +4 from 13"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "double_increment",
+          "reasoning": "Students may add 6 (double the correct increment) from 13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0014",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.2,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All birds have feathers. Some animals that have feathers can fly. Penguins are birds. What must be true about penguins?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Penguins can fly"
+        },
+        {
+          "text": "Penguins have feathers"
+        },
+        {
+          "text": "Penguins are animals"
+        },
+        {
+          "text": "Penguins live in cold places"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "From the first premise, since all birds have feathers and penguins are birds, penguins must have feathers. This tests deductive reasoning with universal statements."
+    },
+    "metadata": {
+      "cognitive_skill": "deductive reasoning",
+      "misconception_targeted": "invalid logical inference",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "affirming_consequent",
+          "reasoning": "Students may incorrectly conclude flight ability from feather possession"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "unstated_assumption",
+          "reasoning": "While true, this assumes knowledge not given in the premises"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "external_knowledge",
+          "reasoning": "Students may use real-world knowledge rather than logical deduction from premises"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0015",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.3,
+    "discrimination": 1,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In this pattern, there are changes in rows and columns. What shape goes in the empty space?\n\nRow 1: Circle, Square, Triangle\nRow 2: Triangle, Circle, ?\nRow 3: Square, Triangle, Circle",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "Circle"
+        },
+        {
+          "text": "Square"
+        },
+        {
+          "text": "Triangle"
+        },
+        {
+          "text": "Diamond"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Each row and column contains each shape exactly once. Row 2 has Circle and Triangle, so needs Square. Column 3 has Triangle and Circle, so needs Square."
+    },
+    "metadata": {
+      "cognitive_skill": "simultaneous relational reasoning",
+      "misconception_targeted": "single dimension focus",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "row_only_pattern",
+          "reasoning": "Students may focus only on row pattern and repeat Circle"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "adjacent_copying",
+          "reasoning": "Students may copy the shape directly above or to the left"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "novel_element",
+          "reasoning": "Students may think a new shape is needed when existing shapes don't seem to fit"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0016",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -0.8,
+    "discrimination": 1.1,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Book is to library as medicine is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "doctor"
+        },
+        {
+          "text": "pharmacy"
+        },
+        {
+          "text": "hospital"
+        },
+        {
+          "text": "patient"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Books are stored and obtained from libraries, just as medicine is stored and obtained from pharmacies. This tests location-to-item relationships."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning",
+      "misconception_targeted": "agent vs location confusion",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "agent_relationship",
+          "reasoning": "Students may think of who uses medicine rather than where it's stored"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "general_location",
+          "reasoning": "Students may choose a broader medical location rather than the specific storage place"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "recipient_relationship",
+          "reasoning": "Students may focus on who receives medicine rather than where it comes from"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0017",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which number follows a different rule than the others: 9, 16, 25, 32?",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "9"
+        },
+        {
+          "text": "16"
+        },
+        {
+          "text": "25"
+        },
+        {
+          "text": "32"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "9, 16, and 25 are perfect squares (3², 4², 5²), while 32 is not a perfect square. This tests recognition of mathematical relationships."
+    },
+    "metadata": {
+      "cognitive_skill": "mathematical pattern recognition",
+      "misconception_targeted": "surface-level pattern recognition",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "smallest_different",
+          "reasoning": "Students may think the smallest number doesn't belong"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "even_odd_pattern",
+          "reasoning": "Students may focus on even/odd properties rather than perfect squares"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "multiplicative_surface",
+          "reasoning": "Students may incorrectly identify 25 as different because it's the only number ending in 5, focusing on digit patterns rather than recognizing the deeper multiplicative square relationship that actually unites 9, 16, and 25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0018",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.5,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at these numbers. What comes next? 2, 4, 8, 16, ___?",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "24"
+        },
+        {
+          "text": "28"
+        },
+        {
+          "text": "32"
+        },
+        {
+          "text": "36"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Each number doubles: 2×2=4, 4×2=8, 8×2=16, so 16×2=32. The pattern is doubling each time."
+    },
+    "metadata": {
+      "cognitive_skill": "complex pattern recognition",
+      "misconception_targeted": "simple additive patterns",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "constant_difference",
+          "reasoning": "Students may see +8 pattern and add 8 again (16+8=24)"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "arithmetic_progression",
+          "reasoning": "Students may look for simple addition pattern (16+12=28)"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "large_increment",
+          "reasoning": "Students may use too large an increment (16+20=36)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0019",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.9,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Some kids like math. All kids who like math like puzzles. Maria likes math. What can we tell about Maria?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Maria is good at math"
+        },
+        {
+          "text": "Maria likes puzzles"
+        },
+        {
+          "text": "Maria likes all subjects"
+        },
+        {
+          "text": "Maria doesn't like math"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Since Maria likes math and all kids who like math like puzzles, we can conclude Maria likes puzzles. This follows deductive reasoning rules."
+    },
+    "metadata": {
+      "cognitive_skill": "deductive reasoning with conditional statements",
+      "misconception_targeted": "making assumptions beyond given information",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "liking_implies_ability",
+          "reasoning": "Students may assume liking something means being good at it"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "overgeneralization",
+          "reasoning": "Students may generalize from one subject to all subjects"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "r_35_belief_bias",
+          "reasoning": "Students may contradict given premises based on personal beliefs or doubts about the information"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0020",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.5,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at this number grid. Each row goes down by 3, and each column goes up by 3:\n\n15  12   9\n18  15  12\n21  18  ?\n\nWhat number goes where the ? is?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "12"
+        },
+        {
+          "text": "15"
+        },
+        {
+          "text": "18"
+        },
+        {
+          "text": "21"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "In each row, numbers decrease by 3. In each column, numbers increase by 3. Following column 3: 9, 12, so the next is 15. Also following row 3: 21, 18, so the next is 15."
+    },
+    "metadata": {
+      "cognitive_skill": "numerical pattern matrix reasoning",
+      "misconception_targeted": "single direction pattern focus",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "continue_row_pattern",
+          "reasoning": "Students may continue the row decrease pattern (18-6=12) without checking columns"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "repeat_adjacent",
+          "reasoning": "Students may copy the number directly above in the matrix"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "continue_column_wrong",
+          "reasoning": "Students may incorrectly continue column pattern by adding too much"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,523 @@
+[
+  {
+    "id": "35-r0021",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -2,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Pencil is to write as hammer is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "build"
+        },
+        {
+          "text": "tool"
+        },
+        {
+          "text": "heavy"
+        },
+        {
+          "text": "nail"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "A pencil is used to write, and a hammer is used to hit nails. The relationship is tool to its primary action or target."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning",
+      "misconception_targeted": "confusing function with category or attribute",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "function_generalization",
+          "reasoning": "Student thinks of the general purpose (building) rather than the specific function"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "category_confusion",
+          "reasoning": "Student identifies the category (tool) rather than the functional relationship"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "attribute_focus",
+          "reasoning": "Student focuses on a physical attribute (heavy) rather than the functional relationship"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0022",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -1,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which one does NOT belong: violin, piano, trumpet, paintbrush?",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "violin"
+        },
+        {
+          "text": "piano"
+        },
+        {
+          "text": "trumpet"
+        },
+        {
+          "text": "paintbrush"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "Violin, piano, and trumpet are all musical instruments. A paintbrush is an art tool, not a musical instrument."
+    },
+    "metadata": {
+      "cognitive_skill": "categorical classification",
+      "misconception_targeted": "surface feature classification",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "string_vs_other",
+          "reasoning": "Student might think violin doesn't belong because it uses strings while others don't"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "keyboard_difference",
+          "reasoning": "Student might focus on piano being the only one with keys"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "wind_vs_string",
+          "reasoning": "Student might think trumpet doesn't belong because it's a wind instrument"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0023",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "What number comes next in this pattern: 5, 10, 20, 40, ___?",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "60"
+        },
+        {
+          "text": "80"
+        },
+        {
+          "text": "70"
+        },
+        {
+          "text": "50"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Each number is multiplied by 2 to get the next number. 5×2=10, 10×2=20, 20×2=40, so 40×2=80."
+    },
+    "metadata": {
+      "cognitive_skill": "pattern recognition and multiplicative reasoning",
+      "misconception_targeted": "additive vs multiplicative patterns",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "additive_thinking",
+          "reasoning": "Student adds 20 (the last difference) instead of recognizing multiplication"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "mixed_operation",
+          "reasoning": "Student tries adding 30, possibly seeing an additive pattern"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "simple_addition",
+          "reasoning": "Student adds 10 (the first difference) throughout"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0024",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All dragons in Fairyland breathe fire. Some dragons are green. Spike is a green dragon from Fairyland. What must be true about Spike?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Spike is the only green dragon"
+        },
+        {
+          "text": "Spike breathes fire"
+        },
+        {
+          "text": "All green dragons live in Fairyland"
+        },
+        {
+          "text": "Spike is larger than other dragons"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Since all dragons in Fairyland breathe fire, and Spike is a dragon from Fairyland, Spike must breathe fire. This is a valid deduction."
+    },
+    "metadata": {
+      "cognitive_skill": "deductive reasoning with universal statements",
+      "misconception_targeted": "invalid inference from partial information",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "uniqueness_assumption",
+          "reasoning": "Student assumes being mentioned makes Spike unique"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "reverse_logic",
+          "reasoning": "Student incorrectly reverses the logical relationship"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "irrelevant_inference",
+          "reasoning": "Student adds information not provided in the premises"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0025",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -0.5,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Engine is to car as brain is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "smart"
+        },
+        {
+          "text": "body"
+        },
+        {
+          "text": "head"
+        },
+        {
+          "text": "heart"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "An engine powers and controls a car, just as a brain powers and controls the body. The relationship is central control system to whole system. 'Head' is incorrect because it refers to where the brain is located, not what the brain controls. 'Heart' and 'smart' focus on other functions rather than the control relationship."
+    },
+    "metadata": {
+      "cognitive_skill": "part-to-whole functional reasoning",
+      "misconception_targeted": "attribute vs functional relationships",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "attribute_association",
+          "reasoning": "Student associates brain with being smart rather than its function"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "physical_location",
+          "reasoning": "Student thinks of where the brain is located rather than what it controls"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "system_confusion",
+          "reasoning": "Student confuses different body systems, thinking of heart as another major organ rather than what the brain controls"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0026",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which number follows a different rule than the others: 16, 25, 36, 42?",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "16"
+        },
+        {
+          "text": "25"
+        },
+        {
+          "text": "36"
+        },
+        {
+          "text": "42"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "16, 25, and 36 are all perfect squares (4², 5², 6²). 42 is not a perfect square, so it doesn't belong."
+    },
+    "metadata": {
+      "cognitive_skill": "mathematical pattern recognition",
+      "misconception_targeted": "focusing on surface number properties vs deep structure",
+      "bloom_level": "analyze",
+      "dok_level": 3,
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "smallest_number",
+          "reasoning": "Student thinks the smallest number doesn't belong"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "arithmetic_sequence_focus",
+          "reasoning": "Student focuses on arithmetic relationships rather than mathematical properties like perfect squares"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "even_odd_confusion",
+          "reasoning": "Student might think about even/odd patterns incorrectly"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0027",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.5,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Find the next number: 4, 9, 16, 25, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "30"
+        },
+        {
+          "text": "36"
+        },
+        {
+          "text": "34"
+        },
+        {
+          "text": "32"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "These are perfect squares: 2²=4, 3²=9, 4²=16, 5²=25, so the next is 6²=36."
+    },
+    "metadata": {
+      "cognitive_skill": "quadratic sequence recognition",
+      "misconception_targeted": "linear vs quadratic thinking",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "constant_addition",
+          "reasoning": "Student adds 5 (thinking +5, +7, +9, +11 pattern but miscalculates)"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "arithmetic_progression",
+          "reasoning": "Student tries to find an additive pattern and adds 9"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "simple_difference",
+          "reasoning": "Student adds 7 (the last difference seen)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0028",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 2,
+    "discrimination": 2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Some students like math. All students who like math also like puzzles. No students who like puzzles dislike reading. Sam likes math. What can we conclude about Sam?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Sam likes reading"
+        },
+        {
+          "text": "Sam dislikes reading"
+        },
+        {
+          "text": "Sam might or might not like reading"
+        },
+        {
+          "text": "Sam likes all subjects"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Sam likes math → Sam likes puzzles → Sam doesn't dislike reading (meaning Sam likes reading). This follows the logical chain provided."
+    },
+    "metadata": {
+      "cognitive_skill": "multi-step deductive reasoning with negation",
+      "misconception_targeted": "confusion with negative statements and logical chains",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "negation_confusion",
+          "reasoning": "Student misinterprets 'no students who like puzzles dislike reading'"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "incomplete_reasoning",
+          "reasoning": "Student doesn't follow the full logical chain"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "overgeneralization",
+          "reasoning": "Student draws conclusions beyond what the premises support"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0029",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.8,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at this pattern grid. In each row, shapes rotate clockwise. In each column, the number of sides increases by 1. What shape goes in the bottom right corner? Top row: triangle pointing up, square, triangle pointing right. Middle row: pentagon, hexagon, ___. Bottom row: circle, triangle pointing up, ___.",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "octagon"
+        },
+        {
+          "text": "pentagon pointing right"
+        },
+        {
+          "text": "hexagon pointing right"
+        },
+        {
+          "text": "square pointing right"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Following the column pattern: triangle (3 sides), pentagon (5 sides), so bottom should have 5 sides. Following the row pattern: pentagon rotates clockwise to point right."
+    },
+    "metadata": {
+      "cognitive_skill": "dual-dimensional pattern recognition",
+      "misconception_targeted": "tracking single vs multiple transformation rules",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "sides_only",
+          "reasoning": "Student follows only the increasing sides rule, ignoring rotation"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "adjacent_copy",
+          "reasoning": "Student copies the middle element with rotation but wrong shape"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "rotation_only",
+          "reasoning": "Student follows rotation but uses wrong number of sides"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0030",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 2.5,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Mirror is to reflection as echo is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "sound"
+        },
+        {
+          "text": "cave"
+        },
+        {
+          "text": "hearing"
+        },
+        {
+          "text": "repetition"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "A mirror creates a reflection (a repeated image), and an echo creates a repetition (a repeated sound). The relationship is object to the type of duplication it creates."
+    },
+    "metadata": {
+      "cognitive_skill": "abstract relational reasoning with causal relationships",
+      "misconception_targeted": "concrete vs abstract relationship mapping",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "medium_confusion",
+          "reasoning": "Student thinks about what echo involves (sound) rather than what it creates"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "location_association",
+          "reasoning": "Student associates echo with where it happens rather than what it is"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "sense_focus",
+          "reasoning": "Student thinks about how we perceive echo rather than its nature"
+        }
+      ]
+    }
+  }
+]

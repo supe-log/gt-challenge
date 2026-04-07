@@ -1,0 +1,53 @@
+{
+  "id": "35-r0019",
+  "domain": "reasoning",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": 1.5,
+  "discrimination": 1.8,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Some animals that live in water can breathe air. All whales live in water. All whales breathe air. What can we say about whales?",
+    "type": "syllogism",
+    "options": [
+      {
+        "text": "All animals that breathe air are whales"
+      },
+      {
+        "text": "Whales are some of the animals that live in water and breathe air"
+      },
+      {
+        "text": "All animals that live in water breathe air"
+      },
+      {
+        "text": "Only whales can live in water and breathe air"
+      }
+    ],
+    "correct_index": 1,
+    "explanation": "We know whales live in water and breathe air, and we know some water animals can breathe air. Therefore, whales are examples of (some of) the animals that fit this description. Option A is incorrect because it reverses the logical relationship - just because all whales breathe air doesn't mean all air-breathing animals are whales. Option C is wrong because it overgeneralizes - we only know some water animals breathe air, not all of them. Option D is incorrect because it assumes whales are the only animals with these properties, but we're told some water animals can breathe air, which could include others besides whales."
+  },
+  "metadata": {
+    "cognitive_skill": "complex deductive reasoning with quantifiers",
+    "misconception_targeted": "universal_quantifier_confusion",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 0,
+        "misconception_id": "converse_error",
+        "reasoning": "Student incorrectly reverses the logical relationship"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "hasty_generalization",
+        "reasoning": "Student incorrectly generalizes from whales to all water animals"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "exclusivity_assumption",
+        "reasoning": "Student assumes whales are the only animals with these properties"
+      }
+    ],
+    "dok_level": "DOK 3"
+  }
+}

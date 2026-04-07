@@ -1,0 +1,522 @@
+[
+  {
+    "id": "68-r0001",
+    "domain": "reasoning",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 0.1,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All musicians practice regularly. Sarah practices piano every day. Which conclusion follows logically?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Sarah is definitely a musician"
+        },
+        {
+          "text": "Sarah might be a musician"
+        },
+        {
+          "text": "Sarah is not a musician"
+        },
+        {
+          "text": "No conclusions can be drawn about Sarah"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "The premises don't allow us to conclude Sarah is definitely a musician. While all musicians practice regularly, practicing regularly doesn't guarantee someone is a musician - they could practice for other reasons. However, since Sarah does practice regularly (which is a necessary condition for being a musician), she could potentially be a musician. Therefore, 'Sarah might be a musician' is the most accurate conclusion we can draw from the given premises."
+    },
+    "metadata": {
+      "cognitive_skill": "deductive reasoning with conditional statements",
+      "misconception_targeted": "affirming the consequent fallacy",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "affirming_consequent",
+          "reasoning": "Students incorrectly reverse the conditional: if all musicians practice, and Sarah practices, then Sarah must be a musician"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "false_negation",
+          "reasoning": "Students incorrectly think that since we can't prove Sarah is a musician, she must not be one"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "logical_nihilism",
+          "reasoning": "Students incorrectly believe that no logical inferences can be made when they cannot establish definitive conclusions"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-r0002",
+    "domain": "reasoning",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 0.5,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which word does NOT belong with the others? Explain your reasoning about how these political concepts are related.",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "Democracy"
+        },
+        {
+          "text": "Republic"
+        },
+        {
+          "text": "Monarchy"
+        },
+        {
+          "text": "Parliament"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "Democracy, Republic, and Monarchy are all forms of government or political systems. Parliament is a legislative body or institution that can exist within different forms of government, not a form of government itself."
+    },
+    "metadata": {
+      "cognitive_skill": "categorical abstraction and classification",
+      "misconception_targeted": "surface-level categorization",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "political_confusion",
+          "reasoning": "Students might think democracy doesn't belong because it seems most different from monarchy"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "unfamiliarity",
+          "reasoning": "Students might choose republic if they're less familiar with this term, though it should be introduced as a form of government where citizens elect representatives to make decisions, distinguishing it from direct democracy"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "value_judgment",
+          "reasoning": "Students might think monarchy doesn't belong due to negative associations rather than logical categorization"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-r0003",
+    "domain": "reasoning",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 0.8,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Revolution is to change as evolution is to:",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "Darwin"
+        },
+        {
+          "text": "gradual development"
+        },
+        {
+          "text": "species"
+        },
+        {
+          "text": "adaptation"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Revolution implies sudden, dramatic change, while evolution implies gradual development over time. The analogy contrasts rapid versus gradual processes of transformation."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning and conceptual mapping",
+      "misconception_targeted": "semantic association over relational thinking",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "semantic_association",
+          "reasoning": "Students associate evolution with Darwin rather than focusing on the conceptual relationship"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "content_focus",
+          "reasoning": "Students think about what evolution affects (species) rather than the nature of the process"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "partial_relationship",
+          "reasoning": "Students connect evolution to adaptation, which is related but doesn't capture the pace/manner contrast"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-r0004",
+    "domain": "reasoning",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 1.2,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In a 3×3 matrix, the first row shows: circle, square, triangle. The second row shows: filled circle, filled square, filled triangle. What should appear in the bottom-right position if the third row starts with: striped circle, striped square, ___?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "striped triangle"
+        },
+        {
+          "text": "triangle"
+        },
+        {
+          "text": "filled triangle"
+        },
+        {
+          "text": "striped circle"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The matrix follows two rules: columns maintain the same shape (circle, square, triangle) while rows maintain the same pattern (outline, filled, striped). The intersection of the triangle column and striped row must be a striped triangle."
+    },
+    "metadata": {
+      "cognitive_skill": "simultaneous relational reasoning across two dimensions",
+      "misconception_targeted": "single-dimension focus in matrices",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "ignore_pattern",
+          "reasoning": "Students focus only on shape progression, ignoring the fill pattern"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "wrong_pattern",
+          "reasoning": "Students apply the filled pattern from row 2 instead of the striped pattern from row 3"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "shape_confusion",
+          "reasoning": "Students continue the shape pattern from the row instead of maintaining column consistency"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-r0005",
+    "domain": "reasoning",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 1.6,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Consider this sequence: 2, 6, 18, 54, 162, ___. What number comes next?",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "324"
+        },
+        {
+          "text": "486"
+        },
+        {
+          "text": "216"
+        },
+        {
+          "text": "648"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Each term is multiplied by 3 to get the next term: 2×3=6, 6×3=18, 18×3=54, 54×3=162, so 162×3=486. This is a geometric sequence with ratio 3."
+    },
+    "metadata": {
+      "cognitive_skill": "pattern recognition in geometric progressions",
+      "misconception_targeted": "additive thinking in multiplicative patterns",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "doubling_pattern",
+          "reasoning": "Students might think the pattern is ×2 (162×2=324) instead of ×3"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "additive_thinking",
+          "reasoning": "Students might look for additive patterns and find a complex addition rule leading to 216"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "wrong_ratio",
+          "reasoning": "Students might think the ratio is 4 (162×4=648) by miscalculating the pattern"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-r0006",
+    "domain": "reasoning",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "If all virtuous people are happy, and some happy people are wealthy, which statement must be true?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Some virtuous people are wealthy"
+        },
+        {
+          "text": "All wealthy people are virtuous"
+        },
+        {
+          "text": "Some wealthy people might be virtuous"
+        },
+        {
+          "text": "No virtuous people are wealthy"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "The premises don't force any direct connection between virtuous and wealthy people. However, since virtuous people are happy, and some happy people are wealthy, it's possible (but not necessary) that some wealthy people could also be virtuous."
+    },
+    "metadata": {
+      "cognitive_skill": "complex syllogistic reasoning with quantifiers",
+      "misconception_targeted": "invalid quantifier conversion",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "existential_fallacy",
+          "reasoning": "Students incorrectly conclude that overlap must exist when only possibility is established"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "conversion_error",
+          "reasoning": "Students reverse the relationship, thinking 'some happy are wealthy' means 'all wealthy are happy'"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "false_exclusion",
+          "reasoning": "Students think no connection is possible, missing that the premises allow for potential overlap"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-r0007",
+    "domain": "reasoning",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2.3,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which concept does NOT belong in this group: Hypothesis, Theory, Axiom, Experiment?",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "Hypothesis"
+        },
+        {
+          "text": "Theory"
+        },
+        {
+          "text": "Axiom"
+        },
+        {
+          "text": "Experiment"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "Hypothesis, Theory, and Axiom are all types of statements or propositions in scientific/logical thinking. Experiment is a process or method for testing these propositions, not a proposition itself."
+    },
+    "metadata": {
+      "cognitive_skill": "abstract categorization in scientific methodology",
+      "misconception_targeted": "functional versus categorical thinking",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "certainty_confusion",
+          "reasoning": "Students might think hypothesis doesn't belong because it's less certain than the others"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "complexity_focus",
+          "reasoning": "Students might think theory doesn't belong because it seems more complex"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "source_confusion",
+          "reasoning": "Students might think axiom doesn't belong because it comes from mathematics rather than science"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-r0008",
+    "domain": "reasoning",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2.6,
+    "discrimination": 1.3,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Procrastination is to deadline as amnesia is to:",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "memory"
+        },
+        {
+          "text": "forgetting"
+        },
+        {
+          "text": "appointment"
+        },
+        {
+          "text": "confusion"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Procrastination creates problems with meeting deadlines; similarly, amnesia creates problems with keeping appointments. Both represent conditions that interfere with time-based commitments or obligations."
+    },
+    "metadata": {
+      "cognitive_skill": "abstract relational mapping between psychological states and consequences",
+      "misconception_targeted": "direct semantic association",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "direct_association",
+          "reasoning": "Students connect amnesia directly to memory rather than considering the relational structure"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "process_focus",
+          "reasoning": "Students think about what amnesia does (forgetting) rather than what it affects"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "symptom_focus",
+          "reasoning": "Students focus on a general consequence (confusion) rather than the specific parallel"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-r0009",
+    "domain": "reasoning",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 2.8,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In this sequence: 1, 4, 9, 16, 25, 36, 49, ___, what is the next number?",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "56"
+        },
+        {
+          "text": "62"
+        },
+        {
+          "text": "64"
+        },
+        {
+          "text": "70"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "This is the sequence of perfect squares: 1²=1, 2²=4, 3²=9, 4²=16, 5²=25, 6²=36, 7²=49, so the next term is 8²=64."
+    },
+    "metadata": {
+      "cognitive_skill": "recognition of quadratic patterns in number sequences",
+      "misconception_targeted": "linear pattern assumption",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "arithmetic_addition",
+          "reasoning": "Students might add 7 to 49, thinking the differences are constant"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "complex_addition",
+          "reasoning": "Students might find a complex additive pattern that yields 62"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "wrong_increment",
+          "reasoning": "Students might think the pattern increases by larger amounts and choose 70"
+        }
+      ]
+    }
+  },
+  {
+    "id": "68-r0010",
+    "domain": "reasoning",
+    "age_bands": [
+      "6-8"
+    ],
+    "difficulty": 3,
+    "discrimination": 1.1,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All zephyrs are either blue or green. No green zephyr is round. Some blue zephyrs are round. If Zara is a round zephyr, what can we conclude?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Zara must be blue"
+        },
+        {
+          "text": "Zara must be green"
+        },
+        {
+          "text": "Zara could be either blue or green"
+        },
+        {
+          "text": "We cannot determine Zara's color"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Since no green zephyr is round, and Zara is round, Zara cannot be green. Since all zephyrs are either blue or green, and Zara cannot be green, Zara must be blue."
+    },
+    "metadata": {
+      "cognitive_skill": "complex deductive reasoning with multiple constraints and contrapositive logic",
+      "misconception_targeted": "incomplete constraint processing",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "constraint_reversal",
+          "reasoning": "Students misread or reverse the constraint about green zephyrs not being round"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "incomplete_reasoning",
+          "reasoning": "Students don't fully process how the constraints eliminate possibilities"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "excessive_uncertainty",
+          "reasoning": "Students think the logic is insufficient when actually the constraints fully determine the answer"
+        }
+      ]
+    }
+  }
+]

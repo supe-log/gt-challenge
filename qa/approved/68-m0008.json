@@ -1,0 +1,52 @@
+{
+  "id": "68-m0008",
+  "domain": "math",
+  "age_bands": [
+    "6-8"
+  ],
+  "difficulty": 0.8,
+  "discrimination": 1.8,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Without calculating exact values, compare: P = 2⁴ × 3³, Q = 2³ × 3⁴, R = 6⁴. Which arrangement shows these from least to greatest?",
+    "type": "comparison",
+    "options": [
+      {
+        "text": "P < Q < R"
+      },
+      {
+        "text": "Q < P < R"
+      },
+      {
+        "text": "R < P < Q"
+      },
+      {
+        "text": "P < R < Q"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "P = 16 × 27 = 432, Q = 8 × 81 = 648, R = 6⁴ = 1296. Since 6⁴ = (2×3)⁴ = 2⁴ × 3⁴, and 3⁴ > 3³ while 2⁴ > 2³, we get P < Q < R."
+  },
+  "metadata": {
+    "cognitive_skill": "exponential comparison and magnitude estimation",
+    "misconception_targeted": "difficulty comparing exponential expressions",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "base_vs_exponent_confusion",
+        "reasoning": "Student focuses on larger base in Q vs larger exponent in P incorrectly"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "underestimating_compound_growth",
+        "reasoning": "Student underestimates how large R = 6⁴ becomes"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "partial_correct_ordering",
+        "reasoning": "Student correctly identifies P < R but incorrectly places Q"
+      }
+    ]
+  }
+}

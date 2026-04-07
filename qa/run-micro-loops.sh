@@ -35,11 +35,11 @@ NC='\033[0m' # No Color
 
 # ─── Config ──────────────────────────────────────────────────────
 
-DOMAIN="${1:-reasoning}"
-AGE_BAND="${2:-3-5}"
+DOMAIN="${1:-${DOMAIN:-reasoning}}"
+AGE_BAND="${2:-${AGE_BAND:-3-5}}"
 COUNT="${3:-10}"
 MAX_ITERATIONS="${MAX_ITERATIONS:-3}"
-PASS_THRESHOLD="${PASS_THRESHOLD:-85}"
+PASS_THRESHOLD="${PASS_THRESHOLD:-90}"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"

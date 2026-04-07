@@ -1,0 +1,52 @@
+{
+  "id": "68-m0015",
+  "domain": "math",
+  "age_bands": [
+    "6-8"
+  ],
+  "difficulty": 1.8,
+  "discrimination": 1.2,
+  "guessing": 0.25,
+  "content": {
+    "stem": "A swimming pool can be filled by Pipe A alone in 8 hours, or by Pipe B alone in 12 hours. If both pipes work together, approximately how long will it take to fill the pool?",
+    "type": "estimation",
+    "options": [
+      {
+        "text": "4.8 hours"
+      },
+      {
+        "text": "6.0 hours"
+      },
+      {
+        "text": "10.0 hours"
+      },
+      {
+        "text": "3.2 hours"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "Pipe A fills 1/8 of the pool per hour, Pipe B fills 1/12 per hour. Together they fill 1/8 + 1/12 = 3/24 + 2/24 = 5/24 of the pool per hour. Time needed = 1 ÷ (5/24) = 24/5 = 4.8 hours."
+  },
+  "metadata": {
+    "cognitive_skill": "work rate problems and fraction addition",
+    "misconception_targeted": "averaging times instead of rates",
+    "bloom_level": "apply",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "time_averaging",
+        "reasoning": "Student averages the times: (8 + 12) ÷ 2 = 10, then assumes combined is faster, estimates 6"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "simple_time_average",
+        "reasoning": "Student directly averages 8 and 12 to get 10 hours"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "overestimation_of_efficiency",
+        "reasoning": "Student assumes combined work is much more efficient than reality"
+      }
+    ]
+  }
+}

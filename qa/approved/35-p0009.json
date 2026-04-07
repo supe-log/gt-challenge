@@ -1,0 +1,52 @@
+{
+  "id": "35-p0009",
+  "domain": "pattern_recognition",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": 2.1,
+  "discrimination": 1.9,
+  "guessing": 0.25,
+  "content": {
+    "stem": "This color and position pattern has two rules working together: Red-Left, Blue-Right, Green-Left, Red-Right, Blue-Left, Green-Right, ___. What comes next?",
+    "type": "color_pattern",
+    "options": [
+      {
+        "text": "Red-Right"
+      },
+      {
+        "text": "Red-Left"
+      },
+      {
+        "text": "Blue-Left"
+      },
+      {
+        "text": "Green-Left"
+      }
+    ],
+    "correct_index": 1,
+    "explanation": "Two patterns run simultaneously: colors cycle Red→Blue→Green→Red, and positions alternate Left→Right→Left. The 7th position needs Red (continuing the color cycle) and Left (continuing the position alternation)."
+  },
+  "metadata": {
+    "cognitive_skill": "Dual simultaneous pattern tracking with different cycle lengths",
+    "misconception_targeted": "Multiple independent pattern rules",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 0,
+        "misconception_id": "color_only",
+        "reasoning": "Student correctly tracks color cycle (Red is next) but assumes position continues as Right"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "position_only",
+        "reasoning": "Student correctly identifies Left position but miscounts color cycle"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "simple_repeat",
+        "reasoning": "Student assumes pattern repeats previous Green-Left instead of tracking both rules"
+      }
+    ]
+  }
+}

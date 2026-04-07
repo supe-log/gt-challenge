@@ -1,0 +1,52 @@
+{
+  "id": "K2-r0007",
+  "domain": "reasoning",
+  "age_bands": [
+    "K-2"
+  ],
+  "difficulty": 0.5,
+  "discrimination": 1.7,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Which one is different: truck, car, bike, tree?",
+    "type": "odd_one_out",
+    "options": [
+      {
+        "text": "tree"
+      },
+      {
+        "text": "truck"
+      },
+      {
+        "text": "car"
+      },
+      {
+        "text": "bike"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "Truck, car, and bike are all things you can ride to move around. A tree cannot move you from place to place."
+  },
+  "metadata": {
+    "cognitive_skill": "functional classification",
+    "misconception_targeted": "focusing on physical attributes over function",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "physical_size_focus",
+        "reasoning": "Students may focus on the truck being the largest physical object rather than considering transportation function"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "color_appearance_focus",
+        "reasoning": "Students may focus on visual appearance or typical color differences rather than transportation function"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "wheel_appearance_focus",
+        "reasoning": "Students may focus on the bike having visible spokes or different wheel appearance rather than transportation function"
+      }
+    ]
+  }
+}

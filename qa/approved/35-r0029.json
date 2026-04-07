@@ -1,0 +1,52 @@
+{
+  "id": "35-r0029",
+  "domain": "reasoning",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": 1.5,
+  "discrimination": 1.9,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Some musicians play instruments. All band members are musicians. Some band members wear glasses. Which conclusion is true?",
+    "type": "syllogism",
+    "options": [
+      {
+        "text": "All musicians play instruments"
+      },
+      {
+        "text": "Some musicians play instruments"
+      },
+      {
+        "text": "Some musicians wear glasses"
+      },
+      {
+        "text": "All band members wear glasses"
+      }
+    ],
+    "correct_index": 1,
+    "explanation": "The first statement tells us that some musicians play instruments - this is given as true. Since all band members are musicians (second statement), and some musicians play instruments (first statement), we can conclude that some musicians play instruments. This conclusion follows directly from the given information. Option A is incorrect because 'some' doesn't mean 'all' - we only know some musicians play instruments, not all of them. Option C is incorrect because even though some band members wear glasses and all band members are musicians, we cannot conclude that some musicians wear glasses since the band members might be the only musicians who wear glasses. Option D is incorrect because 'some band members' means not all band members - if it were all, the statement would say 'all band members wear glasses.'"
+  },
+  "metadata": {
+    "cognitive_skill": "complex deductive reasoning",
+    "misconception_targeted": "quantifier confusion in logic",
+    "bloom_level": "evaluate",
+    "distractor_rationale": [
+      {
+        "option_index": 0,
+        "misconception_id": "universal_overgeneralization",
+        "reasoning": "Students may incorrectly change 'some musicians' to 'all musicians' when reasoning about instruments"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "quantifier_transfer_error",
+        "reasoning": "Students may incorrectly transfer the 'some' quantifier from glasses to a broader musician category"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "quantifier_confusion_some_to_all",
+        "reasoning": "Students may incorrectly interpret 'some band members' as 'all band members' when forming conclusions"
+      }
+    ]
+  }
+}

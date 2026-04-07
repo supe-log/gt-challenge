@@ -1,0 +1,52 @@
+{
+  "id": "35-v0004",
+  "domain": "verbal",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": -0.2,
+  "discrimination": 1.8,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Read this story: 'Long ago, there was an ancient castle on a hill. The king who built it lived hundreds of years before your grandparents were born.' Based on the story, what does ancient mean?",
+    "type": "definition",
+    "options": [
+      {
+        "text": "very old"
+      },
+      {
+        "text": "made of stone"
+      },
+      {
+        "text": "very grand"
+      },
+      {
+        "text": "on a hill"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "Ancient means very old, from a time long ago. An ancient castle would be one built many hundreds of years in the past."
+  },
+  "metadata": {
+    "cognitive_skill": "contextual vocabulary comprehension and word meaning",
+    "misconception_targeted": "inferring word meaning from visual imagery rather than semantic knowledge",
+    "bloom_level": "understand",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "visual_imagery_inference",
+        "reasoning": "Students might focus on the visual image of what castles look like rather than the temporal meaning, thinking ancient describes the stone construction they picture"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "visual_imagery_inference",
+        "reasoning": "Students might associate ancient with the grand, impressive visual appearance they imagine when picturing a castle"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "visual_imagery_inference",
+        "reasoning": "Students might focus on the visual setting described (castle on a hill) rather than understanding the temporal meaning of ancient"
+      }
+    ]
+  }
+}

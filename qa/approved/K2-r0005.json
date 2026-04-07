@@ -1,0 +1,52 @@
+{
+  "id": "K2-r0005",
+  "domain": "reasoning",
+  "age_bands": [
+    "K-2"
+  ],
+  "difficulty": -0.5,
+  "discrimination": 1.5,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Look at the pattern. What shape goes in the empty box?",
+    "type": "matrix",
+    "options": [
+      {
+        "text": "red circle"
+      },
+      {
+        "text": "blue circle"
+      },
+      {
+        "text": "red square"
+      },
+      {
+        "text": "blue square"
+      }
+    ],
+    "correct_index": 1,
+    "explanation": "In each row, the color changes from red to blue. In each column, the shape stays the same. So a blue circle completes the pattern."
+  },
+  "metadata": {
+    "cognitive_skill": "simultaneous relational reasoning",
+    "misconception_targeted": "single dimension focus in matrix patterns",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 0,
+        "misconception_id": "color_consistency",
+        "reasoning": "Students may focus only on keeping one color consistent"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "shape_change",
+        "reasoning": "Students may think both shape and color should change"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "diagonal_pattern",
+        "reasoning": "Students may look for diagonal patterns instead of row/column rules"
+      }
+    ]
+  }
+}

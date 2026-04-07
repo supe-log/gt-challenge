@@ -1,0 +1,52 @@
+{
+  "id": "68-p0004",
+  "domain": "pattern_recognition",
+  "age_bands": [
+    "6-8"
+  ],
+  "difficulty": 1.3,
+  "discrimination": 1.8,
+  "guessing": 0.25,
+  "content": {
+    "stem": "This 3×3 matrix has objects that transform both across rows and down columns. In each row, shapes rotate 90° clockwise. In each column, shapes change color: Red→Blue→Green. The bottom-right cell is missing. What belongs there? [Matrix shows: Row 1: Red Triangle pointing up, Red Square, Red Pentagon; Row 2: Blue Triangle pointing right, Blue Diamond, Blue Hexagon; Row 3: Green Triangle pointing down, Green Star, ?]",
+    "type": "matrix",
+    "options": [
+      {
+        "text": "Green Octagon"
+      },
+      {
+        "text": "Green Pentagon"
+      },
+      {
+        "text": "Blue Octagon"
+      },
+      {
+        "text": "Green Hexagon pointing left"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "Following the column pattern (Red→Blue→Green), the missing shape must be green. Following the row pattern of shape progression (Triangle→Square→Pentagon in row 1, Triangle→Diamond→Hexagon in row 2), row 3 shows Triangle→Star→Octagon."
+  },
+  "metadata": {
+    "cognitive_skill": "simultaneous dual-dimension pattern analysis",
+    "misconception_targeted": "single dimension focus in matrix reasoning",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "row_repeat",
+        "reasoning": "Student replicates shape from row 1 instead of continuing row 3's progression"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "color_confusion",
+        "reasoning": "Student follows shape progression correctly but uses wrong color (blue instead of green)"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "rotation_focus",
+        "reasoning": "Student focuses on rotation pattern and replicates row 2's final shape with wrong color"
+      }
+    ]
+  }
+}

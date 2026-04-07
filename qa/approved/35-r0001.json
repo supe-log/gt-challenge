@@ -8,44 +8,44 @@
   "discrimination": 1.2,
   "guessing": 0.25,
   "content": {
-    "stem": "Kitten is to cat as puppy is to ___",
+    "stem": "Bird is to nest as bee is to ___",
     "type": "analogy",
     "options": [
       {
-        "text": "dog"
+        "text": "hive"
       },
       {
-        "text": "pet"
+        "text": "flower"
       },
       {
-        "text": "small"
+        "text": "honey"
       },
       {
-        "text": "baby"
+        "text": "wings"
       }
     ],
     "correct_index": 0,
-    "explanation": "This analogy shows the relationship between a young animal and its adult form. A kitten grows up to become a cat, just as a puppy grows up to become a dog."
+    "explanation": "A bird lives in a nest, and a bee lives in a hive. Both are homes for these animals."
   },
   "metadata": {
     "cognitive_skill": "relational reasoning",
-    "misconception_targeted": "surface feature matching over relational reasoning",
+    "misconception_targeted": "function vs habitat confusion",
     "bloom_level": "apply",
     "distractor_rationale": [
       {
         "option_index": 1,
-        "misconception_id": "category_overgeneralization",
-        "reasoning": "Student focuses on the fact that both kittens and puppies are pets, missing the specific growth relationship"
+        "misconception_id": "functional_association",
+        "reasoning": "Students may think of what bees interact with rather than where they live"
       },
       {
         "option_index": 2,
-        "misconception_id": "attribute_matching",
-        "reasoning": "Student matches the shared attribute of being small rather than understanding the developmental relationship"
+        "misconception_id": "product_association",
+        "reasoning": "Students may associate bees with what they make rather than their home"
       },
       {
         "option_index": 3,
-        "misconception_id": "synonym_confusion",
-        "reasoning": "Student thinks 'baby' is equivalent to 'puppy' without considering what puppies become"
+        "misconception_id": "physical_attribute",
+        "reasoning": "Students may focus on body parts both animals share"
       }
     ]
   }

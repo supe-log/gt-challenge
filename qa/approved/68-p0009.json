@@ -1,0 +1,52 @@
+{
+  "id": "68-p0009",
+  "domain": "pattern_recognition",
+  "age_bands": [
+    "6-8"
+  ],
+  "difficulty": 1.5,
+  "discrimination": 1.9,
+  "guessing": 0.25,
+  "content": {
+    "stem": "This shape sequence shows transformations involving both rotation and reflection: L-shape → ⅃-shape → Γ-shape → ⌐-shape → ?. Each step involves a 90° clockwise rotation followed by a horizontal flip. What comes next?",
+    "type": "shape_pattern",
+    "options": [
+      {
+        "text": "L-shape"
+      },
+      {
+        "text": "⅃-shape"
+      },
+      {
+        "text": "Γ-shape"
+      },
+      {
+        "text": "⌒-shape"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "Following the pattern: ⌐-shape rotated 90° clockwise becomes Γ-shape, then horizontally flipped becomes L-shape. The sequence returns to the starting position after 4 transformations."
+  },
+  "metadata": {
+    "cognitive_skill": "compound geometric transformation tracking",
+    "misconception_targeted": "transformation sequence confusion",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "single_operation",
+        "reasoning": "Student applies only rotation OR only reflection, not both"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "wrong_direction",
+        "reasoning": "Student rotates counterclockwise instead of clockwise"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "wrong_transformation",
+        "reasoning": "Student applies vertical flip instead of horizontal flip"
+      }
+    ]
+  }
+}

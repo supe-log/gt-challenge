@@ -1,0 +1,522 @@
+[
+  {
+    "id": "35-r0021",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -2.1,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Pencil is to paper as paintbrush is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "canvas"
+        },
+        {
+          "text": "artist"
+        },
+        {
+          "text": "color"
+        },
+        {
+          "text": "handle"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "A pencil is used to write or draw on paper. Similarly, a paintbrush is used to paint on canvas. Both show the relationship between a tool and the surface it works on."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning",
+      "misconception_targeted": "tool-surface relationship confusion",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "agent_confusion",
+          "reasoning": "Students may focus on who uses the tool rather than what surface it works on"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "material_confusion",
+          "reasoning": "Students may think of what the tool produces rather than what it works on"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "part_whole_confusion",
+          "reasoning": "Students may focus on a part of the paintbrush rather than its function"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0022",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -1.3,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which number follows a different rule than the others: 6, 9, 12, 17",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "6"
+        },
+        {
+          "text": "9"
+        },
+        {
+          "text": "12"
+        },
+        {
+          "text": "17"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "The numbers 6, 9, and 12 are all multiples of 3 (6=3×2, 9=3×3, 12=3×4). The number 17 is not a multiple of 3, so it doesn't belong."
+    },
+    "metadata": {
+      "cognitive_skill": "pattern recognition and classification",
+      "misconception_targeted": "arithmetic sequence assumption",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "arithmetic_sequence_assumption",
+          "reasoning": "Students may think the sequence increases by 3 each time and identify 6 as breaking the pattern from an assumed starting point"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "arithmetic_sequence_assumption",
+          "reasoning": "Students may incorrectly assume the sequence should be 6, 9, 12, 15 and identify 9 as problematic when comparing to their expected arithmetic progression"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "arithmetic_sequence_assumption",
+          "reasoning": "Students may focus on 12 as the largest number that fits their assumed arithmetic sequence and think it doesn't belong because it ends the pattern"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0023",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -0.5,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "What number comes next in this pattern: 4, 7, 10, 13, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "15"
+        },
+        {
+          "text": "16"
+        },
+        {
+          "text": "17"
+        },
+        {
+          "text": "14"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Each number increases by 3: 4+3=7, 7+3=10, 10+3=13, so 13+3=16. The pattern is adding 3 each time."
+    },
+    "metadata": {
+      "cognitive_skill": "inductive reasoning",
+      "misconception_targeted": "inconsistent pattern application",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "add_two_error",
+          "reasoning": "Students may incorrectly add 2 instead of recognizing the +3 pattern"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "add_four_error",
+          "reasoning": "Students may incorrectly add 4, thinking the differences increase"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "backward_pattern",
+          "reasoning": "Students may subtract instead of add, showing pattern direction confusion"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0024",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.2,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All planets orbit around stars. Jupiter is a planet. Saturn is also a planet. Which statement must be true?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Jupiter and Saturn orbit around the same star"
+        },
+        {
+          "text": "Jupiter orbits around a star"
+        },
+        {
+          "text": "Saturn is larger than Jupiter"
+        },
+        {
+          "text": "Stars are bigger than all planets"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Since all planets orbit around stars and Jupiter is a planet, Jupiter must orbit around a star. This follows logically from the given information."
+    },
+    "metadata": {
+      "cognitive_skill": "deductive reasoning",
+      "misconception_targeted": "invalid inference from premises",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "same_category_assumption",
+          "reasoning": "Students may assume planets in the same category share all properties"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "irrelevant_conclusion",
+          "reasoning": "Students may introduce information not provided in the premises"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "reverse_logic",
+          "reasoning": "Students may confuse the relationship direction between stars and planets"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0025",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.8,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at this pattern grid. Row 1: circle, square, triangle. Row 2: square, triangle, circle. What should Row 3 be?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "triangle, circle, square"
+        },
+        {
+          "text": "circle, square, triangle"
+        },
+        {
+          "text": "square, triangle, circle"
+        },
+        {
+          "text": "triangle, square, circle"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Each row shifts the shapes one position to the left, with the first shape moving to the end. Row 1 starts with circle, Row 2 starts with square (second shape from Row 1), so Row 3 starts with triangle (third shape from Row 1)."
+    },
+    "metadata": {
+      "cognitive_skill": "simultaneous relational reasoning",
+      "misconception_targeted": "pattern rotation confusion",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "repeat_first_row",
+          "reasoning": "Students may think the pattern simply repeats the first row"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "repeat_second_row",
+          "reasoning": "Students may think the pattern alternates or repeats the second row"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "partial_rotation",
+          "reasoning": "Students may recognize rotation but apply it incorrectly"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0026",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.4,
+    "discrimination": 2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Library is to books as museum is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "artifacts"
+        },
+        {
+          "text": "visitors"
+        },
+        {
+          "text": "building"
+        },
+        {
+          "text": "education"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "A library is a place that houses and displays books for people to use. Similarly, a museum is a place that houses and displays artifacts for people to view and learn from."
+    },
+    "metadata": {
+      "cognitive_skill": "abstract relational reasoning",
+      "misconception_targeted": "function versus content confusion",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "agent_focus",
+          "reasoning": "Students may focus on who uses the place rather than what it contains"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "physical_structure",
+          "reasoning": "Students may focus on the physical aspect rather than the functional relationship"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "purpose_confusion",
+          "reasoning": "Students may focus on the abstract purpose rather than the concrete contents"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0027",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.8,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which item does NOT belong: thermometer, ruler, scale, calendar",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "thermometer"
+        },
+        {
+          "text": "ruler"
+        },
+        {
+          "text": "scale"
+        },
+        {
+          "text": "calendar"
+        }
+      ],
+      "correct_index": 3,
+      "explanation": "Thermometer, ruler, and scale all measure physical properties (temperature, length, and weight). Calendar measures time, which is not a physical property but a temporal concept."
+    },
+    "metadata": {
+      "cognitive_skill": "abstract classification",
+      "misconception_targeted": "surface similarity grouping",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "surface_similarity_grouping",
+          "reasoning": "Students may focus on thermometer having numbers like calendar, grouping them by visual similarity rather than function"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "surface_similarity_grouping",
+          "reasoning": "Students may think ruler doesn't belong because it's flat and straight while others have different shapes, focusing on physical appearance"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "surface_similarity_grouping",
+          "reasoning": "Students may group scale with calendar because both are commonly found in specific rooms (bathroom/kitchen vs office), focusing on location rather than measurement function"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0028",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 2.2,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Find the next number: 2, 5, 11, 23, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "35"
+        },
+        {
+          "text": "41"
+        },
+        {
+          "text": "47"
+        },
+        {
+          "text": "50"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "The differences between numbers next to each other are: 5-2=3, 11-5=6, 23-11=12. The differences (3, 6, 12) double each time. The next difference should be 24, so 23+24=47."
+    },
+    "metadata": {
+      "cognitive_skill": "complex pattern recognition",
+      "misconception_targeted": "simple arithmetic progression assumption",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "constant_difference",
+          "reasoning": "Students may assume a constant difference of 12 and get 23+12=35"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "linear_increase",
+          "reasoning": "Students may see differences increasing by 6 each time (3,6,12,18) and get 23+18=41"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "round_number_bias",
+          "reasoning": "Students may choose a round number that seems reasonable"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0029",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.5,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Some musicians play instruments. All band members are musicians. Some band members wear glasses. Which conclusion is true?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "All musicians play instruments"
+        },
+        {
+          "text": "Some musicians play instruments"
+        },
+        {
+          "text": "Some musicians wear glasses"
+        },
+        {
+          "text": "All band members wear glasses"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "The first statement tells us that some musicians play instruments - this is given as true. Since all band members are musicians (second statement), and some musicians play instruments (first statement), we can conclude that some musicians play instruments. This conclusion follows directly from the given information. Option A is incorrect because 'some' doesn't mean 'all' - we only know some musicians play instruments, not all of them. Option C is incorrect because even though some band members wear glasses and all band members are musicians, we cannot conclude that some musicians wear glasses since the band members might be the only musicians who wear glasses. Option D is incorrect because 'some band members' means not all band members - if it were all, the statement would say 'all band members wear glasses.'"
+    },
+    "metadata": {
+      "cognitive_skill": "complex deductive reasoning",
+      "misconception_targeted": "quantifier confusion in logic",
+      "bloom_level": "evaluate",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "universal_overgeneralization",
+          "reasoning": "Students may incorrectly change 'some musicians' to 'all musicians' when reasoning about instruments"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "quantifier_transfer_error",
+          "reasoning": "Students may incorrectly transfer the 'some' quantifier from glasses to a broader musician category"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "quantifier_confusion_some_to_all",
+          "reasoning": "Students may incorrectly interpret 'some band members' as 'all band members' when forming conclusions"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0030",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.8,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Study this 3×3 grid pattern. Row 1: star increases in size from left to right. Row 2: circle increases in size from left to right. Row 3: triangle, larger triangle, ___. What completes the pattern?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "largest triangle"
+        },
+        {
+          "text": "small star"
+        },
+        {
+          "text": "largest circle"
+        },
+        {
+          "text": "medium triangle"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Each row shows the same shape getting bigger and bigger from left to right. Row 1 shows stars increasing in size, Row 2 shows circles increasing in size, so Row 3 should show triangles increasing in size, making the largest triangle correct."
+    },
+    "metadata": {
+      "cognitive_skill": "multi-dimensional pattern analysis",
+      "misconception_targeted": "shape cycling and column pattern confusion",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "shape_cycling",
+          "reasoning": "Students may think the pattern cycles through different shapes rather than maintaining shape consistency within rows"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "column_pattern_confusion",
+          "reasoning": "Students may try to apply a column-based pattern instead of the row-based size progression"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "incomplete_progression",
+          "reasoning": "Students may not recognize that the progression should continue to the largest size"
+        }
+      ]
+    }
+  }
+]

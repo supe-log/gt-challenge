@@ -1,0 +1,522 @@
+[
+  {
+    "id": "K2-v0001",
+    "domain": "verbal",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -2.5,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which word means the same as happy?",
+      "type": "synonym",
+      "options": [
+        {
+          "text": "sad"
+        },
+        {
+          "text": "glad"
+        },
+        {
+          "text": "fast"
+        },
+        {
+          "text": "big"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Glad means the same as happy - both words describe feeling good and cheerful."
+    },
+    "metadata": {
+      "cognitive_skill": "vocabulary knowledge and semantic relationship understanding",
+      "misconception_targeted": "confusion between emotional opposites",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "antonym_confusion",
+          "reasoning": "Children often confuse synonyms and antonyms, selecting the opposite meaning"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "unrelated_attribute",
+          "reasoning": "Young learners may select words that sound familiar but are unrelated to emotions"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "unrelated_attribute",
+          "reasoning": "Children may choose common adjectives without considering semantic meaning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-v0002",
+    "domain": "verbal",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -2,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "The cat ran up the tree quickly. Why did it do that?",
+      "type": "inference",
+      "options": [
+        {
+          "text": "to sleep"
+        },
+        {
+          "text": "to hide"
+        },
+        {
+          "text": "to eat"
+        },
+        {
+          "text": "to play"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Cats typically run up trees when they are scared or need to hide from something, like a dog. The words 'ran' and 'quickly' show urgency - cats don't run urgently to sleep or eat in trees, and while cats may run up trees to play, the context of urgency makes 'to hide' the more appropriate inference when a cat runs quickly up a tree."
+    },
+    "metadata": {
+      "cognitive_skill": "inferential reasoning from behavioral context",
+      "misconception_targeted": "literal interpretation without contextual reasoning",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "literal_interpretation_without_context",
+          "reasoning": "Children know cats sleep in various places but ignore the contextual clue of urgency implied by 'ran quickly'"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "literal_interpretation_without_context",
+          "reasoning": "Students may think of cats hunting birds in trees without considering the contextual meaning of the urgent running action"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "literal_interpretation_without_context",
+          "reasoning": "Children might associate cats with playful behavior without considering the contextual urgency of running quickly up a tree"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-v0003",
+    "domain": "verbal",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -1.5,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "What is the opposite of hot?",
+      "type": "antonym",
+      "options": [
+        {
+          "text": "warm"
+        },
+        {
+          "text": "cold"
+        },
+        {
+          "text": "wet"
+        },
+        {
+          "text": "hard"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Cold is the opposite of hot. When something is hot it feels very warm, when it is cold it feels cool or chilly."
+    },
+    "metadata": {
+      "cognitive_skill": "understanding semantic opposites and temperature concepts",
+      "misconception_targeted": "similar concept confusion",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "degree_confusion",
+          "reasoning": "Children may not distinguish between warm and hot, seeing warm as opposite rather than similar"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "sensory_property_confusion",
+          "reasoning": "Students might confuse different sensory properties like temperature and moisture"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "unrelated_property",
+          "reasoning": "Tests understanding that texture properties are unrelated to temperature"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-v0004",
+    "domain": "verbal",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -1,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Sam put on his coat and hat. It started to rain. Where is Sam going?",
+      "type": "inference",
+      "options": [
+        {
+          "text": "inside"
+        },
+        {
+          "text": "to bed"
+        },
+        {
+          "text": "outside"
+        },
+        {
+          "text": "to eat"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Sam put on his coat and hat, which are clothes you wear when going outside. Even though it's raining, he is getting ready to go out."
+    },
+    "metadata": {
+      "cognitive_skill": "inferential reasoning from clothing choices and weather context",
+      "misconception_targeted": "weather-based logical reversal",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "weather_avoidance",
+          "reasoning": "Children might think rain means going inside, missing the clothing preparation clues"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "unrelated_activity",
+          "reasoning": "Students may not connect clothing choices with destination planning"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "unrelated_activity",
+          "reasoning": "Tests whether child focuses on clothing context rather than random activities"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-v0005",
+    "domain": "verbal",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -0.5,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In the story, Tim found a shiny rock. What does shiny mean?",
+      "type": "definition",
+      "options": [
+        {
+          "text": "smooth"
+        },
+        {
+          "text": "heavy"
+        },
+        {
+          "text": "bright"
+        },
+        {
+          "text": "round"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Shiny means bright and reflecting light, like a mirror or clean window. A shiny rock would sparkle or gleam."
+    },
+    "metadata": {
+      "cognitive_skill": "vocabulary definition and visual property understanding",
+      "misconception_targeted": "tactile versus visual property confusion",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "tactile_confusion",
+          "reasoning": "Children often confuse visual properties (shiny) with tactile ones (smooth)"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "unrelated_property",
+          "reasoning": "Weight has no relationship to shininess but might seem plausible for rocks"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "shape_confusion",
+          "reasoning": "Students might associate 'shiny rock' with polished round stones"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-v0006",
+    "domain": "verbal",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 0,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which word means the same as small?",
+      "type": "synonym",
+      "options": [
+        {
+          "text": "tiny"
+        },
+        {
+          "text": "tall"
+        },
+        {
+          "text": "loud"
+        },
+        {
+          "text": "slow"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Tiny means the same as small - both words describe something that is not big or takes up little space."
+    },
+    "metadata": {
+      "cognitive_skill": "synonym recognition and size concept understanding",
+      "misconception_targeted": "dimensional property confusion",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "dimensional_confusion",
+          "reasoning": "Children might confuse different size dimensions (small/big vs short/tall)"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "unrelated_property",
+          "reasoning": "Sound properties are unrelated to size but may seem plausible"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "unrelated_property",
+          "reasoning": "Speed properties are completely unrelated to size dimensions"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-v0007",
+    "domain": "verbal",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 0.5,
+    "discrimination": 2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "The dog wagged its tail and jumped up and down. How does the dog feel?",
+      "type": "inference",
+      "options": [
+        {
+          "text": "scared"
+        },
+        {
+          "text": "happy"
+        },
+        {
+          "text": "sleepy"
+        },
+        {
+          "text": "hungry"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Dogs wag their tails and jump when they are excited and happy. These are signs that a dog feels good and playful."
+    },
+    "metadata": {
+      "cognitive_skill": "behavioral inference and emotional state recognition",
+      "misconception_targeted": "single-cue behavioral interpretation",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "behavior_misinterpretation",
+          "reasoning": "Some children might think jumping means fear without considering tail wagging"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "contradictory_behavior",
+          "reasoning": "Jumping contradicts sleepiness, testing logical consistency"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "single_behavior_focus",
+          "reasoning": "Students might focus only on jumping, thinking of food excitement"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-v0008",
+    "domain": "verbal",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "What is the opposite of begin?",
+      "type": "antonym",
+      "options": [
+        {
+          "text": "start"
+        },
+        {
+          "text": "stop"
+        },
+        {
+          "text": "finish"
+        },
+        {
+          "text": "go"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Finish is the opposite of begin. Begin means to start something, finish means to complete or end something."
+    },
+    "metadata": {
+      "cognitive_skill": "abstract verb antonym understanding and temporal sequence concepts",
+      "misconception_targeted": "synonym confusion and process understanding",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "synonym_selection",
+          "reasoning": "Start is a synonym for begin, testing antonym versus synonym confusion"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "interruption_vs_completion",
+          "reasoning": "Stop means interrupt, but finish means complete - subtle but important difference"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "action_confusion",
+          "reasoning": "Go suggests movement but doesn't capture the completion aspect of finishing"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-v0009",
+    "domain": "verbal",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 1.5,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Lily ate breakfast, then brushed her teeth, then got her backpack. What is Lily doing?",
+      "type": "inference",
+      "options": [
+        {
+          "text": "going to bed"
+        },
+        {
+          "text": "getting ready for school"
+        },
+        {
+          "text": "going to play outside"
+        },
+        {
+          "text": "helping mom cook"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "The sequence of eating breakfast, brushing teeth, and getting a backpack shows Lily is following her morning routine to get ready for school."
+    },
+    "metadata": {
+      "cognitive_skill": "sequential reasoning and routine pattern recognition",
+      "misconception_targeted": "single-action focus versus sequence analysis",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "individual_action_focus",
+          "reasoning": "Children might focus only on tooth brushing, which happens at bedtime too"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "backpack_misinterpretation",
+          "reasoning": "Students might think backpack means outdoor play rather than school"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "morning_activity_confusion",
+          "reasoning": "Breakfast connection might suggest kitchen activity without considering the full sequence"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-v0010",
+    "domain": "verbal",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at this sentence: 'The big dog runs fast.' Which word tells us what the dog looks like?",
+      "type": "vocabulary",
+      "options": [
+        {
+          "text": "big"
+        },
+        {
+          "text": "dog"
+        },
+        {
+          "text": "runs"
+        },
+        {
+          "text": "fast"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "The word 'big' tells us what the dog looks like. Words that describe how things look, feel, or seem are called describing words (adjectives). In this sentence, 'big' describes the size of the dog."
+    },
+    "metadata": {
+      "cognitive_skill": "metalinguistic awareness and grammatical category understanding",
+      "misconception_targeted": "word function versus word content confusion",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "word_category_confusion",
+          "reasoning": "Children might think the naming word is what describes rather than understanding descriptive function"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "function_confusion",
+          "reasoning": "Students might confuse action words with describing words"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "literal_interpretation",
+          "reasoning": "Some children might think 'fast' describes the dog rather than how it runs"
+        }
+      ]
+    }
+  }
+]

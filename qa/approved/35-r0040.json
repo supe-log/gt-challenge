@@ -1,0 +1,52 @@
+{
+  "id": "35-r0040",
+  "domain": "reasoning",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": 1.8,
+  "discrimination": 1.5,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Look at this 3×3 grid. Row 1: star, heart, circle. Row 2: filled star, filled heart, filled circle. Row 3: striped star, striped heart, ___. What completes the pattern?",
+    "type": "matrix",
+    "options": [
+      {
+        "text": "striped circle"
+      },
+      {
+        "text": "circle"
+      },
+      {
+        "text": "filled circle"
+      },
+      {
+        "text": "striped star"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "Each row shows the same three shapes with different patterns: Row 1 has outline shapes, Row 2 has filled shapes, Row 3 has striped shapes. The missing piece must be a striped circle."
+  },
+  "metadata": {
+    "cognitive_skill": "two-dimensional pattern completion",
+    "misconception_targeted": "incomplete_pattern_analysis",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "ignore_row_pattern",
+        "reasoning": "Students focus only on shape sequence, ignoring the fill pattern that changes by row"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "wrong_fill_pattern",
+        "reasoning": "Students apply the wrong fill pattern from a different row"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "wrong_shape_sequence",
+        "reasoning": "Students get confused about which shape comes next in the column sequence"
+      }
+    ]
+  }
+}

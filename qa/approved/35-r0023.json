@@ -1,0 +1,52 @@
+{
+  "id": "35-r0023",
+  "domain": "reasoning",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": -0.5,
+  "discrimination": 1.6,
+  "guessing": 0.25,
+  "content": {
+    "stem": "What number comes next in this pattern: 4, 7, 10, 13, ___",
+    "type": "number_series",
+    "options": [
+      {
+        "text": "15"
+      },
+      {
+        "text": "16"
+      },
+      {
+        "text": "17"
+      },
+      {
+        "text": "14"
+      }
+    ],
+    "correct_index": 1,
+    "explanation": "Each number increases by 3: 4+3=7, 7+3=10, 10+3=13, so 13+3=16. The pattern is adding 3 each time."
+  },
+  "metadata": {
+    "cognitive_skill": "inductive reasoning",
+    "misconception_targeted": "inconsistent pattern application",
+    "bloom_level": "apply",
+    "distractor_rationale": [
+      {
+        "option_index": 0,
+        "misconception_id": "add_two_error",
+        "reasoning": "Students may incorrectly add 2 instead of recognizing the +3 pattern"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "add_four_error",
+        "reasoning": "Students may incorrectly add 4, thinking the differences increase"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "backward_pattern",
+        "reasoning": "Students may subtract instead of add, showing pattern direction confusion"
+      }
+    ]
+  }
+}

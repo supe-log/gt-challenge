@@ -1,0 +1,52 @@
+{
+  "id": "K2-p0005",
+  "domain": "pattern_recognition",
+  "age_bands": [
+    "K-2"
+  ],
+  "difficulty": -0.5,
+  "discrimination": 1.8,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Find the missing piece. Big dog, small cat, big bird, ___",
+    "type": "sequence_completion",
+    "options": [
+      {
+        "text": "small fish"
+      },
+      {
+        "text": "big fish"
+      },
+      {
+        "text": "small dog"
+      },
+      {
+        "text": "big cat"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "The pattern alternates big animal, small animal. After big bird, a small animal comes next. The animals are all different."
+  },
+  "metadata": {
+    "cognitive_skill": "alternating pattern with multiple attributes",
+    "misconception_targeted": "single attribute pattern focus",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "ignore_size_pattern",
+        "reasoning": "Child sees animals changing but misses the big/small alternation"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "ignore_animal_variety",
+        "reasoning": "Child focuses on size pattern but repeats an animal already used"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "partial_pattern_focus",
+        "reasoning": "Child tries to connect with previous animal instead of following both patterns"
+      }
+    ]
+  }
+}

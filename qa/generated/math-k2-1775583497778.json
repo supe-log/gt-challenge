@@ -1,0 +1,530 @@
+[
+  {
+    "id": "K2-m0001",
+    "domain": "math",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -2.5,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "You have 3 cats. You get 2 more cats, then 1 cat runs away. How many cats do you have now?",
+      "type": "word_problem",
+      "options": [
+        {
+          "text": "4"
+        },
+        {
+          "text": "5"
+        },
+        {
+          "text": "6"
+        },
+        {
+          "text": "1"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Start with 3 cats, add 2 more cats to get 5 cats, then 1 cat runs away. So you subtract 1 from 5: 3 + 2 - 1 = 4 cats total."
+    },
+    "metadata": {
+      "cognitive_skill": "basic addition reasoning in context",
+      "misconception_targeted": "counting procedures in word problems",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "off_by_one_counting",
+          "reasoning": "Student may perform only the addition step (3 + 2 = 5) and forget to subtract the cat that ran away"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "double_counting",
+          "reasoning": "Student may count the original cats twice or add all numbers without considering subtraction"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "subtraction_confusion",
+          "reasoning": "Student may only focus on the final subtraction step or misinterpret the sequence of operations"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-m0002",
+    "domain": "math",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -2,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which number is bigger: 7 or 4?",
+      "type": "comparison",
+      "options": [
+        {
+          "text": "7"
+        },
+        {
+          "text": "4"
+        },
+        {
+          "text": "They are the same"
+        },
+        {
+          "text": "Cannot tell"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "7 is bigger than 4 because when you count 1, 2, 3, 4, 5, 6, 7, the number 7 comes after 4, so 7 is larger."
+    },
+    "metadata": {
+      "cognitive_skill": "number magnitude comparison",
+      "misconception_targeted": "number order confusion",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "digit_reversal",
+          "reasoning": "Student may confuse which direction represents 'bigger' on number line"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "equality_confusion",
+          "reasoning": "Student may not understand the concept of different quantities"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "uncertainty_bias",
+          "reasoning": "Student may lack confidence in basic number comparison skills"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-m0003",
+    "domain": "math",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -1.5,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "If 3 children play and one hurt their hand, about how many fingers do they have?",
+      "type": "estimation",
+      "options": [
+        {
+          "text": "15"
+        },
+        {
+          "text": "25"
+        },
+        {
+          "text": "30"
+        },
+        {
+          "text": "45"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Each child normally has 10 fingers (5 on each hand). With one child having a hurt hand (5 fewer fingers), that's 30 - 5 = 25 fingers total."
+    },
+    "metadata": {
+      "cognitive_skill": "quantity estimation with familiar objects",
+      "misconception_targeted": "miscounting due to overestimation or confusion between similar body parts",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "single_hand_focus",
+          "reasoning": "Student may only consider one hand per child (3 × 5 = 15)"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "overestimation_bias",
+          "reasoning": "Student may ignore the injury and count all fingers (3 × 10 = 30)"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "finger_toe_confusion",
+          "reasoning": "Student may include toes in their finger count"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-m0004",
+    "domain": "math",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -1,
+    "discrimination": 1.3,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Look at this skip counting pattern: 2, 4, __, 8. What number is missing?",
+      "type": "number_sense",
+      "options": [
+        {
+          "text": "6"
+        },
+        {
+          "text": "7"
+        },
+        {
+          "text": "9"
+        },
+        {
+          "text": "5"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "When skip counting by 2s: 2, 4, 6, 8, the number 6 comes between 4 and 8 in the sequence."
+    },
+    "metadata": {
+      "cognitive_skill": "skip counting pattern recognition",
+      "misconception_targeted": "skip counting sequence gaps",
+      "bloom_level": "understand",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "skip_counting_confusion",
+          "reasoning": "Student may think in terms of counting by 1s instead of recognizing the skip counting pattern"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "before_after_reversal",
+          "reasoning": "Student may confuse 'before' and 'after' directional concepts"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "counting_backwards_confusion",
+          "reasoning": "Student may start counting from 4 but only count by 1 instead of maintaining the skip counting pattern"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-m0005",
+    "domain": "math",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": -0.5,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "I have 8 cookies. I eat 3 cookies. How many cookies are left?",
+      "type": "word_problem",
+      "options": [
+        {
+          "text": "11"
+        },
+        {
+          "text": "6"
+        },
+        {
+          "text": "5"
+        },
+        {
+          "text": "4"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "When you start with 8 cookies and eat 3 cookies, you subtract: 8 - 3 = 5 cookies are left."
+    },
+    "metadata": {
+      "cognitive_skill": "subtraction reasoning in context",
+      "misconception_targeted": "operation selection in word problems",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "addition_instead_subtraction",
+          "reasoning": "Student may add the numbers instead of subtracting when items are consumed"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "counting_error",
+          "reasoning": "Student may make a basic computational error in subtraction"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "double_subtraction",
+          "reasoning": "Student may subtract incorrectly or continue subtracting beyond the problem"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-m0006",
+    "domain": "math",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 0.2,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Emma has 4 red balloons and 4 blue balloons. Her friend gives her 2 more balloons. Emma thinks she might have about 10 balloons. Is her estimate reasonable?",
+      "type": "estimation",
+      "options": [
+        {
+          "text": "Yes, that's a good estimate"
+        },
+        {
+          "text": "No, she has too few"
+        },
+        {
+          "text": "No, she has too many"
+        },
+        {
+          "text": "She needs to count again"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Emma starts with 4 red balloons and 4 blue balloons. First, we add 4 + 4 = 8 balloons. Then her friend gives her 2 more, so we add 8 + 2 = 10 balloons total. Emma's estimate of about 10 balloons is exactly right, making it a reasonable estimate."
+    },
+    "metadata": {
+      "cognitive_skill": "multi-step addition computation",
+      "misconception_targeted": "computational errors in multi-step addition problems",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "partial_computation",
+          "reasoning": "Student may only add the first two numbers and forget the third"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "counting_by_ones_error",
+          "reasoning": "Student may miscount when adding the final number"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "m_K2_counting_on_error",
+          "reasoning": "Student may start counting from the wrong number or misapply counting strategies"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-m0007",
+    "domain": "math",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 0.2,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Emma has 6 stickers and gets 3 more. Tom has 5 stickers and gets 5 more. Who has more stickers?",
+      "type": "comparison",
+      "options": [
+        {
+          "text": "Emma"
+        },
+        {
+          "text": "Tom"
+        },
+        {
+          "text": "They have the same"
+        },
+        {
+          "text": "11"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "Emma has 6 + 3 = 9 stickers and Tom has 5 + 5 = 10 stickers, so Tom has more stickers. When we compare these amounts, we can see that 10 is greater than 9."
+    },
+    "metadata": {
+      "cognitive_skill": "comparing expressions and analyzing number relationships",
+      "misconception_targeted": "expression equivalence reasoning",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "larger_first_number_bias",
+          "reasoning": "Student may focus on first addend being larger without computing sums"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "doubles_bias",
+          "reasoning": "Student may assume doubles are always larger without verification"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "m_K2_counting_on_error",
+          "reasoning": "Student may make a counting-on error by adding 6+3+5 instead of comparing separate sums"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-m0008",
+    "domain": "math",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Tom has 6 marbles. Lisa has 2 more marbles than Tom. How many marbles does Lisa have?",
+      "type": "word_problem",
+      "options": [
+        {
+          "text": "4"
+        },
+        {
+          "text": "6"
+        },
+        {
+          "text": "8"
+        },
+        {
+          "text": "10"
+        },
+        {
+          "text": "12"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Lisa has 2 more marbles than Tom. Since Tom has 6 marbles, Lisa has 6 + 2 = 8 marbles."
+    },
+    "metadata": {
+      "cognitive_skill": "comparative relationship reasoning",
+      "misconception_targeted": "relational language interpretation",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "subtraction_interpretation",
+          "reasoning": "Student may interpret 'more than' as subtraction rather than addition"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "equal_amounts_assumption",
+          "reasoning": "Student may think 'more than' means they have the same amount"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "multiple_operations_confusion",
+          "reasoning": "Student may add Tom's marbles plus Lisa's additional marbles plus the difference incorrectly"
+        },
+        {
+          "option_index": 4,
+          "misconception_id": "total_calculation_error",
+          "reasoning": "Student may add all numbers mentioned in the problem incorrectly"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-m0009",
+    "domain": "math",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 1.5,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Sara counts by 2s: 2, 4, 6, 8. What number should come next?",
+      "type": "number_sense",
+      "options": [
+        {
+          "text": "9"
+        },
+        {
+          "text": "10"
+        },
+        {
+          "text": "12"
+        },
+        {
+          "text": "16"
+        }
+      ],
+      "correct_index": 1,
+      "explanation": "When counting by 2s, you add 2 each time. After 8, the next number is 8 + 2 = 10."
+    },
+    "metadata": {
+      "cognitive_skill": "skip counting pattern recognition",
+      "misconception_targeted": "counting pattern extension",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "counting_by_ones",
+          "reasoning": "Student may revert to counting by 1s instead of continuing the pattern"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "pattern_acceleration",
+          "reasoning": "Student may incorrectly think the pattern increases by larger amounts"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "doubling_confusion",
+          "reasoning": "Student may double the last number instead of adding 2"
+        }
+      ]
+    }
+  },
+  {
+    "id": "K2-m0010",
+    "domain": "math",
+    "age_bands": [
+      "K-2"
+    ],
+    "difficulty": 0.5,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Ben gives away 4 stickers and has 3 left. How many did he start with?",
+      "type": "word_problem",
+      "options": [
+        {
+          "text": "1"
+        },
+        {
+          "text": "12"
+        },
+        {
+          "text": "7"
+        },
+        {
+          "text": "8"
+        }
+      ],
+      "correct_index": 2,
+      "explanation": "Ben ended with 3 stickers after giving away 4. So he started with 3 + 4 = 7 stickers."
+    },
+    "metadata": {
+      "cognitive_skill": "inverse operation reasoning",
+      "misconception_targeted": "working backwards in word problems",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 0,
+          "misconception_id": "subtraction_only",
+          "reasoning": "Student may subtract given numbers without considering the inverse relationship"
+        },
+        {
+          "option_index": 1,
+          "misconception_id": "double_addition",
+          "reasoning": "Student may double-add one of the given numbers (4+4+4 or 3+3+3+3) instead of understanding the inverse operation"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "missing_addend_as_sum",
+          "reasoning": "Student may add all numbers mentioned (4+3+1) instead of understanding the inverse operation"
+        }
+      ]
+    }
+  }
+]
