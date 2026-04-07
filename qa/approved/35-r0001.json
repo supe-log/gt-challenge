@@ -8,44 +8,44 @@
   "discrimination": 1.2,
   "guessing": 0.25,
   "content": {
-    "stem": "Bird is to nest as bee is to ___.",
+    "stem": "Kitten is to cat as puppy is to ___",
     "type": "analogy",
     "options": [
       {
-        "text": "hive"
+        "text": "dog"
       },
       {
-        "text": "flower"
+        "text": "pet"
       },
       {
-        "text": "honey"
+        "text": "small"
       },
       {
-        "text": "wing"
+        "text": "baby"
       }
     ],
     "correct_index": 0,
-    "explanation": "A bird lives in a nest, and a bee lives in a hive. Both are homes where these animals live and raise their young."
+    "explanation": "This analogy shows the relationship between a young animal and its adult form. A kitten grows up to become a cat, just as a puppy grows up to become a dog."
   },
   "metadata": {
     "cognitive_skill": "relational reasoning",
-    "misconception_targeted": "confusing function with habitat",
+    "misconception_targeted": "surface feature matching over relational reasoning",
     "bloom_level": "apply",
     "distractor_rationale": [
       {
         "option_index": 1,
-        "misconception_id": "function_confusion",
-        "reasoning": "Students may think of what bees use (flowers) rather than where they live"
+        "misconception_id": "category_overgeneralization",
+        "reasoning": "Student focuses on the fact that both kittens and puppies are pets, missing the specific growth relationship"
       },
       {
         "option_index": 2,
-        "misconception_id": "product_confusion",
-        "reasoning": "Students may focus on what bees make rather than their dwelling"
+        "misconception_id": "attribute_matching",
+        "reasoning": "Student matches the shared attribute of being small rather than understanding the developmental relationship"
       },
       {
         "option_index": 3,
-        "misconception_id": "part_whole_confusion",
-        "reasoning": "Students may think of bee body parts rather than habitat"
+        "misconception_id": "synonym_confusion",
+        "reasoning": "Student thinks 'baby' is equivalent to 'puppy' without considering what puppies become"
       }
     ]
   }

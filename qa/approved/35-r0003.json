@@ -4,48 +4,48 @@
   "age_bands": [
     "3-5"
   ],
-  "difficulty": 0.5,
-  "discrimination": 1.8,
+  "difficulty": -0.5,
+  "discrimination": 1.6,
   "guessing": 0.25,
   "content": {
-    "stem": "What number comes next in this pattern: 3, 6, 9, 12, ___?",
-    "type": "number_series",
+    "stem": "Which one does NOT belong? square, triangle, circle, rectangle",
+    "type": "odd_one_out",
     "options": [
       {
-        "text": "13"
+        "text": "circle"
       },
       {
-        "text": "14"
+        "text": "square"
       },
       {
-        "text": "15"
+        "text": "triangle"
       },
       {
-        "text": "16"
+        "text": "rectangle"
       }
     ],
-    "correct_index": 2,
-    "explanation": "The pattern adds 3 each time: 3+3=6, 6+3=9, 9+3=12, so 12+3=15."
+    "correct_index": 0,
+    "explanation": "A circle does not belong because it has no straight sides or corners, while square, triangle, and rectangle are all polygons with straight sides and angles."
   },
   "metadata": {
-    "cognitive_skill": "pattern recognition",
-    "misconception_targeted": "additive vs consecutive thinking",
-    "bloom_level": "apply",
+    "cognitive_skill": "categorical reasoning and classification",
+    "misconception_targeted": "focusing on superficial rather than defining attributes",
+    "bloom_level": "analyze",
     "distractor_rationale": [
       {
-        "option_index": 0,
-        "misconception_id": "add_one_error",
-        "reasoning": "Student adds 1 instead of recognizing the +3 pattern"
+        "option_index": 1,
+        "misconception_id": "regularity_focus",
+        "reasoning": "Student thinks square doesn't belong because it's the most 'regular' or symmetric shape"
       },
       {
-        "option_index": 1,
-        "misconception_id": "add_two_error",
-        "reasoning": "Student adds 2, focusing on consecutive even numbers"
+        "option_index": 2,
+        "misconception_id": "side_count_focus",
+        "reasoning": "Student focuses on triangle having the fewest sides rather than the curved vs straight distinction"
       },
       {
         "option_index": 3,
-        "misconception_id": "add_four_error",
-        "reasoning": "Student miscalculates the pattern as +4"
+        "misconception_id": "size_assumption",
+        "reasoning": "Student may think rectangle doesn't belong due to its elongated shape compared to others"
       }
     ]
   }

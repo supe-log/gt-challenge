@@ -206,17 +206,25 @@ Generate items with IRT difficulty (b) parameters spread across: ${difficultyMin
 Each distractor (wrong answer) should target a specific misconception. Here is the misconception library for this domain:
 ${JSON.stringify(misconceptions, null, 2)}
 
-## CRITICAL REQUIREMENTS
-1. Each item MUST have 3-4 options for K-2, 3-4 for 3-5, 4-5 for 6-8
-2. Distractors must be plausible and target real misconceptions - no obviously wrong answers
-3. The correct answer must be unambiguously correct
-4. Stems must be age-appropriate per the grade specs
-5. Every item MUST include content.explanation explaining why the correct answer is correct (min 20 chars)
-6. Every item MUST include metadata.misconception_targeted describing what the primary distractor tests
-7. Every item MUST include metadata.cognitive_skill (the specific cognitive ability measured)
-8. Every item MUST include metadata.bloom_level (one of: remember, understand, apply, analyze)
-9. Vary question types across the available types for this domain
-10. Items must NOT duplicate any of these existing stems:
+## CRITICAL REQUIREMENTS — GIFTED ASSESSMENT STANDARD
+This is a GIFTED AND TALENTED cognitive assessment (like CogAT). Items must test genuine cognitive ability, not recall.
+
+1. Every item MUST have exactly 4 options. No exceptions. (3 distractors + 1 correct)
+2. Distractors must be HIGHLY plausible — a bright-but-not-gifted student should find them tempting. No obviously wrong answers.
+3. Each distractor MUST target a specific, nameable misconception from the misconception library. Include distractor_rationale for EVERY distractor.
+4. The correct answer must be unambiguously correct but not obviously so.
+5. Stems must be age-appropriate per the grade specs.
+6. Every item MUST include content.explanation explaining WHY the correct answer is correct (min 30 chars).
+7. Every item MUST include metadata.misconception_targeted.
+8. Every item MUST include metadata.cognitive_skill (the specific cognitive ability measured).
+9. Bloom's level requirements by age band:
+   - K-2: minimum "understand" (no "remember" items)
+   - 3-5: minimum "apply" (prefer "analyze")
+   - 6-8: minimum "apply" (strongly prefer "analyze" or "evaluate")
+10. Items must test REASONING, not knowledge. A student should not be able to answer by memorization alone.
+11. Vary question types across the available types for this domain.
+12. For difficulty > 1.0, items should require multi-step reasoning or handling of ambiguity.
+13. Items must NOT duplicate any of these existing stems:
 ${existingStemSample}
 
 ## ID Format

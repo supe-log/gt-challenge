@@ -4,48 +4,48 @@
   "age_bands": [
     "3-5"
   ],
-  "difficulty": 2.5,
-  "discrimination": 2,
+  "difficulty": 3,
+  "discrimination": 1.8,
   "guessing": 0.25,
   "content": {
-    "stem": "In a 3x3 grid, each row shows shapes getting larger and each column shows shapes changing from circle to square to triangle. What goes in the bottom right corner?",
-    "type": "matrix",
+    "stem": "Sharp is to dull as hot is to ___",
+    "type": "analogy",
     "options": [
       {
-        "text": "small triangle"
+        "text": "cold"
       },
       {
-        "text": "medium triangle"
+        "text": "warm"
       },
       {
-        "text": "large triangle"
+        "text": "cool"
       },
       {
-        "text": "large circle"
+        "text": "freezing"
       }
     ],
-    "correct_index": 2,
-    "explanation": "The bottom row should have the largest shapes (following the size pattern), and the right column should have triangles (following the shape pattern)."
+    "correct_index": 0,
+    "explanation": "This analogy shows opposite relationships. Sharp and dull are complete opposites on the sharpness scale, just as hot and cold are complete opposites on the temperature scale."
   },
   "metadata": {
-    "cognitive_skill": "multi-dimensional pattern reasoning",
-    "misconception_targeted": "single-dimension focus in matrix",
+    "cognitive_skill": "relational reasoning with opposite relationships",
+    "misconception_targeted": "degree confusion in opposite relationships",
     "bloom_level": "analyze",
     "distractor_rationale": [
       {
-        "option_index": 0,
-        "misconception_id": "size_pattern_ignored",
-        "reasoning": "Student sees triangle shape but ignores size progression"
+        "option_index": 1,
+        "misconception_id": "degree_matching",
+        "reasoning": "Student thinks warm is opposite to hot rather than understanding the complete opposition relationship"
       },
       {
-        "option_index": 1,
-        "misconception_id": "partial_pattern_recognition",
-        "reasoning": "Student partially applies size pattern but not completely"
+        "option_index": 2,
+        "misconception_id": "mild_opposite",
+        "reasoning": "Student chooses a moderate opposite rather than the complete opposite that matches the sharp-dull relationship"
       },
       {
         "option_index": 3,
-        "misconception_id": "shape_pattern_ignored",
-        "reasoning": "Student focuses on size but ignores shape pattern in columns"
+        "misconception_id": "extreme_matching",
+        "reasoning": "Student thinks freezing matches because both hot and freezing are extreme, missing the direct opposition"
       }
     ]
   }

@@ -1,11 +1,11 @@
 timestamp	item_id	domain	age_band	iteration	score	status	description
-2026-04-07T16:24:44Z	35-r0001	reasoning	3-5	1	93.75	approved	reasoning item 3-5
-2026-04-07T16:24:51Z	35-r0002	reasoning	3-5	1	88.75	approved	reasoning item 3-5
-2026-04-07T16:24:57Z	35-r0003	reasoning	3-5	1	93.75	approved	reasoning item 3-5
-2026-04-07T16:25:04Z	35-r0004	reasoning	3-5	1	93.75	approved	reasoning item 3-5
-2026-04-07T16:25:11Z	35-r0005	reasoning	3-5	1	93.75	approved	reasoning item 3-5
-2026-04-07T16:25:16Z	35-r0006	reasoning	3-5	1	92.5	approved	reasoning item 3-5
-2026-04-07T16:25:23Z	35-r0007	reasoning	3-5	1	90	approved	reasoning item 3-5
-2026-04-07T16:25:30Z	35-r0008	reasoning	3-5	1	85	approved	reasoning item 3-5
-2026-04-07T16:25:38Z	35-r0009	reasoning	3-5	1	93.75	approved	reasoning item 3-5
-2026-04-07T16:25:47Z	35-r0010	reasoning	3-5	1	88.75	approved	reasoning item 3-5
+2026-04-07T16:54:27Z	35-r0001	reasoning	3-5	1	85	approved	reasoning item 3-5
+2026-04-07T16:54:31Z	35-r0002	reasoning	3-5	1	85	approved	reasoning item 3-5
+2026-04-07T16:54:37Z	35-r0003	reasoning	3-5	1	87.5	approved	reasoning item 3-5
+2026-04-07T16:54:43Z	35-r0004	reasoning	3-5	1	87.5	approved	reasoning item 3-5
+2026-04-07T16:54:49Z	35-r0005	reasoning	3-5	1	95	approved	reasoning item 3-5
+2026-04-07T16:54:55Z	35-r0006	reasoning	3-5	1	93.75	approved	reasoning item 3-5
+2026-04-07T16:55:00Z	35-r0007	reasoning	3-5	1	87.5	approved	reasoning item 3-5
+2026-04-07T16:55:06Z	35-r0008	reasoning	3-5	1	91.25	approved	reasoning item 3-5
+2026-04-07T16:55:14Z	35-r0009	reasoning	3-5	1	91.25	approved	reasoning item 3-5
+2026-04-07T16:55:21Z	35-r0010	reasoning	3-5	1	87.5	approved	reasoning item 3-5

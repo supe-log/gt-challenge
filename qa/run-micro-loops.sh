@@ -185,10 +185,8 @@ for ((idx=0; idx<ITEM_COUNT; idx++)); do
     # Check if evaluate-item.ts exists
     if [[ -f "$QA_DIR/evaluate-item.ts" ]]; then
       EVAL_OUTPUT=$(ITEM_PATH="$LATEST_FILE" ITEM_INDEX="$idx" \
-        npx tsx qa/evaluate-item.ts 2>&1) || {
-        log_warn "  Evaluation failed for $ITEM_ID, skipping"
-        EVAL_OUTPUT='{"score":0,"deltas":["Evaluation failed"]}'
-      }
+        npx tsx qa/evaluate-item.ts 2>&1) || true
+      # Evaluator exits 1 for flagged/crash but still outputs valid JSON
     else
       # Fallback: simulate evaluation if evaluate-item.ts doesn't exist yet
       log_warn "  evaluate-item.ts not found, using placeholder scoring"

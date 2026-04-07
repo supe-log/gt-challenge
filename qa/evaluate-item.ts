@@ -126,6 +126,20 @@ interface DimensionDef {
 const DIMENSIONS: DimensionDef[] = [
   {
     key: "content_accuracy",
+    max_points: 15,
+    critical: true,
+    model: "gpt-4o",
+    median_calls: 3,
+  },
+  {
+    key: "cognitive_depth",
+    max_points: 20,
+    critical: true,
+    model: "gpt-4o",
+    median_calls: 3,
+  },
+  {
+    key: "distractor_quality",
     max_points: 20,
     critical: true,
     model: "gpt-4o",
@@ -133,27 +147,13 @@ const DIMENSIONS: DimensionDef[] = [
   },
   {
     key: "age_appropriateness",
-    max_points: 15,
-    critical: true,
-    model: "gpt-4o",
-    median_calls: 3,
-  },
-  {
-    key: "distractor_quality",
-    max_points: 15,
+    max_points: 10,
     critical: false,
     model: "gpt-4o-mini",
     median_calls: 1,
   },
   {
     key: "stem_clarity",
-    max_points: 15,
-    critical: false,
-    model: "gpt-4o-mini",
-    median_calls: 1,
-  },
-  {
-    key: "irt_parameter_validity",
     max_points: 10,
     critical: false,
     model: "gpt-4o-mini",
@@ -174,7 +174,7 @@ const DIMENSIONS: DimensionDef[] = [
     median_calls: 1,
   },
   {
-    key: "cognitive_depth",
+    key: "irt_parameter_validity",
     max_points: 5,
     critical: false,
     model: "gpt-4o-mini",
@@ -283,10 +283,10 @@ function runPreFlightChecks(item: any): PreFlightResult {
       }
     }
 
-    // Options validation
+    // Options validation — gifted test requires minimum 4 options
     if (Array.isArray(item.content.options)) {
-      if (item.content.options.length < 2) {
-        errors.push("content.options must have at least 2 options");
+      if (item.content.options.length < 4) {
+        errors.push(`content.options has only ${item.content.options.length} options — gifted assessment items require at least 4 options to reduce guessing probability`);
       }
       if (item.content.options.length > 6) {
         errors.push("content.options must have at most 6 options");
@@ -363,6 +363,43 @@ function runPreFlightChecks(item: any): PreFlightResult {
     ) {
       errors.push(
         `Invalid bloom_level "${item.metadata.bloom_level}". Must be one of: ${validBlooms.join(", ")}`
+      );
+    }
+
+    // Gifted test gate: "remember" level items are too shallow for 3-5 and 6-8
+    if (
+      item.metadata.bloom_level === "remember" &&
+      Array.isArray(item.age_bands) &&
+      item.age_bands.some((b: string) => b === "3-5" || b === "6-8")
+    ) {
+      errors.push(
+        `bloom_level "remember" is too shallow for a gifted assessment targeting ${item.age_bands.join(", ")}. Items must require at least "understand" level cognitive processing.`
+      );
+    }
+
+    // Gifted test gate: "understand" level also too shallow for 6-8
+    if (
+      item.metadata.bloom_level === "understand" &&
+      Array.isArray(item.age_bands) &&
+      item.age_bands.some((b: string) => b === "6-8")
+    ) {
+      errors.push(
+        `bloom_level "understand" is too shallow for 6-8 gifted assessment. Items must require at least "apply" level cognitive processing.`
+      );
+    }
+
+    // Distractor rationale: at least 2 distractors must map to misconceptions
+    if (item.metadata.distractor_rationale) {
+      if (!Array.isArray(item.metadata.distractor_rationale)) {
+        errors.push("metadata.distractor_rationale must be an array");
+      } else if (item.metadata.distractor_rationale.length < 2) {
+        errors.push(
+          `metadata.distractor_rationale has only ${item.metadata.distractor_rationale.length} entries — at least 2 distractors must target documented misconceptions`
+        );
+      }
+    } else {
+      errors.push(
+        "Missing metadata.distractor_rationale — each distractor must map to a specific misconception"
       );
     }
 
@@ -547,7 +584,7 @@ Respond in exactly this JSON format:
     },
 
     // =====================================================================
-    // DISTRACTOR QUALITY (15 pts)
+    // DISTRACTOR QUALITY (20 pts, CRITICAL)
     // =====================================================================
     distractor_quality: {
       system: `${sharedContext}
@@ -574,11 +611,14 @@ RUBRIC — Score 0-4:
 0 (Unusable): Distractors are nonsensical, or there is only one real distractor with the rest being filler.
 
 KEY PRINCIPLES FOR GT ASSESSMENT DISTRACTORS:
+- A gifted assessment item MUST have at least 4 options. Fewer than 4 is an automatic score of 0.
 - Each distractor should represent a specific, nameable error in reasoning
 - Distractors should be derived from known misconceptions, not random wrong answers
 - The "best wrong answer" (most common misconception) should be among the distractors
 - All options should be parallel in structure, length, and grammatical form
-- No option should be eliminatable by test-taking strategy alone (e.g., "all of the above")`,
+- No option should be eliminatable by test-taking strategy alone (e.g., "all of the above")
+- Distractors must be challenging enough that a bright-but-not-gifted student would find them plausible
+- If any distractor can be eliminated without domain knowledge (by process of elimination, format, or common sense), score 2 or below`,
       user: `Score this item on DISTRACTOR QUALITY (0-4).
 
 Think step by step:
@@ -597,7 +637,7 @@ Respond in exactly this JSON format:
     },
 
     // =====================================================================
-    // STEM CLARITY (15 pts)
+    // STEM CLARITY (10 pts)
     // =====================================================================
     stem_clarity: {
       system: `${sharedContext}
@@ -640,7 +680,7 @@ Respond in exactly this JSON format:
     },
 
     // =====================================================================
-    // IRT PARAMETER VALIDITY (10 pts)
+    // IRT PARAMETER VALIDITY (5 pts)
     // =====================================================================
     irt_parameter_validity: {
       system: `${sharedContext}
@@ -769,7 +809,7 @@ Respond in exactly this JSON format:
     },
 
     // =====================================================================
-    // COGNITIVE DEPTH (5 pts)
+    // COGNITIVE DEPTH (20 pts, CRITICAL)
     // =====================================================================
     cognitive_depth: {
       system: `${sharedContext}

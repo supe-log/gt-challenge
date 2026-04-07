@@ -1,0 +1,522 @@
+[
+  {
+    "id": "35-r0001",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -2.5,
+    "discrimination": 1.2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Kitten is to cat as puppy is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "dog"
+        },
+        {
+          "text": "pet"
+        },
+        {
+          "text": "small"
+        },
+        {
+          "text": "baby"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "This analogy shows the relationship between a young animal and its adult form. A kitten grows up to become a cat, just as a puppy grows up to become a dog."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning",
+      "misconception_targeted": "surface feature matching over relational reasoning",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "category_overgeneralization",
+          "reasoning": "Student focuses on the fact that both kittens and puppies are pets, missing the specific growth relationship"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "attribute_matching",
+          "reasoning": "Student matches the shared attribute of being small rather than understanding the developmental relationship"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "synonym_confusion",
+          "reasoning": "Student thinks 'baby' is equivalent to 'puppy' without considering what puppies become"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0002",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -1.5,
+    "discrimination": 1.4,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which number comes next in this pattern? 3, 6, 9, 12, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "15"
+        },
+        {
+          "text": "14"
+        },
+        {
+          "text": "18"
+        },
+        {
+          "text": "21"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "This is a counting by 3s pattern. Each number increases by 3: 3+3=6, 6+3=9, 9+3=12, so 12+3=15."
+    },
+    "metadata": {
+      "cognitive_skill": "pattern recognition and inductive reasoning",
+      "misconception_targeted": "additive vs multiplicative pattern confusion",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "add_one_pattern",
+          "reasoning": "Student applies a simple +1 pattern to the last number (12+1=13, closest option 14)"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "doubling_pattern",
+          "reasoning": "Student thinks the pattern involves doubling and gets confused with 9×2=18"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "wrong_increment",
+          "reasoning": "Student calculates 12+9=21, using the wrong additive increment"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0003",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": -0.5,
+    "discrimination": 1.6,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which one does NOT belong? square, triangle, circle, rectangle",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "circle"
+        },
+        {
+          "text": "square"
+        },
+        {
+          "text": "triangle"
+        },
+        {
+          "text": "rectangle"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "A circle does not belong because it has no straight sides or corners, while square, triangle, and rectangle are all polygons with straight sides and angles."
+    },
+    "metadata": {
+      "cognitive_skill": "categorical reasoning and classification",
+      "misconception_targeted": "focusing on superficial rather than defining attributes",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "regularity_focus",
+          "reasoning": "Student thinks square doesn't belong because it's the most 'regular' or symmetric shape"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "side_count_focus",
+          "reasoning": "Student focuses on triangle having the fewest sides rather than the curved vs straight distinction"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "size_assumption",
+          "reasoning": "Student may think rectangle doesn't belong due to its elongated shape compared to others"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0004",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0.5,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "All birds have feathers. A robin is a bird. What can we conclude?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "A robin has feathers"
+        },
+        {
+          "text": "All robins can fly"
+        },
+        {
+          "text": "A robin is red"
+        },
+        {
+          "text": "Feathers help birds fly"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "From the logical structure, if all birds have feathers and a robin is a bird, then we can definitively conclude that a robin has feathers. This follows the valid logical form of a syllogism."
+    },
+    "metadata": {
+      "cognitive_skill": "deductive reasoning and logical inference",
+      "misconception_targeted": "adding unstated assumptions to logical conclusions",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "assumption_addition",
+          "reasoning": "Student adds the unstated assumption that birds can fly, which wasn't given in the premises"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "specific_knowledge_intrusion",
+          "reasoning": "Student uses real-world knowledge about robin color rather than sticking to logical deduction"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "function_assumption",
+          "reasoning": "Student makes an assumption about the purpose of feathers that wasn't stated in the premises"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0005",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1,
+    "discrimination": 1.5,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Book is to library as medicine is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "pharmacy"
+        },
+        {
+          "text": "doctor"
+        },
+        {
+          "text": "hospital"
+        },
+        {
+          "text": "health"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "This analogy shows the relationship between an item and the place where it is stored and distributed. Books are stored and given out at libraries, just as medicines are stored and given out at pharmacies."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning with functional relationships",
+      "misconception_targeted": "confusing functional with locational relationships",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "agent_confusion",
+          "reasoning": "Student thinks of who uses medicine rather than where medicine is stored and distributed"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "general_location",
+          "reasoning": "Student chooses a place where medicine is used rather than where it's specifically stored and distributed"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "purpose_confusion",
+          "reasoning": "Student focuses on what medicine promotes rather than the storage/distribution relationship"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0006",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 1.5,
+    "discrimination": 1.7,
+    "guessing": 0.25,
+    "content": {
+      "stem": "What comes next? 2, 5, 8, 11, 14, ___",
+      "type": "number_series",
+      "options": [
+        {
+          "text": "17"
+        },
+        {
+          "text": "16"
+        },
+        {
+          "text": "18"
+        },
+        {
+          "text": "19"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "This sequence increases by 3 each time. The pattern is +3: 2+3=5, 5+3=8, 8+3=11, 11+3=14, so 14+3=17."
+    },
+    "metadata": {
+      "cognitive_skill": "arithmetic sequence pattern recognition",
+      "misconception_targeted": "inconsistent pattern application",
+      "bloom_level": "apply",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "alternating_increment",
+          "reasoning": "Student might think the pattern alternates between +3 and +2, giving 14+2=16"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "doubling_last_digit",
+          "reasoning": "Student focuses on the last digit pattern or adds 4 instead of 3"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "variable_increment",
+          "reasoning": "Student thinks the increment increases each time and adds 5 to get 14+5=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0007",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 0,
+    "discrimination": 1.3,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Which group does NOT follow the same rule? Group A: cat, dog, rabbit Group B: car, bus, truck Group C: apple, banana, orange Group D: happy, sad, book",
+      "type": "odd_one_out",
+      "options": [
+        {
+          "text": "Group D"
+        },
+        {
+          "text": "Group A"
+        },
+        {
+          "text": "Group B"
+        },
+        {
+          "text": "Group C"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Groups A, B, and C each contain three items from the same category (animals, vehicles, fruits). Group D mixes two emotions with one object, so it doesn't follow the same rule."
+    },
+    "metadata": {
+      "cognitive_skill": "meta-categorical reasoning and rule identification",
+      "misconception_targeted": "focusing on surface features rather than categorical consistency",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "living_vs_nonliving",
+          "reasoning": "Student might think Group A doesn't belong because it contains living things while others seem non-living"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "concrete_vs_abstract",
+          "reasoning": "Student might focus on vehicles being machines rather than seeing the categorical consistency"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "natural_vs_artificial",
+          "reasoning": "Student might think fruits don't belong because they're natural while other groups seem artificial"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0008",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 2,
+    "discrimination": 2,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Some flowers are roses. All roses are plants. Which statement must be true?",
+      "type": "syllogism",
+      "options": [
+        {
+          "text": "Some flowers are plants"
+        },
+        {
+          "text": "All flowers are plants"
+        },
+        {
+          "text": "All plants are flowers"
+        },
+        {
+          "text": "Some plants are roses"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Since some flowers are roses, and all roses are plants, we know that at least some flowers (the ones that are roses) must be plants. We cannot conclude that ALL flowers are plants from the given information."
+    },
+    "metadata": {
+      "cognitive_skill": "quantified logical reasoning with 'some' and 'all'",
+      "misconception_targeted": "confusing 'some' and 'all' quantifiers in logical reasoning",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "quantifier_strengthening",
+          "reasoning": "Student incorrectly strengthens 'some flowers are roses' to conclude about ALL flowers"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "logical_reversal",
+          "reasoning": "Student reverses the logical relationship, thinking 'all roses are plants' means 'all plants are roses'"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "premise_restatement",
+          "reasoning": "Student restates part of the given information rather than drawing a new conclusion"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0009",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 2.5,
+    "discrimination": 1.9,
+    "guessing": 0.25,
+    "content": {
+      "stem": "In a 3×3 grid, each row and column follows a pattern. Row 1: circle, square, triangle. Row 2: square, triangle, circle. What completes Row 3: triangle, ___, square?",
+      "type": "matrix",
+      "options": [
+        {
+          "text": "circle"
+        },
+        {
+          "text": "triangle"
+        },
+        {
+          "text": "square"
+        },
+        {
+          "text": "star"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "Each row contains the same three shapes in different orders, and each column also contains all three shapes. Column 2 has square, triangle, so it needs circle to complete the set."
+    },
+    "metadata": {
+      "cognitive_skill": "simultaneous relational reasoning across two dimensions",
+      "misconception_targeted": "focusing on single dimension rather than matrix constraints",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "row_repetition",
+          "reasoning": "Student thinks the missing shape should repeat the first shape in the row"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "adjacent_copying",
+          "reasoning": "Student copies the pattern from the cell directly above or focuses only on row completion"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "pattern_breaking",
+          "reasoning": "Student thinks a new shape is needed rather than understanding the constraint of using only the given shapes"
+        }
+      ]
+    }
+  },
+  {
+    "id": "35-r0010",
+    "domain": "reasoning",
+    "age_bands": [
+      "3-5"
+    ],
+    "difficulty": 3,
+    "discrimination": 1.8,
+    "guessing": 0.25,
+    "content": {
+      "stem": "Sharp is to dull as hot is to ___",
+      "type": "analogy",
+      "options": [
+        {
+          "text": "cold"
+        },
+        {
+          "text": "warm"
+        },
+        {
+          "text": "cool"
+        },
+        {
+          "text": "freezing"
+        }
+      ],
+      "correct_index": 0,
+      "explanation": "This analogy shows opposite relationships. Sharp and dull are complete opposites on the sharpness scale, just as hot and cold are complete opposites on the temperature scale."
+    },
+    "metadata": {
+      "cognitive_skill": "relational reasoning with opposite relationships",
+      "misconception_targeted": "degree confusion in opposite relationships",
+      "bloom_level": "analyze",
+      "distractor_rationale": [
+        {
+          "option_index": 1,
+          "misconception_id": "degree_matching",
+          "reasoning": "Student thinks warm is opposite to hot rather than understanding the complete opposition relationship"
+        },
+        {
+          "option_index": 2,
+          "misconception_id": "mild_opposite",
+          "reasoning": "Student chooses a moderate opposite rather than the complete opposite that matches the sharp-dull relationship"
+        },
+        {
+          "option_index": 3,
+          "misconception_id": "extreme_matching",
+          "reasoning": "Student thinks freezing matches because both hot and freezing are extreme, missing the direct opposition"
+        }
+      ]
+    }
+  }
+]
