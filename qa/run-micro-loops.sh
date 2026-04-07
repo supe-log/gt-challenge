@@ -223,28 +223,45 @@ for ((idx=0; idx<ITEM_COUNT; idx++)); do
       ")
     fi
 
-    # Parse score from evaluation output (find the JSON line)
-    EVAL_JSON=$(echo "$EVAL_OUTPUT" | grep -E '^\{' | tail -1)
+    # Parse score from evaluation output (extract full JSON object)
+    # The evaluator outputs pretty-printed JSON to stdout; extract it
+    EVAL_JSON=$(echo "$EVAL_OUTPUT" | node -e "
+      let buf=''; process.stdin.on('data',d=>buf+=d);
+      process.stdin.on('end',()=>{
+        // Find the first { and last } to extract JSON
+        const start = buf.indexOf('{');
+        const end = buf.lastIndexOf('}');
+        if (start >= 0 && end > start) {
+          try { const obj = JSON.parse(buf.slice(start, end+1)); console.log(JSON.stringify(obj)); }
+          catch(e) { console.log('{\"composite_score\":0,\"revision_deltas\":[\"JSON parse error\"]}'); }
+        } else {
+          console.log('{\"composite_score\":0,\"revision_deltas\":[\"No JSON in output\"]}');
+        }
+      });
+    ")
     if [[ -z "$EVAL_JSON" ]]; then
-      EVAL_JSON='{"score":0,"deltas":["Could not parse evaluation output"]}'
+      EVAL_JSON='{"composite_score":0,"revision_deltas":["Could not parse evaluation output"]}'
     fi
 
     SCORE=$(echo "$EVAL_JSON" | node -e "
       let buf=''; process.stdin.on('data',d=>buf+=d);
-      process.stdin.on('end',()=>{ try{console.log(JSON.parse(buf).score||0)}catch(e){console.log(0)} });
+      process.stdin.on('end',()=>{ try{const d=JSON.parse(buf);console.log(d.composite_score||d.score||0)}catch(e){console.log(0)} });
     ")
     SCORE=${SCORE:-0}
 
     DELTA_COUNT=$(echo "$EVAL_JSON" | node -e "
       let buf=''; process.stdin.on('data',d=>buf+=d);
-      process.stdin.on('end',()=>{ try{console.log((JSON.parse(buf).deltas||[]).length)}catch(e){console.log(0)} });
+      process.stdin.on('end',()=>{ try{const d=JSON.parse(buf);console.log((d.revision_deltas||d.deltas||[]).length)}catch(e){console.log(0)} });
     ")
 
     echo -e "  Score: ${BOLD}${SCORE}${NC}/100  (${DELTA_COUNT} deltas)"
 
-    # ── Ratchet check ──
+    # ── Ratchet check (use bc for float comparison) ──
+    # Truncate floats to integers for bash arithmetic
+    SCORE_INT=$(echo "$SCORE" | awk '{printf "%d", $1}')
+    BEST_INT=$(echo "$BEST_SCORE" | awk '{printf "%d", $1}')
     if (( iter > 1 )); then
-      if (( SCORE > BEST_SCORE )); then
+      if (( SCORE_INT > BEST_INT )); then
         log_success "  Improved: $BEST_SCORE -> $SCORE"
         IMPROVED_COUNT=$((IMPROVED_COUNT + 1))
         # Save new best as backup
@@ -252,7 +269,7 @@ for ((idx=0; idx<ITEM_COUNT; idx++)); do
           const items = JSON.parse(require('fs').readFileSync('$LATEST_FILE','utf-8'));
           require('fs').writeFileSync('$BACKUP_FILE', JSON.stringify(items[$idx], null, 2));
         "
-      elif (( SCORE < BEST_SCORE )); then
+      elif (( SCORE_INT < BEST_INT )); then
         log_warn "  Regression: $BEST_SCORE -> $SCORE. Reverting."
         # Revert to backup
         node -e "
@@ -266,10 +283,11 @@ for ((idx=0; idx<ITEM_COUNT; idx++)); do
       fi
     fi
 
-    BEST_SCORE=$((SCORE > BEST_SCORE ? SCORE : BEST_SCORE))
+    if (( SCORE_INT > BEST_INT )); then BEST_SCORE=$SCORE; fi
 
     # ── Check if passed ──
-    if (( BEST_SCORE >= PASS_THRESHOLD )); then
+    BEST_INT=$(echo "$BEST_SCORE" | awk '{printf "%d", $1}')
+    if (( BEST_INT >= PASS_THRESHOLD )); then
       ITEM_STATUS="approved"
       log_success "  PASSED (score $BEST_SCORE >= $PASS_THRESHOLD)"
       break
@@ -295,7 +313,7 @@ for ((idx=0; idx<ITEM_COUNT; idx++)); do
     EDIT_DELTAS=$(echo "$EVAL_JSON" | node -e "
       let buf=''; process.stdin.on('data',d=>buf+=d);
       process.stdin.on('end',()=>{
-        try { console.log(JSON.stringify(JSON.parse(buf).deltas || [])); }
+        try { const d=JSON.parse(buf); console.log(JSON.stringify(d.revision_deltas || d.deltas || [])); }
         catch(e) { console.log('[]'); }
       });
     ")

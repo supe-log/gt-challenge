@@ -1,0 +1,44 @@
+{
+  "id": "35-r0005",
+  "domain": "reasoning",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": -1.5,
+  "discrimination": 1.1,
+  "guessing": 0.33,
+  "content": {
+    "stem": "Hot is to cold as up is to ___.",
+    "type": "analogy",
+    "options": [
+      {
+        "text": "down"
+      },
+      {
+        "text": "high"
+      },
+      {
+        "text": "sky"
+      }
+    ],
+    "correct_index": 0,
+    "explanation": "Hot and cold are opposites. Up and down are also opposites. The relationship is about opposite directions or states."
+  },
+  "metadata": {
+    "cognitive_skill": "relational reasoning",
+    "misconception_targeted": "semantic association over logical relation",
+    "bloom_level": "understand",
+    "distractor_rationale": [
+      {
+        "option_index": 1,
+        "misconception_id": "synonym_confusion",
+        "reasoning": "Student chooses a word similar to 'up' rather than its opposite"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "association_error",
+        "reasoning": "Student thinks of what is 'up' rather than the opposite relationship"
+      }
+    ]
+  }
+}

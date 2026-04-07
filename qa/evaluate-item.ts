@@ -1032,7 +1032,21 @@ async function loadItem(): Promise<Item> {
     // Load from file
     const resolved = path.resolve(itemPath);
     const raw = fs.readFileSync(resolved, "utf-8");
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    // If file is an array and ITEM_INDEX is set, extract that item
+    const itemIndex = process.env.ITEM_INDEX;
+    if (Array.isArray(parsed) && itemIndex !== undefined) {
+      const idx = parseInt(itemIndex, 10);
+      if (idx < 0 || idx >= parsed.length) {
+        throw new Error(`ITEM_INDEX=${idx} out of bounds for array of ${parsed.length} items`);
+      }
+      return parsed[idx];
+    }
+    // If array but no index, take first item
+    if (Array.isArray(parsed)) {
+      return parsed[0];
+    }
+    return parsed;
   }
 
   // Read from stdin

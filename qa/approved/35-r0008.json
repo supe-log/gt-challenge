@@ -1,0 +1,52 @@
+{
+  "id": "35-r0008",
+  "domain": "reasoning",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": 2,
+  "discrimination": 1.7,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Some flowers are red. All red things are beautiful. Therefore:",
+    "type": "syllogism",
+    "options": [
+      {
+        "text": "All flowers are beautiful"
+      },
+      {
+        "text": "Some flowers are beautiful"
+      },
+      {
+        "text": "All beautiful things are flowers"
+      },
+      {
+        "text": "No flowers are beautiful"
+      }
+    ],
+    "correct_index": 1,
+    "explanation": "Since some flowers are red, and all red things are beautiful, we can conclude that at least some flowers (the red ones) are beautiful."
+  },
+  "metadata": {
+    "cognitive_skill": "logical quantifier reasoning",
+    "misconception_targeted": "quantifier confusion - some vs all",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 0,
+        "misconception_id": "universal_generalization",
+        "reasoning": "Student incorrectly extends 'some' to 'all'"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "reverse_logic",
+        "reasoning": "Student reverses the logical direction of the statement"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "negation_error",
+        "reasoning": "Student incorrectly negates the conclusion"
+      }
+    ]
+  }
+}

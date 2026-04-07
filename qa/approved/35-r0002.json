@@ -1,0 +1,44 @@
+{
+  "id": "35-r0002",
+  "domain": "reasoning",
+  "age_bands": [
+    "3-5"
+  ],
+  "difficulty": -1,
+  "discrimination": 1.5,
+  "guessing": 0.33,
+  "content": {
+    "stem": "Which one does NOT belong: triangle, circle, rectangle, birthday?",
+    "type": "odd_one_out",
+    "options": [
+      {
+        "text": "triangle"
+      },
+      {
+        "text": "circle"
+      },
+      {
+        "text": "birthday"
+      }
+    ],
+    "correct_index": 2,
+    "explanation": "Triangle, circle, and rectangle are all shapes. Birthday is not a shape - it is a special day or event."
+  },
+  "metadata": {
+    "cognitive_skill": "categorical classification",
+    "misconception_targeted": "surface feature focusing",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 0,
+        "misconception_id": "angular_focus",
+        "reasoning": "Student may focus on triangle having corners unlike circle"
+      },
+      {
+        "option_index": 1,
+        "misconception_id": "curved_focus",
+        "reasoning": "Student may focus on circle being the only curved shape"
+      }
+    ]
+  }
+}
