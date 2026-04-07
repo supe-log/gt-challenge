@@ -17,6 +17,7 @@ interface SessionState {
   sessionNumber: number;
   currentItem: ItemContent | null;
   currentItemId: string | null;
+  currentItemDomain: string | null;
   itemsCompleted: number;
   itemsCorrect: number;
   offerBonusRound: boolean;
@@ -37,6 +38,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
   sessionNumber: 0,
   currentItem: null,
   currentItemId: null,
+  currentItemDomain: null,
   itemsCompleted: 0,
   itemsCorrect: 0,
   offerBonusRound: false,
@@ -62,6 +64,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
         sessionNumber: data.session_number,
         currentItem: data.item,
         currentItemId: data.item_id,
+        currentItemDomain: data.item_domain ?? null,
         itemsCompleted: 0,
         itemsCorrect: 0,
         isComplete: false,
@@ -101,12 +104,14 @@ export const useSessionStore = create<SessionState>((set, get) => ({
           bonusRoundsCompleted: data.bonus_rounds_completed,
           currentItem: null,
           currentItemId: null,
+          currentItemDomain: null,
           isLoading: false,
         });
       } else {
         set({
           currentItem: data.item,
           currentItemId: data.item_id,
+          currentItemDomain: data.item_domain ?? null,
           itemsCompleted: data.items_completed,
           offerBonusRound: data.offer_bonus_round,
           isLoading: false,
@@ -123,6 +128,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       sessionNumber: 0,
       currentItem: null,
       currentItemId: null,
+      currentItemDomain: null,
       itemsCompleted: 0,
       itemsCorrect: 0,
       offerBonusRound: false,

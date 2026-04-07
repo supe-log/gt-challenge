@@ -128,3 +128,41 @@ export const SubmitResponseResponseSchema = z.discriminatedUnion("done", [
   SessionCompleteResponseSchema,
 ]);
 export type SubmitResponseResponse = z.infer<typeof SubmitResponseResponseSchema>;
+
+// ─── Appetite Signals ──────────────────────────────────────────
+
+export const AppetiteSignalRowSchema = z.object({
+  id: z.string().uuid(),
+  child_id: z.string().uuid(),
+  signal_type: z.enum([
+    "return_visit",
+    "persistence",
+    "voluntary_hard",
+    "learning_velocity",
+    "time_investment",
+    "streak",
+  ]),
+  signal_value: z.number().min(0).max(1),
+  session_id: z.string().uuid().nullable(),
+  computed_at: z.string(),
+  raw_data: z.unknown(),
+});
+export type AppetiteSignalRow = z.infer<typeof AppetiteSignalRowSchema>;
+
+export const CompositeScoreRowSchema = z.object({
+  id: z.string().uuid(),
+  child_id: z.string().uuid(),
+  parent_id: z.string().uuid(),
+  aptitude_theta: z.number().nullable(),
+  aptitude_se: z.number().nullable(),
+  aptitude_tier: z.enum(["high", "very_high", "exceptional"]).nullable(),
+  appetite_score: z.number().nullable(),
+  appetite_tier: z.enum(["high", "very_high", "exceptional"]).nullable(),
+  sessions_completed: z.number().int().min(0),
+  proctor_eligible: z.boolean(),
+  proctor_validated: z.boolean(),
+  proctor_session_id: z.string().uuid().nullable(),
+  admission_eligible: z.boolean(),
+  computed_at: z.string(),
+});
+export type CompositeScoreRow = z.infer<typeof CompositeScoreRowSchema>;

@@ -1,11 +1,12 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
-
-function SessionStarter() {
-  const searchParams = useSearchParams();
-  const childId = searchParams.get("child");
+export default async function NewSessionPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ child?: string }>;
+}) {
+  const params = await searchParams;
+  const childId = params.child;
 
   if (!childId) {
     return (
@@ -15,17 +16,5 @@ function SessionStarter() {
     );
   }
 
-  // Render the actual session page with child param
-  // The [sessionId] page handles session creation via the store
-  return (
-    <meta httpEquiv="refresh" content={`0;url=/session/active?child=${childId}`} />
-  );
-}
-
-export default function NewSessionPage() {
-  return (
-    <Suspense>
-      <SessionStarter />
-    </Suspense>
-  );
+  redirect(`/session/active?child=${childId}`);
 }

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { DEMO_ITEMS, type DemoItem } from "./items";
+import { ALL_ITEMS, DEMO_ITEMS, type DemoItem } from "./items";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -110,13 +110,16 @@ export default function DemoPage() {
   const [streak, setStreak] = useState(0);
   const [maxStreak, setMaxStreak] = useState(0);
 
+  const bandItems = ageBand ? (ALL_ITEMS[ageBand] ?? DEMO_ITEMS) : DEMO_ITEMS;
   const currentLevel = Math.max(0, Math.min(9, Math.floor(((theta + 3) / 6) * 10)));
-  const totalItems = Math.min(DEMO_ITEMS.length, 40);
+  const totalItems = Math.min(bandItems.length, 40);
 
   function startChallenge(band: string) {
     setAgeBand(band);
     setPhase("playing");
-    const first = selectNext(0, DEMO_ITEMS, []);
+    const items = ALL_ITEMS[band] ?? DEMO_ITEMS;
+    itemMap.current = new Map(items.map((it) => [it.id, it]));
+    const first = selectNext(0, items, []);
     if (first) {
       setCurrentItem(first);
       setUsedIds(new Set([first.id]));
@@ -149,7 +152,7 @@ export default function DemoPage() {
     setMaxStreak(newMaxStreak);
 
     const count = newResponses.length;
-    const remaining = DEMO_ITEMS.filter((it) => !usedIds.has(it.id) && it.id !== currentItem.id);
+    const remaining = bandItems.filter((it) => !usedIds.has(it.id) && it.id !== currentItem.id);
     const shouldStop = (count >= 15 && se <= 0.25) || count >= 40 || remaining.length === 0;
 
     // Quick transition — no feedback text, just slide to next

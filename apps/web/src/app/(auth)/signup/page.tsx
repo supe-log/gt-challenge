@@ -12,6 +12,7 @@ export default function SignupPage() {
   const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [confirmationSent, setConfirmationSent] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -32,6 +33,13 @@ export default function SignupPage() {
       return;
     }
 
+    // If email confirmation is required, user.identities will be empty
+    if (authData.user && authData.user.identities?.length === 0) {
+      setConfirmationSent(true);
+      setLoading(false);
+      return;
+    }
+
     // 2. Create parent profile
     if (authData.user) {
       const { error: profileError } = await supabase.from("profiles").insert({
@@ -48,6 +56,26 @@ export default function SignupPage() {
     }
 
     router.push("/parent");
+  }
+
+  if (confirmationSent) {
+    return (
+      <main className="flex flex-col items-center justify-center min-h-screen px-6">
+        <div className="w-full max-w-sm space-y-6 text-center">
+          <div className="text-5xl">📧</div>
+          <h1 className="text-2xl font-bold">Check your email</h1>
+          <p className="text-gray-500">
+            We sent a confirmation link to <strong>{email}</strong>. Click the link to activate your account, then come back to sign in.
+          </p>
+          <Link
+            href="/login"
+            className="inline-block px-6 py-2.5 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          >
+            Go to Sign In
+          </Link>
+        </div>
+      </main>
+    );
   }
 
   return (

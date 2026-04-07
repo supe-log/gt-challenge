@@ -145,6 +145,7 @@ Deno.serve(async (req) => {
         session_number: sessionNumber,
         item: selectedItem.content_json,
         item_id: selectedItem.id,
+        item_domain: selectedItem.domain,
       }),
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },

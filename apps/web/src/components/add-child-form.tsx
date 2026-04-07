@@ -57,10 +57,16 @@ export function AddChildForm({ parentId }: { parentId: string }) {
     }
 
     // Store PII separately
-    await supabase.from("child_pii").insert({
+    const { error: piiError } = await supabase.from("child_pii").insert({
       child_id: childProfile.id,
       full_name: name,
     });
+
+    if (piiError) {
+      setError(piiError.message);
+      setLoading(false);
+      return;
+    }
 
     setName("");
     setLoading(false);
@@ -103,11 +109,11 @@ export function AddChildForm({ parentId }: { parentId: string }) {
       <button
         type="submit"
         disabled={loading}
-        className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 whitespace-nowrap"
+        className="w-full sm:w-auto px-6 py-2.5 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 whitespace-nowrap"
       >
         {loading ? "Adding..." : "Add Child"}
       </button>
-      {error && <p className="text-red-600 text-sm">{error}</p>}
+      {error && <p className="w-full text-red-600 text-sm">{error}</p>}
     </form>
   );
 }

@@ -148,14 +148,8 @@ Deno.serve(async (req) => {
       .eq("item_id", item_id)
       .is("answered_at", null);
 
-    // Update item exposure count
-    await supabase.rpc("increment_exposure", { item_id_param: item_id }).catch(() => {
-      // If RPC doesn't exist yet, do it manually
-      return supabase
-        .from("items")
-        .update({ exposure_count: answeredItem.exposure_count + 1 })
-        .eq("id", item_id);
-    });
+    // Note: item exposure_count update skipped — requires admin/service role
+    // TODO: Add a trigger or RPC for this when deploying to production
 
     // Update session counts
     const newItemsAttempted = session.items_attempted + 1;
@@ -251,6 +245,9 @@ Deno.serve(async (req) => {
       // Trigger composite score computation (inline for now)
       await computeCompositeScore(supabase, session.child_id, session.parent_id);
 
+      // Compute appetite signals
+      await computeAppetiteSignals(supabase, session.child_id, session_id);
+
       return new Response(
         JSON.stringify({
           done: true,
@@ -300,6 +297,7 @@ Deno.serve(async (req) => {
         .eq("id", session_id);
 
       await computeCompositeScore(supabase, session.child_id, session.parent_id);
+      await computeAppetiteSignals(supabase, session.child_id, session_id);
 
       return new Response(
         JSON.stringify({
@@ -375,6 +373,7 @@ Deno.serve(async (req) => {
         done: false,
         item: bestItem.content_json,
         item_id: bestItem.id,
+        item_domain: bestItem.domain,
         items_completed: newItemsAttempted,
         offer_bonus_round: offerBonusRound,
       }),
@@ -429,7 +428,7 @@ async function computeCompositeScore(supabase: any, childId: string, parentId: s
   else if (compositeTheta >= 0.75) tier = "very_high";
   else if (compositeTheta >= 0) tier = "high";
 
-  // Upsert composite score
+  // Upsert composite score (aptitude only — appetite updated separately)
   await supabase.from("composite_scores").upsert(
     {
       child_id: childId,
@@ -441,4 +440,142 @@ async function computeCompositeScore(supabase: any, childId: string, parentId: s
     },
     { onConflict: "child_id" }
   );
+}
+
+// ─── Appetite Signal Computation (inlined from @gt-challenge/appetite-engine) ──
+
+// deno-lint-ignore no-explicit-any
+async function computeAppetiteSignals(supabase: any, childId: string, sessionId: string) {
+  try {
+    // Get all completed sessions for this child
+    const { data: sessions } = await supabase
+      .from("sessions")
+      .select("id, session_number, started_at, ended_at, terminal_theta, items_attempted, items_correct, voluntary_bonus_rounds, duration_seconds")
+      .eq("child_id", childId)
+      .eq("status", "completed")
+      .order("session_number", { ascending: true });
+
+    if (!sessions || sessions.length === 0) return;
+
+    // Get all responses for this child's completed sessions
+    const sessionIds = sessions.map((s: { id: string }) => s.id);
+    const { data: allResponses } = await supabase
+      .from("responses")
+      .select("session_id, is_correct, time_on_item_ms, idle_time_ms, presented_at")
+      .in("session_id", sessionIds)
+      .not("is_correct", "is", null);
+
+    // Group responses by session
+    const responsesBySession: Record<string, { is_correct: boolean }[]> = {};
+    for (const r of allResponses ?? []) {
+      if (!responsesBySession[r.session_id]) responsesBySession[r.session_id] = [];
+      responsesBySession[r.session_id].push(r);
+    }
+
+    // ── Signal 1: return_visit ──
+    let returnVisitValue = 0;
+    if (sessions.length > 1) {
+      const baseScore = Math.min(1, sessions.length / 5);
+      const gaps: number[] = [];
+      for (let i = 1; i < sessions.length; i++) {
+        const daysBetween = (new Date(sessions[i].started_at).getTime() - new Date(sessions[i - 1].ended_at).getTime()) / (1000 * 60 * 60 * 24);
+        gaps.push(daysBetween);
+      }
+      const avgGap = gaps.reduce((a: number, b: number) => a + b, 0) / gaps.length;
+      const recencyBonus = Math.max(0, Math.min(1, (14 - avgGap) / 13));
+      returnVisitValue = Math.min(1, baseScore * 0.7 + recencyBonus * 0.3);
+    }
+
+    // ── Signal 2: persistence ──
+    let persistenceTotal = 0;
+    for (const sid of sessionIds) {
+      const responses = responsesBySession[sid] ?? [];
+      if (responses.length === 0) continue;
+      const firstWrong = responses.findIndex((r: { is_correct: boolean }) => !r.is_correct);
+      if (firstWrong === -1) { persistenceTotal += 1; continue; }
+      const itemsAfter = responses.length - firstWrong - 1;
+      const maxRemaining = Math.max(1, 25 - firstWrong);
+      persistenceTotal += Math.min(1, itemsAfter / maxRemaining);
+    }
+    const persistenceValue = Math.min(1, Math.max(0, persistenceTotal / sessions.length));
+
+    // ── Signal 3: voluntary_hard ──
+    let totalBonus = 0, totalOffered = 0;
+    for (const s of sessions) {
+      totalBonus += s.voluntary_bonus_rounds;
+      totalOffered += Math.floor(s.items_attempted / 10);
+    }
+    const voluntaryHardValue = totalOffered === 0 ? 0 : Math.min(1, totalBonus / totalOffered);
+
+    // ── Signal 4: learning_velocity ──
+    let learningVelocityValue = 0;
+    if (sessions.length >= 2) {
+      const firstTheta = sessions[0].terminal_theta;
+      const lastTheta = sessions[sessions.length - 1].terminal_theta;
+      learningVelocityValue = Math.min(1, Math.max(0, (lastTheta - firstTheta + 1) / 2));
+    }
+
+    // ── Signal 5: time_investment ──
+    const totalSeconds = sessions.reduce((sum: number, s: { duration_seconds: number | null }) => sum + (s.duration_seconds ?? 0), 0);
+    const timeInvestmentValue = Math.min(1, (totalSeconds / 60) / 150);
+
+    // ── Signal 6: streak (consecutive weeks) ──
+    const weekKeys = sessions.map((s: { started_at: string }) => {
+      const d = new Date(s.started_at);
+      d.setUTCHours(0, 0, 0, 0);
+      d.setUTCDate(d.getUTCDate() + 3 - ((d.getUTCDay() + 6) % 7));
+      const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 4));
+      const weekNum = 1 + Math.round(((d.getTime() - yearStart.getTime()) / 86400000 - 3 + ((yearStart.getUTCDay() + 6) % 7)) / 7);
+      return `${d.getUTCFullYear()}-${String(weekNum).padStart(2, "0")}`;
+    });
+    const uniqueWeeks = [...new Set(weekKeys)].sort();
+    let maxStreak = 1, currentStreak = 1;
+    for (let i = 1; i < uniqueWeeks.length; i++) {
+      const [yA, wA] = uniqueWeeks[i - 1].split("-").map(Number);
+      const [yB, wB] = uniqueWeeks[i].split("-").map(Number);
+      const consecutive = (yA === yB && wB === wA + 1) || (yB === yA + 1 && wB === 1 && wA >= 52);
+      if (consecutive) { currentStreak++; maxStreak = Math.max(maxStreak, currentStreak); }
+      else { currentStreak = 1; }
+    }
+    const streakValue = Math.min(1, maxStreak / 5);
+
+    // ── Composite ──
+    const signals = [
+      { type: "return_visit", value: returnVisitValue },
+      { type: "persistence", value: persistenceValue },
+      { type: "voluntary_hard", value: voluntaryHardValue },
+      { type: "learning_velocity", value: learningVelocityValue },
+      { type: "time_investment", value: timeInvestmentValue },
+      { type: "streak", value: streakValue },
+    ];
+
+    const compositeScore = signals.reduce((sum, s) => sum + s.value, 0) / signals.length;
+    let appetiteTier = null;
+    if (compositeScore >= 0.7) appetiteTier = "exceptional";
+    else if (compositeScore >= 0.4) appetiteTier = "very_high";
+    else if (compositeScore >= 0.2) appetiteTier = "high";
+
+    // Write signals to appetite_signals table
+    for (const signal of signals) {
+      await supabase.from("appetite_signals").insert({
+        child_id: childId,
+        signal_type: signal.type,
+        signal_value: signal.value,
+        session_id: sessionId,
+        raw_data: {},
+      });
+    }
+
+    // Update composite_scores with appetite
+    await supabase
+      .from("composite_scores")
+      .update({
+        appetite_score: compositeScore,
+        appetite_tier: appetiteTier,
+      })
+      .eq("child_id", childId);
+  } catch (err) {
+    // Don't fail the session completion if appetite computation fails
+    console.error("Appetite signal computation failed:", err);
+  }
 }

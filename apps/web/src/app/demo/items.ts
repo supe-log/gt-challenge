@@ -2,6 +2,7 @@
 export interface DemoItem {
   id: string;
   domain: string;
+  ageBand: string;
   difficulty: number;
   discrimination: number;
   guessing: number;
@@ -13,192 +14,162 @@ export interface DemoItem {
   };
 }
 
-export const DEMO_ITEMS: DemoItem[] = [
-  // ─── Reasoning ────────────────────────────────────────────
-  {
-    id: "r1", domain: "reasoning", difficulty: -2.0, discrimination: 0.8, guessing: 0.25,
-    content: { stem: "Hot is to cold as up is to ___", type: "analogy", options: [{ text: "Down" }, { text: "Left" }, { text: "Over" }, { text: "Under" }], correct_index: 0 },
-  },
-  {
-    id: "r2", domain: "reasoning", difficulty: -1.5, discrimination: 1.0, guessing: 0.25,
-    content: { stem: "Apple is to tree as egg is to ___", type: "analogy", options: [{ text: "Nest" }, { text: "Plate" }, { text: "Chicken" }, { text: "Egg carton" }], correct_index: 2 },
-  },
-  {
-    id: "r3", domain: "reasoning", difficulty: -1.0, discrimination: 1.2, guessing: 0.25,
-    content: { stem: "Glove is to hand as sock is to ___", type: "analogy", options: [{ text: "Shoe" }, { text: "Foot" }, { text: "Leg" }, { text: "Drawer" }], correct_index: 1 },
-  },
-  {
-    id: "r4", domain: "reasoning", difficulty: -0.5, discrimination: 1.1, guessing: 0.25,
-    content: { stem: "Puppy is to dog as kitten is to ___", type: "analogy", options: [{ text: "Mouse" }, { text: "Cat" }, { text: "Bird" }, { text: "Rabbit" }], correct_index: 1 },
-  },
-  {
-    id: "r5", domain: "reasoning", difficulty: 0.0, discrimination: 1.3, guessing: 0.25,
-    content: { stem: "Which one does NOT belong? Carrot, Banana, Broccoli, Spinach", type: "odd_one_out", options: [{ text: "Carrot" }, { text: "Banana" }, { text: "Broccoli" }, { text: "Spinach" }], correct_index: 1 },
-  },
-  {
-    id: "r6", domain: "reasoning", difficulty: 0.0, discrimination: 1.2, guessing: 0.25,
-    content: { stem: "What comes next? 2, 4, 6, 8, ___", type: "number_series", options: [{ text: "9" }, { text: "10" }, { text: "12" }, { text: "11" }], correct_index: 1 },
-  },
-  {
-    id: "r7", domain: "reasoning", difficulty: 0.5, discrimination: 1.4, guessing: 0.20,
-    content: { stem: "Which one does NOT belong? Triangle, Square, Circle, Cube", type: "odd_one_out", options: [{ text: "Triangle" }, { text: "Square" }, { text: "Circle" }, { text: "Cube" }], correct_index: 3 },
-  },
-  {
-    id: "r8", domain: "reasoning", difficulty: 0.5, discrimination: 1.3, guessing: 0.20,
-    content: { stem: "What comes next? 1, 3, 5, 7, ___", type: "number_series", options: [{ text: "8" }, { text: "9" }, { text: "10" }, { text: "11" }], correct_index: 1 },
-  },
-  {
-    id: "r9", domain: "reasoning", difficulty: 1.0, discrimination: 1.5, guessing: 0.20,
-    content: { stem: "What comes next? 2, 6, 18, 54, ___", type: "number_series", options: [{ text: "108" }, { text: "162" }, { text: "72" }, { text: "216" }], correct_index: 1 },
-  },
-  {
-    id: "r10", domain: "reasoning", difficulty: 1.0, discrimination: 1.6, guessing: 0.20,
-    content: { stem: "All Bloops are Zips. Some Zips are Wops. Can some Bloops be Wops?", type: "syllogism", options: [{ text: "Yes, always" }, { text: "Yes, sometimes" }, { text: "No, never" }, { text: "Not enough info" }], correct_index: 1 },
-  },
-  {
-    id: "r11", domain: "reasoning", difficulty: 1.5, discrimination: 1.7, guessing: 0.15,
-    content: { stem: "If it is raining, the ground is wet. The ground is wet. Is it raining?", type: "syllogism", options: [{ text: "Yes, definitely" }, { text: "Maybe" }, { text: "No" }, { text: "Not enough info" }], correct_index: 1 },
-  },
-  {
-    id: "r12", domain: "reasoning", difficulty: 1.5, discrimination: 1.8, guessing: 0.15,
-    content: { stem: "Book is to library as painting is to ___", type: "analogy", options: [{ text: "Canvas" }, { text: "Museum" }, { text: "Artist" }, { text: "Frame" }], correct_index: 1 },
-  },
-  {
-    id: "r13", domain: "reasoning", difficulty: 2.0, discrimination: 2.0, guessing: 0.15,
-    content: { stem: "Which one does NOT belong? Mercury, Venus, Moon, Mars", type: "odd_one_out", options: [{ text: "Mercury" }, { text: "Venus" }, { text: "Moon" }, { text: "Mars" }], correct_index: 2 },
-  },
+// ─── K-2 Items ─────────────────────────────────────────────────
 
-  // ─── Math ─────────────────────────────────────────────────
-  {
-    id: "m1", domain: "math", difficulty: -2.0, discrimination: 0.9, guessing: 0.25,
-    content: { stem: "Which number is bigger?", type: "comparison", options: [{ text: "15" }, { text: "51" }], correct_index: 1 },
-  },
-  {
-    id: "m2", domain: "math", difficulty: -1.5, discrimination: 1.0, guessing: 0.25,
-    content: { stem: "What is 7 + 8?", type: "computation", options: [{ text: "13" }, { text: "14" }, { text: "15" }, { text: "16" }], correct_index: 2 },
-  },
-  {
-    id: "m3", domain: "math", difficulty: -1.5, discrimination: 1.0, guessing: 0.25,
-    content: { stem: "What is 50 - 23?", type: "computation", options: [{ text: "23" }, { text: "27" }, { text: "33" }, { text: "37" }], correct_index: 1 },
-  },
-  {
-    id: "m4", domain: "math", difficulty: -1.0, discrimination: 1.1, guessing: 0.25,
-    content: { stem: "What is 23 + 19?", type: "computation", options: [{ text: "41" }, { text: "42" }, { text: "43" }, { text: "32" }], correct_index: 1 },
-  },
-  {
-    id: "m5", domain: "math", difficulty: -0.5, discrimination: 1.2, guessing: 0.25,
-    content: { stem: "What is 6 × 7?", type: "computation", options: [{ text: "36" }, { text: "42" }, { text: "48" }, { text: "35" }], correct_index: 1 },
-  },
-  {
-    id: "m6", domain: "math", difficulty: 0.0, discrimination: 1.3, guessing: 0.25,
-    content: { stem: "A baker made 48 cookies in bags of 6. How many bags?", type: "word_problem", options: [{ text: "6" }, { text: "7" }, { text: "8" }, { text: "9" }], correct_index: 2 },
-  },
-  {
-    id: "m7", domain: "math", difficulty: 0.5, discrimination: 1.4, guessing: 0.20,
-    content: { stem: "48 cookies in bags of 6. She gives 2 bags per friend. How many friends get cookies?", type: "word_problem", options: [{ text: "3" }, { text: "4" }, { text: "6" }, { text: "8" }], correct_index: 1 },
-  },
-  {
-    id: "m8", domain: "math", difficulty: 0.5, discrimination: 1.3, guessing: 0.25,
-    content: { stem: "Which is bigger: 1/3 or 1/4?", type: "comparison", options: [{ text: "1/3" }, { text: "1/4" }, { text: "They are equal" }], correct_index: 0 },
-  },
-  {
-    id: "m9", domain: "math", difficulty: 1.0, discrimination: 1.5, guessing: 0.20,
-    content: { stem: "What is 1/2 + 1/4?", type: "computation", options: [{ text: "2/6" }, { text: "3/4" }, { text: "1/2" }, { text: "2/4" }], correct_index: 1 },
-  },
-  {
-    id: "m10", domain: "math", difficulty: 1.0, discrimination: 1.4, guessing: 0.20,
-    content: { stem: "A train travels 60 mph. How far in 2.5 hours?", type: "word_problem", options: [{ text: "120 miles" }, { text: "130 miles" }, { text: "150 miles" }, { text: "180 miles" }], correct_index: 2 },
-  },
-  {
-    id: "m11", domain: "math", difficulty: 1.5, discrimination: 1.6, guessing: 0.15,
-    content: { stem: "What is the next prime number after 13?", type: "number_sense", options: [{ text: "14" }, { text: "15" }, { text: "17" }, { text: "19" }], correct_index: 2 },
-  },
-  {
-    id: "m12", domain: "math", difficulty: 1.5, discrimination: 1.7, guessing: 0.15,
-    content: { stem: "What is 144 ÷ 12?", type: "computation", options: [{ text: "11" }, { text: "12" }, { text: "13" }, { text: "14" }], correct_index: 1 },
-  },
-  {
-    id: "m13", domain: "math", difficulty: 2.0, discrimination: 2.0, guessing: 0.15,
-    content: { stem: "A rectangle has perimeter 24cm and width 4cm. What is its area?", type: "word_problem", options: [{ text: "32 sq cm" }, { text: "20 sq cm" }, { text: "48 sq cm" }, { text: "24 sq cm" }], correct_index: 0 },
-  },
-
-  // ─── Verbal ───────────────────────────────────────────────
-  {
-    id: "v1", domain: "verbal", difficulty: -1.5, discrimination: 1.0, guessing: 0.25,
-    content: { stem: 'What does "enormous" mean?', type: "definition", options: [{ text: "Very small" }, { text: "Very fast" }, { text: "Very big" }, { text: "Very old" }], correct_index: 2 },
-  },
-  {
-    id: "v2", domain: "verbal", difficulty: -1.0, discrimination: 1.1, guessing: 0.25,
-    content: { stem: 'What is a synonym for "happy"?', type: "synonym", options: [{ text: "Sad" }, { text: "Joyful" }, { text: "Angry" }, { text: "Tired" }], correct_index: 1 },
-  },
-  {
-    id: "v3", domain: "verbal", difficulty: -0.5, discrimination: 1.2, guessing: 0.25,
-    content: { stem: 'What is the opposite of "ancient"?', type: "antonym", options: [{ text: "Old" }, { text: "Modern" }, { text: "Classic" }, { text: "Historic" }], correct_index: 1 },
-  },
-  {
-    id: "v4", domain: "verbal", difficulty: 0.0, discrimination: 1.3, guessing: 0.25,
-    content: { stem: "Sam ran to the store because he needed milk. Why did Sam go to the store?", type: "comprehension", options: [{ text: "To buy bread" }, { text: "To get milk" }, { text: "To see a friend" }, { text: "To exercise" }], correct_index: 1 },
-  },
-  {
-    id: "v5", domain: "verbal", difficulty: 0.5, discrimination: 1.4, guessing: 0.20,
-    content: { stem: "Maria put on her raincoat and grabbed her umbrella. What can you infer about the weather?", type: "inference", options: [{ text: "It is sunny" }, { text: "It is raining or about to rain" }, { text: "It is snowing" }, { text: "It is windy" }], correct_index: 1 },
-  },
-  {
-    id: "v6", domain: "verbal", difficulty: 0.5, discrimination: 1.3, guessing: 0.20,
-    content: { stem: 'What does "reluctant" mean?', type: "definition", options: [{ text: "Eager" }, { text: "Unwilling" }, { text: "Confused" }, { text: "Excited" }], correct_index: 1 },
-  },
-  {
-    id: "v7", domain: "verbal", difficulty: 1.0, discrimination: 1.5, guessing: 0.20,
-    content: { stem: "The dog wagged its tail and brought its leash to the door. What does the dog want?", type: "inference", options: [{ text: "Food" }, { text: "A walk" }, { text: "Sleep" }, { text: "A bath" }], correct_index: 1 },
-  },
-  {
-    id: "v8", domain: "verbal", difficulty: 1.0, discrimination: 1.5, guessing: 0.20,
-    content: { stem: "The library was quiet. Everyone whispered. Books lined every wall. Where is this?", type: "comprehension", options: [{ text: "A school gym" }, { text: "A library" }, { text: "A park" }, { text: "A store" }], correct_index: 1 },
-  },
-  {
-    id: "v9", domain: "verbal", difficulty: 1.5, discrimination: 1.7, guessing: 0.15,
-    content: { stem: 'What does "ubiquitous" mean?', type: "definition", options: [{ text: "Very rare" }, { text: "Found everywhere" }, { text: "Very beautiful" }, { text: "Hard to understand" }], correct_index: 1 },
-  },
-  {
-    id: "v10", domain: "verbal", difficulty: 1.5, discrimination: 1.6, guessing: 0.15,
-    content: { stem: "After the earthquake, the family slept outside in a tent. Why?", type: "inference", options: [{ text: "They like camping" }, { text: "Their house may be unsafe" }, { text: "It was summer" }, { text: "The tent was new" }], correct_index: 1 },
-  },
-  {
-    id: "v11", domain: "verbal", difficulty: 2.0, discrimination: 1.8, guessing: 0.15,
-    content: { stem: "The scientist carefully recorded each measurement twice. What does this tell you about the scientist?", type: "comprehension", options: [{ text: "She is bored" }, { text: "She is thorough and careful" }, { text: "She is slow" }, { text: "She forgot the first time" }], correct_index: 1 },
-  },
-
-  // ─── Pattern Recognition ──────────────────────────────────
-  {
-    id: "p1", domain: "pattern", difficulty: -2.0, discrimination: 0.8, guessing: 0.25,
-    content: { stem: "What color comes next? Red, Blue, Red, Blue, ___", type: "color_pattern", options: [{ text: "Red" }, { text: "Blue" }, { text: "Green" }, { text: "Yellow" }], correct_index: 0 },
-  },
-  {
-    id: "p2", domain: "pattern", difficulty: -1.5, discrimination: 1.0, guessing: 0.25,
-    content: { stem: "What shape comes next? Circle, Square, Circle, Square, ___", type: "shape_pattern", options: [{ text: "Triangle" }, { text: "Circle" }, { text: "Square" }, { text: "Star" }], correct_index: 1 },
-  },
-  {
-    id: "p3", domain: "pattern", difficulty: -1.0, discrimination: 1.1, guessing: 0.25,
-    content: { stem: "What comes next? AB, CD, EF, ___", type: "letter_pattern", options: [{ text: "FG" }, { text: "GH" }, { text: "HI" }, { text: "EF" }], correct_index: 1 },
-  },
-  {
-    id: "p4", domain: "pattern", difficulty: 0.0, discrimination: 1.2, guessing: 0.25,
-    content: { stem: "What comes next? 1, 1, 2, 3, 5, ___", type: "number_pattern", options: [{ text: "6" }, { text: "7" }, { text: "8" }, { text: "10" }], correct_index: 2 },
-  },
-  {
-    id: "p5", domain: "pattern", difficulty: 0.5, discrimination: 1.3, guessing: 0.20,
-    content: { stem: "Which shape is the mirror image?", type: "reflection", options: [{ text: "Shape A (same)" }, { text: "Shape B (rotated)" }, { text: "Shape C (mirrored)" }, { text: "Shape D (different)" }], correct_index: 2 },
-  },
-  {
-    id: "p6", domain: "pattern", difficulty: 1.0, discrimination: 1.5, guessing: 0.20,
-    content: { stem: "What comes next? 3, 6, 12, 24, ___", type: "number_pattern", options: [{ text: "30" }, { text: "36" }, { text: "48" }, { text: "32" }], correct_index: 2 },
-  },
-  {
-    id: "p7", domain: "pattern", difficulty: 1.5, discrimination: 1.6, guessing: 0.15,
-    content: { stem: "What comes next? 2, 3, 5, 7, 11, ___", type: "number_pattern", options: [{ text: "12" }, { text: "13" }, { text: "14" }, { text: "15" }], correct_index: 1 },
-  },
-  {
-    id: "p8", domain: "pattern", difficulty: 1.5, discrimination: 1.7, guessing: 0.15,
-    content: { stem: "Which 3D shape can be made from this flat pattern (net)?", type: "nets", options: [{ text: "Cube" }, { text: "Cylinder" }, { text: "Pyramid" }, { text: "Cone" }], correct_index: 2 },
-  },
+const K2_ITEMS: DemoItem[] = [
+  // Reasoning
+  { id: "k2-r1", domain: "reasoning", ageBand: "K-2", difficulty: -2.5, discrimination: 0.8, guessing: 0.25, content: { stem: "A bird can fly. A fish can ___", type: "analogy", options: [{ text: "Swim" }, { text: "Run" }, { text: "Fly" }, { text: "Jump" }], correct_index: 0 } },
+  { id: "k2-r2", domain: "reasoning", ageBand: "K-2", difficulty: -2.0, discrimination: 0.9, guessing: 0.25, content: { stem: "A hat goes on your head. A shoe goes on your ___", type: "analogy", options: [{ text: "Hand" }, { text: "Foot" }, { text: "Head" }, { text: "Arm" }], correct_index: 1 } },
+  { id: "k2-r3", domain: "reasoning", ageBand: "K-2", difficulty: -1.5, discrimination: 1.0, guessing: 0.25, content: { stem: "Night is dark. Day is ___", type: "analogy", options: [{ text: "Dark" }, { text: "Cold" }, { text: "Light" }, { text: "Warm" }], correct_index: 2 } },
+  { id: "k2-r4", domain: "reasoning", ageBand: "K-2", difficulty: -2.0, discrimination: 0.8, guessing: 0.25, content: { stem: "Which one is NOT an animal?", type: "odd_one_out", options: [{ text: "Dog" }, { text: "Cat" }, { text: "Chair" }, { text: "Bird" }], correct_index: 2 } },
+  { id: "k2-r5", domain: "reasoning", ageBand: "K-2", difficulty: -1.5, discrimination: 0.9, guessing: 0.25, content: { stem: "Which one is NOT a fruit?", type: "odd_one_out", options: [{ text: "Apple" }, { text: "Banana" }, { text: "Carrot" }, { text: "Grape" }], correct_index: 2 } },
+  { id: "k2-r6", domain: "reasoning", ageBand: "K-2", difficulty: -2.0, discrimination: 0.8, guessing: 0.25, content: { stem: "What comes next? 1, 2, 3, 4, ___", type: "number_series", options: [{ text: "4" }, { text: "5" }, { text: "6" }, { text: "7" }], correct_index: 1 } },
+  { id: "k2-r7", domain: "reasoning", ageBand: "K-2", difficulty: -0.5, discrimination: 1.1, guessing: 0.25, content: { stem: "What comes next? 2, 4, 6, ___", type: "number_series", options: [{ text: "7" }, { text: "8" }, { text: "9" }, { text: "10" }], correct_index: 1 } },
+  { id: "k2-r8", domain: "reasoning", ageBand: "K-2", difficulty: -0.5, discrimination: 1.0, guessing: 0.25, content: { stem: "All dogs have tails. Buddy is a dog. Does Buddy have a tail?", type: "syllogism", options: [{ text: "Yes" }, { text: "No" }, { text: "Maybe" }, { text: "We don't know" }], correct_index: 0 } },
+  { id: "k2-r9", domain: "reasoning", ageBand: "K-2", difficulty: 0.5, discrimination: 1.3, guessing: 0.20, content: { stem: "Pen is to write as scissors is to ___", type: "analogy", options: [{ text: "Draw" }, { text: "Cut" }, { text: "Glue" }, { text: "Tape" }], correct_index: 1 } },
+  { id: "k2-r10", domain: "reasoning", ageBand: "K-2", difficulty: 1.0, discrimination: 1.4, guessing: 0.20, content: { stem: "Which one does NOT belong? Ice cream, popsicle, snowflake, soup", type: "odd_one_out", options: [{ text: "Ice cream" }, { text: "Popsicle" }, { text: "Snowflake" }, { text: "Soup" }], correct_index: 3 } },
+  // Math
+  { id: "k2-m1", domain: "math", ageBand: "K-2", difficulty: -2.5, discrimination: 0.8, guessing: 0.25, content: { stem: "How many apples? 🍎🍎🍎", type: "counting", options: [{ text: "2" }, { text: "3" }, { text: "4" }, { text: "5" }], correct_index: 1 } },
+  { id: "k2-m2", domain: "math", ageBand: "K-2", difficulty: -2.0, discrimination: 0.8, guessing: 0.25, content: { stem: "Which number is bigger: 3 or 7?", type: "comparison", options: [{ text: "3" }, { text: "7" }], correct_index: 1 } },
+  { id: "k2-m3", domain: "math", ageBand: "K-2", difficulty: -1.5, discrimination: 0.9, guessing: 0.25, content: { stem: "What is 3 + 2?", type: "computation", options: [{ text: "4" }, { text: "5" }, { text: "6" }, { text: "7" }], correct_index: 1 } },
+  { id: "k2-m4", domain: "math", ageBand: "K-2", difficulty: -1.5, discrimination: 1.0, guessing: 0.25, content: { stem: "What is 8 - 3?", type: "computation", options: [{ text: "4" }, { text: "5" }, { text: "6" }, { text: "3" }], correct_index: 1 } },
+  { id: "k2-m5", domain: "math", ageBand: "K-2", difficulty: -1.0, discrimination: 1.0, guessing: 0.25, content: { stem: "What is 6 + 7?", type: "computation", options: [{ text: "12" }, { text: "13" }, { text: "14" }, { text: "11" }], correct_index: 1 } },
+  { id: "k2-m6", domain: "math", ageBand: "K-2", difficulty: -1.0, discrimination: 1.0, guessing: 0.25, content: { stem: "You have 4 cookies and get 3 more. How many?", type: "word_problem", options: [{ text: "5" }, { text: "6" }, { text: "7" }, { text: "8" }], correct_index: 2 } },
+  { id: "k2-m7", domain: "math", ageBand: "K-2", difficulty: -0.5, discrimination: 1.1, guessing: 0.25, content: { stem: "10 birds on a fence. 4 fly away. How many left?", type: "word_problem", options: [{ text: "4" }, { text: "5" }, { text: "6" }, { text: "7" }], correct_index: 2 } },
+  { id: "k2-m8", domain: "math", ageBand: "K-2", difficulty: 0.0, discrimination: 1.2, guessing: 0.25, content: { stem: "Emma has 3 bags with 4 stickers each. How many stickers?", type: "word_problem", options: [{ text: "7" }, { text: "10" }, { text: "12" }, { text: "14" }], correct_index: 2 } },
+  { id: "k2-m9", domain: "math", ageBand: "K-2", difficulty: 0.0, discrimination: 1.1, guessing: 0.25, content: { stem: "What is half of 10?", type: "number_sense", options: [{ text: "3" }, { text: "4" }, { text: "5" }, { text: "6" }], correct_index: 2 } },
+  { id: "k2-m10", domain: "math", ageBand: "K-2", difficulty: 0.5, discrimination: 1.2, guessing: 0.20, content: { stem: "What is 2 + 2 + 2 + 2?", type: "computation", options: [{ text: "6" }, { text: "8" }, { text: "10" }, { text: "4" }], correct_index: 1 } },
+  // Verbal
+  { id: "k2-v1", domain: "verbal", ageBand: "K-2", difficulty: -2.5, discrimination: 0.8, guessing: 0.25, content: { stem: "What is the baby of a cat called?", type: "definition", options: [{ text: "Puppy" }, { text: "Kitten" }, { text: "Cub" }, { text: "Chick" }], correct_index: 1 } },
+  { id: "k2-v2", domain: "verbal", ageBand: "K-2", difficulty: -1.5, discrimination: 0.9, guessing: 0.25, content: { stem: "Which word means the same as \"little\"?", type: "synonym", options: [{ text: "Big" }, { text: "Small" }, { text: "Tall" }, { text: "Fast" }], correct_index: 1 } },
+  { id: "k2-v3", domain: "verbal", ageBand: "K-2", difficulty: -1.0, discrimination: 1.0, guessing: 0.25, content: { stem: "What is the opposite of \"hot\"?", type: "antonym", options: [{ text: "Warm" }, { text: "Cold" }, { text: "Wet" }, { text: "Dry" }], correct_index: 1 } },
+  { id: "k2-v4", domain: "verbal", ageBand: "K-2", difficulty: -1.5, discrimination: 0.9, guessing: 0.25, content: { stem: "The cat sat on the mat. Where is the cat?", type: "comprehension", options: [{ text: "On the bed" }, { text: "On the mat" }, { text: "Under the table" }, { text: "On the chair" }], correct_index: 1 } },
+  { id: "k2-v5", domain: "verbal", ageBand: "K-2", difficulty: -0.5, discrimination: 1.0, guessing: 0.25, content: { stem: "The dog is barking at the door. What might the dog want?", type: "inference", options: [{ text: "To sleep" }, { text: "To eat" }, { text: "To go outside" }, { text: "To play" }], correct_index: 2 } },
+  { id: "k2-v6", domain: "verbal", ageBand: "K-2", difficulty: 0.0, discrimination: 1.2, guessing: 0.25, content: { stem: "Lucy put on her boots and umbrella. What is the weather?", type: "inference", options: [{ text: "Sunny" }, { text: "Rainy" }, { text: "Snowy" }, { text: "Windy" }], correct_index: 1 } },
+  { id: "k2-v7", domain: "verbal", ageBand: "K-2", difficulty: 0.5, discrimination: 1.3, guessing: 0.20, content: { stem: "Flowers in the garden are drooping and soil is dry. What do they need?", type: "inference", options: [{ text: "Sunshine" }, { text: "Water" }, { text: "Music" }, { text: "Wind" }], correct_index: 1 } },
+  { id: "k2-v8", domain: "verbal", ageBand: "K-2", difficulty: 1.0, discrimination: 1.4, guessing: 0.20, content: { stem: "What does \"curious\" mean?", type: "definition", options: [{ text: "Scared" }, { text: "Wanting to learn" }, { text: "Tired" }, { text: "Sick" }], correct_index: 1 } },
+  // Pattern Recognition
+  { id: "k2-p1", domain: "pattern", ageBand: "K-2", difficulty: -2.5, discrimination: 0.8, guessing: 0.25, content: { stem: "What color comes next? Red, Red, Blue, Red, Red, ___", type: "color_pattern", options: [{ text: "Red" }, { text: "Blue" }, { text: "Green" }, { text: "Yellow" }], correct_index: 1 } },
+  { id: "k2-p2", domain: "pattern", ageBand: "K-2", difficulty: -2.0, discrimination: 0.8, guessing: 0.25, content: { stem: "What comes next? Big, Small, Big, Small, ___", type: "size_pattern", options: [{ text: "Small" }, { text: "Big" }, { text: "Medium" }, { text: "Tiny" }], correct_index: 1 } },
+  { id: "k2-p3", domain: "pattern", ageBand: "K-2", difficulty: -1.5, discrimination: 0.9, guessing: 0.25, content: { stem: "What comes next? 1, 2, 1, 2, 1, ___", type: "number_pattern", options: [{ text: "1" }, { text: "2" }, { text: "3" }, { text: "4" }], correct_index: 1 } },
+  { id: "k2-p4", domain: "pattern", ageBand: "K-2", difficulty: -0.5, discrimination: 1.1, guessing: 0.25, content: { stem: "What comes next? 🔴 🔵 🟢 🔴 🔵 ___", type: "color_pattern", options: [{ text: "🔴" }, { text: "🔵" }, { text: "🟢" }, { text: "🟡" }], correct_index: 2 } },
+  { id: "k2-p5", domain: "pattern", ageBand: "K-2", difficulty: 0.0, discrimination: 1.2, guessing: 0.25, content: { stem: "What comes next? 1, 2, 3, 1, 2, 3, 1, 2, ___", type: "number_pattern", options: [{ text: "1" }, { text: "2" }, { text: "3" }, { text: "4" }], correct_index: 2 } },
+  { id: "k2-p6", domain: "pattern", ageBand: "K-2", difficulty: 1.0, discrimination: 1.4, guessing: 0.20, content: { stem: "What comes next? 2, 4, 6, 8, ___", type: "number_pattern", options: [{ text: "9" }, { text: "10" }, { text: "11" }, { text: "12" }], correct_index: 1 } },
 ];
+
+// ─── 3-5 Items (original) ──────────────────────────────────────
+
+const ITEMS_3_5: DemoItem[] = [
+  // Reasoning
+  { id: "r1", domain: "reasoning", ageBand: "3-5", difficulty: -2.0, discrimination: 0.8, guessing: 0.25, content: { stem: "Hot is to cold as up is to ___", type: "analogy", options: [{ text: "Down" }, { text: "Left" }, { text: "Over" }, { text: "Under" }], correct_index: 0 } },
+  { id: "r2", domain: "reasoning", ageBand: "3-5", difficulty: -1.5, discrimination: 1.0, guessing: 0.25, content: { stem: "Apple is to tree as egg is to ___", type: "analogy", options: [{ text: "Nest" }, { text: "Plate" }, { text: "Chicken" }, { text: "Egg carton" }], correct_index: 2 } },
+  { id: "r3", domain: "reasoning", ageBand: "3-5", difficulty: -1.0, discrimination: 1.2, guessing: 0.25, content: { stem: "Glove is to hand as sock is to ___", type: "analogy", options: [{ text: "Shoe" }, { text: "Foot" }, { text: "Leg" }, { text: "Drawer" }], correct_index: 1 } },
+  { id: "r4", domain: "reasoning", ageBand: "3-5", difficulty: -0.5, discrimination: 1.1, guessing: 0.25, content: { stem: "Puppy is to dog as kitten is to ___", type: "analogy", options: [{ text: "Mouse" }, { text: "Cat" }, { text: "Bird" }, { text: "Rabbit" }], correct_index: 1 } },
+  { id: "r5", domain: "reasoning", ageBand: "3-5", difficulty: 0.0, discrimination: 1.3, guessing: 0.25, content: { stem: "Which one does NOT belong? Carrot, Banana, Broccoli, Spinach", type: "odd_one_out", options: [{ text: "Carrot" }, { text: "Banana" }, { text: "Broccoli" }, { text: "Spinach" }], correct_index: 1 } },
+  { id: "r6", domain: "reasoning", ageBand: "3-5", difficulty: 0.0, discrimination: 1.2, guessing: 0.25, content: { stem: "What comes next? 2, 4, 6, 8, ___", type: "number_series", options: [{ text: "9" }, { text: "10" }, { text: "12" }, { text: "11" }], correct_index: 1 } },
+  { id: "r7", domain: "reasoning", ageBand: "3-5", difficulty: 0.5, discrimination: 1.4, guessing: 0.20, content: { stem: "Which one does NOT belong? Triangle, Square, Circle, Cube", type: "odd_one_out", options: [{ text: "Triangle" }, { text: "Square" }, { text: "Circle" }, { text: "Cube" }], correct_index: 3 } },
+  { id: "r8", domain: "reasoning", ageBand: "3-5", difficulty: 0.5, discrimination: 1.3, guessing: 0.20, content: { stem: "What comes next? 1, 3, 5, 7, ___", type: "number_series", options: [{ text: "8" }, { text: "9" }, { text: "10" }, { text: "11" }], correct_index: 1 } },
+  { id: "r9", domain: "reasoning", ageBand: "3-5", difficulty: 1.0, discrimination: 1.5, guessing: 0.20, content: { stem: "What comes next? 2, 6, 18, 54, ___", type: "number_series", options: [{ text: "108" }, { text: "162" }, { text: "72" }, { text: "216" }], correct_index: 1 } },
+  { id: "r10", domain: "reasoning", ageBand: "3-5", difficulty: 1.0, discrimination: 1.6, guessing: 0.20, content: { stem: "All Bloops are Zips. Some Zips are Wops. Can some Bloops be Wops?", type: "syllogism", options: [{ text: "Yes, always" }, { text: "Yes, sometimes" }, { text: "No, never" }, { text: "Not enough info" }], correct_index: 1 } },
+  { id: "r11", domain: "reasoning", ageBand: "3-5", difficulty: 1.5, discrimination: 1.7, guessing: 0.15, content: { stem: "If it is raining, the ground is wet. The ground is wet. Is it raining?", type: "syllogism", options: [{ text: "Yes, definitely" }, { text: "Maybe" }, { text: "No" }, { text: "Not enough info" }], correct_index: 1 } },
+  { id: "r12", domain: "reasoning", ageBand: "3-5", difficulty: 1.5, discrimination: 1.8, guessing: 0.15, content: { stem: "Book is to library as painting is to ___", type: "analogy", options: [{ text: "Canvas" }, { text: "Museum" }, { text: "Artist" }, { text: "Frame" }], correct_index: 1 } },
+  { id: "r13", domain: "reasoning", ageBand: "3-5", difficulty: 2.0, discrimination: 2.0, guessing: 0.15, content: { stem: "Which one does NOT belong? Mercury, Venus, Moon, Mars", type: "odd_one_out", options: [{ text: "Mercury" }, { text: "Venus" }, { text: "Moon" }, { text: "Mars" }], correct_index: 2 } },
+  // Math
+  { id: "m1", domain: "math", ageBand: "3-5", difficulty: -2.0, discrimination: 0.9, guessing: 0.25, content: { stem: "Which number is bigger?", type: "comparison", options: [{ text: "15" }, { text: "51" }], correct_index: 1 } },
+  { id: "m2", domain: "math", ageBand: "3-5", difficulty: -1.5, discrimination: 1.0, guessing: 0.25, content: { stem: "What is 7 + 8?", type: "computation", options: [{ text: "13" }, { text: "14" }, { text: "15" }, { text: "16" }], correct_index: 2 } },
+  { id: "m3", domain: "math", ageBand: "3-5", difficulty: -1.5, discrimination: 1.0, guessing: 0.25, content: { stem: "What is 50 - 23?", type: "computation", options: [{ text: "23" }, { text: "27" }, { text: "33" }, { text: "37" }], correct_index: 1 } },
+  { id: "m4", domain: "math", ageBand: "3-5", difficulty: -1.0, discrimination: 1.1, guessing: 0.25, content: { stem: "What is 23 + 19?", type: "computation", options: [{ text: "41" }, { text: "42" }, { text: "43" }, { text: "32" }], correct_index: 1 } },
+  { id: "m5", domain: "math", ageBand: "3-5", difficulty: -0.5, discrimination: 1.2, guessing: 0.25, content: { stem: "What is 6 × 7?", type: "computation", options: [{ text: "36" }, { text: "42" }, { text: "48" }, { text: "35" }], correct_index: 1 } },
+  { id: "m6", domain: "math", ageBand: "3-5", difficulty: 0.0, discrimination: 1.3, guessing: 0.25, content: { stem: "A baker made 48 cookies in bags of 6. How many bags?", type: "word_problem", options: [{ text: "6" }, { text: "7" }, { text: "8" }, { text: "9" }], correct_index: 2 } },
+  { id: "m7", domain: "math", ageBand: "3-5", difficulty: 0.5, discrimination: 1.4, guessing: 0.20, content: { stem: "48 cookies in bags of 6. She gives 2 bags per friend. How many friends get cookies?", type: "word_problem", options: [{ text: "3" }, { text: "4" }, { text: "6" }, { text: "8" }], correct_index: 1 } },
+  { id: "m8", domain: "math", ageBand: "3-5", difficulty: 0.5, discrimination: 1.3, guessing: 0.25, content: { stem: "Which is bigger: 1/3 or 1/4?", type: "comparison", options: [{ text: "1/3" }, { text: "1/4" }, { text: "They are equal" }], correct_index: 0 } },
+  { id: "m9", domain: "math", ageBand: "3-5", difficulty: 1.0, discrimination: 1.5, guessing: 0.20, content: { stem: "What is 1/2 + 1/4?", type: "computation", options: [{ text: "2/6" }, { text: "3/4" }, { text: "1/2" }, { text: "2/4" }], correct_index: 1 } },
+  { id: "m10", domain: "math", ageBand: "3-5", difficulty: 1.0, discrimination: 1.4, guessing: 0.20, content: { stem: "A train travels 60 mph. How far in 2.5 hours?", type: "word_problem", options: [{ text: "120 miles" }, { text: "130 miles" }, { text: "150 miles" }, { text: "180 miles" }], correct_index: 2 } },
+  { id: "m11", domain: "math", ageBand: "3-5", difficulty: 1.5, discrimination: 1.6, guessing: 0.15, content: { stem: "What is the next prime number after 13?", type: "number_sense", options: [{ text: "14" }, { text: "15" }, { text: "17" }, { text: "19" }], correct_index: 2 } },
+  { id: "m12", domain: "math", ageBand: "3-5", difficulty: 1.5, discrimination: 1.7, guessing: 0.15, content: { stem: "What is 144 ÷ 12?", type: "computation", options: [{ text: "11" }, { text: "12" }, { text: "13" }, { text: "14" }], correct_index: 1 } },
+  { id: "m13", domain: "math", ageBand: "3-5", difficulty: 2.0, discrimination: 2.0, guessing: 0.15, content: { stem: "A rectangle has perimeter 24cm and width 4cm. What is its area?", type: "word_problem", options: [{ text: "32 sq cm" }, { text: "20 sq cm" }, { text: "48 sq cm" }, { text: "24 sq cm" }], correct_index: 0 } },
+  // Verbal
+  { id: "v1", domain: "verbal", ageBand: "3-5", difficulty: -1.5, discrimination: 1.0, guessing: 0.25, content: { stem: 'What does "enormous" mean?', type: "definition", options: [{ text: "Very small" }, { text: "Very fast" }, { text: "Very big" }, { text: "Very old" }], correct_index: 2 } },
+  { id: "v2", domain: "verbal", ageBand: "3-5", difficulty: -1.0, discrimination: 1.1, guessing: 0.25, content: { stem: 'What is a synonym for "happy"?', type: "synonym", options: [{ text: "Sad" }, { text: "Joyful" }, { text: "Angry" }, { text: "Tired" }], correct_index: 1 } },
+  { id: "v3", domain: "verbal", ageBand: "3-5", difficulty: -0.5, discrimination: 1.2, guessing: 0.25, content: { stem: 'What is the opposite of "ancient"?', type: "antonym", options: [{ text: "Old" }, { text: "Modern" }, { text: "Classic" }, { text: "Historic" }], correct_index: 1 } },
+  { id: "v4", domain: "verbal", ageBand: "3-5", difficulty: 0.0, discrimination: 1.3, guessing: 0.25, content: { stem: "Sam ran to the store because he needed milk. Why did Sam go to the store?", type: "comprehension", options: [{ text: "To buy bread" }, { text: "To get milk" }, { text: "To see a friend" }, { text: "To exercise" }], correct_index: 1 } },
+  { id: "v5", domain: "verbal", ageBand: "3-5", difficulty: 0.5, discrimination: 1.4, guessing: 0.20, content: { stem: "Maria put on her raincoat and grabbed her umbrella. What can you infer about the weather?", type: "inference", options: [{ text: "It is sunny" }, { text: "It is raining or about to rain" }, { text: "It is snowing" }, { text: "It is windy" }], correct_index: 1 } },
+  { id: "v6", domain: "verbal", ageBand: "3-5", difficulty: 0.5, discrimination: 1.3, guessing: 0.20, content: { stem: 'What does "reluctant" mean?', type: "definition", options: [{ text: "Eager" }, { text: "Unwilling" }, { text: "Confused" }, { text: "Excited" }], correct_index: 1 } },
+  { id: "v7", domain: "verbal", ageBand: "3-5", difficulty: 1.0, discrimination: 1.5, guessing: 0.20, content: { stem: "The dog wagged its tail and brought its leash to the door. What does the dog want?", type: "inference", options: [{ text: "Food" }, { text: "A walk" }, { text: "Sleep" }, { text: "A bath" }], correct_index: 1 } },
+  { id: "v8", domain: "verbal", ageBand: "3-5", difficulty: 1.0, discrimination: 1.5, guessing: 0.20, content: { stem: "The library was quiet. Everyone whispered. Books lined every wall. Where is this?", type: "comprehension", options: [{ text: "A school gym" }, { text: "A library" }, { text: "A park" }, { text: "A store" }], correct_index: 1 } },
+  { id: "v9", domain: "verbal", ageBand: "3-5", difficulty: 1.5, discrimination: 1.7, guessing: 0.15, content: { stem: 'What does "ubiquitous" mean?', type: "definition", options: [{ text: "Very rare" }, { text: "Found everywhere" }, { text: "Very beautiful" }, { text: "Hard to understand" }], correct_index: 1 } },
+  { id: "v10", domain: "verbal", ageBand: "3-5", difficulty: 1.5, discrimination: 1.6, guessing: 0.15, content: { stem: "After the earthquake, the family slept outside in a tent. Why?", type: "inference", options: [{ text: "They like camping" }, { text: "Their house may be unsafe" }, { text: "It was summer" }, { text: "The tent was new" }], correct_index: 1 } },
+  { id: "v11", domain: "verbal", ageBand: "3-5", difficulty: 2.0, discrimination: 1.8, guessing: 0.15, content: { stem: "The scientist carefully recorded each measurement twice. What does this tell you?", type: "comprehension", options: [{ text: "She is bored" }, { text: "She is thorough and careful" }, { text: "She is slow" }, { text: "She forgot the first time" }], correct_index: 1 } },
+  // Pattern Recognition
+  { id: "p1", domain: "pattern", ageBand: "3-5", difficulty: -2.0, discrimination: 0.8, guessing: 0.25, content: { stem: "What color comes next? Red, Blue, Red, Blue, ___", type: "color_pattern", options: [{ text: "Red" }, { text: "Blue" }, { text: "Green" }, { text: "Yellow" }], correct_index: 0 } },
+  { id: "p2", domain: "pattern", ageBand: "3-5", difficulty: -1.5, discrimination: 1.0, guessing: 0.25, content: { stem: "What shape comes next? Circle, Square, Circle, Square, ___", type: "shape_pattern", options: [{ text: "Triangle" }, { text: "Circle" }, { text: "Square" }, { text: "Star" }], correct_index: 1 } },
+  { id: "p3", domain: "pattern", ageBand: "3-5", difficulty: -1.0, discrimination: 1.1, guessing: 0.25, content: { stem: "What comes next? AB, CD, EF, ___", type: "letter_pattern", options: [{ text: "FG" }, { text: "GH" }, { text: "HI" }, { text: "EF" }], correct_index: 1 } },
+  { id: "p4", domain: "pattern", ageBand: "3-5", difficulty: 0.0, discrimination: 1.2, guessing: 0.25, content: { stem: "What comes next? 1, 1, 2, 3, 5, ___", type: "number_pattern", options: [{ text: "6" }, { text: "7" }, { text: "8" }, { text: "10" }], correct_index: 2 } },
+  { id: "p5", domain: "pattern", ageBand: "3-5", difficulty: 0.5, discrimination: 1.3, guessing: 0.20, content: { stem: "Which shape is the mirror image?", type: "reflection", options: [{ text: "Shape A (same)" }, { text: "Shape B (rotated)" }, { text: "Shape C (mirrored)" }, { text: "Shape D (different)" }], correct_index: 2 } },
+  { id: "p6", domain: "pattern", ageBand: "3-5", difficulty: 1.0, discrimination: 1.5, guessing: 0.20, content: { stem: "What comes next? 3, 6, 12, 24, ___", type: "number_pattern", options: [{ text: "30" }, { text: "36" }, { text: "48" }, { text: "32" }], correct_index: 2 } },
+  { id: "p7", domain: "pattern", ageBand: "3-5", difficulty: 1.5, discrimination: 1.6, guessing: 0.15, content: { stem: "What comes next? 2, 3, 5, 7, 11, ___", type: "number_pattern", options: [{ text: "12" }, { text: "13" }, { text: "14" }, { text: "15" }], correct_index: 1 } },
+  { id: "p8", domain: "pattern", ageBand: "3-5", difficulty: 1.5, discrimination: 1.7, guessing: 0.15, content: { stem: "Which 3D shape from this flat pattern (net)?", type: "nets", options: [{ text: "Cube" }, { text: "Cylinder" }, { text: "Pyramid" }, { text: "Cone" }], correct_index: 2 } },
+];
+
+// ─── 6-8 Items ─────────────────────────────────────────────────
+
+const ITEMS_6_8: DemoItem[] = [
+  // Reasoning
+  { id: "68-r1", domain: "reasoning", ageBand: "6-8", difficulty: -0.5, discrimination: 1.2, guessing: 0.25, content: { stem: "Democracy is to government as capitalism is to ___", type: "analogy", options: [{ text: "Politics" }, { text: "Economics" }, { text: "Society" }, { text: "Law" }], correct_index: 1 } },
+  { id: "68-r2", domain: "reasoning", ageBand: "6-8", difficulty: 0.0, discrimination: 1.3, guessing: 0.25, content: { stem: "Microscope is to biology as telescope is to ___", type: "analogy", options: [{ text: "Physics" }, { text: "Chemistry" }, { text: "Astronomy" }, { text: "Geology" }], correct_index: 2 } },
+  { id: "68-r3", domain: "reasoning", ageBand: "6-8", difficulty: 0.5, discrimination: 1.4, guessing: 0.20, content: { stem: "Symphony is to composer as novel is to ___", type: "analogy", options: [{ text: "Reader" }, { text: "Publisher" }, { text: "Author" }, { text: "Editor" }], correct_index: 2 } },
+  { id: "68-r4", domain: "reasoning", ageBand: "6-8", difficulty: 0.0, discrimination: 1.3, guessing: 0.25, content: { stem: "Which does NOT belong? Photosynthesis, Respiration, Evaporation, Fermentation", type: "odd_one_out", options: [{ text: "Photosynthesis" }, { text: "Respiration" }, { text: "Evaporation" }, { text: "Fermentation" }], correct_index: 2 } },
+  { id: "68-r5", domain: "reasoning", ageBand: "6-8", difficulty: 1.0, discrimination: 1.5, guessing: 0.20, content: { stem: "Which does NOT belong? Simile, Metaphor, Hypothesis, Personification", type: "odd_one_out", options: [{ text: "Simile" }, { text: "Metaphor" }, { text: "Hypothesis" }, { text: "Personification" }], correct_index: 2 } },
+  { id: "68-r6", domain: "reasoning", ageBand: "6-8", difficulty: 0.5, discrimination: 1.3, guessing: 0.20, content: { stem: "What comes next? 1, 4, 9, 16, 25, ___", type: "number_series", options: [{ text: "30" }, { text: "36" }, { text: "49" }, { text: "32" }], correct_index: 1 } },
+  { id: "68-r7", domain: "reasoning", ageBand: "6-8", difficulty: 1.0, discrimination: 1.5, guessing: 0.20, content: { stem: "What comes next? 1, 1, 2, 3, 5, 8, 13, ___", type: "number_series", options: [{ text: "18" }, { text: "20" }, { text: "21" }, { text: "26" }], correct_index: 2 } },
+  { id: "68-r8", domain: "reasoning", ageBand: "6-8", difficulty: 1.5, discrimination: 1.7, guessing: 0.15, content: { stem: "What comes next? 2, 6, 12, 20, 30, ___", type: "number_series", options: [{ text: "40" }, { text: "42" }, { text: "36" }, { text: "48" }], correct_index: 1 } },
+  { id: "68-r9", domain: "reasoning", ageBand: "6-8", difficulty: 1.0, discrimination: 1.5, guessing: 0.20, content: { stem: "All integers divisible by 6 are divisible by 3. 24 is divisible by 6. Which must be true?", type: "syllogism", options: [{ text: "24 is divisible by 3" }, { text: "24 is divisible by 9" }, { text: "All numbers divisible by 3 are divisible by 6" }, { text: "24 is prime" }], correct_index: 0 } },
+  { id: "68-r10", domain: "reasoning", ageBand: "6-8", difficulty: 1.5, discrimination: 1.7, guessing: 0.15, content: { stem: "If A implies B, and B implies C, what can we conclude?", type: "syllogism", options: [{ text: "C implies A" }, { text: "A implies C" }, { text: "Not A implies not C" }, { text: "B implies A" }], correct_index: 1 } },
+  { id: "68-r11", domain: "reasoning", ageBand: "6-8", difficulty: 2.0, discrimination: 1.8, guessing: 0.15, content: { stem: "Some artists are musicians. All musicians practice daily. Which MUST be true?", type: "syllogism", options: [{ text: "All artists practice daily" }, { text: "Some artists practice daily" }, { text: "All who practice daily are musicians" }, { text: "No artists practice daily" }], correct_index: 1 } },
+  { id: "68-r12", domain: "reasoning", ageBand: "6-8", difficulty: 2.5, discrimination: 2.0, guessing: 0.15, content: { stem: "Entropy is to thermodynamics as natural selection is to ___", type: "analogy", options: [{ text: "Genetics" }, { text: "Evolution" }, { text: "Ecology" }, { text: "Taxonomy" }], correct_index: 1 } },
+  { id: "68-r13", domain: "reasoning", ageBand: "6-8", difficulty: 3.0, discrimination: 2.0, guessing: 0.15, content: { stem: "Which does NOT belong? Correlation, Regression, Standard deviation, Allegory", type: "odd_one_out", options: [{ text: "Correlation" }, { text: "Regression" }, { text: "Standard deviation" }, { text: "Allegory" }], correct_index: 3 } },
+  // Math
+  { id: "68-m1", domain: "math", ageBand: "6-8", difficulty: -0.5, discrimination: 1.2, guessing: 0.25, content: { stem: "What is 15% of 200?", type: "computation", options: [{ text: "20" }, { text: "25" }, { text: "30" }, { text: "35" }], correct_index: 2 } },
+  { id: "68-m2", domain: "math", ageBand: "6-8", difficulty: 0.0, discrimination: 1.3, guessing: 0.25, content: { stem: "Simplify: 3(x + 4) - 2x", type: "algebra", options: [{ text: "x + 12" }, { text: "x + 4" }, { text: "5x + 4" }, { text: "5x + 12" }], correct_index: 0 } },
+  { id: "68-m3", domain: "math", ageBand: "6-8", difficulty: 0.5, discrimination: 1.4, guessing: 0.20, content: { stem: "Solve for x: 2x + 7 = 15", type: "algebra", options: [{ text: "3" }, { text: "4" }, { text: "5" }, { text: "11" }], correct_index: 1 } },
+  { id: "68-m4", domain: "math", ageBand: "6-8", difficulty: 0.0, discrimination: 1.3, guessing: 0.25, content: { stem: "What is 2/3 × 3/4?", type: "computation", options: [{ text: "6/12" }, { text: "1/2" }, { text: "5/7" }, { text: "6/7" }], correct_index: 1 } },
+  { id: "68-m5", domain: "math", ageBand: "6-8", difficulty: 0.5, discrimination: 1.4, guessing: 0.20, content: { stem: "Convert 0.375 to a fraction in simplest form", type: "conversion", options: [{ text: "3/8" }, { text: "3/4" }, { text: "375/100" }, { text: "37/100" }], correct_index: 0 } },
+  { id: "68-m6", domain: "math", ageBand: "6-8", difficulty: 1.0, discrimination: 1.5, guessing: 0.20, content: { stem: "Shirt is $40, 25% off, then 10% coupon on sale price. What do you pay?", type: "word_problem", options: [{ text: "$26.00" }, { text: "$27.00" }, { text: "$28.00" }, { text: "$30.00" }], correct_index: 1 } },
+  { id: "68-m7", domain: "math", ageBand: "6-8", difficulty: 1.5, discrimination: 1.6, guessing: 0.15, content: { stem: "Pool fills at 3 gal/min, drains at 1 gal/min. How long to fill 120 gallons?", type: "word_problem", options: [{ text: "40 min" }, { text: "60 min" }, { text: "80 min" }, { text: "120 min" }], correct_index: 1 } },
+  { id: "68-m8", domain: "math", ageBand: "6-8", difficulty: 1.5, discrimination: 1.7, guessing: 0.15, content: { stem: "What is 2^8?", type: "computation", options: [{ text: "128" }, { text: "256" }, { text: "512" }, { text: "64" }], correct_index: 1 } },
+  { id: "68-m9", domain: "math", ageBand: "6-8", difficulty: 2.0, discrimination: 1.8, guessing: 0.15, content: { stem: "Triangle with sides 5, 12, 13. What is its area?", type: "geometry", options: [{ text: "30" }, { text: "60" }, { text: "65" }, { text: "26" }], correct_index: 0 } },
+  { id: "68-m10", domain: "math", ageBand: "6-8", difficulty: 2.0, discrimination: 1.8, guessing: 0.15, content: { stem: "What is the GCF of 48 and 36?", type: "number_theory", options: [{ text: "6" }, { text: "8" }, { text: "12" }, { text: "18" }], correct_index: 2 } },
+  { id: "68-m11", domain: "math", ageBand: "6-8", difficulty: 2.5, discrimination: 2.0, guessing: 0.15, content: { stem: "Simplify: (x² - 9) / (x + 3)", type: "algebra", options: [{ text: "x - 3" }, { text: "x + 3" }, { text: "x² - 3" }, { text: "x - 9" }], correct_index: 0 } },
+  { id: "68-m12", domain: "math", ageBand: "6-8", difficulty: 2.5, discrimination: 1.9, guessing: 0.15, content: { stem: "P(rain) = 0.3. What is P(no rain for 3 days)?", type: "probability", options: [{ text: "0.343" }, { text: "0.027" }, { text: "0.7" }, { text: "0.9" }], correct_index: 0 } },
+  { id: "68-m13", domain: "math", ageBand: "6-8", difficulty: 3.0, discrimination: 2.0, guessing: 0.15, content: { stem: "If f(x) = 3x² - 2x + 1, what is f(-1)?", type: "function_eval", options: [{ text: "2" }, { text: "4" }, { text: "6" }, { text: "0" }], correct_index: 2 } },
+  // Verbal
+  { id: "68-v1", domain: "verbal", ageBand: "6-8", difficulty: -0.5, discrimination: 1.2, guessing: 0.25, content: { stem: "What does \"ambiguous\" mean?", type: "definition", options: [{ text: "Very clear" }, { text: "Open to more than one interpretation" }, { text: "Extremely ambitious" }, { text: "Lacking energy" }], correct_index: 1 } },
+  { id: "68-v2", domain: "verbal", ageBand: "6-8", difficulty: 0.0, discrimination: 1.3, guessing: 0.25, content: { stem: "What is an antonym of \"benevolent\"?", type: "antonym", options: [{ text: "Generous" }, { text: "Malevolent" }, { text: "Indifferent" }, { text: "Brilliant" }], correct_index: 1 } },
+  { id: "68-v3", domain: "verbal", ageBand: "6-8", difficulty: 0.5, discrimination: 1.4, guessing: 0.20, content: { stem: "\"Ephemeral\" means:", type: "definition", options: [{ text: "Lasting a very short time" }, { text: "Extremely important" }, { text: "Related to astronomy" }, { text: "Very beautiful" }], correct_index: 0 } },
+  { id: "68-v4", domain: "verbal", ageBand: "6-8", difficulty: 1.0, discrimination: 1.5, guessing: 0.20, content: { stem: "A company laid off 30% of workers, stock price rose. What can be inferred?", type: "inference", options: [{ text: "Workers were unproductive" }, { text: "Investors valued cost reduction" }, { text: "The company is failing" }, { text: "Stock always rises after layoffs" }], correct_index: 1 } },
+  { id: "68-v5", domain: "verbal", ageBand: "6-8", difficulty: 1.0, discrimination: 1.5, guessing: 0.20, content: { stem: "'A double-edged sword' describing technology means it:", type: "figurative_language", options: [{ text: "Is dangerous" }, { text: "Has both benefits and drawbacks" }, { text: "Is medieval" }, { text: "Should be avoided" }], correct_index: 1 } },
+  { id: "68-v6", domain: "verbal", ageBand: "6-8", difficulty: 1.5, discrimination: 1.7, guessing: 0.15, content: { stem: "What does \"pragmatic\" mean?", type: "definition", options: [{ text: "Idealistic" }, { text: "Dealing with things practically" }, { text: "Dramatic" }, { text: "Ancient" }], correct_index: 1 } },
+  { id: "68-v7", domain: "verbal", ageBand: "6-8", difficulty: 2.0, discrimination: 1.8, guessing: 0.15, content: { stem: "An author uses both statistics AND a personal story about poverty. Why both?", type: "rhetoric", options: [{ text: "To make writing longer" }, { text: "Statistics prove; story makes it emotionally real" }, { text: "Not enough pages" }, { text: "The story replaces statistics" }], correct_index: 1 } },
+  { id: "68-v8", domain: "verbal", ageBand: "6-8", difficulty: 2.0, discrimination: 1.8, guessing: 0.15, content: { stem: "Two scientists publish opposing conclusions from same data. Best explanation?", type: "critical_thinking", options: [{ text: "One is wrong" }, { text: "Data is flawed" }, { text: "Different analytical frameworks" }, { text: "Science can't answer this" }], correct_index: 2 } },
+  { id: "68-v9", domain: "verbal", ageBand: "6-8", difficulty: 2.5, discrimination: 2.0, guessing: 0.15, content: { stem: "'Juxtaposition' in literature refers to:", type: "definition", options: [{ text: "Placing contrasting elements side by side" }, { text: "Multiple perspectives" }, { text: "Legal language in fiction" }, { text: "Breaking the fourth wall" }], correct_index: 0 } },
+  { id: "68-v10", domain: "verbal", ageBand: "6-8", difficulty: 3.0, discrimination: 2.0, guessing: 0.15, content: { stem: "An author argues tests measure SES more than intelligence. What MOST weakens this?", type: "critical_thinking", options: [{ text: "Many wealthy students score poorly" }, { text: "Scores correlate with income" }, { text: "Equal test prep = similar scores" }, { text: "Test prep companies exist" }], correct_index: 0 } },
+  // Pattern Recognition
+  { id: "68-p1", domain: "pattern", ageBand: "6-8", difficulty: -0.5, discrimination: 1.2, guessing: 0.25, content: { stem: "What comes next? 3, 7, 11, 15, ___", type: "number_pattern", options: [{ text: "17" }, { text: "18" }, { text: "19" }, { text: "20" }], correct_index: 2 } },
+  { id: "68-p2", domain: "pattern", ageBand: "6-8", difficulty: 0.0, discrimination: 1.3, guessing: 0.25, content: { stem: "What comes next? 2, 3, 5, 7, 11, 13, ___", type: "number_pattern", options: [{ text: "15" }, { text: "17" }, { text: "19" }, { text: "14" }], correct_index: 1 } },
+  { id: "68-p3", domain: "pattern", ageBand: "6-8", difficulty: 0.5, discrimination: 1.4, guessing: 0.20, content: { stem: "What comes next? 1, 8, 27, 64, ___", type: "number_pattern", options: [{ text: "100" }, { text: "125" }, { text: "81" }, { text: "216" }], correct_index: 1 } },
+  { id: "68-p4", domain: "pattern", ageBand: "6-8", difficulty: 1.5, discrimination: 1.6, guessing: 0.15, content: { stem: "What comes next? 1, 3, 7, 15, 31, ___", type: "number_pattern", options: [{ text: "47" }, { text: "55" }, { text: "62" }, { text: "63" }], correct_index: 3 } },
+  { id: "68-p5", domain: "pattern", ageBand: "6-8", difficulty: 2.0, discrimination: 1.8, guessing: 0.15, content: { stem: "Paper folded twice, hole punched. When unfolded, how many holes?", type: "paper_fold", options: [{ text: "2" }, { text: "3" }, { text: "4" }, { text: "8" }], correct_index: 2 } },
+  { id: "68-p6", domain: "pattern", ageBand: "6-8", difficulty: 2.5, discrimination: 2.0, guessing: 0.15, content: { stem: "What comes next? 1, 11, 21, 1211, 111221, ___", type: "number_pattern", options: [{ text: "312211" }, { text: "122211" }, { text: "1112221" }, { text: "221121" }], correct_index: 0 } },
+  { id: "68-p7", domain: "pattern", ageBand: "6-8", difficulty: 3.0, discrimination: 2.0, guessing: 0.15, content: { stem: "Cube with patterns on each face. After shown rotations, which face is on top?", type: "mental_rotation", options: [{ text: "Stripes" }, { text: "Dots" }, { text: "Solid" }, { text: "Checkerboard" }], correct_index: 1 } },
+];
+
+// ─── Export all items ──────────────────────────────────────────
+
+export const ALL_ITEMS: Record<string, DemoItem[]> = {
+  "K-2": K2_ITEMS,
+  "3-5": ITEMS_3_5,
+  "6-8": ITEMS_6_8,
+};
+
+/** @deprecated Use ALL_ITEMS instead */
+export const DEMO_ITEMS: DemoItem[] = ITEMS_3_5;
