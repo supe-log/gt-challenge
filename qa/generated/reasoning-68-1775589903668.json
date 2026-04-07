@@ -57,11 +57,11 @@
     "age_bands": [
       "6-8"
     ],
-    "difficulty": 0.5,
+    "difficulty": 0.4,
     "discrimination": 1.5,
     "guessing": 0.25,
     "content": {
-      "stem": "Which word does NOT belong with the others? Explain your reasoning about how these political concepts are related.",
+      "stem": "Which word does NOT belong with the others?",
       "type": "odd_one_out",
       "options": [
         {
@@ -93,7 +93,7 @@
         {
           "option_index": 1,
           "misconception_id": "unfamiliarity",
-          "reasoning": "Students might choose republic if they're less familiar with this term, though it should be introduced as a form of government where citizens elect representatives to make decisions, distinguishing it from direct democracy"
+          "reasoning": "Students might choose republic if they're less familiar with this term"
         },
         {
           "option_index": 2,
@@ -265,28 +265,28 @@
     "age_bands": [
       "6-8"
     ],
-    "difficulty": 2,
+    "difficulty": 1.5,
     "discrimination": 1.6,
     "guessing": 0.25,
     "content": {
-      "stem": "If all virtuous people are happy, and some happy people are wealthy, which statement must be true?",
+      "stem": "If all good people are happy and some happy people are rich, which of the following is possible?",
       "type": "syllogism",
       "options": [
         {
-          "text": "Some virtuous people are wealthy"
+          "text": "Some good people are rich"
         },
         {
-          "text": "All wealthy people are virtuous"
+          "text": "All rich people are good"
         },
         {
-          "text": "Some wealthy people might be virtuous"
+          "text": "Some rich people might be good"
         },
         {
-          "text": "No virtuous people are wealthy"
+          "text": "No good people are rich"
         }
       ],
       "correct_index": 2,
-      "explanation": "The premises don't force any direct connection between virtuous and wealthy people. However, since virtuous people are happy, and some happy people are wealthy, it's possible (but not necessary) that some wealthy people could also be virtuous."
+      "explanation": "The premises don't force any direct connection between good and rich people. However, since good people are happy, and some happy people are rich, it's possible (but not necessary) that some rich people could also be good. Option A is incorrect because it assumes an overlap must exist when only possibility is established. Option B is incorrect because it reverses the relationship, wrongly thinking 'some happy are rich' means 'all rich are happy.' Option D is incorrect because it assumes no connection is possible, missing that the premises allow for potential overlap."
     },
     "metadata": {
       "cognitive_skill": "complex syllogistic reasoning with quantifiers",
@@ -308,7 +308,8 @@
           "misconception_id": "false_exclusion",
           "reasoning": "Students think no connection is possible, missing that the premises allow for potential overlap"
         }
-      ]
+      ],
+      "dok_level": "DOK 3 - Strategic Thinking: Requires analyzing relationships between multiple logical premises, evaluating what conclusions are possible versus necessary, and applying complex reasoning about quantified statements."
     }
   },
   {
@@ -321,7 +322,7 @@
     "discrimination": 1.4,
     "guessing": 0.25,
     "content": {
-      "stem": "Which concept does NOT belong in this group: Hypothesis, Theory, Axiom, Experiment?",
+      "stem": "Which concept does NOT belong in this group: Hypothesis, Theory, Law, Experiment?",
       "type": "odd_one_out",
       "options": [
         {
@@ -331,18 +332,18 @@
           "text": "Theory"
         },
         {
-          "text": "Axiom"
+          "text": "Law"
         },
         {
           "text": "Experiment"
         }
       ],
       "correct_index": 3,
-      "explanation": "Hypothesis, Theory, and Axiom are all types of statements or propositions in scientific/logical thinking. Experiment is a process or method for testing these propositions, not a proposition itself."
+      "explanation": "Hypothesis, Theory, and Law are all types of statements or propositions in scientific/logical thinking. Experiment is a process or method for testing these propositions, not a proposition itself."
     },
     "metadata": {
       "cognitive_skill": "abstract categorization in scientific methodology",
-      "misconception_targeted": "functional versus categorical thinking",
+      "misconception_targeted": "certainty-based and source-based categorization over functional categorization",
       "bloom_level": "evaluate",
       "distractor_rationale": [
         {
@@ -353,12 +354,12 @@
         {
           "option_index": 1,
           "misconception_id": "complexity_focus",
-          "reasoning": "Students might think theory doesn't belong because it seems more complex"
+          "reasoning": "Students might think theory doesn't belong because it appears to be the most comprehensive and well-established concept, making it seem fundamentally different from the simpler or more tentative ideas"
         },
         {
           "option_index": 2,
           "misconception_id": "source_confusion",
-          "reasoning": "Students might think axiom doesn't belong because it comes from mathematics rather than science"
+          "reasoning": "Students might think law doesn't belong because it comes from mathematics rather than science"
         }
       ]
     }
@@ -369,11 +370,11 @@
     "age_bands": [
       "6-8"
     ],
-    "difficulty": 2.6,
+    "difficulty": 2,
     "discrimination": 1.3,
     "guessing": 0.25,
     "content": {
-      "stem": "Procrastination is to deadline as amnesia is to:",
+      "stem": "Delaying work is to deadline as memory loss is to:",
       "type": "analogy",
       "options": [
         {
@@ -390,12 +391,12 @@
         }
       ],
       "correct_index": 2,
-      "explanation": "Procrastination creates problems with meeting deadlines; similarly, amnesia creates problems with keeping appointments. Both represent conditions that interfere with time-based commitments or obligations."
+      "explanation": "This analogy focuses on how one condition affects time-based commitments. Delaying work (procrastination) causes problems with meeting deadlines; similarly, memory loss (amnesia) causes problems with keeping appointments. Both represent conditions that interfere with scheduled obligations. While 'memory' might seem related to amnesia, the analogy structure requires identifying what amnesia affects (appointments) rather than what it involves (memory). The relationship is: condition → time-based consequence."
     },
     "metadata": {
       "cognitive_skill": "abstract relational mapping between psychological states and consequences",
       "misconception_targeted": "direct semantic association",
-      "bloom_level": "evaluate",
+      "bloom_level": "analyze",
       "distractor_rationale": [
         {
           "option_index": 0,

@@ -1,0 +1,52 @@
+{
+  "id": "68-r0003",
+  "domain": "reasoning",
+  "age_bands": [
+    "6-8"
+  ],
+  "difficulty": 0.8,
+  "discrimination": 1.7,
+  "guessing": 0.25,
+  "content": {
+    "stem": "Revolution is to change as evolution is to:",
+    "type": "analogy",
+    "options": [
+      {
+        "text": "Darwin"
+      },
+      {
+        "text": "gradual development"
+      },
+      {
+        "text": "species"
+      },
+      {
+        "text": "adaptation"
+      }
+    ],
+    "correct_index": 1,
+    "explanation": "Revolution implies sudden, dramatic change, while evolution implies gradual development over time. The analogy contrasts rapid versus gradual processes of transformation."
+  },
+  "metadata": {
+    "cognitive_skill": "relational reasoning and conceptual mapping",
+    "misconception_targeted": "semantic association over relational thinking",
+    "bloom_level": "analyze",
+    "distractor_rationale": [
+      {
+        "option_index": 0,
+        "misconception_id": "semantic_association",
+        "reasoning": "Students associate evolution with Darwin rather than focusing on the conceptual relationship"
+      },
+      {
+        "option_index": 2,
+        "misconception_id": "content_focus",
+        "reasoning": "Students think about what evolution affects (species) rather than the nature of the process"
+      },
+      {
+        "option_index": 3,
+        "misconception_id": "partial_relationship",
+        "reasoning": "Students connect evolution to adaptation, which is related but doesn't capture the pace/manner contrast"
+      }
+    ]
+  }
+}

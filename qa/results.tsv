@@ -110,3 +110,12 @@ timestamp	item_id	domain	age_band	iteration	score	status	description
 2026-04-07T19:23:14Z	68-p0009	pattern_recognition	6-8	1	90	approved	pattern_recognition item 6-8
 2026-04-07T19:24:00Z	68-p0010	pattern_recognition	6-8	3	88.75	failed	pattern_recognition item 6-8
 2026-04-07T19:25:27Z	68-r0001	reasoning	6-8	2	93.75	approved	reasoning item 6-8
+2026-04-07T19:26:05Z	68-r0002	reasoning	6-8	3	87.5	failed	reasoning item 6-8
+2026-04-07T19:26:11Z	68-r0003	reasoning	6-8	1	92.5	approved	reasoning item 6-8
+2026-04-07T19:26:17Z	68-r0004	reasoning	6-8	1	95	approved	reasoning item 6-8
+2026-04-07T19:26:23Z	68-r0005	reasoning	6-8	1	93.75	approved	reasoning item 6-8
+2026-04-07T19:26:49Z	68-r0006	reasoning	6-8	2	95	approved	reasoning item 6-8
+2026-04-07T19:27:31Z	68-r0007	reasoning	6-8	3	83.75	failed	reasoning item 6-8
+2026-04-07T19:28:21Z	68-r0008	reasoning	6-8	3	81.25	failed	reasoning item 6-8
+2026-04-07T19:28:27Z	68-r0009	reasoning	6-8	1	93.75	approved	reasoning item 6-8
+2026-04-07T19:28:32Z	68-r0010	reasoning	6-8	1	93.75	approved	reasoning item 6-8
