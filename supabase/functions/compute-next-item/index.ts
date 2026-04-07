@@ -79,11 +79,12 @@ function computeSE(theta: number, items: ItemParams[]): number {
 
 // ─── Session Config ─────────────────────────────────────────────
 
-const MIN_ITEMS = 15;
+const MIN_ITEMS = 20;
 const MAX_ITEMS = 40;
 const MAX_TIME_MS = 35 * 60 * 1000;
 const SE_TARGET = 0.25;
 const MAX_CONSECUTIVE_SAME_DOMAIN = 3;
+const MAX_DOMAIN_PROPORTION = 0.30;
 
 // ─── Main Handler ───────────────────────────────────────────────
 
@@ -322,9 +323,8 @@ Deno.serve(async (req) => {
       domainCounts[d] = (domainCounts[d] ?? 0) + 1;
     }
 
-    // Select next item with max info + content balancing
-    let bestItem = eligibleItems[0];
-    let bestScore = -Infinity;
+    // Select next item with max info + content balancing + weighted randomization
+    const scored: { item: typeof eligibleItems[0]; score: number }[] = [];
 
     for (const item of eligibleItems) {
       let score = fisherInformation(
@@ -338,22 +338,31 @@ Deno.serve(async (req) => {
       const lastDomains = domainHistory.slice(-MAX_CONSECUTIVE_SAME_DOMAIN);
       const consecutive = countTrailing(lastDomains, item.domain);
       if (consecutive >= MAX_CONSECUTIVE_SAME_DOMAIN) {
-        score *= 0.1;
+        score *= 0.05;
       } else if (consecutive >= MAX_CONSECUTIVE_SAME_DOMAIN - 1) {
-        score *= 0.5;
+        score *= 0.3;
       }
 
-      // Domain balance
+      // Domain balance: hard cap at 30%, soft penalty at 25%
       const total = Object.values(domainCounts).reduce((a, b) => a + b, 0);
       if (total > 0) {
         const proportion = (domainCounts[item.domain] ?? 0) / total;
-        if (proportion > 0.35) score *= 0.7;
+        if (proportion > MAX_DOMAIN_PROPORTION) score *= 0.05;
+        else if (proportion > 0.25) score *= 0.4;
       }
 
-      if (score > bestScore) {
-        bestScore = score;
-        bestItem = item;
-      }
+      scored.push({ item, score });
+    }
+
+    // Weighted random from top 3 candidates (avoids identical sequences)
+    scored.sort((a, b) => b.score - a.score);
+    const top = scored.slice(0, Math.min(3, scored.length));
+    const totalScore = top.reduce((s, t) => s + Math.max(t.score, 0.001), 0);
+    let rand = Math.random() * totalScore;
+    let bestItem = top[0].item;
+    for (const t of top) {
+      rand -= Math.max(t.score, 0.001);
+      if (rand <= 0) { bestItem = t.item; break; }
     }
 
     // Record next item presentation

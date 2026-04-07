@@ -55,18 +55,43 @@ function computeSE(theta: number, usedItems: DemoItem[]): number {
 
 function selectNext(theta: number, remaining: DemoItem[], lastDomains: string[]): DemoItem | null {
   if (remaining.length === 0) return null;
-  let best = remaining[0], bestScore = -Infinity;
+
+  // Count domain proportions so far
+  const domainCounts: Record<string, number> = {};
+  for (const d of lastDomains) domainCounts[d] = (domainCounts[d] || 0) + 1;
+  const totalSoFar = lastDomains.length || 1;
+
+  // Score all items
+  const scored: { item: DemoItem; score: number }[] = [];
   for (const it of remaining) {
     let score = fisherInfo(theta, it.discrimination, it.difficulty, it.guessing);
+
+    // Consecutive same-domain penalty
     let consecutive = 0;
     for (let i = lastDomains.length - 1; i >= 0; i--) {
       if (lastDomains[i] === it.domain) consecutive++; else break;
     }
-    if (consecutive >= 3) score *= 0.1;
-    else if (consecutive >= 2) score *= 0.5;
-    if (score > bestScore) { bestScore = score; best = it; }
+    if (consecutive >= 3) score *= 0.05;
+    else if (consecutive >= 2) score *= 0.3;
+
+    // Proportion-based domain balance: hard cap at 30%, soft penalty at 25%
+    const proportion = (domainCounts[it.domain] || 0) / totalSoFar;
+    if (proportion > 0.30) score *= 0.05;
+    else if (proportion > 0.25) score *= 0.4;
+
+    scored.push({ item: it, score });
   }
-  return best;
+
+  // Weighted random from top 3 (avoids identical sequences for all students)
+  scored.sort((a, b) => b.score - a.score);
+  const top = scored.slice(0, Math.min(3, scored.length));
+  const totalScore = top.reduce((s, t) => s + Math.max(t.score, 0.001), 0);
+  let r = Math.random() * totalScore;
+  for (const t of top) {
+    r -= Math.max(t.score, 0.001);
+    if (r <= 0) return t.item;
+  }
+  return top[0].item;
 }
 
 // ─── Domain visuals ─────────────────────────────────────────
@@ -153,7 +178,7 @@ export default function DemoPage() {
 
     const count = newResponses.length;
     const remaining = bandItems.filter((it) => !usedIds.has(it.id) && it.id !== currentItem.id);
-    const shouldStop = (count >= 15 && se <= 0.25) || count >= 40 || remaining.length === 0;
+    const shouldStop = (count >= 20 && se <= 0.25) || count >= 40 || remaining.length === 0;
 
     // Quick transition — no feedback text, just slide to next
     setTimeout(() => {
