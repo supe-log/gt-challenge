@@ -1,5 +1,5 @@
 import React from "react";
-import { Scene, SectionTitle, Subtitle, FadeIn, StaggerList } from "./helpers";
+import { Scene, SectionTitle, Subtitle, FadeIn } from "./helpers";
 import { COLORS, FONTS } from "./styles";
 
 export const Scene2Problem: React.FC = () => (

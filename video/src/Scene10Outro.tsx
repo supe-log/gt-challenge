@@ -1,11 +1,10 @@
 import React from "react";
-import { spring, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
+import { useCurrentFrame, interpolate } from "remotion";
 import { Scene, FadeIn } from "./helpers";
 import { COLORS, FONTS } from "./styles";
 
 export const Scene10Outro: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
   const pulse = interpolate(Math.sin(frame / 20), [-1, 1], [0.95, 1.05]);
 
   return (

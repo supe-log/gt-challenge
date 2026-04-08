@@ -1,11 +1,8 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, spring } from "remotion";
 import { Scene, SectionTitle, FadeIn, BoxNode, DrawLine } from "./helpers";
 import { COLORS, FONTS } from "./styles";
 
 export const Scene4Frontend: React.FC = () => {
-  const frame = useCurrentFrame();
-
   return (
     <Scene justify="flex-start">
       <SectionTitle text="Frontend Architecture" color={COLORS.blue} />
