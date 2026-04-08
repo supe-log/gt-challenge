@@ -8,7 +8,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="GTChallengeOverview"
         component={GTChallengeOverview}
-        durationInFrames={2850}
+        durationInFrames={3030}
         fps={30}
         width={1920}
         height={1080}
