@@ -30,6 +30,7 @@ interface SessionState {
 
   startSession: (childId: string) => Promise<void>;
   submitResponse: (answerIndex: number, timeOnItemMs: number, idleTimeMs?: number) => Promise<void>;
+  dismissBonusRound: () => void;
   reset: () => void;
 }
 
@@ -77,10 +78,14 @@ export const useSessionStore = create<SessionState>((set, get) => ({
   },
 
   submitResponse: async (answerIndex: number, timeOnItemMs: number, idleTimeMs = 0) => {
-    const { sessionId, currentItemId } = get();
+    const { sessionId, currentItemId, currentItem, itemsCorrect } = get();
     if (!sessionId || !currentItemId) return;
 
-    set({ isLoading: true, error: null });
+    // Track correct count client-side since server doesn't return it on every response
+    const isCorrect = currentItem ? answerIndex === currentItem.correct_index : false;
+    const newItemsCorrect = itemsCorrect + (isCorrect ? 1 : 0);
+
+    set({ isLoading: true, error: null, itemsCorrect: newItemsCorrect });
     try {
       const supabase = createClient();
       const { data, error } = await supabase.functions.invoke("compute-next-item", {
@@ -99,12 +104,13 @@ export const useSessionStore = create<SessionState>((set, get) => ({
         set({
           isComplete: true,
           itemsCompleted: data.items_completed,
-          itemsCorrect: data.items_correct,
+          itemsCorrect: data.items_correct ?? newItemsCorrect,
           highestDifficulty: data.highest_difficulty_reached,
           bonusRoundsCompleted: data.bonus_rounds_completed,
           currentItem: null,
           currentItemId: null,
           currentItemDomain: null,
+          offerBonusRound: false,
           isLoading: false,
         });
       } else {
@@ -113,13 +119,19 @@ export const useSessionStore = create<SessionState>((set, get) => ({
           currentItemId: data.item_id,
           currentItemDomain: data.item_domain ?? null,
           itemsCompleted: data.items_completed,
-          offerBonusRound: data.offer_bonus_round,
+          itemsCorrect: data.items_correct ?? newItemsCorrect,
+          offerBonusRound: data.offer_bonus_round ?? false,
           isLoading: false,
         });
       }
     } catch (err) {
       set({ error: (err as Error).message, isLoading: false });
     }
+  },
+
+  // Dismiss bonus round offer without it re-triggering
+  dismissBonusRound: () => {
+    set({ offerBonusRound: false });
   },
 
   reset: () => {

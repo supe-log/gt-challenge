@@ -39,6 +39,7 @@ export default function SessionPage() {
     error,
     startSession,
     submitResponse,
+    dismissBonusRound,
     reset,
     itemsCorrect,
     highestDifficulty,
@@ -89,12 +90,12 @@ export default function SessionPage() {
     };
   }, [currentItem]);
 
-  // Show bonus round modal when offered
+  // Show bonus round modal when offered (only when flag transitions to true)
   useEffect(() => {
-    if (offerBonusRound && !showBonusModal && !isComplete) {
+    if (offerBonusRound && !isComplete) {
       setShowBonusModal(true);
     }
-  }, [offerBonusRound, showBonusModal, isComplete]);
+  }, [offerBonusRound, isComplete]);
 
   function resetIdleTimer() {
     if (idleTimer.current) clearTimeout(idleTimer.current);
@@ -128,10 +129,14 @@ export default function SessionPage() {
 
   function handleBonusContinue() {
     setShowBonusModal(false);
+    dismissBonusRound(); // Clear the flag so modal doesn't re-trigger
   }
 
   function handleBonusStop() {
     setShowBonusModal(false);
+    dismissBonusRound();
+    // Navigate back to parent dashboard — session stays active but user chose to stop
+    window.location.href = "/parent";
   }
 
   const currentLevel = Math.max(0, Math.min(9, Math.floor(((highestDifficulty + 3) / 6) * 10)));

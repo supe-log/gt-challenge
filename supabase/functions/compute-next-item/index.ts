@@ -384,6 +384,7 @@ Deno.serve(async (req) => {
         item_id: bestItem.id,
         item_domain: bestItem.domain,
         items_completed: newItemsAttempted,
+        items_correct: newItemsCorrect,
         offer_bonus_round: offerBonusRound,
       }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
