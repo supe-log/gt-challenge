@@ -10,22 +10,22 @@ export const Scene3Solution: React.FC = () => (
         text="Multi-session adaptive assessment that measures both cognitive ability (aptitude) and learning drive (appetite). The only way to beat it is to keep coming back."
         delay={8}
       />
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 16, marginTop: 24 }}>
         {[
           { label: "Next.js 16", color: COLORS.blue },
           { label: "React 19", color: COLORS.blue },
           { label: "TypeScript", color: COLORS.blue },
-          { label: "Tailwind 4", color: COLORS.blue },
           { label: "Supabase", color: COLORS.emerald },
           { label: "PostgreSQL 17", color: COLORS.emerald },
           { label: "Edge Functions", color: COLORS.emerald },
           { label: "IRT Engine", color: COLORS.purple },
+          { label: "Tailwind 4", color: COLORS.blue },
           { label: "Zustand", color: COLORS.blue },
           { label: "Framer Motion", color: COLORS.pink },
           { label: "AWS Amplify", color: COLORS.amber },
           { label: "Karpathy QA", color: COLORS.amber },
         ].map((b, i) => (
-          <Badge key={i} label={b.label} color={b.color} delay={16 + i * 4} />
+          <Badge key={i} label={b.label} color={b.color} delay={16 + i * 3} />
         ))}
       </div>
       <FadeIn delay={70} direction="up">

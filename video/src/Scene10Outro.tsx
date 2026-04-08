@@ -28,23 +28,23 @@ export const Scene10Outro: React.FC = () => {
           </h1>
         </FadeIn>
         <FadeIn delay={20} direction="up">
-          <p style={{ fontSize: 28, color: COLORS.textDim, fontFamily: FONTS.mono, margin: 0 }}>
+          <p style={{ fontSize: 34, color: COLORS.blue, fontFamily: FONTS.mono, margin: 0 }}>
             github.com/supe-log/gt-challenge
           </p>
         </FadeIn>
         <FadeIn delay={30} direction="up">
-          <p style={{ fontSize: 28, color: COLORS.textDim, fontFamily: FONTS.mono, margin: 0 }}>
+          <p style={{ fontSize: 34, color: COLORS.emerald, fontFamily: FONTS.mono, margin: 0 }}>
             main.d1ft6a4fdhj1nr.amplifyapp.com
           </p>
         </FadeIn>
         <FadeIn delay={45} direction="up">
           <p style={{
-            fontSize: 32,
-            fontWeight: 600,
+            fontSize: 40,
+            fontWeight: 700,
             fontFamily: FONTS.sans,
             color: COLORS.text,
             margin: 0,
-            marginTop: 16,
+            marginTop: 24,
           }}>
             Questions? Let&apos;s build.
           </p>

@@ -27,27 +27,23 @@ export const Scene5Backend: React.FC = () => (
         <DrawLine x1={750} y1={110} x2={750} y2={180} color={COLORS.emerald} delay={32} />
         <DrawLine x1={1225} y1={110} x2={750} y2={50} color={COLORS.purple} delay={28} width={2} />
 
-        {/* Database tables */}
-        <BoxNode x={50} y={190} w={180} h={60} label="profiles" color={COLORS.blue} delay={35} sublabel="parents + children" />
-        <BoxNode x={260} y={190} w={220} h={60} label="parent_child_links" color={COLORS.blue} delay={37} />
-        <BoxNode x={510} y={190} w={160} h={60} label="sessions" color={COLORS.blue} delay={39} sublabel="theta tracking" />
-        <BoxNode x={700} y={190} w={160} h={60} label="responses" color={COLORS.blue} delay={41} sublabel="per-item data" />
-        <BoxNode x={890} y={190} w={180} h={60} label="items (334)" color={COLORS.blue} delay={43} sublabel="IRT-calibrated" />
-        <BoxNode x={1100} y={190} w={200} h={60} label="appetite_signals" color={COLORS.blue} delay={45} sublabel="6 signal types" />
-        <BoxNode x={1330} y={190} w={220} h={60} label="composite_scores" color={COLORS.blue} delay={47} sublabel="aptitude + appetite" />
+        {/* Database tables - Row 1 (core) */}
+        <BoxNode x={50} y={200} w={220} h={70} label="profiles" color={COLORS.blue} delay={35} sublabel="parents + children" />
+        <BoxNode x={300} y={200} w={220} h={70} label="sessions" color={COLORS.blue} delay={38} sublabel="theta tracking" />
+        <BoxNode x={550} y={200} w={220} h={70} label="responses" color={COLORS.blue} delay={41} sublabel="per-item data" />
+        <BoxNode x={800} y={200} w={220} h={70} label="items (334)" color={COLORS.blue} delay={44} sublabel="IRT-calibrated" />
 
-        {/* Child PII isolated */}
-        <BoxNode x={50} y={290} w={180} h={60} label="child_pii" color={COLORS.amber} delay={50} sublabel="COPPA isolated" />
+        {/* Database tables - Row 2 (derived) */}
+        <BoxNode x={50} y={310} w={250} h={70} label="appetite_signals" color={COLORS.blue} delay={47} sublabel="6 signal types" />
+        <BoxNode x={330} y={310} w={250} h={70} label="composite_scores" color={COLORS.blue} delay={50} sublabel="aptitude + appetite" />
+        <BoxNode x={610} y={310} w={220} h={70} label="child_pii" color={COLORS.amber} delay={53} sublabel="COPPA isolated" />
 
         {/* RLS */}
-        <FadeIn delay={55} direction="up">
+        <FadeIn delay={58} direction="up">
           <g>
-            <rect x={50} y={380} width={1500} height={80} rx={12} fill={COLORS.amber + "11"} stroke={COLORS.amber} strokeWidth={2} strokeDasharray="8 4" />
-            <text x={800} y={420} textAnchor="middle" fill={COLORS.amber} fontSize={24} fontWeight={700} fontFamily="Inter, sans-serif">
-              Row-Level Security — Parents see only their children&apos;s data
-            </text>
-            <text x={800} y={445} textAnchor="middle" fill={COLORS.textDim} fontSize={18} fontFamily="Inter, sans-serif">
-              9 RLS policies · auth_user_id match · parent_child_link verification · denormalized parent_id for session/response reads
+            <rect x={50} y={420} width={1500} height={70} rx={12} fill={COLORS.amber + "11"} stroke={COLORS.amber} strokeWidth={2} strokeDasharray="8 4" />
+            <text x={800} y={460} textAnchor="middle" fill={COLORS.amber} fontSize={26} fontWeight={700} fontFamily="Inter, sans-serif">
+              Row-Level Security — Parents see only their children&apos;s data (9 policies)
             </text>
           </g>
         </FadeIn>

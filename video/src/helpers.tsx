@@ -52,12 +52,12 @@ export const Badge: React.FC<{
     <span
       style={{
         display: "inline-block",
-        padding: "8px 20px",
+        padding: "10px 24px",
         borderRadius: 999,
         background: color + "22",
         border: `2px solid ${color}`,
         color,
-        fontSize: 24,
+        fontSize: 28,
         fontWeight: 600,
         fontFamily: FONTS.sans,
       }}
