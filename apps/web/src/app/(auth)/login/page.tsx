@@ -32,10 +32,11 @@ export default function LoginPage() {
     setLoading(true);
     setError(null);
     const supabase = createClient();
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || window.location.origin;
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/callback`,
+        redirectTo: `${siteUrl}/callback`,
       },
     });
     if (error) {

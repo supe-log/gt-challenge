@@ -1,8 +1,14 @@
 import { createClient } from "@/lib/supabase-server";
 import { NextResponse } from "next/server";
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.NODE_ENV === "production"
+    ? "https://main.d1ft6a4fdhj1nr.amplifyapp.com"
+    : "http://localhost:3000");
+
 export async function GET(request: Request) {
-  const { searchParams, origin } = new URL(request.url);
+  const { searchParams } = new URL(request.url);
   const code = searchParams.get("code");
 
   if (code) {
@@ -23,7 +29,6 @@ export async function GET(request: Request) {
         .single();
 
       if (!existingProfile) {
-        // Create parent profile from OAuth metadata
         const displayName =
           user.user_metadata?.full_name ||
           user.user_metadata?.name ||
@@ -39,5 +44,5 @@ export async function GET(request: Request) {
     }
   }
 
-  return NextResponse.redirect(`${origin}/parent`);
+  return NextResponse.redirect(`${SITE_URL}/parent`);
 }
