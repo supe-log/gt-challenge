@@ -1,65 +1,163 @@
 import React from "react";
-import { Scene, SectionTitle, FadeIn, BoxNode, DrawLine } from "./helpers";
+import { spring, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
+import { Scene, SectionTitle, FadeIn } from "./helpers";
 import { COLORS, FONTS } from "./styles";
+
+const Box: React.FC<{
+  x: number; y: number; w: number; h: number;
+  label: string; sub?: string; color: string; delay: number;
+}> = ({ x, y, w, h, label, sub, color, delay }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const p = spring({ frame: frame - delay, fps, config: { damping: 200 } });
+  return (
+    <g opacity={p} transform={`translate(${x},${y})`}>
+      <rect width={w} height={h} rx={10} fill={color + "18"} stroke={color} strokeWidth={2} />
+      <text x={w / 2} y={sub ? h / 2 - 6 : h / 2 + 6} textAnchor="middle" fill={color} fontSize={17} fontWeight={700} fontFamily="Inter,sans-serif">{label}</text>
+      {sub && <text x={w / 2} y={h / 2 + 14} textAnchor="middle" fill="#94a3b8" fontSize={13} fontFamily="Inter,sans-serif">{sub}</text>}
+    </g>
+  );
+};
+
+const Arrow: React.FC<{
+  x1: number; y1: number; x2: number; y2: number;
+  color?: string; delay: number;
+}> = ({ x1, y1, x2, y2, color = "#475569", delay }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const p = spring({ frame: frame - delay, fps, config: { damping: 200 } });
+  const len = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+  return (
+    <line x1={x1} y1={y1} x2={x2} y2={y2}
+      stroke={color} strokeWidth={2} opacity={p}
+      strokeDasharray={len}
+      strokeDashoffset={len * (1 - p)}
+      markerEnd="url(#flowArrow)"
+    />
+  );
+};
+
+// Curved path arrow for the loop
+const CurveArrow: React.FC<{
+  d: string; color: string; delay: number;
+}> = ({ d, color, delay }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const p = spring({ frame: frame - delay, fps, config: { damping: 200 } });
+  return (
+    <path d={d} fill="none" stroke={color} strokeWidth={2.5} opacity={p}
+      strokeDasharray={600} strokeDashoffset={600 * (1 - p)}
+      markerEnd="url(#flowArrow)" />
+  );
+};
 
 export const Scene6Flow: React.FC = () => (
   <Scene justify="flex-start">
     <SectionTitle text="How It Works: End-to-End" color={COLORS.text} />
-    <FadeIn delay={8}>
-      <span style={{ fontSize: 24, color: COLORS.textDim, fontFamily: FONTS.sans }}>
+    <FadeIn delay={6}>
+      <span style={{ fontSize: 22, color: COLORS.textDim, fontFamily: FONTS.sans }}>
         Parent signs up → Adds child → Child takes adaptive session → Scores computed
       </span>
     </FadeIn>
 
-    <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <svg width={1600} height={600} viewBox="0 0 1600 600">
-        {/* Row 1: User actions */}
-        <BoxNode x={50} y={20} w={200} h={70} label="Parent Signup" color={COLORS.blue} delay={15} sublabel="email + password" />
-        <DrawLine x1={250} y1={55} x2={320} y2={55} color={COLORS.textDim} delay={20} />
-        <BoxNode x={320} y={20} w={200} h={70} label="Add Child" color={COLORS.blue} delay={22} sublabel="name + age band" />
-        <DrawLine x1={520} y1={55} x2={590} y2={55} color={COLORS.textDim} delay={27} />
-        <BoxNode x={590} y={20} w={250} h={70} label="Start Challenge" color={COLORS.blue} delay={29} sublabel="click Start button" />
-        <DrawLine x1={840} y1={55} x2={910} y2={55} color={COLORS.textDim} delay={34} />
-        <BoxNode x={910} y={20} w={250} h={70} label="Answer Questions" color={COLORS.blue} delay={36} sublabel="20-40 adaptive items" />
-        <DrawLine x1={1160} y1={55} x2={1230} y2={55} color={COLORS.textDim} delay={41} />
-        <BoxNode x={1230} y={20} w={250} h={70} label="View Results" color={COLORS.blue} delay={43} sublabel="aptitude + appetite" />
+    <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", marginTop: -10 }}>
+      <svg width={1700} height={620} viewBox="0 0 1700 620">
+        <defs>
+          <marker id="flowArrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#64748b" />
+          </marker>
+        </defs>
 
-        {/* Row 2: What happens behind the scenes */}
-        <DrawLine x1={715} y1={90} x2={715} y2={150} color={COLORS.emerald} delay={48} />
-
-        <BoxNode x={50} y={160} w={280} h={70} label="Edge: start-session" color={COLORS.emerald} delay={50} sublabel="Verify parent → Create session" />
-        <DrawLine x1={330} y1={195} x2={390} y2={195} color={COLORS.emerald} delay={55} />
-        <BoxNode x={390} y={160} w={280} h={70} label="Select First Item" color={COLORS.emerald} delay={57} sublabel="Max Fisher Info at θ=0" />
-        <DrawLine x1={670} y1={195} x2={730} y2={195} color={COLORS.emerald} delay={62} />
-        <BoxNode x={730} y={160} w={280} h={70} label="Student Answers" color={COLORS.purple} delay={64} sublabel="time + idle tracked" />
-        <DrawLine x1={1010} y1={195} x2={1070} y2={195} color={COLORS.emerald} delay={69} />
-        <BoxNode x={1070} y={160} w={280} h={70} label="compute-next-item" color={COLORS.emerald} delay={71} sublabel="Score → EAP → Next" />
-
-        {/* Loop arrow */}
-        <DrawLine x1={1210} y1={230} x2={1210} y2={280} color={COLORS.purple} delay={76} />
-        <DrawLine x1={1210} y1={280} x2={870} y2={280} color={COLORS.purple} delay={78} />
-        <DrawLine x1={870} y1={280} x2={870} y2={230} color={COLORS.purple} delay={80} />
-
-        <FadeIn delay={82} direction="none">
+        {/* ═══ ROW 1: User Journey ═══ */}
+        <FadeIn delay={10} direction="none">
           <g>
-            <text x={1040} y={300} textAnchor="middle" fill={COLORS.purple} fontSize={18} fontWeight={700} fontFamily="Inter, sans-serif">
+            <text x={80} y={20} fill="#64748b" fontSize={14} fontWeight={700} fontFamily="Inter,sans-serif" letterSpacing={2}>USER JOURNEY</text>
+          </g>
+        </FadeIn>
+
+        <Box x={60}   y={30} w={210} h={60} label="Parent Signup" sub="email + password" color={COLORS.blue} delay={12} />
+        <Arrow x1={270} y1={60} x2={310} y2={60} delay={16} />
+        <Box x={310}  y={30} w={210} h={60} label="Add Child" sub="name + age band" color={COLORS.blue} delay={18} />
+        <Arrow x1={520} y1={60} x2={560} y2={60} delay={22} />
+        <Box x={560}  y={30} w={220} h={60} label="Start Challenge" sub="click Start button" color={COLORS.blue} delay={24} />
+        <Arrow x1={780} y1={60} x2={820} y2={60} delay={28} />
+        <Box x={820}  y={30} w={250} h={60} label="Answer Questions" sub="20-40 adaptive items" color={COLORS.blue} delay={30} />
+        <Arrow x1={1070} y1={60} x2={1110} y2={60} delay={34} />
+        <Box x={1110} y={30} w={230} h={60} label="View Results" sub="aptitude + appetite" color={COLORS.blue} delay={36} />
+
+        {/* ═══ Down arrow to backend ═══ */}
+        <Arrow x1={670} y1={90} x2={670} y2={140} color={COLORS.emerald} delay={40} />
+
+        {/* ═══ ROW 2: Backend Processing ═══ */}
+        <FadeIn delay={42} direction="none">
+          <g>
+            <text x={80} y={160} fill="#64748b" fontSize={14} fontWeight={700} fontFamily="Inter,sans-serif" letterSpacing={2}>BACKEND</text>
+          </g>
+        </FadeIn>
+
+        <Box x={60}  y={170} w={280} h={60} label="Edge: start-session" sub="Verify parent → Create session" color={COLORS.emerald} delay={44} />
+        <Arrow x1={340} y1={200} x2={380} y2={200} color={COLORS.emerald} delay={48} />
+        <Box x={380} y={170} w={260} h={60} label="Select First Item" sub="Max Fisher Info at θ=0" color={COLORS.emerald} delay={50} />
+        <Arrow x1={640} y1={200} x2={680} y2={200} color={COLORS.emerald} delay={54} />
+        <Box x={680} y={170} w={240} h={60} label="Student Answers" sub="time + idle tracked" color={COLORS.purple} delay={56} />
+        <Arrow x1={920} y1={200} x2={960} y2={200} color={COLORS.emerald} delay={60} />
+        <Box x={960} y={170} w={280} h={60} label="compute-next-item" sub="Score → EAP theta → Next" color={COLORS.emerald} delay={62} />
+
+        {/* ═══ Adaptive Loop (curved arrow back) ═══ */}
+        <CurveArrow
+          d="M 1100,230 L 1100,270 Q 1100,290 1080,290 L 820,290 Q 800,290 800,270 L 800,230"
+          color={COLORS.purple}
+          delay={66}
+        />
+        <FadeIn delay={68} direction="none">
+          <g>
+            <text x={950} y={308} textAnchor="middle" fill={COLORS.purple} fontSize={16} fontWeight={700} fontFamily="Inter,sans-serif">
               ADAPTIVE LOOP (20-40 items)
             </text>
           </g>
         </FadeIn>
 
-        {/* Termination */}
-        <DrawLine x1={1350} y1={195} x2={1420} y2={195} color={COLORS.amber} delay={85} />
-        <BoxNode x={1380} y={160} w={180} h={70} label="Terminate" color={COLORS.amber} delay={87} sublabel="SE ≤ 0.25" />
+        {/* ═══ Terminate branch ═══ */}
+        <Arrow x1={1240} y1={200} x2={1300} y2={200} color={COLORS.amber} delay={70} />
+        <Box x={1300} y={170} w={200} h={60} label="Terminate" sub="SE ≤ 0.25 or 40 max" color={COLORS.amber} delay={72} />
 
-        {/* Row 3: Post-session */}
-        <DrawLine x1={1470} y1={230} x2={1470} y2={340} color={COLORS.amber} delay={90} />
+        {/* ═══ Down arrow to post-session ═══ */}
+        <Arrow x1={1400} y1={230} x2={1400} y2={340} color={COLORS.amber} delay={76} />
+        {/* Horizontal line to connect to post-session row */}
+        <Arrow x1={1400} y1={370} x2={830} y2={370} color={COLORS.pink} delay={78} />
 
-        <BoxNode x={200} y={350} w={350} h={70} label="Compute Composite Score" color={COLORS.pink} delay={92} sublabel="Weighted θ across sessions (λ=0.7)" />
-        <DrawLine x1={550} y1={385} x2={620} y2={385} color={COLORS.pink} delay={97} />
-        <BoxNode x={620} y={350} w={350} h={70} label="Compute Appetite Signals" color={COLORS.pink} delay={99} sublabel="6 behavioral signals (0-1 each)" />
-        <DrawLine x1={970} y1={385} x2={1040} y2={385} color={COLORS.pink} delay={104} />
-        <BoxNode x={1040} y={350} w={350} h={70} label="Update Dashboard" color={COLORS.pink} delay={106} sublabel="Aptitude tier + Appetite tier" />
+        {/* ═══ ROW 3: Post-Session ═══ */}
+        <FadeIn delay={78} direction="none">
+          <g>
+            <text x={80} y={350} fill="#64748b" fontSize={14} fontWeight={700} fontFamily="Inter,sans-serif" letterSpacing={2}>POST-SESSION</text>
+          </g>
+        </FadeIn>
+
+        <Box x={100} y={360} w={320} h={65} label="Compute Composite Score" sub="Weighted θ across sessions (λ=0.7)" color={COLORS.pink} delay={80} />
+        <Arrow x1={420} y1={392} x2={470} y2={392} color={COLORS.pink} delay={85} />
+        <Box x={470} y={360} w={320} h={65} label="Compute Appetite Signals" sub="6 behavioral signals (0-1 each)" color={COLORS.pink} delay={83} />
+
+        {/* ═══ ROW 4: Result ═══ */}
+        <Arrow x1={310} y1={425} x2={310} y2={470} color={COLORS.pink} delay={88} />
+        <Arrow x1={630} y1={425} x2={630} y2={470} color={COLORS.pink} delay={90} />
+
+        <Box x={150} y={475} w={680} h={65} label="Parent Dashboard Updated" sub="Aptitude tier (Developing → Exceptional) + Appetite tier + Progress chart" color={COLORS.text} delay={92} />
+
+        {/* ═══ Legend ═══ */}
+        <FadeIn delay={96} direction="up">
+          <g>
+            <rect x={100} y={570} width={14} height={14} rx={3} fill={COLORS.blue} />
+            <text x={122} y={582} fill="#64748b" fontSize={14} fontFamily="Inter,sans-serif">User Actions</text>
+            <rect x={260} y={570} width={14} height={14} rx={3} fill={COLORS.emerald} />
+            <text x={282} y={582} fill="#64748b" fontSize={14} fontFamily="Inter,sans-serif">Edge Functions</text>
+            <rect x={430} y={570} width={14} height={14} rx={3} fill={COLORS.purple} />
+            <text x={452} y={582} fill="#64748b" fontSize={14} fontFamily="Inter,sans-serif">Adaptive Loop</text>
+            <rect x={600} y={570} width={14} height={14} rx={3} fill={COLORS.pink} />
+            <text x={622} y={582} fill="#64748b" fontSize={14} fontFamily="Inter,sans-serif">Post-Session</text>
+            <rect x={760} y={570} width={14} height={14} rx={3} fill={COLORS.amber} />
+            <text x={782} y={582} fill="#64748b" fontSize={14} fontFamily="Inter,sans-serif">Termination</text>
+          </g>
+        </FadeIn>
       </svg>
     </div>
   </Scene>
