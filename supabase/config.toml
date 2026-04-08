@@ -31,7 +31,7 @@ file_size_limit = "50MiB"
 
 [auth.external.google]
 enabled = true
-client_id = "368758455328-s54q027k6iakjbc4mlqnerqdct75onf2.apps.googleusercontent.com"
+client_id = "368758455328-210ug2q7g453n2c2usrmj2gr6dtm0pse.apps.googleusercontent.com"
 secret = "env(GOOGLE_CLIENT_SECRET)"
 
 [realtime]
