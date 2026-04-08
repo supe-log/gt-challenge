@@ -29,5 +29,10 @@ enable_confirmations = false
 enabled = true
 file_size_limit = "50MiB"
 
+[auth.external.google]
+enabled = true
+client_id = "368758455328-s54q027k6iakjbc4mlqnerqdct75onf2.apps.googleusercontent.com"
+secret = "env(GOOGLE_CLIENT_SECRET)"
+
 [realtime]
 enabled = true
