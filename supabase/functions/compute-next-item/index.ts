@@ -79,7 +79,7 @@ function computeSE(theta: number, items: ItemParams[]): number {
 
 // ─── Session Config ─────────────────────────────────────────────
 
-const MIN_ITEMS = 20;
+const MIN_ITEMS = 15;  // Must match irt-engine termination.ts
 const MAX_ITEMS = 40;
 const MAX_TIME_MS = 35 * 60 * 1000;
 const SE_TARGET = 0.25;
@@ -149,8 +149,11 @@ Deno.serve(async (req) => {
       .eq("item_id", item_id)
       .is("answered_at", null);
 
-    // Note: item exposure_count update skipped — requires admin/service role
-    // TODO: Add a trigger or RPC for this when deploying to production
+    // Increment exposure count for the answered item
+    await supabase.rpc("increment_exposure_count", { item_id_param: item_id }).catch(() => {
+      // Non-critical — log but don't fail the session
+      console.warn("exposure_count increment skipped (RPC may not exist yet)");
+    });
 
     // Update session counts
     const newItemsAttempted = session.items_attempted + 1;

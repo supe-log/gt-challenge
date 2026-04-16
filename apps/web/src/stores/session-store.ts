@@ -12,12 +12,19 @@ interface ItemContent {
   audio_stem?: string;
 }
 
+interface TeachContent {
+  lesson_text: string;
+  duration: number;
+  examples?: { text: string }[];
+}
+
 interface SessionState {
   sessionId: string | null;
   sessionNumber: number;
   currentItem: ItemContent | null;
   currentItemId: string | null;
   currentItemDomain: string | null;
+  currentTeachContent: TeachContent | null;
   itemsCompleted: number;
   itemsCorrect: number;
   offerBonusRound: boolean;
@@ -40,6 +47,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
   currentItem: null,
   currentItemId: null,
   currentItemDomain: null,
+  currentTeachContent: null,
   itemsCompleted: 0,
   itemsCorrect: 0,
   offerBonusRound: false,
@@ -66,6 +74,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
         currentItem: data.item,
         currentItemId: data.item_id,
         currentItemDomain: data.item_domain ?? null,
+        currentTeachContent: data.teach_content ?? null,
         itemsCompleted: 0,
         itemsCorrect: 0,
         isComplete: false,
@@ -110,6 +119,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
           currentItem: null,
           currentItemId: null,
           currentItemDomain: null,
+          currentTeachContent: null,
           offerBonusRound: false,
           isLoading: false,
         });
@@ -118,6 +128,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
           currentItem: data.item,
           currentItemId: data.item_id,
           currentItemDomain: data.item_domain ?? null,
+          currentTeachContent: data.teach_content ?? null,
           itemsCompleted: data.items_completed,
           itemsCorrect: data.items_correct ?? newItemsCorrect,
           offerBonusRound: data.offer_bonus_round ?? false,
@@ -141,6 +152,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       currentItem: null,
       currentItemId: null,
       currentItemDomain: null,
+      currentTeachContent: null,
       itemsCompleted: 0,
       itemsCorrect: 0,
       offerBonusRound: false,

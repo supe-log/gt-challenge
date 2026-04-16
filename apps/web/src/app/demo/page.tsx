@@ -3,10 +3,17 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ALL_ITEMS, DEMO_ITEMS, type DemoItem } from "./items";
+import { VISUAL_ITEMS, type VisualDemoItem } from "./visual-items";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
+import { VisualItemRenderer, VisualOption } from "@/components/visual-item-renderer";
+import { TeachItem } from "@/components/teach-item";
+import { useSpeech } from "@/hooks/use-speech";
+import { SpeakButton } from "@/components/speak-button";
+import { thetaToPercentile, getPercentileLabel } from "@/lib/norms";
+import { PercentileBadge } from "@/components/percentile-badge";
 
 // ─── IRT Math ───────────────────────────────────────────────
 
@@ -134,21 +141,69 @@ export default function DemoPage() {
   const [highestDifficulty, setHighestDifficulty] = useState(-3);
   const [streak, setStreak] = useState(0);
   const [maxStreak, setMaxStreak] = useState(0);
+  const [showingTeach, setShowingTeach] = useState(false);
+  const [hoveredOptionText, setHoveredOptionText] = useState("");
 
-  const bandItems = ageBand ? (ALL_ITEMS[ageBand] ?? DEMO_ITEMS) : DEMO_ITEMS;
+  // ─── TTS ──────────────────────────────────────────────────
+  const isK2 = ageBand === "K-2";
+  const stemText = currentItem?.content.stem ?? "";
+
+  // Stem speech: auto-speak for K-2, manual for others
+  const {
+    speak: speakStem,
+    stop: stopStem,
+    isSpeaking: isSpeakingStem,
+    isSupported: ttsSupported,
+  } = useSpeech(stemText, {
+    autoSpeak: isK2 && phase === "playing",
+    rate: isK2 ? 0.8 : 1.0,
+    pitch: isK2 ? 1.1 : 1.0,
+  });
+
+  // Option hover speech (K-2 only)
+  const { speak: speakOption } = useSpeech(hoveredOptionText, {
+    rate: 0.85,
+    pitch: 1.1,
+  });
+
+  // Speak hovered option text for K-2
+  const handleOptionHover = useCallback(
+    (text: string) => {
+      if (!isK2 || !ttsSupported) return;
+      setHoveredOptionText(text);
+      // The hook auto-speaks on text change isn't used here;
+      // we trigger manually after state settles
+    },
+    [isK2, ttsSupported]
+  );
+
+  // Trigger option speech when hoveredOptionText changes (K-2 only)
+  useEffect(() => {
+    if (isK2 && hoveredOptionText) {
+      speakOption();
+    }
+  }, [isK2, hoveredOptionText, speakOption]);
+
+  const bandItems = ageBand
+    ? [...(ALL_ITEMS[ageBand] ?? DEMO_ITEMS), ...(VISUAL_ITEMS[ageBand] ?? [])]
+    : DEMO_ITEMS;
   const currentLevel = Math.max(0, Math.min(9, Math.floor(((theta + 3) / 6) * 10)));
   const totalItems = Math.min(bandItems.length, 40);
 
   function startChallenge(band: string) {
     setAgeBand(band);
     setPhase("playing");
-    const items = ALL_ITEMS[band] ?? DEMO_ITEMS;
+    // Merge text items with visual items for a richer experience
+    const textItems = ALL_ITEMS[band] ?? DEMO_ITEMS;
+    const visItems = VISUAL_ITEMS[band] ?? [];
+    const items: DemoItem[] = [...textItems, ...visItems];
     itemMap.current = new Map(items.map((it) => [it.id, it]));
     const first = selectNext(0, items, []);
     if (first) {
       setCurrentItem(first);
       setUsedIds(new Set([first.id]));
       setLastDomains([first.domain]);
+      setShowingTeach(!!first.teachContent);
     }
   }
 
@@ -194,6 +249,7 @@ export default function DemoPage() {
         setCurrentItem(next);
         setSelectedAnswer(null);
         setTransitioning(false);
+        setShowingTeach(!!next?.teachContent);
       }
     }, 400);
   }, [transitioning, currentItem, responses, itemsCorrect, highestDifficulty, usedIds, lastDomains, streak, maxStreak]);
@@ -211,6 +267,7 @@ export default function DemoPage() {
     setHighestDifficulty(-3);
     setStreak(0);
     setMaxStreak(0);
+    setShowingTeach(false);
     setCurrentItem(null);
   };
 
@@ -265,6 +322,7 @@ export default function DemoPage() {
     const accuracy = responses.length > 0 ? Math.round((itemsCorrect / responses.length) * 100) : 0;
     const thetaLabel = theta >= 1.5 ? "Exceptional" : theta >= 0.75 ? "Very High" : theta >= 0 ? "High" : theta >= -0.75 ? "Average" : "Developing";
     const thetaEmoji = theta >= 1.5 ? "🚀" : theta >= 0.75 ? "🌟" : theta >= 0 ? "⭐" : theta >= -0.75 ? "💪" : "🌱";
+    const demoPercentile = thetaToPercentile(theta);
 
     return (
       <div className="min-h-screen bg-gradient-to-b from-yellow-50 via-amber-50 to-orange-50 flex items-center justify-center px-4">
@@ -305,6 +363,19 @@ export default function DemoPage() {
                 transition={{ duration: 1, delay: 0.5 }}
               />
             </div>
+
+            {/* Percentile comparison */}
+            <div className="flex items-center gap-4 pt-2 border-t border-gray-100">
+              <PercentileBadge theta={theta} size="sm" />
+              <div className="flex-1">
+                <p className="font-semibold text-sm text-gray-800">
+                  You&apos;re in the {getPercentileLabel(demoPercentile)} of peers your age!
+                </p>
+                <p className="text-xs text-gray-400 mt-0.5">
+                  Higher than {demoPercentile}% of age-band peers
+                </p>
+              </div>
+            </div>
           </Card>
 
           <div className="grid grid-cols-2 gap-3">
@@ -323,14 +394,21 @@ export default function DemoPage() {
           </div>
 
           <div className="space-y-3 pt-2">
+            <a
+              href="/signup"
+              className="flex items-center justify-center w-full h-14 text-lg font-bold bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-xl transition-all"
+            >
+              Track Progress Across Sessions
+            </a>
             <Button
               onClick={restart}
-              className="w-full h-14 text-lg font-bold bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-xl"
+              variant="outline"
+              className="w-full h-12 text-base font-semibold rounded-xl"
             >
-              🚀 Try Again
+              Try Again
             </Button>
             <p className="text-center text-sm text-gray-400">
-              Come back tomorrow to climb even higher!
+              This was a single session. Create a free account to track your child&apos;s growth across multiple sessions and unlock appetite signals.
             </p>
           </div>
         </motion.div>
@@ -346,17 +424,17 @@ export default function DemoPage() {
   const progressPct = (responses.length / totalItems) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex flex-col">
+    <div className="h-screen overflow-hidden bg-gradient-to-b from-slate-50 to-white flex flex-col">
       {/* Top bar */}
-      <div className="px-4 pt-4 pb-2">
-        <div className="max-w-2xl mx-auto space-y-3">
+      <div className="px-4 pt-2 pb-1 shrink-0">
+        <div className="max-w-2xl mx-auto space-y-1.5">
           {/* Level + domain + streak */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">{MOUNTAIN_LEVELS[currentLevel]}</span>
-              <span className="text-sm font-bold text-gray-700">Level {currentLevel + 1}</span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-lg">{MOUNTAIN_LEVELS[currentLevel]}</span>
+              <span className="text-xs font-bold text-gray-700">Lv {currentLevel + 1}</span>
             </div>
-            <Badge variant="outline" className={`${domain.bg} ${domain.color} ${domain.border} text-sm px-3 py-1`}>
+            <Badge variant="outline" className={`${domain.bg} ${domain.color} ${domain.border} text-xs px-2 py-0.5`}>
               {domain.emoji} {domain.label}
             </Badge>
             {streak >= 3 && (
@@ -365,18 +443,18 @@ export default function DemoPage() {
                 animate={{ scale: 1 }}
                 className="flex items-center gap-1"
               >
-                <span className="text-lg">🔥</span>
-                <span className="text-sm font-bold text-orange-600">{streak}</span>
+                <span className="text-base">🔥</span>
+                <span className="text-xs font-bold text-orange-600">{streak}</span>
               </motion.div>
             )}
           </div>
 
           {/* Progress bar */}
-          <Progress value={progressPct} className="h-3" />
-          <div className="flex justify-between text-xs text-gray-400">
-            <span>{responses.length} of ~{totalItems} questions</span>
-            <span className="flex gap-1">
-              {Array.from({ length: Math.min(itemsCorrect, 20) }, (_, i) => (
+          <Progress value={progressPct} className="h-2" />
+          <div className="flex justify-between text-[10px] text-gray-400">
+            <span>{responses.length} of ~{totalItems}</span>
+            <span className="flex gap-0.5">
+              {Array.from({ length: Math.min(itemsCorrect, 15) }, (_, i) => (
                 <span key={i} className="text-yellow-400">★</span>
               ))}
             </span>
@@ -385,29 +463,54 @@ export default function DemoPage() {
       </div>
 
       {/* Question area */}
-      <div className="flex-1 flex items-center justify-center px-4 py-4">
-        <div className="w-full max-w-2xl">
+      <div className="flex-1 flex items-center justify-center px-3 py-2 min-h-0 overflow-hidden">
+        {showingTeach && currentItem.teachContent ? (
+          <TeachItem
+            key={`teach-${currentItem.id}`}
+            teachContent={currentItem.teachContent}
+            onComplete={() => setShowingTeach(false)}
+          />
+        ) : (
+        <div className="w-full max-w-2xl flex flex-col h-full justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentItem.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.25 }}
-              className="space-y-6"
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.2 }}
+              className="space-y-3 sm:space-y-4 flex flex-col justify-center"
             >
-              {/* Question card */}
-              <Card className={`p-6 sm:p-8 ${domain.bg} ${domain.border} border-2`}>
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-800 leading-relaxed text-center">
+              {/* Question card with optional speak button */}
+              <div className="relative">
+              <Card className={`p-3 sm:p-4 ${domain.bg} ${domain.border} border-2`}>
+                <h2 className="text-base sm:text-lg font-bold text-gray-800 leading-snug text-center">
                   {currentItem.content.stem}
                 </h2>
+                {/* Visual content (SVG matrix/sequence/analogy) */}
+                {(currentItem as VisualDemoItem).visual && (
+                  <div className="mt-2 max-h-[35vh] flex items-center justify-center">
+                    <VisualItemRenderer visual={(currentItem as VisualDemoItem).visual!} />
+                  </div>
+                )}
               </Card>
+                {/* Show SpeakButton for 3-5 and 6-8 (K-2 auto-speaks instead) */}
+                {!isK2 && ttsSupported && (
+                  <SpeakButton
+                    isSpeaking={isSpeakingStem}
+                    isSupported={ttsSupported}
+                    onToggle={isSpeakingStem ? stopStem : speakStem}
+                    className="absolute -top-2 -right-2"
+                  />
+                )}
+              </div>
 
               {/* Answer options */}
-              <div className={`grid gap-3 ${currentItem.content.options.length === 2 ? "grid-cols-2" : "sm:grid-cols-2"}`}>
+              <div className={`grid gap-2 sm:gap-2.5 ${currentItem.content.options.length === 2 ? "grid-cols-2" : "grid-cols-2"}`}>
                 {currentItem.content.options.map((option, i) => {
                   const colors = OPTION_COLORS[i % OPTION_COLORS.length];
                   const isSelected = selectedAnswer === i;
+                  const visualOpt = (currentItem as VisualDemoItem).visualOptions?.[i];
 
                   return (
                     <motion.button
@@ -415,15 +518,21 @@ export default function DemoPage() {
                       whileHover={{ scale: transitioning ? 1 : 1.02 }}
                       whileTap={{ scale: transitioning ? 1 : 0.97 }}
                       onClick={() => handleAnswer(i)}
+                      onMouseEnter={() => handleOptionHover(option.text)}
+                      onFocus={() => handleOptionHover(option.text)}
                       disabled={transitioning}
-                      className={`relative p-5 sm:p-6 rounded-2xl border-2 text-left font-semibold transition-all min-h-[72px] flex items-center gap-4 ${
+                      className={`relative p-3 sm:p-4 rounded-xl border-2 text-left font-semibold transition-all min-h-[56px] flex items-center gap-3 ${
                         isSelected ? colors.selected : `${colors.bg} ${colors.border}`
                       } disabled:cursor-default`}
                     >
-                      <span className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg ${colors.letter}`}>
+                      <span className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm ${colors.letter}`}>
                         {String.fromCharCode(65 + i)}
                       </span>
-                      <span className="text-gray-800 text-base sm:text-lg">{option.text}</span>
+                      {visualOpt ? (
+                        <VisualOption shape={visualOpt} />
+                      ) : (
+                        <span className="text-gray-800 text-sm sm:text-base">{option.text}</span>
+                      )}
                     </motion.button>
                   );
                 })}
@@ -431,6 +540,7 @@ export default function DemoPage() {
             </motion.div>
           </AnimatePresence>
         </div>
+        )}
       </div>
     </div>
   );

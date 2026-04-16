@@ -40,6 +40,9 @@ export async function GET(request: Request) {
           role: "parent",
           display_name: displayName,
         });
+
+        // New user — redirect to onboarding
+        return NextResponse.redirect(`${SITE_URL}/parent/welcome`);
       }
     }
   }

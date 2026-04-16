@@ -14,5 +14,14 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.82.0",
+    "@types/uuid": "^10.0.0",
+    "tsx": "^4.21.0",
+    "uuid": "^13.0.0"
+  },
+  "dependencies": {
+    "openai": "^6.33.0"
   }
 }

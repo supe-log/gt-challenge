@@ -72,7 +72,7 @@ export default function SignupPage() {
       }
     }
 
-    router.push("/parent");
+    router.push("/parent/welcome");
   }
 
   if (confirmationSent) {

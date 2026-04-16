@@ -7,6 +7,11 @@ import { useSessionStore } from "@/stores/session-store";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { TeachItem } from "@/components/teach-item";
+import { useSpeech } from "@/hooks/use-speech";
+import { SpeakButton } from "@/components/speak-button";
+import { thetaToPercentile, getPercentileLabel } from "@/lib/norms";
+import { PercentileBadge } from "@/components/percentile-badge";
 
 // ─── Domain visuals ────────────────────────────────────────────
 
@@ -33,6 +38,7 @@ export default function SessionPage() {
     currentItem,
     currentItemId,
     currentItemDomain,
+    currentTeachContent,
     itemsCompleted,
     isComplete,
     isLoading,
@@ -51,6 +57,7 @@ export default function SessionPage() {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [lastCorrect, setLastCorrect] = useState(false);
+  const [showingTeach, setShowingTeach] = useState(false);
   const itemStartTime = useRef<number>(Date.now());
   const idleTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const [idleMs, setIdleMs] = useState(0);
@@ -59,6 +66,15 @@ export default function SessionPage() {
   const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [streak, setStreak] = useState(0);
   const [elapsedMinutes, setElapsedMinutes] = useState(0);
+
+  // ─── TTS (manual speaker button — no auto-speak in real sessions) ───
+  const stemText = currentItem?.stem ?? "";
+  const {
+    speak: speakStem,
+    stop: stopStem,
+    isSpeaking: isSpeakingStem,
+    isSupported: ttsSupported,
+  } = useSpeech(stemText, { rate: 1.0, pitch: 1.0 });
 
   // Update elapsed time every 15 seconds
   useEffect(() => {
@@ -77,18 +93,19 @@ export default function SessionPage() {
     }
   }, [childId, reset, startSession]);
 
-  // Track item presentation time
+  // Track item presentation time & show teach phase if applicable
   useEffect(() => {
     if (currentItem) {
       itemStartTime.current = Date.now();
       setSelectedAnswer(null);
       setShowFeedback(false);
+      setShowingTeach(!!currentTeachContent);
       resetIdleTimer();
     }
     return () => {
       if (idleTimer.current) clearTimeout(idleTimer.current);
     };
-  }, [currentItem]);
+  }, [currentItem, currentTeachContent]);
 
   // Show bonus round modal when offered (only when flag transitions to true)
   useEffect(() => {
@@ -203,6 +220,7 @@ export default function SessionPage() {
   if (isComplete) {
     const level = Math.max(1, Math.min(10, Math.round(((highestDifficulty + 3) / 6) * 9 + 1)));
     const accuracy = itemsCompleted > 0 ? Math.round((itemsCorrect / itemsCompleted) * 100) : 0;
+    const sessionPercentile = thetaToPercentile(highestDifficulty);
 
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-yellow-50 via-amber-50 to-orange-50 px-4">
@@ -224,6 +242,21 @@ export default function SessionPage() {
             <p className="text-gray-500">You made it to level {level}!</p>
           </div>
 
+          {/* Percentile comparison */}
+          <Card className="p-5 bg-gradient-to-r from-indigo-50/60 to-purple-50/60 border-indigo-100">
+            <div className="flex items-center gap-4">
+              <PercentileBadge theta={highestDifficulty} size="sm" />
+              <div className="flex-1">
+                <p className="font-semibold text-gray-800">
+                  You&apos;re in the {getPercentileLabel(sessionPercentile)} of peers your age!
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Higher than {sessionPercentile}% of peers. Sign up to track progress across sessions.
+                </p>
+              </div>
+            </div>
+          </Card>
+
           <div className="grid grid-cols-2 gap-3">
             {[
               { label: "Questions", value: itemsCompleted, emoji: "📝" },
@@ -244,11 +277,12 @@ export default function SessionPage() {
               href="/parent"
               className="block w-full text-center py-4 text-lg font-bold bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-xl transition-colors"
             >
-              Back to Home
+              View Dashboard
             </a>
-            <p className="text-center text-sm text-gray-400">
-              Come back tomorrow to climb even higher!
-            </p>
+            <div className="text-center text-sm text-gray-500 space-y-1">
+              <p className="font-medium">Each session makes your score more precise.</p>
+              <p className="text-gray-400">Come back for another session to keep climbing!</p>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -262,7 +296,7 @@ export default function SessionPage() {
   const domain = DOMAIN_CONFIG[currentItemDomain ?? ""] ?? DOMAIN_CONFIG.reasoning;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex flex-col">
+    <div className="h-screen overflow-hidden bg-gradient-to-b from-slate-50 to-white flex flex-col">
       {/* Overlays */}
 
       {/* Exit confirm */}
@@ -346,48 +380,48 @@ export default function SessionPage() {
       )}
 
       {/* ─── Top bar ──────────────────────────────────────────── */}
-      <div className="px-3 sm:px-4 pt-3 sm:pt-4 pb-2">
-        <div className="max-w-2xl mx-auto space-y-2 sm:space-y-3">
+      <div className="px-3 pt-2 pb-1 shrink-0">
+        <div className="max-w-2xl mx-auto space-y-1.5">
           {/* Row 1: exit, level, domain, streak */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2">
             {/* Exit button */}
             <button
               onClick={() => setShowExitConfirm(true)}
-              className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+              className="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
               title="Leave session"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
 
-            <div className="flex items-center gap-1.5">
-              <span className="text-xl sm:text-2xl">{MOUNTAIN_LEVELS[currentLevel]}</span>
-              <span className="text-xs sm:text-sm font-bold text-gray-700">Lv {currentLevel + 1}</span>
+            <div className="flex items-center gap-1">
+              <span className="text-lg">{MOUNTAIN_LEVELS[currentLevel]}</span>
+              <span className="text-xs font-bold text-gray-700">Lv {currentLevel + 1}</span>
             </div>
 
             <div className="flex-1" />
 
-            <Badge variant="outline" className={`${domain.bg} ${domain.color} ${domain.border} text-xs sm:text-sm px-2 sm:px-3 py-0.5 sm:py-1`}>
+            <Badge variant="outline" className={`${domain.bg} ${domain.color} ${domain.border} text-xs px-2 py-0.5`}>
               {domain.emoji} {domain.label}
             </Badge>
 
             {streak >= 3 && (
-              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex items-center gap-1">
-                <span className="text-base sm:text-lg">🔥</span>
-                <span className="text-xs sm:text-sm font-bold text-orange-600">{streak}</span>
+              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex items-center gap-0.5">
+                <span className="text-base">🔥</span>
+                <span className="text-xs font-bold text-orange-600">{streak}</span>
               </motion.div>
             )}
           </div>
 
           {/* Progress bar */}
-          <Progress value={progressPct} className="h-2.5 sm:h-3" />
+          <Progress value={progressPct} className="h-2" />
 
           {/* Row 2: counter + score */}
-          <div className="flex justify-between items-center text-xs sm:text-sm">
+          <div className="flex justify-between items-center text-[10px]">
             <span className="text-gray-500">
-              {itemsCompleted} / ~40 questions
-              {elapsedMinutes > 0 && <span className="text-gray-300 ml-2">{elapsedMinutes}m</span>}
+              {itemsCompleted} / ~40
+              {elapsedMinutes > 0 && <span className="text-gray-300 ml-1.5">{elapsedMinutes}m</span>}
             </span>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1">
               <span className="font-bold text-green-600">{itemsCorrect}</span>
               <span className="text-gray-300">/</span>
               <span className="text-gray-500">{itemsCompleted}</span>
@@ -398,33 +432,61 @@ export default function SessionPage() {
       </div>
 
       {/* ─── Question area ────────────────────────────────────── */}
-      <div className="flex-1 flex items-center justify-center px-3 sm:px-4 py-3 sm:py-4">
-        <div className="w-full max-w-2xl">
+      <div className="flex-1 flex items-center justify-center px-3 py-2 min-h-0 overflow-hidden">
+        {showingTeach && currentTeachContent ? (
+          <TeachItem
+            key={`teach-${currentItemId}`}
+            teachContent={{
+              lesson_text: currentTeachContent.lesson_text,
+              duration: currentTeachContent.duration,
+              examples: currentTeachContent.examples,
+            }}
+            onComplete={() => setShowingTeach(false)}
+          />
+        ) : (
+        <div className="w-full max-w-2xl flex flex-col h-full justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentItemId}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.25 }}
-              className="space-y-4 sm:space-y-6"
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.2 }}
+              className="space-y-3 flex flex-col justify-center"
             >
-              {/* Question card */}
-              <Card className={`p-5 sm:p-8 ${domain.bg} ${domain.border} border-2`}>
-                <h2 className="text-lg sm:text-2xl font-bold text-gray-800 leading-relaxed text-center">
-                  {currentItem.stem}
-                </h2>
-              </Card>
+              {/* Question card with speak button */}
+              <div className="relative">
+                <Card className={`p-3 sm:p-4 ${domain.bg} ${domain.border} border-2`}>
+                  <h2 className="text-base sm:text-lg font-bold text-gray-800 leading-snug text-center">
+                    {currentItem.stem}
+                  </h2>
+                </Card>
+                {ttsSupported && (
+                  <SpeakButton
+                    isSpeaking={isSpeakingStem}
+                    isSupported={ttsSupported}
+                    onToggle={isSpeakingStem ? stopStem : speakStem}
+                    className="absolute -top-2 -right-2"
+                  />
+                )}
+              </div>
 
               {/* Answer options */}
-              <div className={`grid gap-2 sm:gap-3 ${currentItem.options.length === 2 ? "grid-cols-2" : "grid-cols-1 sm:grid-cols-2"}`}>
+              <div className={`grid gap-2 ${currentItem.options.length === 2 ? "grid-cols-2" : "grid-cols-2"}`}>
                 {currentItem.options.map((option, i) => {
                   const colors = OPTION_COLORS[i % OPTION_COLORS.length];
                   const isSelected = selectedAnswer === i;
 
+                  const isCorrectAnswer = i === currentItem.correct_index;
                   let classes = `${colors.bg} ${colors.border}`;
-                  if (showFeedback && isSelected) {
-                    classes = lastCorrect ? colors.correct : colors.wrong;
+                  if (showFeedback) {
+                    if (isCorrectAnswer) {
+                      classes = colors.correct;
+                    } else if (isSelected && !lastCorrect) {
+                      classes = colors.wrong;
+                    } else {
+                      classes = "bg-gray-50 border-gray-200 opacity-50";
+                    }
                   } else if (isSelected) {
                     classes = colors.selected;
                   }
@@ -436,12 +498,18 @@ export default function SessionPage() {
                       whileTap={{ scale: showFeedback ? 1 : 0.97 }}
                       onClick={() => handleAnswer(i)}
                       disabled={isLoading || showFeedback}
-                      className={`relative p-4 sm:p-6 rounded-xl sm:rounded-2xl border-2 text-left font-semibold transition-all min-h-[56px] sm:min-h-[72px] flex items-center gap-3 sm:gap-4 ${classes} disabled:cursor-default`}
+                      className={`relative p-3 sm:p-4 rounded-xl border-2 text-left font-semibold transition-all min-h-[56px] flex items-center gap-3 ${classes} disabled:cursor-default`}
                     >
-                      <span className={`flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center font-bold text-sm sm:text-lg ${colors.letter}`}>
-                        {String.fromCharCode(65 + i)}
+                      <span className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm ${
+                        showFeedback && isCorrectAnswer ? "bg-green-200 text-green-700" : colors.letter
+                      }`}>
+                        {showFeedback && isCorrectAnswer ? (
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        ) : (
+                          String.fromCharCode(65 + i)
+                        )}
                       </span>
-                      <span className="text-gray-800 text-sm sm:text-lg">{option.text}</span>
+                      <span className="text-gray-800 text-sm sm:text-base">{option.text}</span>
                     </motion.button>
                   );
                 })}
@@ -452,9 +520,13 @@ export default function SessionPage() {
                 {showFeedback && (
                   <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="text-center">
                     {lastCorrect ? (
-                      <p className="text-green-600 font-semibold text-base sm:text-lg">⭐ Great job!</p>
+                      <p className="text-green-600 font-semibold text-base sm:text-lg">
+                        {streak >= 5 ? "Incredible streak!" : streak >= 3 ? "You&apos;re on fire!" : "Correct!"}
+                      </p>
                     ) : (
-                      <p className="text-blue-600 font-semibold text-base sm:text-lg">Keep going, you&apos;re doing great!</p>
+                      <p className="text-gray-500 font-medium text-sm sm:text-base">
+                        The correct answer is highlighted. Every question helps build your profile!
+                      </p>
                     )}
                   </motion.div>
                 )}
@@ -462,6 +534,7 @@ export default function SessionPage() {
             </motion.div>
           </AnimatePresence>
         </div>
+        )}
       </div>
     </div>
   );

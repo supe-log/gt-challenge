@@ -49,4 +49,61 @@ describe("computeVoluntaryHard", () => {
     // 3 out of 5 = 0.6
     expect(result.signalValue).toBeCloseTo(0.6, 1);
   });
+
+  // --- Boundary condition tests ---
+
+  it("returns 0 when fewer than 10 items attempted (no bonus offered)", () => {
+    const result = computeVoluntaryHard([makeSession(9, 0)]);
+    // Math.floor(9/10) = 0 offered, so signalValue = 0/0 = 0
+    expect(result.signalValue).toBe(0);
+    expect(result.rawData.totalOffered).toBe(0);
+  });
+
+  it("handles exactly 10 items (boundary: first bonus offered)", () => {
+    const result = computeVoluntaryHard([makeSession(10, 1)]);
+    // Math.floor(10/10) = 1 offered, 1 taken
+    expect(result.signalValue).toBe(1);
+    expect(result.rawData.totalOffered).toBe(1);
+  });
+
+  it("caps signal at 1.0 when more bonus rounds taken than offered", () => {
+    // Edge case: voluntaryBonusRounds > offered (shouldn't happen in practice)
+    const result = computeVoluntaryHard([makeSession(10, 5)]);
+    // 1 offered, 5 taken -> min(1, 5/1) = 1
+    expect(result.signalValue).toBe(1);
+  });
+
+  it("handles large number of sessions", () => {
+    const sessions = Array.from({ length: 50 }, () => makeSession(40, 2));
+    const result = computeVoluntaryHard(sessions);
+    // Each: 4 offered, 2 taken. Total: 200 offered, 100 taken = 0.5
+    expect(result.signalValue).toBeCloseTo(0.5, 2);
+    expect(result.rawData.totalBonusRounds).toBe(100);
+    expect(result.rawData.totalOffered).toBe(200);
+  });
+
+  it("handles session with 0 items attempted", () => {
+    const result = computeVoluntaryHard([makeSession(0, 0)]);
+    // Math.floor(0/10) = 0 offered
+    expect(result.signalValue).toBe(0);
+  });
+
+  it("returns correct rawData", () => {
+    const result = computeVoluntaryHard([
+      makeSession(20, 1),
+      makeSession(30, 3),
+    ]);
+    expect(result.rawData.totalBonusRounds).toBe(4);
+    expect(result.rawData.totalOffered).toBe(5);
+    expect(result.signalType).toBe("voluntary_hard");
+  });
+
+  it("handles mix of sessions with and without bonus opportunities", () => {
+    const result = computeVoluntaryHard([
+      makeSession(5, 0),  // 0 offered
+      makeSession(20, 2), // 2 offered, 2 taken
+    ]);
+    // Total: 2 offered, 2 taken = 1.0
+    expect(result.signalValue).toBe(1);
+  });
 });

@@ -71,4 +71,111 @@ describe("computeStreak", () => {
     const result = computeStreak(sessions);
     expect(result.signalValue).toBeLessThanOrEqual(1);
   });
+
+  // --- Boundary condition tests ---
+
+  it("returns correct rawData for a single session", () => {
+    const result = computeStreak([makeSession("2026-01-05")]);
+    expect(result.rawData.currentStreak).toBe(1);
+    expect(result.rawData.maxStreak).toBe(1);
+    expect(result.signalType).toBe("streak");
+  });
+
+  it("handles exactly 5 weeks (boundary: target met)", () => {
+    const sessions = [
+      makeSession("2026-01-05"),
+      makeSession("2026-01-12"),
+      makeSession("2026-01-19"),
+      makeSession("2026-01-26"),
+      makeSession("2026-02-02"),
+    ];
+    const result = computeStreak(sessions);
+    expect(result.signalValue).toBe(1);
+    expect(result.rawData.maxStreak).toBe(5);
+  });
+
+  it("handles exactly 4 consecutive weeks (just below target)", () => {
+    const sessions = [
+      makeSession("2026-01-05"),
+      makeSession("2026-01-12"),
+      makeSession("2026-01-19"),
+      makeSession("2026-01-26"),
+    ];
+    const result = computeStreak(sessions);
+    expect(result.signalValue).toBeCloseTo(0.8, 2);
+    expect(result.rawData.maxStreak).toBe(4);
+  });
+
+  it("handles year boundary (late December to early January)", () => {
+    const sessions = [
+      makeSession("2025-12-22"), // week 52
+      makeSession("2025-12-29"), // week 1 of 2026 (or 52/53)
+      makeSession("2026-01-05"), // week 2
+    ];
+    const result = computeStreak(sessions);
+    // Should count consecutive across year boundary
+    expect(result.rawData.maxStreak).toBeGreaterThanOrEqual(2);
+  });
+
+  it("handles large number of consecutive weeks", () => {
+    // 20 consecutive weeks starting from a Monday
+    const sessions = Array.from({ length: 20 }, (_, i) => {
+      const date = new Date("2026-01-05"); // a Monday
+      date.setDate(date.getDate() + i * 7);
+      return makeSession(date.toISOString().split("T")[0]);
+    });
+    const result = computeStreak(sessions);
+    expect(result.signalValue).toBe(1); // capped at 1.0
+    // The max streak should be at least 10 (may vary due to ISO week logic)
+    expect(result.rawData.maxStreak).toBeGreaterThanOrEqual(10);
+  });
+
+  it("handles all sessions on the same day", () => {
+    const sessions = [
+      makeSession("2026-01-05"),
+      makeSession("2026-01-05"),
+      makeSession("2026-01-05"),
+    ];
+    const result = computeStreak(sessions);
+    // All same week -> 1 unique week -> 1/5
+    expect(result.signalValue).toBeCloseTo(0.2, 2);
+  });
+
+  it("handles two non-consecutive weeks", () => {
+    const sessions = [
+      makeSession("2026-01-05"), // week 2
+      makeSession("2026-01-26"), // week 5 (gap)
+    ];
+    const result = computeStreak(sessions);
+    // maxStreak = 1 (no consecutive pair)
+    expect(result.signalValue).toBeCloseTo(0.2, 2);
+    expect(result.rawData.maxStreak).toBe(1);
+  });
+
+  it("correctly reports current vs max streak when broken", () => {
+    const sessions = [
+      makeSession("2026-01-05"),  // week 2
+      makeSession("2026-01-12"), // week 3
+      makeSession("2026-01-19"), // week 4
+      // gap
+      makeSession("2026-02-09"), // week 7
+      makeSession("2026-02-16"), // week 8
+    ];
+    const result = computeStreak(sessions);
+    expect(result.rawData.maxStreak).toBe(3); // weeks 2-3-4
+    expect(result.rawData.currentStreak).toBe(2); // weeks 7-8 (ends at the end)
+  });
+
+  it("handles sessions in reverse chronological order", () => {
+    // The function uses getWeekKey on each session and sorts unique weeks
+    const sessions = [
+      makeSession("2026-02-02"),
+      makeSession("2026-01-26"),
+      makeSession("2026-01-19"),
+      makeSession("2026-01-12"),
+      makeSession("2026-01-05"),
+    ];
+    const result = computeStreak(sessions);
+    expect(result.signalValue).toBe(1); // 5 consecutive weeks
+  });
 });
