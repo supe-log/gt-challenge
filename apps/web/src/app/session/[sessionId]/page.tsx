@@ -8,6 +8,8 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { TeachItem } from "@/components/teach-item";
+import { VisualItemRenderer, VisualOption } from "@/components/visual-item-renderer";
+import type { VisualContent } from "@/components/visual-item-renderer";
 import { useSpeech } from "@/hooks/use-speech";
 import { SpeakButton } from "@/components/speak-button";
 import { thetaToPercentile, getPercentileLabel } from "@/lib/norms";
@@ -460,6 +462,12 @@ export default function SessionPage() {
                   <h2 className="text-base sm:text-lg font-bold text-gray-800 leading-snug text-center">
                     {currentItem.stem}
                   </h2>
+                  {/* Visual content from DB items (SVG matrix/sequence/analogy) */}
+                  {Boolean(currentItem.visual) && (
+                    <div className="mt-2 max-h-[35vh] flex items-center justify-center">
+                      <VisualItemRenderer visual={currentItem.visual as VisualContent} />
+                    </div>
+                  )}
                 </Card>
                 {ttsSupported && (
                   <SpeakButton
@@ -476,6 +484,7 @@ export default function SessionPage() {
                 {currentItem.options.map((option, i) => {
                   const colors = OPTION_COLORS[i % OPTION_COLORS.length];
                   const isSelected = selectedAnswer === i;
+                  const visualOpt = currentItem.visualOptions?.[i];
 
                   const isCorrectAnswer = i === currentItem.correct_index;
                   let classes = `${colors.bg} ${colors.border}`;
@@ -509,7 +518,11 @@ export default function SessionPage() {
                           String.fromCharCode(65 + i)
                         )}
                       </span>
-                      <span className="text-gray-800 text-sm sm:text-base">{option.text}</span>
+                      {visualOpt ? (
+                        <VisualOption shape={visualOpt} />
+                      ) : (
+                        <span className="text-gray-800 text-sm sm:text-base">{option.text}</span>
+                      )}
                     </motion.button>
                   );
                 })}

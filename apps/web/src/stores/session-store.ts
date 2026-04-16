@@ -10,6 +10,16 @@ interface ItemContent {
   correct_index: number;
   media?: string[];
   audio_stem?: string;
+  // Visual SVG content for pattern/matrix/analogy items
+  visual?: unknown;
+  visualOptions?: Array<{
+    shape: string;
+    color: string;
+    size?: "sm" | "md" | "lg";
+    fill?: "solid" | "striped" | "empty";
+    rotation?: number;
+    count?: number;
+  }>;
 }
 
 interface TeachContent {
